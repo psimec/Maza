@@ -20,5 +20,12 @@ namespace PI_t18024_Maza
             {
             }
         }
+
+        //Sučelje sadrži listu Životinja
+
+        public void DodijeliVlasnika()
+        {
+            //dodijela vlasnika zivotinji
+        }
     }
 }
