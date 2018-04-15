@@ -29,5 +29,10 @@ namespace PI_t18024_Maza
         {
             //U objekt Lijek se dodaje lijek
         }
+
+        public void DodajDijagnozu()
+        {
+            //U objekt Dijagnoza se dodaje dijagnoza
+        }
     }
 }
