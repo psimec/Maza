@@ -13,5 +13,12 @@ namespace PI_t18024_Maza
         private string brojTelefona1;
         private string brojTelefina2;
         private string email;
+        
+        //Sučelje sadrži listu Vlasnika
+
+        public void DodijeliZivotinju()
+        {
+            //dodavanje zivotinje u vlasnikovu listu zivotinja
+        }
     }
 }
