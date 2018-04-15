@@ -27,5 +27,10 @@ namespace PI_t18024_Maza
         {
             //Dodavanje operacija u listu operacija
         }
+
+        public void DodajLijek()
+        {
+            //Dodavanje lijekova u listu lijekova
+        }
     }
 }
