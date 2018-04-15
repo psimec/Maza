@@ -55,5 +55,11 @@ namespace PI_t18024_Maza
         {
             //Dodavanje dijagnoze u listu povijesti bolesti
         }
+
+        public void DodijeliCijepivo()
+        {
+            //Dodijela cijepiva u listu povijesti bolesti
+            //Dodijela cijepiva u listu cijepiva za zivotinju
+        }
     }
 }
