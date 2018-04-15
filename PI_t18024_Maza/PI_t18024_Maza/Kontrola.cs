@@ -50,5 +50,10 @@ namespace PI_t18024_Maza
         {
             //Ako kontrola nije zakazana u buducnosti, dohvati trenutno vrijeme i upisi ga
         }
+
+        public void DodijeliDijagnozu()
+        {
+            //Dodavanje dijagnoze u listu povijesti bolesti
+        }
     }
 }
