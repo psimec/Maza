@@ -12,12 +12,20 @@ namespace PI_t18024_Maza
         private string terapija;
         private string napomena;
 
+        //Dodati listu operacija 
+        //Dodati listu lijekova
+
         public Kontrola Kontrola
         {
             get => default(Kontrola);
             set
             {
             }
+        }
+
+        public void DodajOperaciju()
+        {
+            //Dodavanje operacija u listu operacija
         }
     }
 }
