@@ -12,5 +12,7 @@ namespace PI_t18024_Maza
         private float cijena;
         private DateTime rokTrajanja;
         private string upute;
+
+        //Sučelje sadrži listu lijekova
     }
 }
