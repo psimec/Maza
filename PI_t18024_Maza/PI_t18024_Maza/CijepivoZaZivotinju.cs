@@ -24,5 +24,10 @@ namespace PI_t18024_Maza
             {
             }
         }
+
+        public void DodijelaCijepiva()
+        {
+            //Dodijela cijepiva u objekt Cijepivo
+        }
     }
 }
