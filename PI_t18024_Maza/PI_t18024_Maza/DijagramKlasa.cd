@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PI_t18024_Maza.Zivotinja" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAQAAEAAAAAAEAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Zivotinja.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vlasnik" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PI_t18024_Maza.Vlasnik" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAUAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAIIAAAA=</HashCode>
+      <FileName>Vlasnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PI_t18024_Maza.Vrsta_zivotinje" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Vrsta_zivotinje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PI_t18024_Maza.Kontrola" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEAAAAAIAAAQAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Kontrola.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Veterinar" />
+      <Property Name="Zivotinja" />
+      <Property Name="StatusAktivnosti" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PI_t18024_Maza.Veterinar" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAFAAAAAAAAAAAAAEAAAAAAACAAJIAAAA=</HashCode>
+      <FileName>Veterinar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PI_t18024_Maza.Dijagnoza" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAIAEAAAAAAAAIAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Dijagnoza.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kontrola" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PI_t18024_Maza.PropisaniLijek" Collapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAIAAEAAAAAA=</HashCode>
+      <FileName>PropisaniLijek.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dijagnoza" />
+      <Property Name="Lijek" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PI_t18024_Maza.Lijek" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAAAAAAIAAAAAAAAAAAAAAAAAAgAAAAAAAAEAA=</HashCode>
+      <FileName>Lijek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PI_t18024_Maza.Operacija" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEIAAABA=</HashCode>
+      <FileName>Operacija.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dijagnoza" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PI_t18024_Maza.Cijepivo" Collapsed="true">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABAAAIAAAAAAAAAAAAAAAAAAgAAAQAAAAAAA=</HashCode>
+      <FileName>Cijepivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PI_t18024_Maza.Cijepivo_za_zivotinju" Collapsed="true">
+    <Position X="5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAIAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Cijepivo_za_zivotinju.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kontrola" />
+      <Property Name="Cijepivo" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="PI_t18024_Maza.StatusAktivnosti" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusAktivnosti.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
