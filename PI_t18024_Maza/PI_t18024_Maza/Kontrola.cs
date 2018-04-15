@@ -45,5 +45,10 @@ namespace PI_t18024_Maza
         {
             //Dodaj prijavljenog veterinara
         }
+
+        public void DodajTrenutniDatum()
+        {
+            //Ako kontrola nije zakazana u buducnosti, dohvati trenutno vrijeme i upisi ga
+        }
     }
 }
