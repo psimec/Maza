@@ -18,5 +18,10 @@ namespace PI_t18024_Maza
             {
             }
         }
+
+        public void DodijeliDijagnozu()
+        {
+            //Dodijela dijagnoze
+        }
     }
 }
