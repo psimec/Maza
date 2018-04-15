@@ -17,11 +17,11 @@
       <FileName>Vlasnik.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PI_t18024_Maza.Vrsta_zivotinje" Collapsed="true">
+  <Class Name="PI_t18024_Maza.VrstaZivotinje" Collapsed="true">
     <Position X="6" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Vrsta_zivotinje.cs</FileName>
+      <FileName>VrstaZivotinje.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PI_t18024_Maza.Kontrola" Collapsed="true">
@@ -88,11 +88,11 @@
       <FileName>Cijepivo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PI_t18024_Maza.Cijepivo_za_zivotinju" Collapsed="true">
+  <Class Name="PI_t18024_Maza.CijepivoZaZivotinju" Collapsed="true">
     <Position X="5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAIAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Cijepivo_za_zivotinju.cs</FileName>
+      <FileName>CijepivoZaZivotinju.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Kontrola" />
