@@ -10,7 +10,7 @@ namespace PI_t18024_Maza
         private DateTime datumKontrole;
         private string opis;
 
-
+        //Lista cijepiva za zivotinju
 
         public Veterinar Veterinar
         {
@@ -34,6 +34,11 @@ namespace PI_t18024_Maza
             set
             {
             }
+        }
+
+        public void DodajZivotinju()
+        {
+            //Dodavaj trenutacno selektiranu zivotinju iz liste
         }
     }
 }
