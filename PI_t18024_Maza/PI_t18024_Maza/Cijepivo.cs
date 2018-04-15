@@ -12,5 +12,7 @@ namespace PI_t18024_Maza
         private string proizvodac;
         private DateTime rokTrajanja;
         private float cijena;
+
+        //Sučelje sadrži listu Cijepiva
     }
 }
