@@ -24,5 +24,10 @@ namespace PI_t18024_Maza
             {
             }
         }
+
+        public void DodajLijek()
+        {
+            //U objekt Lijek se dodaje lijek
+        }
     }
 }
