@@ -29,5 +29,10 @@ namespace PI_t18024_Maza
         {
             //Dodijela cijepiva u objekt Cijepivo
         }
+
+        public void DodijelaKontrole()
+        {
+            //Dodijela kontrole u objekt Kontrola
+        }
     }
 }
