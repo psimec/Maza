@@ -40,5 +40,10 @@ namespace PI_t18024_Maza
         {
             //Dodavaj trenutacno selektiranu zivotinju iz liste
         }
+
+        public void DodajVeterinara()
+        {
+            //Dodaj prijavljenog veterinara
+        }
     }
 }
