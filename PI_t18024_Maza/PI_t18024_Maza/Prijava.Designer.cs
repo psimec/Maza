@@ -91,6 +91,7 @@
             this.uiActionPrijava.TabIndex = 5;
             this.uiActionPrijava.Text = "Prijava";
             this.uiActionPrijava.UseVisualStyleBackColor = true;
+            this.uiActionPrijava.Click += new System.EventHandler(this.uiActionPrijava_Click);
             // 
             // panel1
             // 

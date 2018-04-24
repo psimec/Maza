@@ -21,5 +21,15 @@ namespace PI_t18024_Maza
         {
             Close();
         }
+
+        private void uiActionPrijava_Click(object sender, EventArgs e)
+        {
+            //ukoliko su uneseni podaci točni, izvrši
+
+            Form glavnaForma = new Form1();
+            this.Hide();
+            glavnaForma.ShowDialog();
+            this.Close();
+        }
     }
 }
