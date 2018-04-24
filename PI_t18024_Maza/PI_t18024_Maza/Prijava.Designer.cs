@@ -80,6 +80,7 @@
             this.uiActionOdustani.TabIndex = 4;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // uiActionPrijava
             // 

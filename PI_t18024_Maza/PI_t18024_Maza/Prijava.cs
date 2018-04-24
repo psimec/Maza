@@ -16,5 +16,10 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
         }
+
+        private void uiActionOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
