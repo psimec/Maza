@@ -16,5 +16,13 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
         }
+
+        private void uiActionOdjava_Click(object sender, EventArgs e)
+        {
+            Form prijava = new Prijava();
+            this.Hide();
+            prijava.ShowDialog();
+            this.Close();
+        }
     }
 }
