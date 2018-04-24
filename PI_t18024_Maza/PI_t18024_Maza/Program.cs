@@ -16,7 +16,7 @@ namespace PI_t18024_Maza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Prijava());
+            Application.Run(new Form1());
         }
     }
 }
