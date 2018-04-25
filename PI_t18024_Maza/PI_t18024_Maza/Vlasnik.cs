@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PI_t18024_Maza
 {
-    public class Vlasnik
+    public class Vlasnik : Kontrola
     {
         private string ime;
         private string prezime;
@@ -14,7 +14,7 @@ namespace PI_t18024_Maza
         private string brojTelefina2;
         private string email;
         private List<Zivotinja> listaZivotinja;
-        
+
         //Sučelje sadrži listu Vlasnika
 
         public void DodijeliZivotinju()
