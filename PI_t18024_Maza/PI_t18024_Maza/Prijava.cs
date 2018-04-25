@@ -12,9 +12,11 @@ namespace PI_t18024_Maza
 {
     public partial class Prijava : Form
     {
+
         public Prijava()
         {
             InitializeComponent();
+            uiUnosLozinke.UseSystemPasswordChar = true;
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -24,12 +26,30 @@ namespace PI_t18024_Maza
 
         private void uiActionPrijava_Click(object sender, EventArgs e)
         {
-            //ukoliko su uneseni podaci točni, izvrši
+            string korime = uiUnosKorisnickogImena.Text;
+            string lozinka = uiUnosLozinke.Text;
 
-            Form glavnaForma = new Form1();
-            this.Hide();
-            glavnaForma.ShowDialog();
-            this.Close();
+
+            if (korime != "" || lozinka != "")
+            {
+                // dohvati korisnicko ime iz baze, ako ne postoji vrati gresku
+                // dohvati lozinku za korisnicko ime u bazi podataka;
+                string bazaLozinka = "testloz"; 
+
+                if (lozinka == bazaLozinka)
+                {
+                    Form glavnaForma = new Form1();
+                    this.Hide();
+                    glavnaForma.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Lozinka nije točna");
+                }
+            }
+
+
         }
     }
 }
