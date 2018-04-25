@@ -48,8 +48,21 @@ namespace PI_t18024_Maza
                     MessageBox.Show("Lozinka nije točna");
                 }
             }
+            else
+            {
+                uiUnosKorisnickogImena.BackColor = Color.IndianRed;
+                uiUnosLozinke.BackColor = Color.IndianRed;
+            }
+        }
 
+        private void uiUnosKorisnickogImena_TextChanged(object sender, EventArgs e)
+        {
+            uiUnosKorisnickogImena.BackColor = Color.White;
+        }
 
+        private void uiUnosLozinke_TextChanged(object sender, EventArgs e)
+        {
+            uiUnosLozinke.BackColor = Color.White;
         }
     }
 }

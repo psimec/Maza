@@ -43,6 +43,7 @@
             this.uiUnosKorisnickogImena.Name = "uiUnosKorisnickogImena";
             this.uiUnosKorisnickogImena.Size = new System.Drawing.Size(184, 20);
             this.uiUnosKorisnickogImena.TabIndex = 0;
+            this.uiUnosKorisnickogImena.TextChanged += new System.EventHandler(this.uiUnosKorisnickogImena_TextChanged);
             // 
             // uiUnosLozinke
             // 
@@ -50,6 +51,7 @@
             this.uiUnosLozinke.Name = "uiUnosLozinke";
             this.uiUnosLozinke.Size = new System.Drawing.Size(184, 20);
             this.uiUnosLozinke.TabIndex = 1;
+            this.uiUnosLozinke.TextChanged += new System.EventHandler(this.uiUnosLozinke_TextChanged);
             // 
             // label1
             // 
