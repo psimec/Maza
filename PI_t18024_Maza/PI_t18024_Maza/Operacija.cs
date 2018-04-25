@@ -11,14 +11,6 @@ namespace PI_t18024_Maza
         private int trajanjeZahvata;
         private string napomena;
 
-        public Dijagnoza Dijagnoza
-        {
-            get => default(Dijagnoza);
-            set
-            {
-            }
-        }
-
         public void DodijeliDijagnozu()
         {
             //Dodijela dijagnoze
