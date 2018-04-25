@@ -9,6 +9,7 @@ namespace PI_t18024_Maza
     {
         private DateTime datumKontrole;
         private string opis;
+        private Dijagnoza dijagnoza;
 
         //Lista cijepiva za zivotinju
 
@@ -20,17 +21,25 @@ namespace PI_t18024_Maza
             }
         }
 
-        public Zivotinja Zivotinja
+        public StatusAktivnosti StatusAktivnosti
         {
-            get => default(Zivotinja);
+            get => default(StatusAktivnosti);
             set
             {
             }
         }
 
-        public StatusAktivnosti StatusAktivnosti
+        public List<Cijepivo> Cijepivo
         {
-            get => default(StatusAktivnosti);
+            get => default(List<Cijepivo>);
+            set
+            {
+            }
+        }
+
+        public Zivotinja Zivotinja
+        {
+            get => default(Zivotinja);
             set
             {
             }
@@ -60,6 +69,11 @@ namespace PI_t18024_Maza
         {
             //Dodijela cijepiva u listu povijesti bolesti
             //Dodijela cijepiva u listu cijepiva za zivotinju
+        }
+
+        public void PromjeniStatus()
+        {
+            //Promjena statusa kontrole, ako je već odradena
         }
     }
 }
