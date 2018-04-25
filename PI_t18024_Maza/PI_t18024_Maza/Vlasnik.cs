@@ -13,6 +13,7 @@ namespace PI_t18024_Maza
         private string brojTelefona1;
         private string brojTelefina2;
         private string email;
+        private List<Zivotinja> listaZivotinja;
         
         //Sučelje sadrži listu Vlasnika
 
