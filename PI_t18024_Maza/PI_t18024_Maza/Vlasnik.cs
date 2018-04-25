@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PI_t18024_Maza
 {
-    public class Vlasnik : Kontrola
+    public class Vlasnik
     {
         private string ime;
         private string prezime;
