@@ -11,9 +11,15 @@ namespace PI_t18024_Maza
         private string nazivBolesti;
         private string terapija;
         private string napomena;
+        private List<PropisaniLijek> listaPropisanihLijekova;
 
-        //Dodati listu operacija 
-        //Dodati listu lijekova
+        public Operacija Operacija
+        {
+            get => default(Operacija);
+            set
+            {
+            }
+        }
 
         public Kontrola Kontrola
         {
@@ -22,6 +28,8 @@ namespace PI_t18024_Maza
             {
             }
         }
+
+        //Dodati listu lijekova
 
         public void DodajOperaciju()
         {
