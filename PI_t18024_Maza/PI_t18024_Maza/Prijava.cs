@@ -38,7 +38,7 @@ namespace PI_t18024_Maza
 
                 if (lozinka == bazaLozinka)
                 {
-                    Form glavnaForma = new Form1();
+                    Form glavnaForma = new Kalendar();
                     this.Hide();
                     glavnaForma.ShowDialog();
                     this.Close();

@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Form1
+    partial class Kalendar
     {
         /// <summary>
         /// Required designer variable.
@@ -158,15 +158,15 @@
             this.button1.Text = "Kalendar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // Kalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Kalendar";
+            this.Text = "Kalendar";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
