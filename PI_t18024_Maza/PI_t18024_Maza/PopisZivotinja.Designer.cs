@@ -35,8 +35,18 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vrsta_zivotinje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasmina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_vlasnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datum_rođenja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.broj_čipa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.težina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -134,17 +144,93 @@
             this.button1.Text = "Kalendar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vrsta_zivotinje,
+            this.pasmina,
+            this.ID_vlasnik,
+            this.ime,
+            this.spol,
+            this.datum_rođenja,
+            this.broj_čipa,
+            this.težina});
+            this.dataGridView1.Location = new System.Drawing.Point(194, 62);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 351);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // vrsta_zivotinje
+            // 
+            this.vrsta_zivotinje.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vrsta_zivotinje.HeaderText = "Vrsta";
+            this.vrsta_zivotinje.Name = "vrsta_zivotinje";
+            this.vrsta_zivotinje.Width = 70;
+            // 
+            // pasmina
+            // 
+            this.pasmina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pasmina.HeaderText = "Pasmina";
+            this.pasmina.Name = "pasmina";
+            this.pasmina.Width = 91;
+            // 
+            // ID_vlasnik
+            // 
+            this.ID_vlasnik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID_vlasnik.HeaderText = "Vlasnik";
+            this.ID_vlasnik.Name = "ID_vlasnik";
+            this.ID_vlasnik.Width = 82;
+            // 
+            // ime
+            // 
+            this.ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ime.HeaderText = "Ime";
+            this.ime.Name = "ime";
+            this.ime.Width = 59;
+            // 
+            // spol
+            // 
+            this.spol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.spol.HeaderText = "Spol";
+            this.spol.Name = "spol";
+            this.spol.Width = 65;
+            // 
+            // datum_rođenja
+            // 
+            this.datum_rođenja.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.datum_rođenja.HeaderText = "Datum rođenja";
+            this.datum_rođenja.Name = "datum_rođenja";
+            this.datum_rođenja.Width = 130;
+            // 
+            // broj_čipa
+            // 
+            this.broj_čipa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.broj_čipa.HeaderText = "Broj čipa";
+            this.broj_čipa.Name = "broj_čipa";
+            this.broj_čipa.Width = 92;
+            // 
+            // težina
+            // 
+            this.težina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.težina.HeaderText = "Težina";
+            this.težina.Name = "težina";
+            this.težina.Width = 80;
+            // 
             // PopisZivotinja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 624);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "PopisZivotinja";
             this.Text = "PopisZivotinja";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,5 +244,14 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrsta_zivotinje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pasmina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_vlasnik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datum_rođenja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn broj_čipa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn težina;
     }
 }
