@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Form1
+    partial class PopisZivotinja
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,6 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Životinje";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -135,15 +134,15 @@
             this.button1.Text = "Kalendar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // PopisZivotinja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 624);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "PopisZivotinja";
+            this.Text = "PopisZivotinja";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -161,4 +160,3 @@
         private System.Windows.Forms.Button button1;
     }
 }
-

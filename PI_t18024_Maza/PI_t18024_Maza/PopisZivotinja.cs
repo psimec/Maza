@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Form1 : Form
+    public partial class PopisZivotinja : Form
     {
-        public Form1()
+        public PopisZivotinja()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form popisZivotinja = new PopisZivotinja();
-            this.Hide();
-            popisZivotinja.ShowDialog();
-            this.Close();
         }
     }
 }
