@@ -156,38 +156,50 @@
             this.dataGridView1.Location = new System.Drawing.Point(194, 62);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(701, 325);
             this.dataGridView1.TabIndex = 6;
             // 
             // ime
             // 
+            this.ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ime.HeaderText = "Ime";
             this.ime.Name = "ime";
+            this.ime.Width = 59;
             // 
             // prezime
             // 
+            this.prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.prezime.HeaderText = "Prezime";
             this.prezime.Name = "prezime";
+            this.prezime.Width = 88;
             // 
             // adresa_stanovanja
             // 
+            this.adresa_stanovanja.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.adresa_stanovanja.HeaderText = "Adresa";
             this.adresa_stanovanja.Name = "adresa_stanovanja";
+            this.adresa_stanovanja.Width = 82;
             // 
             // broj_telefona1
             // 
+            this.broj_telefona1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.broj_telefona1.HeaderText = "Broj telefona1";
             this.broj_telefona1.Name = "broj_telefona1";
+            this.broj_telefona1.Width = 125;
             // 
             // broj_telefona2
             // 
+            this.broj_telefona2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.broj_telefona2.HeaderText = "Broj telefona2";
             this.broj_telefona2.Name = "broj_telefona2";
+            this.broj_telefona2.Width = 125;
             // 
             // email
             // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
+            this.email.Width = 76;
             // 
             // Vlasnici
             // 
