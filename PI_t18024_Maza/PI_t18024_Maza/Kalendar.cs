@@ -24,5 +24,10 @@ namespace PI_t18024_Maza
             prijava.ShowDialog();
             this.Close();
         }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
