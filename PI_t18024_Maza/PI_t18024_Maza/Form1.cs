@@ -24,5 +24,13 @@ namespace PI_t18024_Maza
             popisZivotinja.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form vlasnici = new Vlasnici();
+            this.Hide();
+            vlasnici.ShowDialog();
+            this.Close();
+        }
     }
 }
