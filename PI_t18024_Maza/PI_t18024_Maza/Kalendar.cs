@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Form1 : Form
+    public partial class Kalendar : Form
     {
-        public Form1()
+        public Kalendar()
         {
             InitializeComponent();
         }
