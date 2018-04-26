@@ -12,6 +12,9 @@ namespace PI_t18024_Maza
 {
     public partial class Kalendar : Form
     {
+        DateTime datumOd;
+        DateTime datumDo;
+        
         public Kalendar()
         {
             InitializeComponent();
@@ -25,28 +28,44 @@ namespace PI_t18024_Maza
             this.Close();
         }
 
+        private void odrediTjedan(DateTime datum)
+        {
+            double brojDana = 0;
+            switch (datum.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    brojDana = 0;
+                    break;
+                case DayOfWeek.Tuesday:
+                    brojDana = 1;
+                    break;
+                case DayOfWeek.Wednesday:
+                    brojDana = 2;
+                    break;
+                case DayOfWeek.Thursday:
+                    brojDana = 3;
+                    break;
+                case DayOfWeek.Friday:
+                    brojDana = 4;
+                    break;
+                case DayOfWeek.Saturday:
+                    brojDana = 5;
+                    break;
+                case DayOfWeek.Sunday:
+                    brojDana = 6;
+                    break;
+                default:
+                    break;
+            }
+
+            DateTime datumOd = datum.AddDays(-brojDana);
+            DateTime datumDo = datum.AddDays(6 - brojDana);
+        }
+
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
         {
-            DateTime datum = uiActionOdabirDatuma.Value;
-            DayOfWeek danUTjednu = datum.DayOfWeek; // dan u tjednu se koristi kako bi se znalo pod koji dan se dodaje aktivnost
-            int brojDanaUMjesecu = DateTime.DaysInMonth(datum.Year, datum.Month);
-            int brojTjednaUMjesecu = (datum.Day + (7 - (int)datum.DayOfWeek)) / 7;
-
-            string test = "";
-
-            for (int i = (brojTjednaUMjesecu * 7) - 7; i < brojTjednaUMjesecu * 7; i++)
-            {
-                if (i <= brojTjednaUMjesecu)
-                {
-                    test += i + " ";
-                }
-                else
-                {
-
-                }
-            }
-            MessageBox.Show(test);
-
+            odrediTjedan(uiActionOdabirDatuma.Value); // odreduje tjedan za koji se prikazuju aktivnosti
+            //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
     }
 }
