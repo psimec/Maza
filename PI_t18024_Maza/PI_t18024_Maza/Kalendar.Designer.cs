@@ -278,6 +278,7 @@
             this.uiActionOdabirDatuma.Name = "uiActionOdabirDatuma";
             this.uiActionOdabirDatuma.Size = new System.Drawing.Size(200, 20);
             this.uiActionOdabirDatuma.TabIndex = 10;
+            this.uiActionOdabirDatuma.ValueChanged += new System.EventHandler(this.uiActionOdabirDatuma_ValueChanged);
             // 
             // label8
             // 
