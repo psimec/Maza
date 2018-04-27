@@ -43,16 +43,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.uiPanelAktivnosti = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.uiActionOdabirDatuma = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.uiActionDodajAktivnost = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.uiPanelAktivnosti.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -223,11 +218,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.uiPanelAktivnosti.Controls.Add(this.button5, 0, 0);
-            this.uiPanelAktivnosti.Controls.Add(this.button6, 4, 0);
-            this.uiPanelAktivnosti.Controls.Add(this.button7, 2, 0);
-            this.uiPanelAktivnosti.Controls.Add(this.button8, 2, 1);
+            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.uiPanelAktivnosti.Location = new System.Drawing.Point(162, 140);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
             this.uiPanelAktivnosti.RowCount = 2;
@@ -235,42 +226,6 @@
             this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiPanelAktivnosti.Size = new System.Drawing.Size(816, 138);
             this.uiPanelAktivnosti.TabIndex = 9;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 63);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Cijepljenje 10:30";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(449, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(106, 63);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Cijepljenje 10:30";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(224, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(106, 63);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Operacija 15:30";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(224, 72);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(106, 63);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Cijepljenje 16:00";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // uiActionOdabirDatuma
             // 
@@ -321,7 +276,6 @@
             this.Text = "Kalendar";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.uiPanelAktivnosti.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,10 +298,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TableLayoutPanel uiPanelAktivnosti;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DateTimePicker uiActionOdabirDatuma;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button uiActionDodajAktivnost;

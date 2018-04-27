@@ -33,12 +33,18 @@ namespace PI_t18024_Maza
         {
             Button novi = new Button();
             //novi.Text = datum, životinja, opis
-            // novi.Location = new Point(x iz klase, y odreden prema kolicina aktivnosti za taj dan)
-            this.Controls.Add(novi);
+            novi.Size = new Size(100, 50);
+            postaviAktivnost(novi,1,1);
+        }
+
+        private void postaviAktivnost(Button aktivnost, int stupac, int red)
+        {
+            uiPanelAktivnosti.Controls.Add(aktivnost, column:stupac, row:red);
         }
 
         private void odrediTjedan(DateTime datum)
         {
+            kreirajAkrivnost();
             double brojDana = 0;
             switch (datum.DayOfWeek)
             {
@@ -76,5 +82,6 @@ namespace PI_t18024_Maza
             odrediTjedan(uiActionOdabirDatuma.Value); // odreduje tjedan za koji se prikazuju aktivnosti
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
+
     }
 }
