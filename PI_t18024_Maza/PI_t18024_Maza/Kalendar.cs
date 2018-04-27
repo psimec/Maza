@@ -45,11 +45,9 @@ namespace PI_t18024_Maza
 
         private void odrediTjedan(DateTime datum)
         {
-            kreirajAkrivnost();
             brojDana = (int)datum.DayOfWeek - 1;
             datumOd = datum.AddDays(-brojDana);
             datumDo = datum.AddDays(6 - brojDana);
-            MessageBox.Show(datumOd.ToString() + "  " + datumDo.ToString());
         }
 
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
