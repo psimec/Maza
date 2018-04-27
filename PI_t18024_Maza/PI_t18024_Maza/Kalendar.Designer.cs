@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiActionOdjava = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionKontrola = new System.Windows.Forms.Button();
+            this.uiActionVlasnici = new System.Windows.Forms.Button();
+            this.uiActionZivotinje = new System.Windows.Forms.Button();
+            this.uiActionKalendar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,67 +77,67 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.uiActionKontrola);
+            this.panel2.Controls.Add(this.uiActionVlasnici);
+            this.panel2.Controls.Add(this.uiActionZivotinje);
+            this.panel2.Controls.Add(this.uiActionKalendar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 587);
             this.panel2.TabIndex = 1;
             // 
-            // button4
+            // uiActionKontrola
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(0, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Kontrola";
-            this.button4.UseVisualStyleBackColor = false;
+            this.uiActionKontrola.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.uiActionKontrola.FlatAppearance.BorderSize = 0;
+            this.uiActionKontrola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionKontrola.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionKontrola.Location = new System.Drawing.Point(0, 240);
+            this.uiActionKontrola.Name = "uiActionKontrola";
+            this.uiActionKontrola.Size = new System.Drawing.Size(140, 37);
+            this.uiActionKontrola.TabIndex = 3;
+            this.uiActionKontrola.Text = "Kontrola";
+            this.uiActionKontrola.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // uiActionVlasnici
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(0, 180);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 37);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Vlasnici";
-            this.button3.UseVisualStyleBackColor = false;
+            this.uiActionVlasnici.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.uiActionVlasnici.FlatAppearance.BorderSize = 0;
+            this.uiActionVlasnici.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionVlasnici.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionVlasnici.Location = new System.Drawing.Point(0, 180);
+            this.uiActionVlasnici.Name = "uiActionVlasnici";
+            this.uiActionVlasnici.Size = new System.Drawing.Size(140, 37);
+            this.uiActionVlasnici.TabIndex = 2;
+            this.uiActionVlasnici.Text = "Vlasnici";
+            this.uiActionVlasnici.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // uiActionZivotinje
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(0, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 37);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Životinje";
-            this.button2.UseVisualStyleBackColor = false;
+            this.uiActionZivotinje.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.uiActionZivotinje.FlatAppearance.BorderSize = 0;
+            this.uiActionZivotinje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionZivotinje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionZivotinje.Location = new System.Drawing.Point(0, 120);
+            this.uiActionZivotinje.Name = "uiActionZivotinje";
+            this.uiActionZivotinje.Size = new System.Drawing.Size(140, 37);
+            this.uiActionZivotinje.TabIndex = 1;
+            this.uiActionZivotinje.Text = "Životinje";
+            this.uiActionZivotinje.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // uiActionKalendar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(0, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Kalendar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.uiActionKalendar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.uiActionKalendar.FlatAppearance.BorderSize = 0;
+            this.uiActionKalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionKalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionKalendar.Location = new System.Drawing.Point(0, 60);
+            this.uiActionKalendar.Name = "uiActionKalendar";
+            this.uiActionKalendar.Size = new System.Drawing.Size(140, 37);
+            this.uiActionKalendar.TabIndex = 0;
+            this.uiActionKalendar.Text = "Kalendar";
+            this.uiActionKalendar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -218,7 +218,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.uiPanelAktivnosti.Location = new System.Drawing.Point(162, 140);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
             this.uiPanelAktivnosti.RowCount = 7;
@@ -292,10 +292,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button uiActionOdjava;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionKontrola;
+        private System.Windows.Forms.Button uiActionVlasnici;
+        private System.Windows.Forms.Button uiActionZivotinje;
+        private System.Windows.Forms.Button uiActionKalendar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
