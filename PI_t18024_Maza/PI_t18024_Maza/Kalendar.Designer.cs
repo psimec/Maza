@@ -223,7 +223,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.uiPanelAktivnosti.Controls.Add(this.button5, 0, 0);
             this.uiPanelAktivnosti.Controls.Add(this.button6, 4, 0);
             this.uiPanelAktivnosti.Controls.Add(this.button7, 2, 0);
@@ -240,14 +240,14 @@
             // 
             this.button5.Location = new System.Drawing.Point(3, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 63);
+            this.button5.Size = new System.Drawing.Size(104, 63);
             this.button5.TabIndex = 0;
             this.button5.Text = "Cijepljenje 10:30";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(450, 3);
+            this.button6.Location = new System.Drawing.Point(449, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(106, 63);
             this.button6.TabIndex = 1;
@@ -256,7 +256,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(225, 3);
+            this.button7.Location = new System.Drawing.Point(224, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(106, 63);
             this.button7.TabIndex = 2;
@@ -265,7 +265,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(225, 72);
+            this.button8.Location = new System.Drawing.Point(224, 72);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(106, 63);
             this.button8.TabIndex = 3;

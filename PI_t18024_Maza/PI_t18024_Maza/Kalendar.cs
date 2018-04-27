@@ -12,6 +12,7 @@ namespace PI_t18024_Maza
 {
     public partial class Kalendar : Form
     {
+        List<DanAktivnosti> daniAktivnosti = new List<DanAktivnosti>();
         DateTime datumOd;
         DateTime datumDo;
         
@@ -26,6 +27,14 @@ namespace PI_t18024_Maza
             this.Hide();
             prijava.ShowDialog();
             this.Close();
+        }
+
+        private void kreirajAkrivnost()
+        {
+            Button novi = new Button();
+            //novi.Text = datum, životinja, opis
+            // novi.Location = new Point(x iz klase, y odreden prema kolicina aktivnosti za taj dan)
+            this.Controls.Add(novi);
         }
 
         private void odrediTjedan(DateTime datum)
@@ -58,8 +67,8 @@ namespace PI_t18024_Maza
                     break;
             }
 
-            DateTime datumOd = datum.AddDays(-brojDana);
-            DateTime datumDo = datum.AddDays(6 - brojDana);
+            datumOd = datum.AddDays(-brojDana);
+            datumDo = datum.AddDays(6 - brojDana);
         }
 
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
