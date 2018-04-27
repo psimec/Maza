@@ -15,15 +15,15 @@ namespace PI_t18024_Maza
         public Vlasnici()
         {
             InitializeComponent();
-            dataGridView1.Rows.Add("Marko", "Marić", "Samobor", "0911231233", null, "mmaric@mail.com");
-            dataGridView1.Rows.Add("Ivan", "Ivić", "Zagreb", "0955511152", null, "iivic@mail.com");
-            dataGridView1.Rows.Add("Luka", "Marinkov", "Zagreb", "0955422121", null, "lmarinkov@mail.com");
-            dataGridView1.Rows.Add("Marko", "Štuka", "Zaprešić", "0977875555", null, "mstuka@mail.com");
-            dataGridView1.Rows.Add("Marija", "Petrić", "Samobor", "0996932252", null, "mpetric@mail.com");
-            dataGridView1.Rows.Add("Ana", "Anić", "Zagreb", "0922177787", null, "aanic@mail.com");
+            uiTablicaVlasnika.Rows.Add("Marko", "Marić", "Samobor", "0911231233", null, "mmaric@mail.com");
+            uiTablicaVlasnika.Rows.Add("Ivan", "Ivić", "Zagreb", "0955511152", null, "iivic@mail.com");
+            uiTablicaVlasnika.Rows.Add("Luka", "Marinkov", "Zagreb", "0955422121", null, "lmarinkov@mail.com");
+            uiTablicaVlasnika.Rows.Add("Marko", "Štuka", "Zaprešić", "0977875555", null, "mstuka@mail.com");
+            uiTablicaVlasnika.Rows.Add("Marija", "Petrić", "Samobor", "0996932252", null, "mpetric@mail.com");
+            uiTablicaVlasnika.Rows.Add("Ana", "Anić", "Zagreb", "0922177787", null, "aanic@mail.com");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void uiActionPopisZivotinja_Click(object sender, EventArgs e)
         {
             Form popisZivotinja = new PopisZivotinja();
             this.Hide();
