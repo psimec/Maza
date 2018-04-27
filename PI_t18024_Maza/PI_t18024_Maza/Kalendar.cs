@@ -15,7 +15,7 @@ namespace PI_t18024_Maza
         List<DanAktivnosti> daniAktivnosti = new List<DanAktivnosti>();
         DateTime datumOd;
         DateTime datumDo;
-        double brojDana = (int)DateTime.Now.DayOfWeek;
+        double brojDana = (int)DateTime.Now.DayOfWeek - 1;
 
         public Kalendar()
         {
