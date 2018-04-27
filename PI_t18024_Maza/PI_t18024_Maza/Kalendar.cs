@@ -15,7 +15,8 @@ namespace PI_t18024_Maza
         List<DanAktivnosti> daniAktivnosti = new List<DanAktivnosti>();
         DateTime datumOd;
         DateTime datumDo;
-        
+        double brojDana = (int)DateTime.Now.DayOfWeek;
+
         public Kalendar()
         {
             InitializeComponent();
@@ -32,9 +33,9 @@ namespace PI_t18024_Maza
         private void kreirajAkrivnost()
         {
             Button novi = new Button();
+            //novi.Click += (s, e) => { funkcija koju button izvrsava };
             //novi.Text = datum, životinja, opis
             novi.Size = new Size(100, 50);
-            postaviAktivnost(novi,1,1);
         }
 
         private void postaviAktivnost(Button aktivnost, int stupac, int red)
@@ -45,43 +46,25 @@ namespace PI_t18024_Maza
         private void odrediTjedan(DateTime datum)
         {
             kreirajAkrivnost();
-            double brojDana = 0;
-            switch (datum.DayOfWeek)
-            {
-                case DayOfWeek.Monday:
-                    brojDana = 0;
-                    break;
-                case DayOfWeek.Tuesday:
-                    brojDana = 1;
-                    break;
-                case DayOfWeek.Wednesday:
-                    brojDana = 2;
-                    break;
-                case DayOfWeek.Thursday:
-                    brojDana = 3;
-                    break;
-                case DayOfWeek.Friday:
-                    brojDana = 4;
-                    break;
-                case DayOfWeek.Saturday:
-                    brojDana = 5;
-                    break;
-                case DayOfWeek.Sunday:
-                    brojDana = 6;
-                    break;
-                default:
-                    break;
-            }
-
+            brojDana = (int)datum.DayOfWeek - 1;
             datumOd = datum.AddDays(-brojDana);
             datumDo = datum.AddDays(6 - brojDana);
+            MessageBox.Show(datumOd.ToString() + "  " + datumDo.ToString());
         }
 
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
         {
             odrediTjedan(uiActionOdabirDatuma.Value); // odreduje tjedan za koji se prikazuju aktivnosti
+            uiPanelAktivnosti.Invalidate();
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
 
+        private void uiPanelAktivnosti_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if (e.Column == brojDana)
+            {
+                e.Graphics.FillRectangle(Brushes.LightPink, e.CellBounds);
+            }           
+        }
     }
 }

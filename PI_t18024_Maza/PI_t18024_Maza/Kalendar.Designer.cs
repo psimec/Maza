@@ -221,11 +221,17 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.uiPanelAktivnosti.Location = new System.Drawing.Point(162, 140);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
-            this.uiPanelAktivnosti.RowCount = 2;
+            this.uiPanelAktivnosti.RowCount = 7;
             this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiPanelAktivnosti.Size = new System.Drawing.Size(816, 138);
+            this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.uiPanelAktivnosti.Size = new System.Drawing.Size(816, 459);
             this.uiPanelAktivnosti.TabIndex = 9;
+            this.uiPanelAktivnosti.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.uiPanelAktivnosti_CellPaint);
             // 
             // uiActionOdabirDatuma
             // 
