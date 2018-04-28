@@ -24,7 +24,7 @@ namespace PI_t18024_Maza
         
         private void formirajPDF() //privremena funckija za kreiranje PDF-a, samo za testiranje
         {
-            PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream(@"Izvještaji\Test.pdf", FileMode.Create));
             doc.Open();
             iTextSharp.text.Font naslovFont = FontFactory.GetFont("Times New Roman", 32);
             iTextSharp.text.Font sadrzajFont = FontFactory.GetFont("Times New Roman", 14);
@@ -47,9 +47,9 @@ namespace PI_t18024_Maza
         private void uiActionPrikaziPDF_Click(object sender, EventArgs e)
         {
             formirajPDF();
-            System.Diagnostics.Process.Start("Test.pdf");
+            System.Diagnostics.Process.Start(@"Izvještaji\Test.pdf");
             System.Threading.Thread.Sleep(10000); // privremeno rijesenje kod brisanja prikazanog pdf-a
-            File.Delete("Test.pdf");
+            File.Delete(@"Izvještaji\Test.pdf");
             doc = new Document(PageSize.A4);
         }
     }
