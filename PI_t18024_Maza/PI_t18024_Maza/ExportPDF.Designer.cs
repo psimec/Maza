@@ -36,7 +36,7 @@
             this.uiActionOdjava = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiActionSpremiPDF = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionPrikaziPDF = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,22 +137,24 @@
             this.uiActionSpremiPDF.TabIndex = 15;
             this.uiActionSpremiPDF.Text = "Spremi PDF";
             this.uiActionSpremiPDF.UseVisualStyleBackColor = true;
+            this.uiActionSpremiPDF.Click += new System.EventHandler(this.uiActionSpremiPDF_Click);
             // 
-            // button1
+            // uiActionPrikaziPDF
             // 
-            this.button1.Location = new System.Drawing.Point(285, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Prikaži PDF";
-            this.button1.UseVisualStyleBackColor = true;
+            this.uiActionPrikaziPDF.Location = new System.Drawing.Point(285, 78);
+            this.uiActionPrikaziPDF.Name = "uiActionPrikaziPDF";
+            this.uiActionPrikaziPDF.Size = new System.Drawing.Size(100, 50);
+            this.uiActionPrikaziPDF.TabIndex = 16;
+            this.uiActionPrikaziPDF.Text = "Prikaži PDF";
+            this.uiActionPrikaziPDF.UseVisualStyleBackColor = true;
+            this.uiActionPrikaziPDF.Click += new System.EventHandler(this.uiActionPrikaziPDF_Click);
             // 
             // ExportPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uiActionPrikaziPDF);
             this.Controls.Add(this.uiActionSpremiPDF);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -174,6 +176,6 @@
         private System.Windows.Forms.Button uiActionOdjava;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button uiActionSpremiPDF;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionPrikaziPDF;
     }
 }
