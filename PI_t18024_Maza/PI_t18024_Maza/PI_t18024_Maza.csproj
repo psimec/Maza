@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DanAktivnosti.cs" />
+    <Compile Include="ExportPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportPDF.Designer.cs">
+      <DependentUpon>ExportPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExportPDF.resx">
+      <DependentUpon>ExportPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kalendar.resx">
       <DependentUpon>Kalendar.cs</DependentUpon>
     </EmbeddedResource>
