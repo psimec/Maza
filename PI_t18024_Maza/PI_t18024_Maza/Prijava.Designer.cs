@@ -35,6 +35,7 @@
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionPrijava = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uiUnosKorisnickogImena
@@ -105,11 +106,21 @@
             this.panel1.Size = new System.Drawing.Size(391, 113);
             this.panel1.TabIndex = 6;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Lozinka: testloz";
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 261);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.uiActionPrijava);
             this.Controls.Add(this.uiActionOdustani);
@@ -133,5 +144,6 @@
         private System.Windows.Forms.Button uiActionOdustani;
         private System.Windows.Forms.Button uiActionPrijava;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }
