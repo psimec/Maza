@@ -9,7 +9,7 @@ namespace PI_t18024_Maza
     {
         private DateTime datumKontrole;
         private string opis;
-        private Dijagnoza dijagnoza;
+        private List<Dijagnoza> dijagnoze;
 
         //Lista cijepiva za zivotinju
 
