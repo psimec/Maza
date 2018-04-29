@@ -10,10 +10,5 @@ namespace PI_t18024_Maza
         private string vrstaZahvata;
         private int trajanjeZahvata;
         private string napomena;
-
-        public void DodijeliDijagnozu()
-        {
-            //Dodijela dijagnoze
-        }
     }
 }
