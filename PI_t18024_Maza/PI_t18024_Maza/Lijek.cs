@@ -11,6 +11,5 @@ namespace PI_t18024_Maza
         private string proizvodac;
         private float cijena;
         private DateTime rokTrajanja;
-        private string upute;
     }
 }
