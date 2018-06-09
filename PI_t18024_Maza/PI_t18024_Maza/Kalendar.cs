@@ -64,5 +64,11 @@ namespace PI_t18024_Maza
                 e.Graphics.FillRectangle(Brushes.LightPink, e.CellBounds);
             }
         }
+
+        private void uiActionZivotinje_Click(object sender, EventArgs e)
+        {
+            Zivotinje zivotinje = new Zivotinje();
+            zivotinje.ShowDialog();
+        }
     }
 }
