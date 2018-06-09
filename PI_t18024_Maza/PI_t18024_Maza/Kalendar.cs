@@ -16,10 +16,12 @@ namespace PI_t18024_Maza
         DateTime datumOd;
         DateTime datumDo;
         double brojDana = (int)DateTime.Now.DayOfWeek - 1;
+        //Dictionary<DayOfWeek, Dictionary<int, object>> brojAktivnostiPoDanu; mogucnost za bilježenje broja aktivnosti u redu
 
         public Kalendar()
         {
             InitializeComponent();
+            dohvatiAktivnosti();
         }
 
         private void uiActionOdjava_Click(object sender, EventArgs e)
@@ -30,12 +32,13 @@ namespace PI_t18024_Maza
             this.Close();
         }
 
-        private void kreirajAkrivnost()
+        private Button kreirajAkrivnost(DateTime datum, string zivotinja) // treba i id
         {
             Button novi = new Button();
             //novi.Click += (s, e) => { funkcija koju button izvrsava };
-            //novi.Text = datum, životinja, opis
+            novi.Text = datum + Environment.NewLine + zivotinja;
             novi.Size = new Size(100, 50);
+            return novi;
         }
 
         private void postaviAktivnost(Button aktivnost, int stupac, int red)
@@ -43,9 +46,18 @@ namespace PI_t18024_Maza
             uiPanelAktivnosti.Controls.Add(aktivnost, column: stupac, row: red);
         }
 
+        private int odrediStupac(DateTime datum)
+        {
+           return (int)datum.DayOfWeek - 1;
+        }
+
         private void odrediTjedan(DateTime datum)
         {
             brojDana = (int)datum.DayOfWeek - 1;
+            if (brojDana == -1)
+            {
+                brojDana = 6;
+            }
             datumOd = datum.AddDays(-brojDana);
             datumDo = datum.AddDays(6 - brojDana);
         }
@@ -64,6 +76,20 @@ namespace PI_t18024_Maza
                 e.Graphics.FillRectangle(Brushes.LightPink, e.CellBounds);
             }
         }
+
+        private void dohvatiAktivnosti()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var kontrola in db.Kontrola)
+                {
+                    Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
+                    Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime);
+                    postaviAktivnost(aktivnost, odrediStupac(kontrola.DatumKontrole), 0);
+                }
+            }
+        }
+
 
         private void uiActionZivotinje_Click(object sender, EventArgs e)
         {
