@@ -31,7 +31,7 @@ namespace PI_t18024_Maza
         public virtual ICollection<dijagnoza> dijagnozas { get; set; }
         public virtual ICollection<operacija> operacijas { get; set; }
         public virtual veterinar veterinar { get; set; }
-        public virtual zivotinja zivotinja { get; set; }
+        public virtual Zivotinja zivotinja { get; set; }
         public virtual ICollection<cjepivo> cjepivoes { get; set; }
     }
 }

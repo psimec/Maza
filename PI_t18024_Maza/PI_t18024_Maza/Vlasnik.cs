@@ -16,7 +16,7 @@ namespace PI_t18024_Maza
     {
         public vlasnik()
         {
-            this.zivotinjas = new HashSet<zivotinja>();
+            this.zivotinjas = new HashSet<Zivotinja>();
         }
     
         public int ID_vlasnik { get; set; }
@@ -27,6 +27,6 @@ namespace PI_t18024_Maza
         public string broj_telefona2 { get; set; }
         public string e_mail { get; set; }
     
-        public virtual ICollection<zivotinja> zivotinjas { get; set; }
+        public virtual ICollection<Zivotinja> zivotinjas { get; set; }
     }
 }

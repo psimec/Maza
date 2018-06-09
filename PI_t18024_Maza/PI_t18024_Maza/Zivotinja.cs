@@ -12,9 +12,9 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class zivotinja
+    public partial class Zivotinja
     {
-        public zivotinja()
+        public Zivotinja()
         {
             this.kontrolas = new HashSet<kontrola>();
         }

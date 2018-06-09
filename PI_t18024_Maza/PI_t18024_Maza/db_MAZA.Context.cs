@@ -34,6 +34,6 @@ namespace PI_t18024_Maza
         public DbSet<propisani_lijek> propisani_lijek { get; set; }
         public DbSet<veterinar> veterinars { get; set; }
         public DbSet<vlasnik> vlasniks { get; set; }
-        public DbSet<zivotinja> zivotinjas { get; set; }
+        public DbSet<Zivotinja> zivotinjas { get; set; }
     }
 }
