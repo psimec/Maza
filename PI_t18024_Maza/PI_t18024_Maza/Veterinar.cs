@@ -16,19 +16,19 @@ namespace PI_t18024_Maza
     {
         public Veterinar()
         {
-            this.kontrolas = new HashSet<Kontrola>();
+            this.Kontrola = new HashSet<Kontrola>();
         }
     
-        public int ID_veterinar { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string adresa_stanovanja { get; set; }
-        public string broj__telefona1 { get; set; }
-        public string broj_telefona2 { get; set; }
-        public string titula { get; set; }
-        public System.DateTime datum_zaposljavanja { get; set; }
-        public System.DateTime datum_rođenja { get; set; }
+        public int IdVeterinar { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string AdresaStanovanja { get; set; }
+        public string BrojTelefona1 { get; set; }
+        public string BrojTelefona2 { get; set; }
+        public string Titula { get; set; }
+        public System.DateTime DatumZaposlenja { get; set; }
+        public System.DateTime DatumRodenja { get; set; }
     
-        public virtual ICollection<Kontrola> kontrolas { get; set; }
+        public virtual ICollection<Kontrola> Kontrola { get; set; }
     }
 }

@@ -16,16 +16,16 @@ namespace PI_t18024_Maza
     {
         public Cjepivo()
         {
-            this.kontrolas = new HashSet<Kontrola>();
+            this.Kontrola = new HashSet<Kontrola>();
         }
     
-        public int ID_cjepiva { get; set; }
-        public string ime_cjepiva { get; set; }
-        public double doza_cjepiva { get; set; }
-        public string proizvodac_cjepiva { get; set; }
-        public System.DateTime rok_trajanja { get; set; }
-        public double cijena { get; set; }
+        public int IdCjepivo { get; set; }
+        public string Ime { get; set; }
+        public double Doza { get; set; }
+        public string Proizvodac { get; set; }
+        public System.DateTime RokTrajanja { get; set; }
+        public double Cijena { get; set; }
     
-        public virtual ICollection<Kontrola> kontrolas { get; set; }
+        public virtual ICollection<Kontrola> Kontrola { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace PI_t18024_Maza
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class MazaEntities : DbContext
     {
-        public Entities()
+        public MazaEntities()
             : base("name=Entities")
         {
         }
@@ -25,15 +25,15 @@ namespace PI_t18024_Maza
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Bolest> bolests { get; set; }
-        public DbSet<Cjepivo> cjepivoes { get; set; }
-        public DbSet<Dijagnoza> dijagnozas { get; set; }
-        public DbSet<Kontrola> kontrolas { get; set; }
-        public DbSet<Lijek> Lijeks { get; set; }
-        public DbSet<Operacija> operacijas { get; set; }
-        public DbSet<PropisaniLijek> propisani_lijek { get; set; }
-        public DbSet<Veterinar> veterinars { get; set; }
-        public DbSet<Vlasnik> vlasniks { get; set; }
-        public DbSet<Zivotinja> zivotinjas { get; set; }
+        public DbSet<Bolest> Bolest { get; set; }
+        public DbSet<Cjepivo> Cjepivo { get; set; }
+        public DbSet<Dijagnoza> Dijagnoza { get; set; }
+        public DbSet<Kontrola> Kontrola { get; set; }
+        public DbSet<Lijek> Lijek { get; set; }
+        public DbSet<Operacija> Operacija{ get; set; }
+        public DbSet<PropisaniLijek> PropisaniLijek { get; set; }
+        public DbSet<Veterinar> Veterinar { get; set; }
+        public DbSet<Vlasnik> Vlasnik { get; set; }
+        public DbSet<Zivotinja> Zivotinja { get; set; }
     }
 }

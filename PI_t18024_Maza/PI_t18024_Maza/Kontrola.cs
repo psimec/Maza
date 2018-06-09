@@ -16,22 +16,22 @@ namespace PI_t18024_Maza
     {
         public Kontrola()
         {
-            this.dijagnozas = new HashSet<Dijagnoza>();
-            this.operacijas = new HashSet<Operacija>();
-            this.cjepivoes = new HashSet<Cjepivo>();
+            this.Dijagnoza = new HashSet<Dijagnoza>();
+            this.Operacija = new HashSet<Operacija>();
+            this.Cjepivo = new HashSet<Cjepivo>();
         }
     
-        public int ID_kontrola { get; set; }
-        public int ID_zivotinja { get; set; }
-        public int ID_veterinar { get; set; }
-        public System.DateTime datum_kontrole { get; set; }
-        public string status { get; set; }
-        public string opis { get; set; }
+        public int IdKontrola { get; set; }
+        public int IdZivotinja { get; set; }
+        public int IdVeterinar { get; set; }
+        public System.DateTime DatumKontrole { get; set; }
+        public string Status { get; set; }
+        public string Opis { get; set; }
     
-        public virtual ICollection<Dijagnoza> dijagnozas { get; set; }
-        public virtual ICollection<Operacija> operacijas { get; set; }
-        public virtual Veterinar veterinar { get; set; }
-        public virtual Zivotinja zivotinja { get; set; }
-        public virtual ICollection<Cjepivo> cjepivoes { get; set; }
+        public virtual ICollection<Dijagnoza> Dijagnoza { get; set; }
+        public virtual ICollection<Operacija> Operacija { get; set; }
+        public virtual Veterinar Veterinar { get; set; }
+        public virtual Zivotinja Zivotinja { get; set; }
+        public virtual ICollection<Cjepivo> Cjepivo { get; set; }
     }
 }
