@@ -21,12 +21,27 @@ namespace PI_t18024_Maza
         private void Test()
         {
             BindingList<Bolest> test = null;
-            using(var db = new Entities())
+            using(var db = new MazaEntities())
             {
-                test = new BindingList<Bolest>(db.bolests.ToList());
+                test = new BindingList<Bolest>(db.Bolest.ToList());
             }
             dataGridView1.DataSource = test;
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new MazaEntities())
+            {
+                Bolest test = new Bolest
+                {
+                    Naziv = textBox1.Text
+                };
+                db.Bolest.Add(test);
+                db.SaveChanges();
+            }
+            Test();
+            
         }
     }
 }

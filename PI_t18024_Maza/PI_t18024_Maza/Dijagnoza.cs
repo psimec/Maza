@@ -16,19 +16,18 @@ namespace PI_t18024_Maza
     {
         public Dijagnoza()
         {
-            this.propisani_lijek = new HashSet<PropisaniLijek>();
+            this.PropisaniLijek = new HashSet<PropisaniLijek>();
         }
     
-        public int ID_dijagnoza { get; set; }
-        public string simptomi { get; set; }
-        public string naziv_bolesti { get; set; }
-        public string terapija { get; set; }
-        public string napomena { get; set; }
-        public int ID_kontrola { get; set; }
-        public int ID_bolest { get; set; }
+        public int IdDijagnoza { get; set; }
+        public string Simptomi { get; set; }
+        public string Terapija { get; set; }
+        public string Napomena { get; set; }
+        public int IdKontrola { get; set; }
+        public int IdBolest { get; set; }
     
-        public virtual Bolest bolest { get; set; }
-        public virtual Kontrola kontrola { get; set; }
-        public virtual ICollection<PropisaniLijek> propisani_lijek { get; set; }
+        public virtual Bolest Bolest { get; set; }
+        public virtual Kontrola Kontrola { get; set; }
+        public virtual ICollection<PropisaniLijek> PropisaniLijek { get; set; }
     }
 }

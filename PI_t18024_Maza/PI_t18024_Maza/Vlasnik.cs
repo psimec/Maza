@@ -16,17 +16,17 @@ namespace PI_t18024_Maza
     {
         public Vlasnik()
         {
-            this.zivotinjas = new HashSet<Zivotinja>();
+            this.Zivotinja = new HashSet<Zivotinja>();
         }
     
-        public int ID_vlasnik { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string adresa_stanovanja { get; set; }
-        public string broj_telefona1 { get; set; }
-        public string broj_telefona2 { get; set; }
-        public string e_mail { get; set; }
+        public int IdVlasnik { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string AdresaStavnovanja { get; set; }
+        public string BrojTelefona1 { get; set; }
+        public string BrojTelefona2 { get; set; }
+        public string Email { get; set; }
     
-        public virtual ICollection<Zivotinja> zivotinjas { get; set; }
+        public virtual ICollection<Zivotinja> Zivotinja { get; set; }
     }
 }

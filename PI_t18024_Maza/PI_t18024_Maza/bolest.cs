@@ -16,12 +16,12 @@ namespace PI_t18024_Maza
     {
         public Bolest()
         {
-            this.dijagnozas = new HashSet<Dijagnoza>();
+            this.Dijagnoza = new HashSet<Dijagnoza>();
         }
     
-        public int ID_bolest { get; set; }
+        public int IdBolest { get; set; }
         public string Naziv { get; set; }
     
-        public virtual ICollection<Dijagnoza> dijagnozas { get; set; }
+        public virtual ICollection<Dijagnoza> Dijagnoza { get; set; }
     }
 }

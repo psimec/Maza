@@ -14,11 +14,11 @@ namespace PI_t18024_Maza
     
     public partial class PropisaniLijek
     {
-        public int ID_lijek { get; set; }
-        public int ID_dijagnoza { get; set; }
-        public string napomena { get; set; }
+        public int IdLijek { get; set; }
+        public int IdDijagnoza { get; set; }
+        public string Napomena { get; set; }
     
-        public virtual Dijagnoza dijagnoza { get; set; }
+        public virtual Dijagnoza Dijagnoza { get; set; }
         public virtual Lijek Lijek { get; set; }
     }
 }
