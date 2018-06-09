@@ -12,15 +12,16 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class operacija
+    public partial class bolest
     {
-        public int ID_operacija { get; set; }
-        public string vrsta_zahvata { get; set; }
-        public Nullable<System.TimeSpan> trajanje_zahvata { get; set; }
-        public string napomena { get; set; }
-        public System.DateTime datum_zahvata { get; set; }
-        public int kontrola_ID_kontrola { get; set; }
+        public bolest()
+        {
+            this.dijagnozas = new HashSet<dijagnoza>();
+        }
     
-        public virtual kontrola kontrola { get; set; }
+        public int ID_bolest { get; set; }
+        public string Naziv { get; set; }
+    
+        public virtual ICollection<dijagnoza> dijagnozas { get; set; }
     }
 }

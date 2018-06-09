@@ -12,22 +12,19 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class veterinar
+    public partial class cjepivo
     {
-        public veterinar()
+        public cjepivo()
         {
             this.kontrolas = new HashSet<kontrola>();
         }
     
-        public int ID_veterinar { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string adresa_stanovanja { get; set; }
-        public string broj__telefona1 { get; set; }
-        public string broj_telefona2 { get; set; }
-        public string titula { get; set; }
-        public System.DateTime datum_zaposljavanja { get; set; }
-        public System.DateTime datum_rođenja { get; set; }
+        public int ID_cjepiva { get; set; }
+        public string ime_cjepiva { get; set; }
+        public double doza_cjepiva { get; set; }
+        public string proizvodac_cjepiva { get; set; }
+        public System.DateTime rok_trajanja { get; set; }
+        public double cijena { get; set; }
     
         public virtual ICollection<kontrola> kontrolas { get; set; }
     }

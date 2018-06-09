@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e715e4f1f1a14a608826bdb467a9e69a" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.bolest" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.cjepivo" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dijagnoza" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.kontrola" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Lijek" Width="1.5" PointX="10.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.operacija" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.propisani_lijek" Width="1.5" PointX="12.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.veterinar" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.vlasnik" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.zivotinja" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.fk_dijagnoza_bolest1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Dijagnoza_Kontrola1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Propisani_lijek_Dijagnoza1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Operacija_kontrola1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Životinja_has_Veterinar_Veterinar1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Životinja_has_Veterinar_Životinja1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Propisani_lijek_Lijek1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_Životinja_Vlasnik" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.cjepivo_za_zivotinju" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

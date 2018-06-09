@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bolest">
+          <Key>
+            <PropertyRef Name="ID_bolest" />
+          </Key>
+          <Property Name="ID_bolest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cjepivo">
+          <Key>
+            <PropertyRef Name="ID_cjepiva" />
+          </Key>
+          <Property Name="ID_cjepiva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime_cjepiva" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="doza_cjepiva" Type="float" Nullable="false" />
+          <Property Name="proizvodac_cjepiva" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="rok_trajanja" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="cijena" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cjepivo_za_zivotinju">
+          <Key>
+            <PropertyRef Name="ID_cjepiva" />
+            <PropertyRef Name="ID_kontrola" />
+          </Key>
+          <Property Name="ID_cjepiva" Type="int" Nullable="false" />
+          <Property Name="ID_kontrola" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dijagnoza">
+          <Key>
+            <PropertyRef Name="ID_dijagnoza" />
+          </Key>
+          <Property Name="ID_dijagnoza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="simptomi" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="naziv_bolesti" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="terapija" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="napomena" Type="varchar" MaxLength="255" />
+          <Property Name="ID_kontrola" Type="int" Nullable="false" />
+          <Property Name="ID_bolest" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kontrola">
+          <Key>
+            <PropertyRef Name="ID_kontrola" />
+          </Key>
+          <Property Name="ID_kontrola" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_zivotinja" Type="int" Nullable="false" />
+          <Property Name="ID_veterinar" Type="int" Nullable="false" />
+          <Property Name="datum_kontrole" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Lijek">
+          <Key>
+            <PropertyRef Name="ID_lijek" />
+          </Key>
+          <Property Name="ID_lijek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="proizvodac" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cijena" Type="float" Nullable="false" />
+          <Property Name="uputstva" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="rok_trajanja" Type="date" />
+        </EntityType>
+        <EntityType Name="operacija">
+          <Key>
+            <PropertyRef Name="ID_operacija" />
+            <PropertyRef Name="kontrola_ID_kontrola" />
+          </Key>
+          <Property Name="ID_operacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vrsta_zahvata" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="trajanje_zahvata" Type="time" Precision="0" />
+          <Property Name="napomena" Type="varchar" MaxLength="255" />
+          <Property Name="datum_zahvata" Type="date" Nullable="false" />
+          <Property Name="kontrola_ID_kontrola" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="propisani_lijek">
+          <Key>
+            <PropertyRef Name="ID_lijek" />
+            <PropertyRef Name="ID_dijagnoza" />
+          </Key>
+          <Property Name="ID_lijek" Type="int" Nullable="false" />
+          <Property Name="ID_dijagnoza" Type="int" Nullable="false" />
+          <Property Name="napomena" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="veterinar">
+          <Key>
+            <PropertyRef Name="ID_veterinar" />
+          </Key>
+          <Property Name="ID_veterinar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adresa_stanovanja" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="broj_ telefona1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="broj_telefona2" Type="varchar" MaxLength="20" />
+          <Property Name="titula" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="datum_zaposljavanja" Type="date" Nullable="false" />
+          <Property Name="datum_rođenja" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vlasnik">
+          <Key>
+            <PropertyRef Name="ID_vlasnik" />
+          </Key>
+          <Property Name="ID_vlasnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adresa_stanovanja" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="broj_telefona1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="broj_telefona2" Type="varchar" MaxLength="20" />
+          <Property Name="e-mail" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="zivotinja">
+          <Key>
+            <PropertyRef Name="ID_zivotinja" />
+          </Key>
+          <Property Name="ID_zivotinja" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="spol" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="vrsta" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="datum_rodenja" Type="date" Nullable="false" />
+          <Property Name="broj_cipa" Type="int" />
+          <Property Name="težina" Type="int" Nullable="false" />
+          <Property Name="datum_uginuca" Type="date" />
+          <Property Name="ID_vlasnik" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_cjepivo_za_životinju_kontrola1">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
+          <End Role="cjepivo_za_zivotinju" Type="Self.cjepivo_za_zivotinju" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kontrola">
+              <PropertyRef Name="ID_kontrola" />
+            </Principal>
+            <Dependent Role="cjepivo_za_zivotinju">
+              <PropertyRef Name="ID_kontrola" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dijagnoza_bolest1">
+          <End Role="bolest" Type="Self.bolest" Multiplicity="1" />
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bolest">
+              <PropertyRef Name="ID_bolest" />
+            </Principal>
+            <Dependent Role="dijagnoza">
+              <PropertyRef Name="ID_bolest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Dijagnoza_Kontrola1">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kontrola">
+              <PropertyRef Name="ID_kontrola" />
+            </Principal>
+            <Dependent Role="dijagnoza">
+              <PropertyRef Name="ID_kontrola" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Operacija_kontrola1">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
+          <End Role="operacija" Type="Self.operacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kontrola">
+              <PropertyRef Name="ID_kontrola" />
+            </Principal>
+            <Dependent Role="operacija">
+              <PropertyRef Name="kontrola_ID_kontrola" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Propisani_lijek_Dijagnoza1">
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="1" />
+          <End Role="propisani_lijek" Type="Self.propisani_lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dijagnoza">
+              <PropertyRef Name="ID_dijagnoza" />
+            </Principal>
+            <Dependent Role="propisani_lijek">
+              <PropertyRef Name="ID_dijagnoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Propisani_lijek_Lijek1">
+          <End Role="Lijek" Type="Self.Lijek" Multiplicity="1" />
+          <End Role="propisani_lijek" Type="Self.propisani_lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lijek">
+              <PropertyRef Name="ID_lijek" />
+            </Principal>
+            <Dependent Role="propisani_lijek">
+              <PropertyRef Name="ID_lijek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_has_Cijepivo_Cijepivo1">
+          <End Role="cjepivo" Type="Self.cjepivo" Multiplicity="1" />
+          <End Role="cjepivo_za_zivotinju" Type="Self.cjepivo_za_zivotinju" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cjepivo">
+              <PropertyRef Name="ID_cjepiva" />
+            </Principal>
+            <Dependent Role="cjepivo_za_zivotinju">
+              <PropertyRef Name="ID_cjepiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_has_Veterinar_Veterinar1">
+          <End Role="veterinar" Type="Self.veterinar" Multiplicity="1" />
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="veterinar">
+              <PropertyRef Name="ID_veterinar" />
+            </Principal>
+            <Dependent Role="kontrola">
+              <PropertyRef Name="ID_veterinar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_has_Veterinar_Životinja1">
+          <End Role="zivotinja" Type="Self.zivotinja" Multiplicity="1" />
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zivotinja">
+              <PropertyRef Name="ID_zivotinja" />
+            </Principal>
+            <Dependent Role="kontrola">
+              <PropertyRef Name="ID_zivotinja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_Vlasnik">
+          <End Role="vlasnik" Type="Self.vlasnik" Multiplicity="1" />
+          <End Role="zivotinja" Type="Self.zivotinja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vlasnik">
+              <PropertyRef Name="ID_vlasnik" />
+            </Principal>
+            <Dependent Role="zivotinja">
+              <PropertyRef Name="ID_vlasnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="bolest" EntityType="Self.bolest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cjepivo" EntityType="Self.cjepivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cjepivo_za_zivotinju" EntityType="Self.cjepivo_za_zivotinju" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dijagnoza" EntityType="Self.dijagnoza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kontrola" EntityType="Self.kontrola" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lijek" EntityType="Self.Lijek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operacija" EntityType="Self.operacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="propisani_lijek" EntityType="Self.propisani_lijek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="veterinar" EntityType="Self.veterinar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vlasnik" EntityType="Self.vlasnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zivotinja" EntityType="Self.zivotinja" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_cjepivo_za_životinju_kontrola1" Association="Self.fk_cjepivo_za_životinju_kontrola1">
+            <End Role="kontrola" EntitySet="kontrola" />
+            <End Role="cjepivo_za_zivotinju" EntitySet="cjepivo_za_zivotinju" />
+          </AssociationSet>
+          <AssociationSet Name="fk_dijagnoza_bolest1" Association="Self.fk_dijagnoza_bolest1">
+            <End Role="bolest" EntitySet="bolest" />
+            <End Role="dijagnoza" EntitySet="dijagnoza" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Dijagnoza_Kontrola1" Association="Self.fk_Dijagnoza_Kontrola1">
+            <End Role="kontrola" EntitySet="kontrola" />
+            <End Role="dijagnoza" EntitySet="dijagnoza" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Operacija_kontrola1" Association="Self.fk_Operacija_kontrola1">
+            <End Role="kontrola" EntitySet="kontrola" />
+            <End Role="operacija" EntitySet="operacija" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Propisani_lijek_Dijagnoza1" Association="Self.fk_Propisani_lijek_Dijagnoza1">
+            <End Role="dijagnoza" EntitySet="dijagnoza" />
+            <End Role="propisani_lijek" EntitySet="propisani_lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Propisani_lijek_Lijek1" Association="Self.fk_Propisani_lijek_Lijek1">
+            <End Role="Lijek" EntitySet="Lijek" />
+            <End Role="propisani_lijek" EntitySet="propisani_lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_has_Cijepivo_Cijepivo1" Association="Self.fk_Životinja_has_Cijepivo_Cijepivo1">
+            <End Role="cjepivo" EntitySet="cjepivo" />
+            <End Role="cjepivo_za_zivotinju" EntitySet="cjepivo_za_zivotinju" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_has_Veterinar_Veterinar1" Association="Self.fk_Životinja_has_Veterinar_Veterinar1">
+            <End Role="veterinar" EntitySet="veterinar" />
+            <End Role="kontrola" EntitySet="kontrola" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_has_Veterinar_Životinja1" Association="Self.fk_Životinja_has_Veterinar_Životinja1">
+            <End Role="zivotinja" EntitySet="zivotinja" />
+            <End Role="kontrola" EntitySet="kontrola" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_Vlasnik" Association="Self.fk_Životinja_Vlasnik">
+            <End Role="vlasnik" EntitySet="vlasnik" />
+            <End Role="zivotinja" EntitySet="zivotinja" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bolest">
+          <Key>
+            <PropertyRef Name="ID_bolest" />
+          </Key>
+          <Property Name="ID_bolest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="dijagnozas" Relationship="Self.fk_dijagnoza_bolest1" FromRole="bolest" ToRole="dijagnoza" />
+        </EntityType>
+        <EntityType Name="cjepivo">
+          <Key>
+            <PropertyRef Name="ID_cjepiva" />
+          </Key>
+          <Property Name="ID_cjepiva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime_cjepiva" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="doza_cjepiva" Type="Double" Nullable="false" />
+          <Property Name="proizvodac_cjepiva" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rok_trajanja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="cijena" Type="Double" Nullable="false" />
+          <NavigationProperty Name="kontrolas" Relationship="Self.cjepivo_za_zivotinju" FromRole="cjepivo" ToRole="kontrola" />
+        </EntityType>
+        <EntityType Name="dijagnoza">
+          <Key>
+            <PropertyRef Name="ID_dijagnoza" />
+          </Key>
+          <Property Name="ID_dijagnoza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="simptomi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="naziv_bolesti" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="terapija" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="napomena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ID_kontrola" Type="Int32" Nullable="false" />
+          <Property Name="ID_bolest" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bolest" Relationship="Self.fk_dijagnoza_bolest1" FromRole="dijagnoza" ToRole="bolest" />
+          <NavigationProperty Name="kontrola" Relationship="Self.fk_Dijagnoza_Kontrola1" FromRole="dijagnoza" ToRole="kontrola" />
+          <NavigationProperty Name="propisani_lijek" Relationship="Self.fk_Propisani_lijek_Dijagnoza1" FromRole="dijagnoza" ToRole="propisani_lijek" />
+        </EntityType>
+        <EntityType Name="kontrola">
+          <Key>
+            <PropertyRef Name="ID_kontrola" />
+          </Key>
+          <Property Name="ID_kontrola" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_zivotinja" Type="Int32" Nullable="false" />
+          <Property Name="ID_veterinar" Type="Int32" Nullable="false" />
+          <Property Name="datum_kontrole" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dijagnozas" Relationship="Self.fk_Dijagnoza_Kontrola1" FromRole="kontrola" ToRole="dijagnoza" />
+          <NavigationProperty Name="operacijas" Relationship="Self.fk_Operacija_kontrola1" FromRole="kontrola" ToRole="operacija" />
+          <NavigationProperty Name="veterinar" Relationship="Self.fk_Životinja_has_Veterinar_Veterinar1" FromRole="kontrola" ToRole="veterinar" />
+          <NavigationProperty Name="zivotinja" Relationship="Self.fk_Životinja_has_Veterinar_Životinja1" FromRole="kontrola" ToRole="zivotinja" />
+          <NavigationProperty Name="cjepivoes" Relationship="Self.cjepivo_za_zivotinju" FromRole="kontrola" ToRole="cjepivo" />
+        </EntityType>
+        <EntityType Name="Lijek">
+          <Key>
+            <PropertyRef Name="ID_lijek" />
+          </Key>
+          <Property Name="ID_lijek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proizvodac" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cijena" Type="Double" Nullable="false" />
+          <Property Name="uputstva" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rok_trajanja" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="propisani_lijek" Relationship="Self.fk_Propisani_lijek_Lijek1" FromRole="Lijek" ToRole="propisani_lijek" />
+        </EntityType>
+        <EntityType Name="operacija">
+          <Key>
+            <PropertyRef Name="ID_operacija" />
+            <PropertyRef Name="kontrola_ID_kontrola" />
+          </Key>
+          <Property Name="ID_operacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vrsta_zahvata" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="trajanje_zahvata" Type="Time" Precision="0" />
+          <Property Name="napomena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="datum_zahvata" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="kontrola_ID_kontrola" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kontrola" Relationship="Self.fk_Operacija_kontrola1" FromRole="operacija" ToRole="kontrola" />
+        </EntityType>
+        <EntityType Name="propisani_lijek">
+          <Key>
+            <PropertyRef Name="ID_lijek" />
+            <PropertyRef Name="ID_dijagnoza" />
+          </Key>
+          <Property Name="ID_lijek" Type="Int32" Nullable="false" />
+          <Property Name="ID_dijagnoza" Type="Int32" Nullable="false" />
+          <Property Name="napomena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="dijagnoza" Relationship="Self.fk_Propisani_lijek_Dijagnoza1" FromRole="propisani_lijek" ToRole="dijagnoza" />
+          <NavigationProperty Name="Lijek" Relationship="Self.fk_Propisani_lijek_Lijek1" FromRole="propisani_lijek" ToRole="Lijek" />
+        </EntityType>
+        <EntityType Name="veterinar">
+          <Key>
+            <PropertyRef Name="ID_veterinar" />
+          </Key>
+          <Property Name="ID_veterinar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa_stanovanja" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="broj__telefona1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="broj_telefona2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="titula" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datum_zaposljavanja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="datum_rođenja" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="kontrolas" Relationship="Self.fk_Životinja_has_Veterinar_Veterinar1" FromRole="veterinar" ToRole="kontrola" />
+        </EntityType>
+        <EntityType Name="vlasnik">
+          <Key>
+            <PropertyRef Name="ID_vlasnik" />
+          </Key>
+          <Property Name="ID_vlasnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa_stanovanja" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="broj_telefona1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="broj_telefona2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="e_mail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="zivotinjas" Relationship="Self.fk_Životinja_Vlasnik" FromRole="vlasnik" ToRole="zivotinja" />
+        </EntityType>
+        <EntityType Name="zivotinja">
+          <Key>
+            <PropertyRef Name="ID_zivotinja" />
+          </Key>
+          <Property Name="ID_zivotinja" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spol" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vrsta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datum_rodenja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="broj_cipa" Type="Int32" />
+          <Property Name="težina" Type="Int32" Nullable="false" />
+          <Property Name="datum_uginuca" Type="DateTime" Precision="0" />
+          <Property Name="ID_vlasnik" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kontrolas" Relationship="Self.fk_Životinja_has_Veterinar_Životinja1" FromRole="zivotinja" ToRole="kontrola" />
+          <NavigationProperty Name="vlasnik" Relationship="Self.fk_Životinja_Vlasnik" FromRole="zivotinja" ToRole="vlasnik" />
+        </EntityType>
+        <Association Name="fk_dijagnoza_bolest1">
+          <End Role="bolest" Type="Self.bolest" Multiplicity="1" />
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bolest">
+              <PropertyRef Name="ID_bolest" />
+            </Principal>
+            <Dependent Role="dijagnoza">
+              <PropertyRef Name="ID_bolest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Dijagnoza_Kontrola1">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kontrola">
+              <PropertyRef Name="ID_kontrola" />
+            </Principal>
+            <Dependent Role="dijagnoza">
+              <PropertyRef Name="ID_kontrola" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Propisani_lijek_Dijagnoza1">
+          <End Role="dijagnoza" Type="Self.dijagnoza" Multiplicity="1" />
+          <End Role="propisani_lijek" Type="Self.propisani_lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dijagnoza">
+              <PropertyRef Name="ID_dijagnoza" />
+            </Principal>
+            <Dependent Role="propisani_lijek">
+              <PropertyRef Name="ID_dijagnoza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Operacija_kontrola1">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
+          <End Role="operacija" Type="Self.operacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kontrola">
+              <PropertyRef Name="ID_kontrola" />
+            </Principal>
+            <Dependent Role="operacija">
+              <PropertyRef Name="kontrola_ID_kontrola" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_has_Veterinar_Veterinar1">
+          <End Role="veterinar" Type="Self.veterinar" Multiplicity="1" />
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="veterinar">
+              <PropertyRef Name="ID_veterinar" />
+            </Principal>
+            <Dependent Role="kontrola">
+              <PropertyRef Name="ID_veterinar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_has_Veterinar_Životinja1">
+          <End Role="zivotinja" Type="Self.zivotinja" Multiplicity="1" />
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zivotinja">
+              <PropertyRef Name="ID_zivotinja" />
+            </Principal>
+            <Dependent Role="kontrola">
+              <PropertyRef Name="ID_zivotinja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Propisani_lijek_Lijek1">
+          <End Role="Lijek" Type="Self.Lijek" Multiplicity="1" />
+          <End Role="propisani_lijek" Type="Self.propisani_lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lijek">
+              <PropertyRef Name="ID_lijek" />
+            </Principal>
+            <Dependent Role="propisani_lijek">
+              <PropertyRef Name="ID_lijek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Životinja_Vlasnik">
+          <End Role="vlasnik" Type="Self.vlasnik" Multiplicity="1" />
+          <End Role="zivotinja" Type="Self.zivotinja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vlasnik">
+              <PropertyRef Name="ID_vlasnik" />
+            </Principal>
+            <Dependent Role="zivotinja">
+              <PropertyRef Name="ID_vlasnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cjepivo_za_zivotinju">
+          <End Role="kontrola" Type="Self.kontrola" Multiplicity="*" />
+          <End Role="cjepivo" Type="Self.cjepivo" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bolests" EntityType="Self.bolest" />
+          <EntitySet Name="cjepivoes" EntityType="Self.cjepivo" />
+          <EntitySet Name="dijagnozas" EntityType="Self.dijagnoza" />
+          <EntitySet Name="kontrolas" EntityType="Self.kontrola" />
+          <EntitySet Name="Lijeks" EntityType="Self.Lijek" />
+          <EntitySet Name="operacijas" EntityType="Self.operacija" />
+          <EntitySet Name="propisani_lijek" EntityType="Self.propisani_lijek" />
+          <EntitySet Name="veterinars" EntityType="Self.veterinar" />
+          <EntitySet Name="vlasniks" EntityType="Self.vlasnik" />
+          <EntitySet Name="zivotinjas" EntityType="Self.zivotinja" />
+          <AssociationSet Name="fk_dijagnoza_bolest1" Association="Self.fk_dijagnoza_bolest1">
+            <End Role="bolest" EntitySet="bolests" />
+            <End Role="dijagnoza" EntitySet="dijagnozas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Dijagnoza_Kontrola1" Association="Self.fk_Dijagnoza_Kontrola1">
+            <End Role="kontrola" EntitySet="kontrolas" />
+            <End Role="dijagnoza" EntitySet="dijagnozas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Propisani_lijek_Dijagnoza1" Association="Self.fk_Propisani_lijek_Dijagnoza1">
+            <End Role="dijagnoza" EntitySet="dijagnozas" />
+            <End Role="propisani_lijek" EntitySet="propisani_lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Operacija_kontrola1" Association="Self.fk_Operacija_kontrola1">
+            <End Role="kontrola" EntitySet="kontrolas" />
+            <End Role="operacija" EntitySet="operacijas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_has_Veterinar_Veterinar1" Association="Self.fk_Životinja_has_Veterinar_Veterinar1">
+            <End Role="veterinar" EntitySet="veterinars" />
+            <End Role="kontrola" EntitySet="kontrolas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_has_Veterinar_Životinja1" Association="Self.fk_Životinja_has_Veterinar_Životinja1">
+            <End Role="zivotinja" EntitySet="zivotinjas" />
+            <End Role="kontrola" EntitySet="kontrolas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Propisani_lijek_Lijek1" Association="Self.fk_Propisani_lijek_Lijek1">
+            <End Role="Lijek" EntitySet="Lijeks" />
+            <End Role="propisani_lijek" EntitySet="propisani_lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Životinja_Vlasnik" Association="Self.fk_Životinja_Vlasnik">
+            <End Role="vlasnik" EntitySet="vlasniks" />
+            <End Role="zivotinja" EntitySet="zivotinjas" />
+          </AssociationSet>
+          <AssociationSet Name="cjepivo_za_zivotinju" Association="Self.cjepivo_za_zivotinju">
+            <End Role="kontrola" EntitySet="kontrolas" />
+            <End Role="cjepivo" EntitySet="cjepivoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="bolests">
+            <EntityTypeMapping TypeName="DBModel.bolest">
+              <MappingFragment StoreEntitySet="bolest">
+                <ScalarProperty Name="ID_bolest" ColumnName="ID_bolest" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cjepivoes">
+            <EntityTypeMapping TypeName="DBModel.cjepivo">
+              <MappingFragment StoreEntitySet="cjepivo">
+                <ScalarProperty Name="ID_cjepiva" ColumnName="ID_cjepiva" />
+                <ScalarProperty Name="ime_cjepiva" ColumnName="ime_cjepiva" />
+                <ScalarProperty Name="doza_cjepiva" ColumnName="doza_cjepiva" />
+                <ScalarProperty Name="proizvodac_cjepiva" ColumnName="proizvodac_cjepiva" />
+                <ScalarProperty Name="rok_trajanja" ColumnName="rok_trajanja" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dijagnozas">
+            <EntityTypeMapping TypeName="DBModel.dijagnoza">
+              <MappingFragment StoreEntitySet="dijagnoza">
+                <ScalarProperty Name="ID_dijagnoza" ColumnName="ID_dijagnoza" />
+                <ScalarProperty Name="simptomi" ColumnName="simptomi" />
+                <ScalarProperty Name="naziv_bolesti" ColumnName="naziv_bolesti" />
+                <ScalarProperty Name="terapija" ColumnName="terapija" />
+                <ScalarProperty Name="napomena" ColumnName="napomena" />
+                <ScalarProperty Name="ID_kontrola" ColumnName="ID_kontrola" />
+                <ScalarProperty Name="ID_bolest" ColumnName="ID_bolest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kontrolas">
+            <EntityTypeMapping TypeName="DBModel.kontrola">
+              <MappingFragment StoreEntitySet="kontrola">
+                <ScalarProperty Name="ID_kontrola" ColumnName="ID_kontrola" />
+                <ScalarProperty Name="ID_zivotinja" ColumnName="ID_zivotinja" />
+                <ScalarProperty Name="ID_veterinar" ColumnName="ID_veterinar" />
+                <ScalarProperty Name="datum_kontrole" ColumnName="datum_kontrole" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lijeks">
+            <EntityTypeMapping TypeName="DBModel.Lijek">
+              <MappingFragment StoreEntitySet="Lijek">
+                <ScalarProperty Name="ID_lijek" ColumnName="ID_lijek" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="proizvodac" ColumnName="proizvodac" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="uputstva" ColumnName="uputstva" />
+                <ScalarProperty Name="rok_trajanja" ColumnName="rok_trajanja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operacijas">
+            <EntityTypeMapping TypeName="DBModel.operacija">
+              <MappingFragment StoreEntitySet="operacija">
+                <ScalarProperty Name="ID_operacija" ColumnName="ID_operacija" />
+                <ScalarProperty Name="vrsta_zahvata" ColumnName="vrsta_zahvata" />
+                <ScalarProperty Name="trajanje_zahvata" ColumnName="trajanje_zahvata" />
+                <ScalarProperty Name="napomena" ColumnName="napomena" />
+                <ScalarProperty Name="datum_zahvata" ColumnName="datum_zahvata" />
+                <ScalarProperty Name="kontrola_ID_kontrola" ColumnName="kontrola_ID_kontrola" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="propisani_lijek">
+            <EntityTypeMapping TypeName="DBModel.propisani_lijek">
+              <MappingFragment StoreEntitySet="propisani_lijek">
+                <ScalarProperty Name="ID_lijek" ColumnName="ID_lijek" />
+                <ScalarProperty Name="ID_dijagnoza" ColumnName="ID_dijagnoza" />
+                <ScalarProperty Name="napomena" ColumnName="napomena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="veterinars">
+            <EntityTypeMapping TypeName="DBModel.veterinar">
+              <MappingFragment StoreEntitySet="veterinar">
+                <ScalarProperty Name="ID_veterinar" ColumnName="ID_veterinar" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="adresa_stanovanja" ColumnName="adresa_stanovanja" />
+                <ScalarProperty Name="broj__telefona1" ColumnName="broj_ telefona1" />
+                <ScalarProperty Name="broj_telefona2" ColumnName="broj_telefona2" />
+                <ScalarProperty Name="titula" ColumnName="titula" />
+                <ScalarProperty Name="datum_zaposljavanja" ColumnName="datum_zaposljavanja" />
+                <ScalarProperty Name="datum_rođenja" ColumnName="datum_rođenja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vlasniks">
+            <EntityTypeMapping TypeName="DBModel.vlasnik">
+              <MappingFragment StoreEntitySet="vlasnik">
+                <ScalarProperty Name="ID_vlasnik" ColumnName="ID_vlasnik" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="adresa_stanovanja" ColumnName="adresa_stanovanja" />
+                <ScalarProperty Name="broj_telefona1" ColumnName="broj_telefona1" />
+                <ScalarProperty Name="broj_telefona2" ColumnName="broj_telefona2" />
+                <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zivotinjas">
+            <EntityTypeMapping TypeName="DBModel.zivotinja">
+              <MappingFragment StoreEntitySet="zivotinja">
+                <ScalarProperty Name="ID_zivotinja" ColumnName="ID_zivotinja" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="spol" ColumnName="spol" />
+                <ScalarProperty Name="vrsta" ColumnName="vrsta" />
+                <ScalarProperty Name="datum_rodenja" ColumnName="datum_rodenja" />
+                <ScalarProperty Name="broj_cipa" ColumnName="broj_cipa" />
+                <ScalarProperty Name="težina" ColumnName="težina" />
+                <ScalarProperty Name="datum_uginuca" ColumnName="datum_uginuca" />
+                <ScalarProperty Name="ID_vlasnik" ColumnName="ID_vlasnik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="cjepivo_za_zivotinju" TypeName="DBModel.cjepivo_za_zivotinju" StoreEntitySet="cjepivo_za_zivotinju">
+            <EndProperty Name="kontrola">
+              <ScalarProperty Name="ID_kontrola" ColumnName="ID_kontrola" />
+            </EndProperty>
+            <EndProperty Name="cjepivo">
+              <ScalarProperty Name="ID_cjepiva" ColumnName="ID_cjepiva" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
