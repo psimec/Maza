@@ -25,15 +25,15 @@ namespace PI_t18024_Maza
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<bolest> bolests { get; set; }
-        public DbSet<cjepivo> cjepivoes { get; set; }
-        public DbSet<dijagnoza> dijagnozas { get; set; }
-        public DbSet<kontrola> kontrolas { get; set; }
+        public DbSet<Bolest> bolests { get; set; }
+        public DbSet<Cjepivo> cjepivoes { get; set; }
+        public DbSet<Dijagnoza> dijagnozas { get; set; }
+        public DbSet<Kontrola> kontrolas { get; set; }
         public DbSet<Lijek> Lijeks { get; set; }
-        public DbSet<operacija> operacijas { get; set; }
-        public DbSet<propisani_lijek> propisani_lijek { get; set; }
-        public DbSet<veterinar> veterinars { get; set; }
-        public DbSet<vlasnik> vlasniks { get; set; }
+        public DbSet<Operacija> operacijas { get; set; }
+        public DbSet<PropisaniLijek> propisani_lijek { get; set; }
+        public DbSet<Veterinar> veterinars { get; set; }
+        public DbSet<Vlasnik> vlasniks { get; set; }
         public DbSet<Zivotinja> zivotinjas { get; set; }
     }
 }

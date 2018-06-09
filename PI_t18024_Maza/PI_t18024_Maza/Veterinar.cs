@@ -12,11 +12,11 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class veterinar
+    public partial class Veterinar
     {
-        public veterinar()
+        public Veterinar()
         {
-            this.kontrolas = new HashSet<kontrola>();
+            this.kontrolas = new HashSet<Kontrola>();
         }
     
         public int ID_veterinar { get; set; }
@@ -29,6 +29,6 @@ namespace PI_t18024_Maza
         public System.DateTime datum_zaposljavanja { get; set; }
         public System.DateTime datum_rođenja { get; set; }
     
-        public virtual ICollection<kontrola> kontrolas { get; set; }
+        public virtual ICollection<Kontrola> kontrolas { get; set; }
     }
 }

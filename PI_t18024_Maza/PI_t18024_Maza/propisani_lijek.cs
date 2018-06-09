@@ -12,13 +12,13 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class propisani_lijek
+    public partial class PropisaniLijek
     {
         public int ID_lijek { get; set; }
         public int ID_dijagnoza { get; set; }
         public string napomena { get; set; }
     
-        public virtual dijagnoza dijagnoza { get; set; }
+        public virtual Dijagnoza dijagnoza { get; set; }
         public virtual Lijek Lijek { get; set; }
     }
 }

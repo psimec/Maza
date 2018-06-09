@@ -12,13 +12,13 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class kontrola
+    public partial class Kontrola
     {
-        public kontrola()
+        public Kontrola()
         {
-            this.dijagnozas = new HashSet<dijagnoza>();
-            this.operacijas = new HashSet<operacija>();
-            this.cjepivoes = new HashSet<cjepivo>();
+            this.dijagnozas = new HashSet<Dijagnoza>();
+            this.operacijas = new HashSet<Operacija>();
+            this.cjepivoes = new HashSet<Cjepivo>();
         }
     
         public int ID_kontrola { get; set; }
@@ -28,10 +28,10 @@ namespace PI_t18024_Maza
         public string status { get; set; }
         public string opis { get; set; }
     
-        public virtual ICollection<dijagnoza> dijagnozas { get; set; }
-        public virtual ICollection<operacija> operacijas { get; set; }
-        public virtual veterinar veterinar { get; set; }
+        public virtual ICollection<Dijagnoza> dijagnozas { get; set; }
+        public virtual ICollection<Operacija> operacijas { get; set; }
+        public virtual Veterinar veterinar { get; set; }
         public virtual Zivotinja zivotinja { get; set; }
-        public virtual ICollection<cjepivo> cjepivoes { get; set; }
+        public virtual ICollection<Cjepivo> cjepivoes { get; set; }
     }
 }

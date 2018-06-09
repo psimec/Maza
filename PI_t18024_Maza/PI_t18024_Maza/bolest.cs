@@ -12,16 +12,16 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class bolest
+    public partial class Bolest
     {
-        public bolest()
+        public Bolest()
         {
-            this.dijagnozas = new HashSet<dijagnoza>();
+            this.dijagnozas = new HashSet<Dijagnoza>();
         }
     
         public int ID_bolest { get; set; }
         public string Naziv { get; set; }
     
-        public virtual ICollection<dijagnoza> dijagnozas { get; set; }
+        public virtual ICollection<Dijagnoza> dijagnozas { get; set; }
     }
 }

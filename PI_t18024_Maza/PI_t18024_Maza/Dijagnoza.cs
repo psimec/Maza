@@ -12,11 +12,11 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class dijagnoza
+    public partial class Dijagnoza
     {
-        public dijagnoza()
+        public Dijagnoza()
         {
-            this.propisani_lijek = new HashSet<propisani_lijek>();
+            this.propisani_lijek = new HashSet<PropisaniLijek>();
         }
     
         public int ID_dijagnoza { get; set; }
@@ -27,8 +27,8 @@ namespace PI_t18024_Maza
         public int ID_kontrola { get; set; }
         public int ID_bolest { get; set; }
     
-        public virtual bolest bolest { get; set; }
-        public virtual kontrola kontrola { get; set; }
-        public virtual ICollection<propisani_lijek> propisani_lijek { get; set; }
+        public virtual Bolest bolest { get; set; }
+        public virtual Kontrola kontrola { get; set; }
+        public virtual ICollection<PropisaniLijek> propisani_lijek { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace PI_t18024_Maza
     {
         public Lijek()
         {
-            this.propisani_lijek = new HashSet<propisani_lijek>();
+            this.propisani_lijek = new HashSet<PropisaniLijek>();
         }
     
         public int ID_lijek { get; set; }
@@ -26,6 +26,6 @@ namespace PI_t18024_Maza
         public string uputstva { get; set; }
         public Nullable<System.DateTime> rok_trajanja { get; set; }
     
-        public virtual ICollection<propisani_lijek> propisani_lijek { get; set; }
+        public virtual ICollection<PropisaniLijek> propisani_lijek { get; set; }
     }
 }

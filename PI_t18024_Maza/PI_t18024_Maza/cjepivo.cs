@@ -12,11 +12,11 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class cjepivo
+    public partial class Cjepivo
     {
-        public cjepivo()
+        public Cjepivo()
         {
-            this.kontrolas = new HashSet<kontrola>();
+            this.kontrolas = new HashSet<Kontrola>();
         }
     
         public int ID_cjepiva { get; set; }
@@ -26,6 +26,6 @@ namespace PI_t18024_Maza
         public System.DateTime rok_trajanja { get; set; }
         public double cijena { get; set; }
     
-        public virtual ICollection<kontrola> kontrolas { get; set; }
+        public virtual ICollection<Kontrola> kontrolas { get; set; }
     }
 }

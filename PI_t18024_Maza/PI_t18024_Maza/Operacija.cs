@@ -12,7 +12,7 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class operacija
+    public partial class Operacija
     {
         public int ID_operacija { get; set; }
         public string vrsta_zahvata { get; set; }
@@ -21,6 +21,6 @@ namespace PI_t18024_Maza
         public System.DateTime datum_zahvata { get; set; }
         public int kontrola_ID_kontrola { get; set; }
     
-        public virtual kontrola kontrola { get; set; }
+        public virtual Kontrola kontrola { get; set; }
     }
 }

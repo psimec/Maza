@@ -16,7 +16,7 @@ namespace PI_t18024_Maza
     {
         public Zivotinja()
         {
-            this.kontrolas = new HashSet<kontrola>();
+            this.kontrolas = new HashSet<Kontrola>();
         }
     
         public int ID_zivotinja { get; set; }
@@ -29,7 +29,7 @@ namespace PI_t18024_Maza
         public Nullable<System.DateTime> datum_uginuca { get; set; }
         public int ID_vlasnik { get; set; }
     
-        public virtual ICollection<kontrola> kontrolas { get; set; }
-        public virtual vlasnik vlasnik { get; set; }
+        public virtual ICollection<Kontrola> kontrolas { get; set; }
+        public virtual Vlasnik vlasnik { get; set; }
     }
 }
