@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dizajn));
             this.LijeviPanel = new System.Windows.Forms.Panel();
             this.uiActionKontrola = new System.Windows.Forms.Button();
@@ -40,11 +41,15 @@
             this.ZaglavljePanel = new System.Windows.Forms.Panel();
             this.uiActionMinimize = new System.Windows.Forms.Button();
             this.uiActionClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.vlasnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
+            this.vlasnikTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.vlasnikTableAdapter();
             this.LijeviPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ZaglavljePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // LijeviPanel
@@ -190,12 +195,19 @@
             this.uiActionClose.UseVisualStyleBackColor = true;
             this.uiActionClose.Click += new System.EventHandler(this.uiActionClose_Click);
             // 
-            // panel1
+            // vlasnikBindingSource
             // 
-            this.panel1.Location = new System.Drawing.Point(216, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 2;
+            this.vlasnikBindingSource.DataMember = "vlasnik";
+            this.vlasnikBindingSource.DataSource = this._18024_DBDataSet;
+            // 
+            // _18024_DBDataSet
+            // 
+            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
+            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
             // 
             // Dizajn
             // 
@@ -203,18 +215,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1344, 778);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ZaglavljePanel);
             this.Controls.Add(this.LijeviPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dizajn";
             this.Text = "Dizajn";
-            this.Load += new System.EventHandler(this.Dizajn_Load);
             this.LijeviPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ZaglavljePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,6 +244,8 @@
         private System.Windows.Forms.Button uiActionZivotinje;
         private System.Windows.Forms.Button uiActionMinimize;
         private System.Windows.Forms.Button uiActionClose;
-        private System.Windows.Forms.Panel panel1;
+        private _18024_DBDataSet _18024_DBDataSet;
+        private System.Windows.Forms.BindingSource vlasnikBindingSource;
+        private _18024_DBDataSetTableAdapters.vlasnikTableAdapter vlasnikTableAdapter;
     }
 }
