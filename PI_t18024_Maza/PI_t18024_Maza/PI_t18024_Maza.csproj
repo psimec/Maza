@@ -146,6 +146,11 @@
     <Compile Include="Zivotinje.Designer.cs">
       <DependentUpon>Zivotinje.cs</DependentUpon>
     </Compile>
+    <Compile Include="_18024_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
     <EmbeddedResource Include="Kalendar.resx">
       <DependentUpon>Kalendar.cs</DependentUpon>
@@ -185,6 +190,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_18024_DBDataSet.xsc">
+      <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_18024_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_18024_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_18024_DBDataSet.xss">
+      <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

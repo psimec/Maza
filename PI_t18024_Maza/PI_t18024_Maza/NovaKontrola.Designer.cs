@@ -28,35 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.uiOdabirZivotinja = new System.Windows.Forms.ComboBox();
+            this.zivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
+            this.uiOdabirVeterinar = new System.Windows.Forms.ComboBox();
+            this.veterinarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.uiOdabirDatum = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uiOdabirStatus = new System.Windows.Forms.ComboBox();
+            this.uiUnosOpis = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.uiActionUredu = new System.Windows.Forms.Button();
+            this.uiActionOdustani = new System.Windows.Forms.Button();
+            this.zivotinjaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.zivotinjaTableAdapter();
+            this.veterinarTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.veterinarTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // uiOdabirZivotinja
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(211, 21);
-            this.comboBox1.TabIndex = 0;
+            this.uiOdabirZivotinja.DataSource = this.zivotinjaBindingSource;
+            this.uiOdabirZivotinja.DisplayMember = "ime";
+            this.uiOdabirZivotinja.FormattingEnabled = true;
+            this.uiOdabirZivotinja.Location = new System.Drawing.Point(85, 28);
+            this.uiOdabirZivotinja.Name = "uiOdabirZivotinja";
+            this.uiOdabirZivotinja.Size = new System.Drawing.Size(211, 21);
+            this.uiOdabirZivotinja.TabIndex = 0;
+            this.uiOdabirZivotinja.ValueMember = "ID_zivotinja";
             // 
-            // comboBox2
+            // zivotinjaBindingSource
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(85, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(211, 21);
-            this.comboBox2.TabIndex = 1;
+            this.zivotinjaBindingSource.DataMember = "zivotinja";
+            this.zivotinjaBindingSource.DataSource = this._18024_DBDataSet;
+            // 
+            // _18024_DBDataSet
+            // 
+            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
+            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uiOdabirVeterinar
+            // 
+            this.uiOdabirVeterinar.DataSource = this.veterinarBindingSource;
+            this.uiOdabirVeterinar.DisplayMember = "ime";
+            this.uiOdabirVeterinar.FormattingEnabled = true;
+            this.uiOdabirVeterinar.Location = new System.Drawing.Point(85, 65);
+            this.uiOdabirVeterinar.Name = "uiOdabirVeterinar";
+            this.uiOdabirVeterinar.Size = new System.Drawing.Size(211, 21);
+            this.uiOdabirVeterinar.TabIndex = 1;
+            this.uiOdabirVeterinar.ValueMember = "ID_veterinar";
+            // 
+            // veterinarBindingSource
+            // 
+            this.veterinarBindingSource.DataMember = "veterinar";
+            this.veterinarBindingSource.DataSource = this._18024_DBDataSet;
             // 
             // label1
             // 
@@ -76,12 +106,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Veterinar";
             // 
-            // dateTimePicker1
+            // uiOdabirDatum
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(85, 105);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(211, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.uiOdabirDatum.Location = new System.Drawing.Point(85, 105);
+            this.uiOdabirDatum.Name = "uiOdabirDatum";
+            this.uiOdabirDatum.Size = new System.Drawing.Size(211, 20);
+            this.uiOdabirDatum.TabIndex = 4;
             // 
             // label3
             // 
@@ -101,21 +131,24 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Status";
             // 
-            // comboBox3
+            // uiOdabirStatus
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(85, 142);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(211, 21);
-            this.comboBox3.TabIndex = 6;
+            this.uiOdabirStatus.FormattingEnabled = true;
+            this.uiOdabirStatus.Items.AddRange(new object[] {
+            "Obavljen",
+            "Nije obavljen"});
+            this.uiOdabirStatus.Location = new System.Drawing.Point(85, 142);
+            this.uiOdabirStatus.Name = "uiOdabirStatus";
+            this.uiOdabirStatus.Size = new System.Drawing.Size(211, 21);
+            this.uiOdabirStatus.TabIndex = 6;
             // 
-            // textBox1
+            // uiUnosOpis
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 180);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 128);
-            this.textBox1.TabIndex = 8;
+            this.uiUnosOpis.Location = new System.Drawing.Point(85, 180);
+            this.uiUnosOpis.Multiline = true;
+            this.uiUnosOpis.Name = "uiUnosOpis";
+            this.uiUnosOpis.Size = new System.Drawing.Size(211, 128);
+            this.uiUnosOpis.TabIndex = 8;
             // 
             // label5
             // 
@@ -126,44 +159,56 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Opis";
             // 
-            // button1
+            // uiActionUredu
             // 
-            this.button1.Location = new System.Drawing.Point(144, 324);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Uredu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.uiActionUredu.Location = new System.Drawing.Point(144, 324);
+            this.uiActionUredu.Name = "uiActionUredu";
+            this.uiActionUredu.Size = new System.Drawing.Size(75, 23);
+            this.uiActionUredu.TabIndex = 10;
+            this.uiActionUredu.Text = "Uredu";
+            this.uiActionUredu.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // uiActionOdustani
             // 
-            this.button2.Location = new System.Drawing.Point(225, 324);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Odustani";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.uiActionOdustani.Location = new System.Drawing.Point(225, 324);
+            this.uiActionOdustani.Name = "uiActionOdustani";
+            this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
+            this.uiActionOdustani.TabIndex = 11;
+            this.uiActionOdustani.Text = "Odustani";
+            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
+            // 
+            // zivotinjaTableAdapter
+            // 
+            this.zivotinjaTableAdapter.ClearBeforeFill = true;
+            // 
+            // veterinarTableAdapter
+            // 
+            this.veterinarTableAdapter.ClearBeforeFill = true;
             // 
             // NovaKontrola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 370);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uiActionOdustani);
+            this.Controls.Add(this.uiActionUredu);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.uiUnosOpis);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.uiOdabirStatus);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.uiOdabirDatum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.uiOdabirVeterinar);
+            this.Controls.Add(this.uiOdabirZivotinja);
             this.Name = "NovaKontrola";
             this.Text = "Kreiraj kontrolu";
+            this.Load += new System.EventHandler(this.NovaKontrola_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,17 +216,22 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox uiOdabirZivotinja;
+        private System.Windows.Forms.ComboBox uiOdabirVeterinar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker uiOdabirDatum;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox uiOdabirStatus;
+        private System.Windows.Forms.TextBox uiUnosOpis;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button uiActionUredu;
+        private System.Windows.Forms.Button uiActionOdustani;
+        private _18024_DBDataSet _18024_DBDataSet;
+        private System.Windows.Forms.BindingSource zivotinjaBindingSource;
+        private _18024_DBDataSetTableAdapters.zivotinjaTableAdapter zivotinjaTableAdapter;
+        private System.Windows.Forms.BindingSource veterinarBindingSource;
+        private _18024_DBDataSetTableAdapters.veterinarTableAdapter veterinarTableAdapter;
     }
 }
