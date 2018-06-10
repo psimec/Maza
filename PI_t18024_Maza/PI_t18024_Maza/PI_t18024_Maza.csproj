@@ -136,7 +136,6 @@
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="StatusAktivnosti.cs" />
     <Compile Include="Veterinar.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
