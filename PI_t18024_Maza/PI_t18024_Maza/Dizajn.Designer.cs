@@ -40,7 +40,6 @@
             this.ZaglavljePanel = new System.Windows.Forms.Panel();
             this.uiActionMinimize = new System.Windows.Forms.Button();
             this.uiActionClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.LijeviPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -190,20 +189,12 @@
             this.uiActionClose.UseVisualStyleBackColor = true;
             this.uiActionClose.Click += new System.EventHandler(this.uiActionClose_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(216, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 2;
-            // 
             // Dizajn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1344, 778);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ZaglavljePanel);
             this.Controls.Add(this.LijeviPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -232,6 +223,5 @@
         private System.Windows.Forms.Button uiActionZivotinje;
         private System.Windows.Forms.Button uiActionMinimize;
         private System.Windows.Forms.Button uiActionClose;
-        private System.Windows.Forms.Panel panel1;
     }
 }
