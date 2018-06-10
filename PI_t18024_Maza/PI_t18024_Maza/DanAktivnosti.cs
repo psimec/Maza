@@ -10,12 +10,17 @@ namespace PI_t18024_Maza
     public class DanAktivnosti
     {
         public DayOfWeek Dan;
-        public List<Button> ListaAktivnosti;
+        public List<Button> ListaAktivnosti = new List<Button>();
 
-        public DanAktivnosti(DayOfWeek dan)
+        public DanAktivnosti(DayOfWeek dan, Button aktivnost)
         {
             this.Dan = dan;
-            ListaAktivnosti = new List<Button>();
+            ListaAktivnosti.Add(aktivnost);
+        }
+
+        public void DodajAktivnost(Button aktivnost)
+        {
+            ListaAktivnosti.Add(aktivnost);
         }
     }
 }
