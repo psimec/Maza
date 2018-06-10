@@ -124,6 +124,12 @@
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
     <Compile Include="Pas.cs" />
+    <Compile Include="povijestBolesti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="povijestBolesti.Designer.cs">
+      <DependentUpon>povijestBolesti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="Zivotinje.Designer.cs">
       <DependentUpon>Zivotinje.cs</DependentUpon>
     </Compile>
+    <Compile Include="_18024_DBDataSet.cs">
+      <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_18024_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NovaKontrola.resx">
       <DependentUpon>NovaKontrola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="povijestBolesti.resx">
+      <DependentUpon>povijestBolesti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>

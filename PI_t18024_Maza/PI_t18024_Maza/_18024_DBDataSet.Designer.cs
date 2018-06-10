@@ -3660,7 +3660,7 @@ namespace PI_t18024_Maza {
             
             private global::System.Data.DataColumn columnbroj_telefona2;
             
-            private global::System.Data.DataColumn _columne_mail;
+            private global::System.Data.DataColumn columnemail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3745,9 +3745,9 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn _e_mailColumn {
+            public global::System.Data.DataColumn emailColumn {
                 get {
-                    return this._columne_mail;
+                    return this.columnemail;
                 }
             }
             
@@ -3788,7 +3788,7 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vlasnikRow AddvlasnikRow(string ime, string prezime, string adresa_stanovanja, string broj_telefona1, string broj_telefona2, string _e_mail) {
+            public vlasnikRow AddvlasnikRow(string ime, string prezime, string adresa_stanovanja, string broj_telefona1, string broj_telefona2, string email) {
                 vlasnikRow rowvlasnikRow = ((vlasnikRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3797,7 +3797,7 @@ namespace PI_t18024_Maza {
                         adresa_stanovanja,
                         broj_telefona1,
                         broj_telefona2,
-                        _e_mail};
+                        email};
                 rowvlasnikRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvlasnikRow);
                 return rowvlasnikRow;
@@ -3833,7 +3833,7 @@ namespace PI_t18024_Maza {
                 this.columnadresa_stanovanja = base.Columns["adresa_stanovanja"];
                 this.columnbroj_telefona1 = base.Columns["broj_telefona1"];
                 this.columnbroj_telefona2 = base.Columns["broj_telefona2"];
-                this._columne_mail = base.Columns["e-mail"];
+                this.columnemail = base.Columns["email"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3851,10 +3851,8 @@ namespace PI_t18024_Maza {
                 base.Columns.Add(this.columnbroj_telefona1);
                 this.columnbroj_telefona2 = new global::System.Data.DataColumn("broj_telefona2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbroj_telefona2);
-                this._columne_mail = new global::System.Data.DataColumn("e-mail", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columne_mail.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columne_mail");
-                this._columne_mail.ExtendedProperties.Add("Generator_UserColumnName", "e-mail");
-                base.Columns.Add(this._columne_mail);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_vlasnik}, true));
                 this.columnID_vlasnik.AutoIncrement = true;
@@ -3872,7 +3870,7 @@ namespace PI_t18024_Maza {
                 this.columnbroj_telefona1.AllowDBNull = false;
                 this.columnbroj_telefona1.MaxLength = 20;
                 this.columnbroj_telefona2.MaxLength = 20;
-                this._columne_mail.MaxLength = 45;
+                this.columnemail.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5402,17 +5400,17 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string _e_mail {
+            public string email {
                 get {
                     try {
-                        return ((string)(this[this.tablevlasnik._e_mailColumn]));
+                        return ((string)(this[this.tablevlasnik.emailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'e-mail\' in table \'vlasnik\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'email\' in table \'vlasnik\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevlasnik._e_mailColumn] = value;
+                    this[this.tablevlasnik.emailColumn] = value;
                 }
             }
             
@@ -5430,14 +5428,14 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Is_e_mailNull() {
-                return this.IsNull(this.tablevlasnik._e_mailColumn);
+            public bool IsemailNull() {
+                return this.IsNull(this.tablevlasnik.emailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Set_e_mailNull() {
-                this[this.tablevlasnik._e_mailColumn] = global::System.Convert.DBNull;
+            public void SetemailNull() {
+                this[this.tablevlasnik.emailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6159,11 +6157,22 @@ namespace PI_t18024_Maza._18024_DBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_bolest, Naziv FROM dbo.bolest";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        bolest.Naziv
+FROM            dijagnoza INNER JOIN
+                         kontrola ON dijagnoza.ID_kontrola = kontrola.ID_kontrola INNER JOIN
+                         zivotinja ON kontrola.ID_zivotinja = zivotinja.ID_zivotinja INNER JOIN
+                         vlasnik ON zivotinja.ID_vlasnik = vlasnik.ID_vlasnik INNER JOIN
+                         bolest ON bolest.ID_bolest = dijagnoza.ID_bolest
+WHERE        (zivotinja.ID_zivotinja = @zivotinja)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6188,6 +6197,20 @@ namespace PI_t18024_Maza._18024_DBDataSetTableAdapters {
             _18024_DBDataSet.bolestDataTable dataTable = new _18024_DBDataSet.bolestDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByZivotinjaId(_18024_DBDataSet.bolestDataTable dataTable, int zivotinja) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7170,12 +7193,22 @@ SELECT ID_dijagnoza, simptomi, terapija, napomena, ID_kontrola, ID_bolest FROM d
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_dijagnoza, simptomi, terapija, napomena, ID_kontrola, ID_bolest FROM db" +
                 "o.dijagnoza";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        dijagnoza.ID_dijagnoza, dijagnoza.simptomi, dijagnoza.terapija, dijagnoza.napomena, dijagnoza.ID_kontrola, dijagnoza.ID_bolest
+FROM            dijagnoza INNER JOIN
+                         kontrola ON dijagnoza.ID_kontrola = kontrola.ID_kontrola INNER JOIN
+                         zivotinja ON kontrola.ID_zivotinja = zivotinja.ID_zivotinja INNER JOIN
+                         vlasnik ON zivotinja.ID_vlasnik = vlasnik.ID_vlasnik
+WHERE        (zivotinja.ID_zivotinja = @zivotinja)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7200,6 +7233,20 @@ SELECT ID_dijagnoza, simptomi, terapija, napomena, ID_kontrola, ID_bolest FROM d
             _18024_DBDataSet.dijagnozaDataTable dataTable = new _18024_DBDataSet.dijagnozaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByZivotinjaId(_18024_DBDataSet.dijagnozaDataTable dataTable, int zivotinja) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9572,7 +9619,7 @@ SELECT ID_veterinar, ime, prezime, adresa_stanovanja, [broj_ telefona1], broj_te
             tableMapping.ColumnMappings.Add("adresa_stanovanja", "adresa_stanovanja");
             tableMapping.ColumnMappings.Add("broj_telefona1", "broj_telefona1");
             tableMapping.ColumnMappings.Add("broj_telefona2", "broj_telefona2");
-            tableMapping.ColumnMappings.Add("e-mail", "e-mail");
+            tableMapping.ColumnMappings.Add("e-mail", "email");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -9631,12 +9678,20 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefona" +
                 "2, [e-mail] FROM dbo.vlasnik";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        vlasnik.ID_vlasnik, vlasnik.ime, vlasnik.prezime, vlasnik.adresa_stanovanja, vlasnik.broj_telefona1, vlasnik.broj_telefona2, vlasnik.[e-mail]
+FROM            vlasnik INNER JOIN
+                         zivotinja ON vlasnik.ID_vlasnik = zivotinja.ID_vlasnik
+WHERE        (zivotinja.ID_zivotinja = @zivotinja)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9661,6 +9716,20 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
             _18024_DBDataSet.vlasnikDataTable dataTable = new _18024_DBDataSet.vlasnikDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByZivotinjaId(_18024_DBDataSet.vlasnikDataTable dataTable, int zivotinja) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10115,12 +10184,19 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_ug" +
                 "inuca, ID_vlasnik FROM dbo.zivotinja";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, d" +
+                "atum_uginuca, ID_vlasnik\r\nFROM            zivotinja\r\nWHERE        (zivotinja.ID_" +
+                "zivotinja = @zivotinja)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10145,6 +10221,20 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
             _18024_DBDataSet.zivotinjaDataTable dataTable = new _18024_DBDataSet.zivotinjaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByZivotinjaId(_18024_DBDataSet.zivotinjaDataTable dataTable, int zivotinja) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
