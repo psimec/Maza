@@ -37,12 +37,13 @@
             this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
             this.zivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dijagnozaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bolestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.vlasnikTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.vlasnikTableAdapter();
             this.zivotinjaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.zivotinjaTableAdapter();
             this.dijagnozaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.dijagnozaTableAdapter();
-            this.bolestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bolestTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.bolestTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
@@ -70,8 +71,14 @@
             this.dijagnozaBindingSource.DataMember = "dijagnoza";
             this.dijagnozaBindingSource.DataSource = this._18024_DBDataSet;
             // 
+            // bolestBindingSource
+            // 
+            this.bolestBindingSource.DataMember = "bolest";
+            this.bolestBindingSource.DataSource = this._18024_DBDataSet;
+            // 
             // reportViewer1
             // 
+            this.reportViewer1.AutoSize = true;
             reportDataSource1.Name = "vlasnik";
             reportDataSource1.Value = this.vlasnikBindingSource;
             reportDataSource2.Name = "zivotinja";
@@ -85,10 +92,10 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PI_t18024_Maza.IzvjestajZivotinja.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(165, 89);
+            this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(841, 531);
+            this.reportViewer1.Size = new System.Drawing.Size(1033, 740);
             this.reportViewer1.TabIndex = 3;
             // 
             // vlasnikTableAdapter
@@ -103,31 +110,37 @@
             // 
             this.dijagnozaTableAdapter.ClearBeforeFill = true;
             // 
-            // bolestBindingSource
-            // 
-            this.bolestBindingSource.DataMember = "bolest";
-            this.bolestBindingSource.DataSource = this._18024_DBDataSet;
-            // 
             // bolestTableAdapter
             // 
             this.bolestTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(716, 745);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // povijestBolesti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.ClientSize = new System.Drawing.Size(1027, 780);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "povijestBolesti";
             this.Text = "povijestBolseti";
             this.Load += new System.EventHandler(this.povijestBolesti_Load);
-            this.Controls.SetChildIndex(this.reportViewer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dijagnozaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +156,6 @@
         private _18024_DBDataSetTableAdapters.dijagnozaTableAdapter dijagnozaTableAdapter;
         private System.Windows.Forms.BindingSource bolestBindingSource;
         private _18024_DBDataSetTableAdapters.bolestTableAdapter bolestTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }
