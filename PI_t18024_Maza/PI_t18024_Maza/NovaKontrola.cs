@@ -29,5 +29,32 @@ namespace PI_t18024_Maza
         {
             this.Close();
         }
+
+        private void uiActionUredu_Click(object sender, EventArgs e)
+        {
+            using (var db = new MazaEntities())
+            {
+                Zivotinja zivotinja = db.Zivotinja.FirstOrDefault(z => z.IdZivotinja == (int)uiOdabirZivotinja.SelectedValue);
+                Veterinar veterinar = db.Veterinar.FirstOrDefault(z => z.IdVeterinar == (int)uiOdabirVeterinar.SelectedValue);
+
+                Kontrola kontrola = new Kontrola
+                {
+                    IdVeterinar = int.Parse(uiOdabirVeterinar.SelectedValue.ToString()),
+                    IdZivotinja = int.Parse(uiOdabirZivotinja.SelectedValue.ToString()),
+                    DatumKontrole = uiOdabirDatum.Value,
+                    Status = uiOdabirStatus.SelectedValue.ToString(),
+                    Opis = uiUnosOpis.ToString(),
+                    Zivotinja = zivotinja,
+                    Veterinar = veterinar,
+                    Dijagnoza = null,
+                    Cjepivo = null,
+                    Operacija = null           
+                };
+
+                db.Kontrola.Add(kontrola);
+                db.SaveChanges();               
+            }
+            this.Close();
+        }
     }
 }

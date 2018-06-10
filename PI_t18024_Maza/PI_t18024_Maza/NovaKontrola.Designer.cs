@@ -167,6 +167,7 @@
             this.uiActionUredu.TabIndex = 10;
             this.uiActionUredu.Text = "Uredu";
             this.uiActionUredu.UseVisualStyleBackColor = true;
+            this.uiActionUredu.Click += new System.EventHandler(this.uiActionUredu_Click);
             // 
             // uiActionOdustani
             // 
