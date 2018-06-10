@@ -9576,7 +9576,7 @@ SELECT ID_veterinar, ime, prezime, adresa_stanovanja, [broj_ telefona1], broj_te
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[vlasnik] WHERE (([ID_vlasnik] = @Original_ID_vlasnik) AND ([ime] = @Original_ime) AND ([prezime] = @Original_prezime) AND ([adresa_stanovanja] = @Original_adresa_stanovanja) AND ([broj_telefona1] = @Original_broj_telefona1) AND ((@IsNull_broj_telefona2 = 1 AND [broj_telefona2] IS NULL) OR ([broj_telefona2] = @Original_broj_telefona2)) AND ((@p3 = 1 AND [e-mail] IS NULL) OR ([e-mail] = @p2)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [vlasnik] WHERE (([ID_vlasnik] = @Original_ID_vlasnik) AND ([ime] = @Original_ime) AND ([prezime] = @Original_prezime) AND ([adresa_stanovanja] = @Original_adresa_stanovanja) AND ([broj_telefona1] = @Original_broj_telefona1) AND ((@IsNull_broj_telefona2 = 1 AND [broj_telefona2] IS NULL) OR ([broj_telefona2] = @Original_broj_telefona2)) AND ((@p3 = 1 AND [e-mail] IS NULL) OR ([e-mail] = @p2)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_vlasnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_vlasnik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -9589,7 +9589,7 @@ SELECT ID_veterinar, ime, prezime, adresa_stanovanja, [broj_ telefona1], broj_te
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "e-mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[vlasnik] ([ime], [prezime], [adresa_stanovanja], [broj_telefona1], [broj_telefona2], [e-mail]) VALUES (@ime, @prezime, @adresa_stanovanja, @broj_telefona1, @broj_telefona2, @p1);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [vlasnik] ([ime], [prezime], [adresa_stanovanja], [broj_telefona1], [broj_telefona2], [e-mail]) VALUES (@ime, @prezime, @adresa_stanovanja, @broj_telefona1, @broj_telefona2, @p1);
 SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefona2, [e-mail] FROM vlasnik WHERE (ID_vlasnik = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9600,7 +9600,7 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "e-mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[vlasnik] SET [ime] = @ime, [prezime] = @prezime, [adresa_stanovanja] = @adresa_stanovanja, [broj_telefona1] = @broj_telefona1, [broj_telefona2] = @broj_telefona2, [e-mail] = @p1 WHERE (([ID_vlasnik] = @Original_ID_vlasnik) AND ([ime] = @Original_ime) AND ([prezime] = @Original_prezime) AND ([adresa_stanovanja] = @Original_adresa_stanovanja) AND ([broj_telefona1] = @Original_broj_telefona1) AND ((@IsNull_broj_telefona2 = 1 AND [broj_telefona2] IS NULL) OR ([broj_telefona2] = @Original_broj_telefona2)) AND ((@p3 = 1 AND [e-mail] IS NULL) OR ([e-mail] = @p2)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [vlasnik] SET [ime] = @ime, [prezime] = @prezime, [adresa_stanovanja] = @adresa_stanovanja, [broj_telefona1] = @broj_telefona1, [broj_telefona2] = @broj_telefona2, [e-mail] = @p1 WHERE (([ID_vlasnik] = @Original_ID_vlasnik) AND ([ime] = @Original_ime) AND ([prezime] = @Original_prezime) AND ([adresa_stanovanja] = @Original_adresa_stanovanja) AND ([broj_telefona1] = @Original_broj_telefona1) AND ((@IsNull_broj_telefona2 = 1 AND [broj_telefona2] IS NULL) OR ([broj_telefona2] = @Original_broj_telefona2)) AND ((@p3 = 1 AND [e-mail] IS NULL) OR ([e-mail] = @p2)));
 SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefona2, [e-mail] FROM vlasnik WHERE (ID_vlasnik = @ID_vlasnik)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9635,7 +9635,7 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefona" +
-                "2, [e-mail] FROM dbo.vlasnik";
+                "2, [e-mail]\r\nFROM     vlasnik";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9723,16 +9723,14 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_broj_telefona1));
             }
             if ((Original_broj_telefona2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_broj_telefona2");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_broj_telefona2));
             }
             if ((p2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
@@ -9784,13 +9782,13 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(broj_telefona1));
             }
             if ((broj_telefona2 == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("broj_telefona2");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(broj_telefona2));
             }
             if ((p1 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p1));
@@ -9841,13 +9839,13 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(broj_telefona1));
             }
             if ((broj_telefona2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("broj_telefona2");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(broj_telefona2));
             }
             if ((p1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p1));
@@ -9878,16 +9876,14 @@ SELECT ID_vlasnik, ime, prezime, adresa_stanovanja, broj_telefona1, broj_telefon
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_broj_telefona1));
             }
             if ((Original_broj_telefona2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_broj_telefona2");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_broj_telefona2));
             }
             if ((p2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));

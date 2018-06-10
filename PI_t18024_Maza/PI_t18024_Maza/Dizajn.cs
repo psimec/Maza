@@ -17,12 +17,6 @@ namespace PI_t18024_Maza
             InitializeComponent();
         }
 
-        private void Dizajn_Load(object sender, EventArgs e)
-        {
-
-           
-        }
-
         private void uiActionKalendar_Click(object sender, EventArgs e)
         {            
             Kalendar kalendar = new Kalendar();

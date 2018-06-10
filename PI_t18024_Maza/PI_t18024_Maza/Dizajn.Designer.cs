@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dizajn));
             this.LijeviPanel = new System.Windows.Forms.Panel();
             this.uiActionKontrola = new System.Windows.Forms.Button();
@@ -40,10 +41,15 @@
             this.ZaglavljePanel = new System.Windows.Forms.Panel();
             this.uiActionMinimize = new System.Windows.Forms.Button();
             this.uiActionClose = new System.Windows.Forms.Button();
+            this.vlasnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
+            this.vlasnikTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.vlasnikTableAdapter();
             this.LijeviPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ZaglavljePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // LijeviPanel
@@ -189,6 +195,20 @@
             this.uiActionClose.UseVisualStyleBackColor = true;
             this.uiActionClose.Click += new System.EventHandler(this.uiActionClose_Click);
             // 
+            // vlasnikBindingSource
+            // 
+            this.vlasnikBindingSource.DataMember = "vlasnik";
+            this.vlasnikBindingSource.DataSource = this._18024_DBDataSet;
+            // 
+            // _18024_DBDataSet
+            // 
+            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
+            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vlasnikTableAdapter
+            // 
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
+            // 
             // Dizajn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -200,12 +220,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dizajn";
             this.Text = "Dizajn";
-            this.Load += new System.EventHandler(this.Dizajn_Load);
             this.LijeviPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ZaglavljePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +244,8 @@
         private System.Windows.Forms.Button uiActionZivotinje;
         private System.Windows.Forms.Button uiActionMinimize;
         private System.Windows.Forms.Button uiActionClose;
+        private _18024_DBDataSet _18024_DBDataSet;
+        private System.Windows.Forms.BindingSource vlasnikBindingSource;
+        private _18024_DBDataSetTableAdapters.vlasnikTableAdapter vlasnikTableAdapter;
     }
 }
