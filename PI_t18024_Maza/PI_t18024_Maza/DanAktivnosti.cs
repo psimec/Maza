@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
     public class DanAktivnosti
     {
         public DayOfWeek Dan;
-        public int BrojAktivnosti;
+        public List<Button> ListaAktivnosti;
 
-        public DanAktivnosti(DayOfWeek dan, int brojAktivnosti)
+        public DanAktivnosti(DayOfWeek dan)
         {
             this.Dan = dan;
-            this.BrojAktivnosti = brojAktivnosti;
+            ListaAktivnosti = new List<Button>();
         }
     }
 }

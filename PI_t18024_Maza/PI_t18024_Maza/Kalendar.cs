@@ -13,23 +13,18 @@ namespace PI_t18024_Maza
     public partial class Kalendar : Form
     {
         List<DanAktivnosti> daniAktivnosti = new List<DanAktivnosti>();
+        double brojDana;
         DateTime datumOd;
         DateTime datumDo;
-        double brojDana = (int)DateTime.Now.DayOfWeek - 1;
         //Dictionary<DayOfWeek, Dictionary<int, object>> brojAktivnostiPoDanu; mogucnost za bilježenje broja aktivnosti u redu
 
         public Kalendar()
         {
-            InitializeComponent();
+            InitializeComponent();         
+            brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
+            datumOd = DateTime.Now.AddDays(-brojDana);
+            datumDo = DateTime.Now.AddDays(6 - brojDana);
             dohvatiAktivnosti();
-        }
-
-        private void uiActionOdjava_Click(object sender, EventArgs e)
-        {
-            Form prijava = new Prijava();
-            this.Hide();
-            prijava.ShowDialog();
-            this.Close();
         }
 
         private Button kreirajAkrivnost(DateTime datum, string zivotinja) // treba i id
@@ -62,10 +57,29 @@ namespace PI_t18024_Maza
             datumDo = datum.AddDays(6 - brojDana);
         }
 
+        private void dohvatiAktivnosti()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var kontrola in db.Kontrola)
+                {
+                    if (kontrola.DatumKontrole >= datumOd && kontrola.DatumKontrole <= datumDo)
+                    {
+                        
+                        Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
+                        Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime);
+                        postaviAktivnost(aktivnost, odrediStupac(kontrola.DatumKontrole), 0);
+                    }                    
+                }
+            }
+        }
+
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
         {
+            uiPanelAktivnosti.Controls.Clear();
             odrediTjedan(uiActionOdabirDatuma.Value); // odreduje tjedan za koji se prikazuju aktivnosti
             uiPanelAktivnosti.Invalidate();
+            dohvatiAktivnosti();
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
 
@@ -77,24 +91,18 @@ namespace PI_t18024_Maza
             }
         }
 
-        private void dohvatiAktivnosti()
-        {
-            using (var db = new MazaEntities())
-            {
-                foreach (var kontrola in db.Kontrola)
-                {
-                    Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
-                    Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime);
-                    postaviAktivnost(aktivnost, odrediStupac(kontrola.DatumKontrole), 0);
-                }
-            }
-        }
-
-
         private void uiActionZivotinje_Click(object sender, EventArgs e)
         {
             Zivotinje zivotinje = new Zivotinje();
             zivotinje.ShowDialog();
+        }
+
+        private void uiActionOdjava_Click(object sender, EventArgs e)
+        {
+            Form prijava = new Prijava();
+            this.Hide();
+            prijava.ShowDialog();
+            this.Close();
         }
     }
 }

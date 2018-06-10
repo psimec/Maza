@@ -30,7 +30,7 @@ namespace PI_t18024_Maza
         public DbSet<Dijagnoza> Dijagnoza { get; set; }
         public DbSet<Kontrola> Kontrola { get; set; }
         public DbSet<Lijek> Lijek { get; set; }
-        public DbSet<Operacija> Operacija{ get; set; }
+        public DbSet<Operacija> Operacija { get; set; }
         public DbSet<PropisaniLijek> PropisaniLijek { get; set; }
         public DbSet<Veterinar> Veterinar { get; set; }
         public DbSet<Vlasnik> Vlasnik { get; set; }
