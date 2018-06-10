@@ -96,6 +96,12 @@
     <Compile Include="Dijagnoza.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dizajn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dizajn.Designer.cs">
+      <DependentUpon>Dizajn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dizajn.resx">
+      <DependentUpon>Dizajn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
     <EmbeddedResource Include="Kalendar.resx">
       <DependentUpon>Kalendar.cs</DependentUpon>

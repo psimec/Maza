@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Kalendar : Form
+    public partial class Kalendar : Dizajn
     {
         List<DanAktivnosti> listaDaniAktivnosti = new List<DanAktivnosti>();
         double brojDana;
