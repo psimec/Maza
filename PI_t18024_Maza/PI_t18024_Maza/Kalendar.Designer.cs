@@ -219,7 +219,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.uiPanelAktivnosti.Location = new System.Drawing.Point(165, 138);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
             this.uiPanelAktivnosti.RowCount = 7;
@@ -258,8 +258,9 @@
             this.uiActionDodajAktivnost.Name = "uiActionDodajAktivnost";
             this.uiActionDodajAktivnost.Size = new System.Drawing.Size(127, 23);
             this.uiActionDodajAktivnost.TabIndex = 12;
-            this.uiActionDodajAktivnost.Text = "Dodaj novu aktivnost";
+            this.uiActionDodajAktivnost.Text = "Dodaj kontrolu";
             this.uiActionDodajAktivnost.UseVisualStyleBackColor = true;
+            this.uiActionDodajAktivnost.Click += new System.EventHandler(this.uiActionDodajAktivnost_Click);
             // 
             // Kalendar
             // 

@@ -108,6 +108,12 @@
     <Compile Include="Lijek.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="NovaKontrola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaKontrola.Designer.cs">
+      <DependentUpon>NovaKontrola.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operacija.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
     <EmbeddedResource Include="Kalendar.resx">
       <DependentUpon>Kalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaKontrola.resx">
+      <DependentUpon>NovaKontrola.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
