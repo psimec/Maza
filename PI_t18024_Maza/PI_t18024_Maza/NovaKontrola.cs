@@ -32,23 +32,24 @@ namespace PI_t18024_Maza
 
         private void uiActionUredu_Click(object sender, EventArgs e)
         {
+
             using (var db = new MazaEntities())
             {
                 Zivotinja zivotinja = db.Zivotinja.FirstOrDefault(z => z.IdZivotinja == (int)uiOdabirZivotinja.SelectedValue);
                 Veterinar veterinar = db.Veterinar.FirstOrDefault(z => z.IdVeterinar == (int)uiOdabirVeterinar.SelectedValue);
+
+                db.Zivotinja.Attach(zivotinja);
+                db.Veterinar.Attach(veterinar);
 
                 Kontrola kontrola = new Kontrola
                 {
                     IdVeterinar = int.Parse(uiOdabirVeterinar.SelectedValue.ToString()),
                     IdZivotinja = int.Parse(uiOdabirZivotinja.SelectedValue.ToString()),
                     DatumKontrole = uiOdabirDatum.Value,
-                    Status = uiOdabirStatus.SelectedValue.ToString(),
-                    Opis = uiUnosOpis.ToString(),
+                    Status = uiOdabirStatus.Text,
+                    Opis = uiUnosOpis.Text,
                     Zivotinja = zivotinja,
-                    Veterinar = veterinar,
-                    Dijagnoza = null,
-                    Cjepivo = null,
-                    Operacija = null           
+                    Veterinar = veterinar        
                 };
 
                 db.Kontrola.Add(kontrola);
