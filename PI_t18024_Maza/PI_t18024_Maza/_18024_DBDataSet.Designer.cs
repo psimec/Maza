@@ -54,10 +54,6 @@ namespace PI_t18024_Maza {
         
         private global::System.Data.DataRelation relationfk_Dijagnoza_Kontrola1;
         
-        private global::System.Data.DataRelation relationfk_Životinja_has_Veterinar_Veterinar1;
-        
-        private global::System.Data.DataRelation relationfk_Životinja_has_Veterinar_Životinja1;
-        
         private global::System.Data.DataRelation relationfk_Operacija_kontrola1;
         
         private global::System.Data.DataRelation relationfk_Propisani_lijek_Dijagnoza1;
@@ -458,8 +454,6 @@ namespace PI_t18024_Maza {
             this.relationfk_Životinja_has_Cijepivo_Cijepivo1 = this.Relations["fk_Životinja_has_Cijepivo_Cijepivo1"];
             this.relationfk_dijagnoza_bolest1 = this.Relations["fk_dijagnoza_bolest1"];
             this.relationfk_Dijagnoza_Kontrola1 = this.Relations["fk_Dijagnoza_Kontrola1"];
-            this.relationfk_Životinja_has_Veterinar_Veterinar1 = this.Relations["fk_Životinja_has_Veterinar_Veterinar1"];
-            this.relationfk_Životinja_has_Veterinar_Životinja1 = this.Relations["fk_Životinja_has_Veterinar_Životinja1"];
             this.relationfk_Operacija_kontrola1 = this.Relations["fk_Operacija_kontrola1"];
             this.relationfk_Propisani_lijek_Dijagnoza1 = this.Relations["fk_Propisani_lijek_Dijagnoza1"];
             this.relationfk_Propisani_lijek_Lijek1 = this.Relations["fk_Propisani_lijek_Lijek1"];
@@ -512,14 +506,6 @@ namespace PI_t18024_Maza {
                         this.tablekontrola.ID_kontrolaColumn}, new global::System.Data.DataColumn[] {
                         this.tabledijagnoza.ID_kontrolaColumn}, false);
             this.Relations.Add(this.relationfk_Dijagnoza_Kontrola1);
-            this.relationfk_Životinja_has_Veterinar_Veterinar1 = new global::System.Data.DataRelation("fk_Životinja_has_Veterinar_Veterinar1", new global::System.Data.DataColumn[] {
-                        this.tableveterinar.ID_veterinarColumn}, new global::System.Data.DataColumn[] {
-                        this.tablekontrola.ID_veterinarColumn}, false);
-            this.Relations.Add(this.relationfk_Životinja_has_Veterinar_Veterinar1);
-            this.relationfk_Životinja_has_Veterinar_Životinja1 = new global::System.Data.DataRelation("fk_Životinja_has_Veterinar_Životinja1", new global::System.Data.DataColumn[] {
-                        this.tablezivotinja.ID_zivotinjaColumn}, new global::System.Data.DataColumn[] {
-                        this.tablekontrola.ID_zivotinjaColumn}, false);
-            this.Relations.Add(this.relationfk_Životinja_has_Veterinar_Životinja1);
             this.relationfk_Operacija_kontrola1 = new global::System.Data.DataRelation("fk_Operacija_kontrola1", new global::System.Data.DataColumn[] {
                         this.tablekontrola.ID_kontrolaColumn}, new global::System.Data.DataColumn[] {
                         this.tableoperacija.kontrola_ID_kontrolaColumn}, false);
@@ -1943,15 +1929,15 @@ namespace PI_t18024_Maza {
             
             private global::System.Data.DataColumn columnID_kontrola;
             
-            private global::System.Data.DataColumn columnID_zivotinja;
-            
-            private global::System.Data.DataColumn columnID_veterinar;
-            
             private global::System.Data.DataColumn columndatum_kontrole;
             
             private global::System.Data.DataColumn columnstatus;
             
             private global::System.Data.DataColumn columnopis;
+            
+            private global::System.Data.DataColumn columnVeterinar;
+            
+            private global::System.Data.DataColumn columnzivotinja;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1996,22 +1982,6 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_zivotinjaColumn {
-                get {
-                    return this.columnID_zivotinja;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_veterinarColumn {
-                get {
-                    return this.columnID_veterinar;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn datum_kontroleColumn {
                 get {
                     return this.columndatum_kontrole;
@@ -2031,6 +2001,22 @@ namespace PI_t18024_Maza {
             public global::System.Data.DataColumn opisColumn {
                 get {
                     return this.columnopis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VeterinarColumn {
+                get {
+                    return this.columnVeterinar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn zivotinjaColumn {
+                get {
+                    return this.columnzivotinja;
                 }
             }
             
@@ -2071,21 +2057,15 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public kontrolaRow AddkontrolaRow(zivotinjaRow parentzivotinjaRowByfk_Životinja_has_Veterinar_Životinja1, veterinarRow parentveterinarRowByfk_Životinja_has_Veterinar_Veterinar1, System.DateTime datum_kontrole, string status, string opis) {
+            public kontrolaRow AddkontrolaRow(System.DateTime datum_kontrole, string status, string opis, string Veterinar, string zivotinja) {
                 kontrolaRow rowkontrolaRow = ((kontrolaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
-                        null,
                         datum_kontrole,
                         status,
-                        opis};
-                if ((parentzivotinjaRowByfk_Životinja_has_Veterinar_Životinja1 != null)) {
-                    columnValuesArray[1] = parentzivotinjaRowByfk_Životinja_has_Veterinar_Životinja1[0];
-                }
-                if ((parentveterinarRowByfk_Životinja_has_Veterinar_Veterinar1 != null)) {
-                    columnValuesArray[2] = parentveterinarRowByfk_Životinja_has_Veterinar_Veterinar1[0];
-                }
+                        opis,
+                        Veterinar,
+                        zivotinja};
                 rowkontrolaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowkontrolaRow);
                 return rowkontrolaRow;
@@ -2116,11 +2096,11 @@ namespace PI_t18024_Maza {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnID_kontrola = base.Columns["ID_kontrola"];
-                this.columnID_zivotinja = base.Columns["ID_zivotinja"];
-                this.columnID_veterinar = base.Columns["ID_veterinar"];
                 this.columndatum_kontrole = base.Columns["datum_kontrole"];
                 this.columnstatus = base.Columns["status"];
                 this.columnopis = base.Columns["opis"];
+                this.columnVeterinar = base.Columns["Veterinar"];
+                this.columnzivotinja = base.Columns["zivotinja"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2128,16 +2108,16 @@ namespace PI_t18024_Maza {
             private void InitClass() {
                 this.columnID_kontrola = new global::System.Data.DataColumn("ID_kontrola", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_kontrola);
-                this.columnID_zivotinja = new global::System.Data.DataColumn("ID_zivotinja", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_zivotinja);
-                this.columnID_veterinar = new global::System.Data.DataColumn("ID_veterinar", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_veterinar);
                 this.columndatum_kontrole = new global::System.Data.DataColumn("datum_kontrole", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndatum_kontrole);
                 this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus);
                 this.columnopis = new global::System.Data.DataColumn("opis", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnopis);
+                this.columnVeterinar = new global::System.Data.DataColumn("Veterinar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVeterinar);
+                this.columnzivotinja = new global::System.Data.DataColumn("zivotinja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzivotinja);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_kontrola}, true));
                 this.columnID_kontrola.AutoIncrement = true;
@@ -2146,12 +2126,14 @@ namespace PI_t18024_Maza {
                 this.columnID_kontrola.AllowDBNull = false;
                 this.columnID_kontrola.ReadOnly = true;
                 this.columnID_kontrola.Unique = true;
-                this.columnID_zivotinja.AllowDBNull = false;
-                this.columnID_veterinar.AllowDBNull = false;
                 this.columndatum_kontrole.AllowDBNull = false;
                 this.columnstatus.AllowDBNull = false;
                 this.columnstatus.MaxLength = 25;
                 this.columnopis.MaxLength = 255;
+                this.columnVeterinar.AllowDBNull = false;
+                this.columnVeterinar.MaxLength = 20;
+                this.columnzivotinja.AllowDBNull = false;
+                this.columnzivotinja.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4740,28 +4722,6 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_zivotinja {
-                get {
-                    return ((int)(this[this.tablekontrola.ID_zivotinjaColumn]));
-                }
-                set {
-                    this[this.tablekontrola.ID_zivotinjaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_veterinar {
-                get {
-                    return ((int)(this[this.tablekontrola.ID_veterinarColumn]));
-                }
-                set {
-                    this[this.tablekontrola.ID_veterinarColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime datum_kontrole {
                 get {
                     return ((global::System.DateTime)(this[this.tablekontrola.datum_kontroleColumn]));
@@ -4800,23 +4760,23 @@ namespace PI_t18024_Maza {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public veterinarRow veterinarRow {
+            public string Veterinar {
                 get {
-                    return ((veterinarRow)(this.GetParentRow(this.Table.ParentRelations["fk_Životinja_has_Veterinar_Veterinar1"])));
+                    return ((string)(this[this.tablekontrola.VeterinarColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_Životinja_has_Veterinar_Veterinar1"]);
+                    this[this.tablekontrola.VeterinarColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public zivotinjaRow zivotinjaRow {
+            public string zivotinja {
                 get {
-                    return ((zivotinjaRow)(this.GetParentRow(this.Table.ParentRelations["fk_Životinja_has_Veterinar_Životinja1"])));
+                    return ((string)(this[this.tablekontrola.zivotinjaColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_Životinja_has_Veterinar_Životinja1"]);
+                    this[this.tablekontrola.zivotinjaColumn] = value;
                 }
             }
             
@@ -5300,17 +5260,6 @@ namespace PI_t18024_Maza {
             public void Setbroj_telefona2Null() {
                 this[this.tableveterinar.broj_telefona2Column] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public kontrolaRow[] GetkontrolaRows() {
-                if ((this.Table.ChildRelations["fk_Životinja_has_Veterinar_Veterinar1"] == null)) {
-                    return new kontrolaRow[0];
-                }
-                else {
-                    return ((kontrolaRow[])(base.GetChildRows(this.Table.ChildRelations["fk_Životinja_has_Veterinar_Veterinar1"])));
-                }
-            }
         }
         
         /// <summary>
@@ -5606,17 +5555,6 @@ namespace PI_t18024_Maza {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setdatum_uginucaNull() {
                 this[this.tablezivotinja.datum_uginucaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public kontrolaRow[] GetkontrolaRows() {
-                if ((this.Table.ChildRelations["fk_Životinja_has_Veterinar_Životinja1"] == null)) {
-                    return new kontrolaRow[0];
-                }
-                else {
-                    return ((kontrolaRow[])(base.GetChildRows(this.Table.ChildRelations["fk_Životinja_has_Veterinar_Životinja1"])));
-                }
             }
         }
         
@@ -7559,51 +7497,12 @@ WHERE        (zivotinja.ID_zivotinja = @zivotinja)";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "kontrola";
             tableMapping.ColumnMappings.Add("ID_kontrola", "ID_kontrola");
-            tableMapping.ColumnMappings.Add("ID_zivotinja", "ID_zivotinja");
-            tableMapping.ColumnMappings.Add("ID_veterinar", "ID_veterinar");
             tableMapping.ColumnMappings.Add("datum_kontrole", "datum_kontrole");
             tableMapping.ColumnMappings.Add("status", "status");
             tableMapping.ColumnMappings.Add("opis", "opis");
+            tableMapping.ColumnMappings.Add("Veterinar", "Veterinar");
+            tableMapping.ColumnMappings.Add("zivotinja", "zivotinja");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[kontrola] WHERE (([ID_kontrola] = @Original_ID_kontrola) AND ([ID_zivotinja] = @Original_ID_zivotinja) AND ([ID_veterinar] = @Original_ID_veterinar) AND ([datum_kontrole] = @Original_datum_kontrole) AND ([status] = @Original_status) AND ((@IsNull_opis = 1 AND [opis] IS NULL) OR ([opis] = @Original_opis)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_kontrola", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_kontrola", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_zivotinja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_veterinar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_veterinar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum_kontrole", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum_kontrole", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opis", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[kontrola] ([ID_zivotinja], [ID_veterinar], [datum_kontrole], [status], [opis]) VALUES (@ID_zivotinja, @ID_veterinar, @datum_kontrole, @status, @opis);
-SELECT ID_kontrola, ID_zivotinja, ID_veterinar, datum_kontrole, status, opis FROM kontrola WHERE (ID_kontrola = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_zivotinja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_veterinar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_veterinar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum_kontrole", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum_kontrole", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opis", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[kontrola] SET [ID_zivotinja] = @ID_zivotinja, [ID_veterinar] = @ID_veterinar, [datum_kontrole] = @datum_kontrole, [status] = @status, [opis] = @opis WHERE (([ID_kontrola] = @Original_ID_kontrola) AND ([ID_zivotinja] = @Original_ID_zivotinja) AND ([ID_veterinar] = @Original_ID_veterinar) AND ([datum_kontrole] = @Original_datum_kontrole) AND ([status] = @Original_status) AND ((@IsNull_opis = 1 AND [opis] IS NULL) OR ([opis] = @Original_opis)));
-SELECT ID_kontrola, ID_zivotinja, ID_veterinar, datum_kontrole, status, opis FROM kontrola WHERE (ID_kontrola = @ID_kontrola)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_zivotinja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_veterinar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_veterinar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum_kontrole", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum_kontrole", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opis", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_kontrola", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_kontrola", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_zivotinja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_veterinar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_veterinar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum_kontrole", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum_kontrole", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opis", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_kontrola", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_kontrola", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7616,12 +7515,23 @@ SELECT ID_kontrola, ID_zivotinja, ID_veterinar, datum_kontrole, status, opis FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_kontrola, ID_zivotinja, ID_veterinar, datum_kontrole, status, opis FROM" +
-                " dbo.kontrola";
+            this._commandCollection[0].CommandText = @"SELECT        kontrola.ID_kontrola, zivotinja.ime AS 'zivotinja', veterinar.ime AS 'Veterinar', kontrola.datum_kontrole, kontrola.status, kontrola.opis
+FROM            kontrola INNER JOIN
+                         zivotinja ON zivotinja.ID_zivotinja = kontrola.ID_zivotinja INNER JOIN
+                         veterinar ON veterinar.ID_veterinar = kontrola.ID_veterinar";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        kontrola.ID_kontrola, zivotinja.ime AS 'zivotinja', veterinar.ime AS 'Veterinar', kontrola.datum_kontrole, kontrola.status, kontrola.opis
+FROM            kontrola INNER JOIN
+                         zivotinja ON zivotinja.ID_zivotinja = kontrola.ID_zivotinja INNER JOIN
+                         veterinar ON veterinar.ID_veterinar = kontrola.ID_veterinar
+WHERE        (kontrola.ID_kontrola = @kontrola)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kontrola", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_kontrola", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7651,168 +7561,15 @@ SELECT ID_kontrola, ID_zivotinja, ID_veterinar, datum_kontrole, status, opis FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_18024_DBDataSet.kontrolaDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_18024_DBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "kontrola");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_kontrola, int Original_ID_zivotinja, int Original_ID_veterinar, System.DateTime Original_datum_kontrole, string Original_status, string Original_opis) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_kontrola));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID_zivotinja));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID_veterinar));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_datum_kontrole));
-            if ((Original_status == null)) {
-                throw new global::System.ArgumentNullException("Original_status");
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByKontrolaId(_18024_DBDataSet.kontrolaDataTable dataTable, int kontrola) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(kontrola));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_status));
-            }
-            if ((Original_opis == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_opis));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_zivotinja, int ID_veterinar, System.DateTime datum_kontrole, string status, string opis) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_zivotinja));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_veterinar));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(datum_kontrole));
-            if ((status == null)) {
-                throw new global::System.ArgumentNullException("status");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(status));
-            }
-            if ((opis == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(opis));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_zivotinja, int ID_veterinar, System.DateTime datum_kontrole, string status, string opis, int Original_ID_kontrola, int Original_ID_zivotinja, int Original_ID_veterinar, System.DateTime Original_datum_kontrole, string Original_status, string Original_opis, int ID_kontrola) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_zivotinja));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID_veterinar));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(datum_kontrole));
-            if ((status == null)) {
-                throw new global::System.ArgumentNullException("status");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(status));
-            }
-            if ((opis == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(opis));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_kontrola));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_zivotinja));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_veterinar));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_datum_kontrole));
-            if ((Original_status == null)) {
-                throw new global::System.ArgumentNullException("Original_status");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_status));
-            }
-            if ((Original_opis == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_opis));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(ID_kontrola));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_zivotinja, int ID_veterinar, System.DateTime datum_kontrole, string status, string opis, int Original_ID_kontrola, int Original_ID_zivotinja, int Original_ID_veterinar, System.DateTime Original_datum_kontrole, string Original_status, string Original_opis) {
-            return this.Update(ID_zivotinja, ID_veterinar, datum_kontrole, status, opis, Original_ID_kontrola, Original_ID_zivotinja, Original_ID_veterinar, Original_datum_kontrole, Original_status, Original_opis, Original_ID_kontrola);
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -10558,8 +10315,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         
         private dijagnozaTableAdapter _dijagnozaTableAdapter;
         
-        private kontrolaTableAdapter _kontrolaTableAdapter;
-        
         private LijekTableAdapter _lijekTableAdapter;
         
         private operacijaTableAdapter _operacijaTableAdapter;
@@ -10640,20 +10395,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
             }
             set {
                 this._dijagnozaTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public kontrolaTableAdapter kontrolaTableAdapter {
-            get {
-                return this._kontrolaTableAdapter;
-            }
-            set {
-                this._kontrolaTableAdapter = value;
             }
         }
         
@@ -10776,10 +10517,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                             && (this._dijagnozaTableAdapter.Connection != null))) {
                     return this._dijagnozaTableAdapter.Connection;
                 }
-                if (((this._kontrolaTableAdapter != null) 
-                            && (this._kontrolaTableAdapter.Connection != null))) {
-                    return this._kontrolaTableAdapter.Connection;
-                }
                 if (((this._lijekTableAdapter != null) 
                             && (this._lijekTableAdapter.Connection != null))) {
                     return this._lijekTableAdapter.Connection;
@@ -10829,9 +10566,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                 if ((this._dijagnozaTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._kontrolaTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._lijekTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -10861,48 +10595,12 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(_18024_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._vlasnikTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vlasnikTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._veterinarTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._veterinarTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._zivotinjaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._zivotinjaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._bolestTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.bolest.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._bolestTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._kontrolaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.kontrola.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._kontrolaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10933,6 +10631,15 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._vlasnikTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._vlasnikTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._cjepivo_za_zivotinjuTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.cjepivo_za_zivotinju.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10960,6 +10667,24 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._veterinarTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._veterinarTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._zivotinjaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._zivotinjaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -10970,43 +10695,11 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(_18024_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._vlasnikTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vlasnikTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._veterinarTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._veterinarTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._zivotinjaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._zivotinjaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._bolestTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.bolest.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._bolestTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._kontrolaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.kontrola.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._kontrolaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11034,6 +10727,14 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._vlasnikTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._vlasnikTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._cjepivo_za_zivotinjuTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.cjepivo_za_zivotinju.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11058,6 +10759,22 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._veterinarTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._veterinarTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._zivotinjaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._zivotinjaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -11068,6 +10785,22 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(_18024_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._zivotinjaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._zivotinjaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._veterinarTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._veterinarTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._propisani_lijekTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.propisani_lijek.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11089,6 +10822,14 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cjepivo_za_zivotinjuTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._vlasnikTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._vlasnikTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11116,43 +10857,11 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._kontrolaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.kontrola.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._kontrolaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._bolestTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.bolest.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._bolestTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._zivotinjaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.zivotinja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._zivotinjaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._veterinarTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.veterinar.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._veterinarTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._vlasnikTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.vlasnik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._vlasnikTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11212,11 +10921,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
             }
             if (((this._dijagnozaTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._dijagnozaTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._kontrolaTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._kontrolaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -11316,15 +11020,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                     if (this._dijagnozaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._dijagnozaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._dijagnozaTableAdapter.Adapter);
-                    }
-                }
-                if ((this._kontrolaTableAdapter != null)) {
-                    revertConnections.Add(this._kontrolaTableAdapter, this._kontrolaTableAdapter.Connection);
-                    this._kontrolaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._kontrolaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._kontrolaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._kontrolaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._kontrolaTableAdapter.Adapter);
                     }
                 }
                 if ((this._lijekTableAdapter != null)) {
@@ -11454,10 +11149,6 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
                 if ((this._dijagnozaTableAdapter != null)) {
                     this._dijagnozaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dijagnozaTableAdapter]));
                     this._dijagnozaTableAdapter.Transaction = null;
-                }
-                if ((this._kontrolaTableAdapter != null)) {
-                    this._kontrolaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._kontrolaTableAdapter]));
-                    this._kontrolaTableAdapter.Transaction = null;
                 }
                 if ((this._lijekTableAdapter != null)) {
                     this._lijekTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lijekTableAdapter]));
