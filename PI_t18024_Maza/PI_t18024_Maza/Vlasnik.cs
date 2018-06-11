@@ -11,6 +11,7 @@ namespace PI_t18024_Maza
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class Vlasnik
     {
@@ -26,7 +27,7 @@ namespace PI_t18024_Maza
         public string BrojTelefona1 { get; set; }
         public string BrojTelefona2 { get; set; }
         public string Email { get; set; }
-    
+
         public virtual ICollection<Zivotinja> Zivotinja { get; set; }
     }
 }

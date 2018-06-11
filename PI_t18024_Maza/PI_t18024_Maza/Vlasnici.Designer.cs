@@ -28,211 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.uiActionPopisVlasnika = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uiActionPopisZivotinja = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.uiTablicaVlasnika = new System.Windows.Forms.DataGridView();
-            this.ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresa_stanovanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.broj_telefona1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.broj_telefona2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uiTablicaVlasnika)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
+            this.vlasnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vlasnikTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.vlasnikTableAdapter();
+            this.iDvlasnikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresastanovanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojtelefona1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojtelefona2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(0, 295);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(187, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Kontrola";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // uiActionPopisVlasnika
-            // 
-            this.uiActionPopisVlasnika.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.uiActionPopisVlasnika.FlatAppearance.BorderSize = 0;
-            this.uiActionPopisVlasnika.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionPopisVlasnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionPopisVlasnika.Location = new System.Drawing.Point(0, 222);
-            this.uiActionPopisVlasnika.Margin = new System.Windows.Forms.Padding(4);
-            this.uiActionPopisVlasnika.Name = "uiActionPopisVlasnika";
-            this.uiActionPopisVlasnika.Size = new System.Drawing.Size(187, 46);
-            this.uiActionPopisVlasnika.TabIndex = 2;
-            this.uiActionPopisVlasnika.Text = "Vlasnici";
-            this.uiActionPopisVlasnika.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(187, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(216, 318);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(819, 55);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(7, 100);
+            this.panel1.TabIndex = 2;
             // 
-            // button7
+            // dataGridView1
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.Location = new System.Drawing.Point(1229, 12);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(108, 34);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Odjava";
-            this.button7.UseVisualStyleBackColor = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDvlasnikDataGridViewTextBoxColumn,
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.adresastanovanjaDataGridViewTextBoxColumn,
+            this.brojtelefona1DataGridViewTextBoxColumn,
+            this.brojtelefona2DataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.vlasnikBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(222, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(743, 309);
+            this.dataGridView1.TabIndex = 3;
             // 
-            // panel2
+            // _18024_DBDataSet
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.uiActionPopisVlasnika);
-            this.panel2.Controls.Add(this.uiActionPopisZivotinja);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(187, 624);
-            this.panel2.TabIndex = 5;
+            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
+            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // uiActionPopisZivotinja
+            // vlasnikBindingSource
             // 
-            this.uiActionPopisZivotinja.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.uiActionPopisZivotinja.FlatAppearance.BorderSize = 0;
-            this.uiActionPopisZivotinja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionPopisZivotinja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionPopisZivotinja.Location = new System.Drawing.Point(0, 148);
-            this.uiActionPopisZivotinja.Margin = new System.Windows.Forms.Padding(4);
-            this.uiActionPopisZivotinja.Name = "uiActionPopisZivotinja";
-            this.uiActionPopisZivotinja.Size = new System.Drawing.Size(187, 46);
-            this.uiActionPopisZivotinja.TabIndex = 1;
-            this.uiActionPopisZivotinja.Text = "Životinje";
-            this.uiActionPopisZivotinja.UseVisualStyleBackColor = false;
-            this.uiActionPopisZivotinja.Click += new System.EventHandler(this.uiActionPopisZivotinja_Click);
+            this.vlasnikBindingSource.DataMember = "vlasnik";
+            this.vlasnikBindingSource.DataSource = this._18024_DBDataSet;
             // 
-            // button1
+            // vlasnikTableAdapter
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(0, 74);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Kalendar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.vlasnikTableAdapter.ClearBeforeFill = true;
             // 
-            // uiTablicaVlasnika
+            // iDvlasnikDataGridViewTextBoxColumn
             // 
-            this.uiTablicaVlasnika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uiTablicaVlasnika.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ime,
-            this.prezime,
-            this.adresa_stanovanja,
-            this.broj_telefona1,
-            this.broj_telefona2,
-            this.email});
-            this.uiTablicaVlasnika.Location = new System.Drawing.Point(194, 62);
-            this.uiTablicaVlasnika.Name = "uiTablicaVlasnika";
-            this.uiTablicaVlasnika.RowTemplate.Height = 24;
-            this.uiTablicaVlasnika.Size = new System.Drawing.Size(701, 325);
-            this.uiTablicaVlasnika.TabIndex = 6;
+            this.iDvlasnikDataGridViewTextBoxColumn.DataPropertyName = "ID_vlasnik";
+            this.iDvlasnikDataGridViewTextBoxColumn.HeaderText = "ID_vlasnik";
+            this.iDvlasnikDataGridViewTextBoxColumn.Name = "iDvlasnikDataGridViewTextBoxColumn";
+            this.iDvlasnikDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDvlasnikDataGridViewTextBoxColumn.Visible = false;
             // 
-            // ime
+            // imeDataGridViewTextBoxColumn
             // 
-            this.ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ime.HeaderText = "Ime";
-            this.ime.Name = "ime";
-            this.ime.Width = 59;
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             // 
-            // prezime
+            // prezimeDataGridViewTextBoxColumn
             // 
-            this.prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.prezime.HeaderText = "Prezime";
-            this.prezime.Name = "prezime";
-            this.prezime.Width = 88;
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             // 
-            // adresa_stanovanja
+            // adresastanovanjaDataGridViewTextBoxColumn
             // 
-            this.adresa_stanovanja.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.adresa_stanovanja.HeaderText = "Adresa";
-            this.adresa_stanovanja.Name = "adresa_stanovanja";
-            this.adresa_stanovanja.Width = 82;
+            this.adresastanovanjaDataGridViewTextBoxColumn.DataPropertyName = "adresa_stanovanja";
+            this.adresastanovanjaDataGridViewTextBoxColumn.HeaderText = "Adresa";
+            this.adresastanovanjaDataGridViewTextBoxColumn.Name = "adresastanovanjaDataGridViewTextBoxColumn";
             // 
-            // broj_telefona1
+            // brojtelefona1DataGridViewTextBoxColumn
             // 
-            this.broj_telefona1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.broj_telefona1.HeaderText = "Broj telefona1";
-            this.broj_telefona1.Name = "broj_telefona1";
-            this.broj_telefona1.Width = 125;
+            this.brojtelefona1DataGridViewTextBoxColumn.DataPropertyName = "broj_telefona1";
+            this.brojtelefona1DataGridViewTextBoxColumn.HeaderText = "Broj telefona";
+            this.brojtelefona1DataGridViewTextBoxColumn.Name = "brojtelefona1DataGridViewTextBoxColumn";
             // 
-            // broj_telefona2
+            // brojtelefona2DataGridViewTextBoxColumn
             // 
-            this.broj_telefona2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.broj_telefona2.HeaderText = "Broj telefona2";
-            this.broj_telefona2.Name = "broj_telefona2";
-            this.broj_telefona2.Width = 125;
+            this.brojtelefona2DataGridViewTextBoxColumn.DataPropertyName = "broj_telefona2";
+            this.brojtelefona2DataGridViewTextBoxColumn.HeaderText = "broj_telefona2";
+            this.brojtelefona2DataGridViewTextBoxColumn.Name = "brojtelefona2DataGridViewTextBoxColumn";
             // 
-            // email
+            // emailDataGridViewTextBoxColumn
             // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.Width = 76;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // Vlasnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 624);
-            this.Controls.Add(this.uiTablicaVlasnika);
+            this.ClientSize = new System.Drawing.Size(1344, 778);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Name = "Vlasnici";
             this.Text = "Vlasnici";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uiTablicaVlasnika)).EndInit();
+            this.Load += new System.EventHandler(this.Vlasnici_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button uiActionPopisVlasnika;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button uiActionPopisZivotinja;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView uiTablicaVlasnika;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresa_stanovanja;
-        private System.Windows.Forms.DataGridViewTextBoxColumn broj_telefona1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn broj_telefona2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private _18024_DBDataSet _18024_DBDataSet;
+        private System.Windows.Forms.BindingSource vlasnikBindingSource;
+        private _18024_DBDataSetTableAdapters.vlasnikTableAdapter vlasnikTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDvlasnikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresastanovanjaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojtelefona1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojtelefona2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
