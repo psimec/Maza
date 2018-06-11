@@ -44,6 +44,7 @@
             // 
             // uiOdabirZivotinja
             // 
+            this.uiOdabirZivotinja.DisplayMember = "ID_zivotinja";
             this.uiOdabirZivotinja.FormattingEnabled = true;
             this.uiOdabirZivotinja.Location = new System.Drawing.Point(85, 28);
             this.uiOdabirZivotinja.Name = "uiOdabirZivotinja";
@@ -53,6 +54,7 @@
             // 
             // uiOdabirVeterinar
             // 
+            this.uiOdabirVeterinar.DisplayMember = "ID_veterinar";
             this.uiOdabirVeterinar.FormattingEnabled = true;
             this.uiOdabirVeterinar.Location = new System.Drawing.Point(85, 65);
             this.uiOdabirVeterinar.Name = "uiOdabirVeterinar";
@@ -171,6 +173,7 @@
             this.Controls.Add(this.uiOdabirZivotinja);
             this.Name = "NovaKontrola";
             this.Text = "Kreiraj kontrolu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NovaKontrola_FormClosed);
             this.Load += new System.EventHandler(this.NovaKontrola_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

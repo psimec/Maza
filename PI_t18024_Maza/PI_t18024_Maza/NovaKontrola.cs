@@ -47,8 +47,6 @@ namespace PI_t18024_Maza
                     Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
                     Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
 
-                    MessageBox.Show(zivotinja.IdZivotinja.ToString());
-
                     db.Zivotinja.Attach(zivotinja);
                     db.Veterinar.Attach(veterinar);
 
@@ -66,12 +64,18 @@ namespace PI_t18024_Maza
                     db.Kontrola.Add(kontrola);
                     db.SaveChanges();
                 }
-                this.Close();
+                this.Close();            
             }
             else
             {
                 return;
             }     
+        }
+
+        private void NovaKontrola_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Kalendar nova = new Kalendar();
+            nova.Refresh();
         }
     }
 }

@@ -24,6 +24,8 @@ namespace PI_t18024_Maza
             brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
             datumOd = DateTime.Now.AddDays(-brojDana);
             datumDo = DateTime.Now.AddDays(6 - brojDana);
+            datumOd = datumOd.Date;
+            datumDo = datumDo.Date;
             ispisAktivnosti();
         }
 
@@ -57,6 +59,8 @@ namespace PI_t18024_Maza
             }
             datumOd = datum.AddDays(-brojDana);
             datumDo = datum.AddDays(6 - brojDana);
+            datumOd = datumOd.Date;
+            datumDo = datumDo.Date;
         }
 
         private void dohvatiAktivnosti()
@@ -65,8 +69,9 @@ namespace PI_t18024_Maza
             {
                 foreach (var kontrola in db.Kontrola)
                 {
-                    if (kontrola.DatumKontrole >= datumOd && kontrola.DatumKontrole <= datumDo)
-                    {                        
+                    if (kontrola.DatumKontrole > datumOd.AddDays(-1) && kontrola.DatumKontrole < datumDo.AddDays(1))
+                    {
+                        //MessageBox.Show(datumOd.AddDays(-1).ToString());
                         Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
                         Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime, kontrola.IdKontrola);
                         int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.DatumKontrole.DayOfWeek);
@@ -102,9 +107,9 @@ namespace PI_t18024_Maza
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
         {
             uiPanelAktivnosti.Controls.Clear();
-            odrediTjedan(uiActionOdabirDatuma.Value); // odreduje tjedan za koji se prikazuju aktivnosti
-            uiPanelAktivnosti.Invalidate();
             listaDaniAktivnosti.Clear();
+            odrediTjedan(uiActionOdabirDatuma.Value);
+            uiPanelAktivnosti.Invalidate();
             ispisAktivnosti();
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
