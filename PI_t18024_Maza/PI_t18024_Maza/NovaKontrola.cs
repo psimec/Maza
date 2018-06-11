@@ -12,9 +12,12 @@ namespace PI_t18024_Maza
 {
     public partial class NovaKontrola : Form
     {
-        public NovaKontrola()
+        Kalendar kalendar;
+
+        public NovaKontrola(Kalendar kalendar)
         {
             InitializeComponent();
+            this.kalendar = kalendar;
         }
 
         private void NovaKontrola_Load(object sender, EventArgs e)
@@ -74,8 +77,7 @@ namespace PI_t18024_Maza
 
         private void NovaKontrola_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Kalendar nova = new Kalendar();
-            nova.Refresh();
+            kalendar.Osvjezi();
         }
     }
 }

@@ -177,7 +177,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.uiPanelAktivnosti.Location = new System.Drawing.Point(175, 138);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
             this.uiPanelAktivnosti.RowCount = 7;
@@ -232,7 +232,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(162, 86);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 81);
             this.panel1.TabIndex = 13;
@@ -254,7 +254,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "Kalendar";
             this.Text = "Kalendar";
             this.Controls.SetChildIndex(this.label1, 0);

@@ -23,11 +23,11 @@ namespace PI_t18024_Maza
         {
             using (var db = new MazaEntities())
             {
-                uiOdabirVlasnika.DataSource = db.Vlasnik.ToList();
-                uiOdabirVlasnika.DisplayMember = "Ime";
-                uiOdabirVlasnika.ValueMember = "IdVlasnik";
+                //uiOdabirVlasnika.DataSource = db.Vlasnik.ToList();
+                //uiOdabirVlasnika.DisplayMember = "Ime";
+                //uiOdabirVlasnika.ValueMember = "IdVlasnik";
 
-                ui
+                //ui
             }
         }
     }

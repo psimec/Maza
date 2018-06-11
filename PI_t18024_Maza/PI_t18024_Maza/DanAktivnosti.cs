@@ -10,6 +10,7 @@ namespace PI_t18024_Maza
     public class DanAktivnosti
     {
         public DayOfWeek Dan;
+        public DateTime datum;
         public List<Button> ListaAktivnosti = new List<Button>();
 
         public DanAktivnosti(DayOfWeek dan, Button aktivnost)
@@ -21,6 +22,11 @@ namespace PI_t18024_Maza
         public void DodajAktivnost(Button aktivnost)
         {
             ListaAktivnosti.Add(aktivnost);
+        }
+
+        public void SortirajListuAktivnosti()
+        {
+            ListaAktivnosti = ListaAktivnosti.OrderBy(a => a.Text).ToList();
         }
     }
 }

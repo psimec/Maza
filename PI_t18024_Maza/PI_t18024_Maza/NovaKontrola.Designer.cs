@@ -82,10 +82,11 @@
             // 
             // uiOdabirDatum
             // 
+            this.uiOdabirDatum.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.uiOdabirDatum.Location = new System.Drawing.Point(85, 105);
             this.uiOdabirDatum.Name = "uiOdabirDatum";
             this.uiOdabirDatum.Size = new System.Drawing.Size(211, 20);
-            this.uiOdabirDatum.TabIndex = 4;
+            this.uiOdabirDatum.TabIndex = 1;
             // 
             // label3
             // 

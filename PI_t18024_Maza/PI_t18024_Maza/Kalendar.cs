@@ -40,7 +40,7 @@ namespace PI_t18024_Maza
                 kontrola.ShowDialog();
                 this.Close();
             };
-            novi.Text = datum + Environment.NewLine + zivotinja;
+            novi.Text = datum.TimeOfDay + Environment.NewLine +zivotinja;
             novi.Size = new Size(100, 50);
             return novi;
         }
@@ -96,6 +96,7 @@ namespace PI_t18024_Maza
             foreach (var danTjedna in listaDaniAktivnosti)
             {
                 int red = 0;
+                danTjedna.SortirajListuAktivnosti();
                 foreach (var aktivnost in danTjedna.ListaAktivnosti)
                 {
                     postaviAktivnost(aktivnost, (int)danTjedna.Dan -1, red);
@@ -104,7 +105,7 @@ namespace PI_t18024_Maza
             }
         }
 
-        private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
+        public void Osvjezi()
         {
             uiPanelAktivnosti.Controls.Clear();
             listaDaniAktivnosti.Clear();
@@ -112,6 +113,11 @@ namespace PI_t18024_Maza
             uiPanelAktivnosti.Invalidate();
             ispisAktivnosti();
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
+        }
+
+        private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
+        {
+            Osvjezi();
         }
 
         private void uiPanelAktivnosti_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -124,7 +130,7 @@ namespace PI_t18024_Maza
         
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
         {
-            Form kreirajKontrolu = new NovaKontrola();
+            Form kreirajKontrolu = new NovaKontrola(this);
             kreirajKontrolu.ShowDialog();
         }
     }
