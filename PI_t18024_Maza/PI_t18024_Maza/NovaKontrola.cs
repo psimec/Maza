@@ -19,10 +19,18 @@ namespace PI_t18024_Maza
 
         private void NovaKontrola_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_18024_DBDataSet.veterinar' table. You can move, or remove it, as needed.
-            this.veterinarTableAdapter.Fill(this._18024_DBDataSet.veterinar);
-            // TODO: This line of code loads data into the '_18024_DBDataSet.zivotinja' table. You can move, or remove it, as needed.
-            this.zivotinjaTableAdapter.Fill(this._18024_DBDataSet.zivotinja);
+            using (var db = new MazaEntities())
+            {
+                uiOdabirVeterinar.DataSource = db.Veterinar.ToList();
+                uiOdabirVeterinar.DisplayMember = "Ime";
+                uiOdabirVeterinar.ValueMember = "ID_Veterinar";
+
+                uiOdabirZivotinja.DataSource = db.Zivotinja.ToList();
+                uiOdabirZivotinja.DisplayMember = "Ime";
+                uiOdabirZivotinja.ValueMember = "ID_Zivotinja";
+
+                uiOdabirStatus.SelectedIndex = 1;
+            }    
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -36,16 +44,18 @@ namespace PI_t18024_Maza
             {
                 using (var db = new MazaEntities())
                 {
-                    Zivotinja zivotinja = db.Zivotinja.FirstOrDefault(z => z.IdZivotinja == (int)uiOdabirZivotinja.SelectedValue);
-                    Veterinar veterinar = db.Veterinar.FirstOrDefault(z => z.IdVeterinar == (int)uiOdabirVeterinar.SelectedValue);
+                    Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
+                    Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
+
+                    MessageBox.Show(zivotinja.IdZivotinja.ToString());
 
                     db.Zivotinja.Attach(zivotinja);
                     db.Veterinar.Attach(veterinar);
 
                     Kontrola kontrola = new Kontrola
                     {
-                        IdVeterinar = int.Parse(uiOdabirVeterinar.SelectedValue.ToString()),
-                        IdZivotinja = int.Parse(uiOdabirZivotinja.SelectedValue.ToString()),
+                        IdVeterinar = veterinar.IdVeterinar,
+                        IdZivotinja = zivotinja.IdZivotinja,
                         DatumKontrole = uiOdabirDatum.Value,
                         Status = uiOdabirStatus.Text,
                         Opis = uiUnosOpis.Text,
