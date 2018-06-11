@@ -9963,7 +9963,7 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_ug" +
@@ -9972,22 +9972,9 @@ SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, datum_ug" +
-                "inuca, ID_vlasnik\r\nFROM     zivotinja\r\nWHERE  (ID_vlasnik = @ID_vlasnik)";
+                "inuca, ID_vlasnik FROM dbo.zivotinja\r\nWHERE (ID_zivotinja = @ID_zivotinja)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_vlasnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_vlasnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ID_zivotinja, ime, spol, vrsta, datum_rodenja, broj_cipa, težina, d" +
-                "atum_uginuca, ID_vlasnik\r\nFROM            zivotinja\r\nWHERE        (zivotinja.ID_" +
-                "zivotinja = @zivotinja)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT zivotinja.ID_zivotinja, zivotinja.ime, zivotinja.spol, zivotinja.vrsta, zivotinja.datum_rodenja, zivotinja.broj_cipa, zivotinja.težina, zivotinja.datum_uginuca, vlasnik.ime AS Ime, vlasnik.prezime
-FROM     zivotinja INNER JOIN
-                  vlasnik ON zivotinja.ID_vlasnik = vlasnik.ID_vlasnik";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10018,36 +10005,9 @@ FROM     zivotinja INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByVlasnikId(_18024_DBDataSet.zivotinjaDataTable dataTable, int ID_vlasnik) {
+        public virtual int FillByZivotinjaId(_18024_DBDataSet.zivotinjaDataTable dataTable, int ID_zivotinja) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_vlasnik));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByZivotinjaId(_18024_DBDataSet.zivotinjaDataTable dataTable, int zivotinja) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillZivotinje(_18024_DBDataSet.zivotinjaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_zivotinja));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

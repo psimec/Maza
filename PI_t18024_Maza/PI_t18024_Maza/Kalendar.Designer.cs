@@ -84,7 +84,6 @@
             this.uiActionZivotinje.TabIndex = 1;
             this.uiActionZivotinje.Text = "Životinje";
             this.uiActionZivotinje.UseVisualStyleBackColor = false;
-            this.uiActionZivotinje.Click += new System.EventHandler(this.uiActionZivotinje_Click);
             // 
             // uiActionKalendar
             // 
