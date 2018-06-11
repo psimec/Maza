@@ -36,8 +36,6 @@ namespace PI_t18024_Maza
 
         private void KontrolaForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_18024_DBDataSet.cjepivo' table. You can move, or remove it, as needed.
-            this.cjepivoTableAdapter.Fill(this._18024_DBDataSet.cjepivo);
             if (idKontrola == -1)
             {
                 // TODO: This line of code loads data into the '_18024_DBDataSet.kontrola' table. You can move, or remove it, as needed.

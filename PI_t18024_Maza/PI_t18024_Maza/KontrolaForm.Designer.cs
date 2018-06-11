@@ -33,11 +33,13 @@
             System.Windows.Forms.Label datum_kontroleLabel;
             System.Windows.Forms.Label statusLabel;
             System.Windows.Forms.Label opisLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaForm));
             System.Windows.Forms.Label zivotinjaLabel;
             System.Windows.Forms.Label veterinarLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaForm));
             this.kontrolaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.kontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,12 +55,8 @@
             this.datum_kontroleDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.opisTextBox = new System.Windows.Forms.TextBox();
-            this.kontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
             this.kontrolaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.kontrolaTableAdapter();
             this.tableAdapterManager = new PI_t18024_Maza._18024_DBDataSetTableAdapters.TableAdapterManager();
-            this.cjepivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cjepivoTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.cjepivoTableAdapter();
             this.zivotinjaTextBox = new System.Windows.Forms.TextBox();
             this.veterinarTextBox = new System.Windows.Forms.TextBox();
             iD_kontrolaLabel = new System.Windows.Forms.Label();
@@ -71,7 +69,6 @@
             this.kontrolaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cjepivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iD_kontrolaLabel
@@ -110,6 +107,24 @@
             opisLabel.TabIndex = 13;
             opisLabel.Text = "Opis:";
             // 
+            // zivotinjaLabel
+            // 
+            zivotinjaLabel.AutoSize = true;
+            zivotinjaLabel.Location = new System.Drawing.Point(555, 119);
+            zivotinjaLabel.Name = "zivotinjaLabel";
+            zivotinjaLabel.Size = new System.Drawing.Size(50, 13);
+            zivotinjaLabel.TabIndex = 15;
+            zivotinjaLabel.Text = "Životinja:";
+            // 
+            // veterinarLabel
+            // 
+            veterinarLabel.AutoSize = true;
+            veterinarLabel.Location = new System.Drawing.Point(382, 120);
+            veterinarLabel.Name = "veterinarLabel";
+            veterinarLabel.Size = new System.Drawing.Size(52, 13);
+            veterinarLabel.TabIndex = 14;
+            veterinarLabel.Text = "Veterinar:";
+            // 
             // kontrolaBindingNavigator
             // 
             this.kontrolaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -129,14 +144,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.kontrolaBindingNavigatorSaveItem});
-            this.kontrolaBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.kontrolaBindingNavigator.Location = new System.Drawing.Point(162, 81);
             this.kontrolaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.kontrolaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.kontrolaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.kontrolaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.kontrolaBindingNavigator.Name = "kontrolaBindingNavigator";
             this.kontrolaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.kontrolaBindingNavigator.Size = new System.Drawing.Size(1075, 25);
+            this.kontrolaBindingNavigator.Size = new System.Drawing.Size(913, 25);
             this.kontrolaBindingNavigator.TabIndex = 2;
             this.kontrolaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -148,6 +163,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // kontrolaBindingSource
+            // 
+            this.kontrolaBindingSource.DataMember = "kontrola";
+            this.kontrolaBindingSource.DataSource = this._18024_DBDataSet;
+            // 
+            // _18024_DBDataSet
+            // 
+            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
+            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -267,16 +292,6 @@
             this.opisTextBox.Size = new System.Drawing.Size(100, 20);
             this.opisTextBox.TabIndex = 14;
             // 
-            // kontrolaBindingSource
-            // 
-            this.kontrolaBindingSource.DataMember = "kontrola";
-            this.kontrolaBindingSource.DataSource = this._18024_DBDataSet;
-            // 
-            // _18024_DBDataSet
-            // 
-            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
-            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // kontrolaTableAdapter
             // 
             this.kontrolaTableAdapter.ClearBeforeFill = true;
@@ -297,15 +312,6 @@
             this.tableAdapterManager.vlasnikTableAdapter = null;
             this.tableAdapterManager.zivotinjaTableAdapter = null;
             // 
-            // cjepivoBindingSource
-            // 
-            this.cjepivoBindingSource.DataMember = "cjepivo";
-            this.cjepivoBindingSource.DataSource = this._18024_DBDataSet;
-            // 
-            // cjepivoTableAdapter
-            // 
-            this.cjepivoTableAdapter.ClearBeforeFill = true;
-            // 
             // zivotinjaTextBox
             // 
             this.zivotinjaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "zivotinja", true));
@@ -314,15 +320,6 @@
             this.zivotinjaTextBox.Size = new System.Drawing.Size(100, 20);
             this.zivotinjaTextBox.TabIndex = 16;
             // 
-            // zivotinjaLabel
-            // 
-            zivotinjaLabel.AutoSize = true;
-            zivotinjaLabel.Location = new System.Drawing.Point(555, 119);
-            zivotinjaLabel.Name = "zivotinjaLabel";
-            zivotinjaLabel.Size = new System.Drawing.Size(50, 13);
-            zivotinjaLabel.TabIndex = 15;
-            zivotinjaLabel.Text = "Životinja:";
-            // 
             // veterinarTextBox
             // 
             this.veterinarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "Veterinar", true));
@@ -330,15 +327,6 @@
             this.veterinarTextBox.Name = "veterinarTextBox";
             this.veterinarTextBox.Size = new System.Drawing.Size(100, 20);
             this.veterinarTextBox.TabIndex = 15;
-            // 
-            // veterinarLabel
-            // 
-            veterinarLabel.AutoSize = true;
-            veterinarLabel.Location = new System.Drawing.Point(382, 120);
-            veterinarLabel.Name = "veterinarLabel";
-            veterinarLabel.Size = new System.Drawing.Size(52, 13);
-            veterinarLabel.TabIndex = 14;
-            veterinarLabel.Text = "Veterinar:";
             // 
             // KontrolaForm
             // 
@@ -379,7 +367,6 @@
             this.kontrolaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cjepivoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,8 +395,6 @@
         private System.Windows.Forms.DateTimePicker datum_kontroleDateTimePicker;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.TextBox opisTextBox;
-        private System.Windows.Forms.BindingSource cjepivoBindingSource;
-        private _18024_DBDataSetTableAdapters.cjepivoTableAdapter cjepivoTableAdapter;
         private System.Windows.Forms.TextBox zivotinjaTextBox;
         private System.Windows.Forms.TextBox veterinarTextBox;
     }
