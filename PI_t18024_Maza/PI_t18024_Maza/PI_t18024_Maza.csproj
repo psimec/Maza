@@ -151,6 +151,12 @@
     <Compile Include="Veterinar.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vlasnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vlasnici.Designer.cs">
+      <DependentUpon>Vlasnici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vlasnik.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vlasnici.resx">
+      <DependentUpon>Vlasnici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Zivotinje.resx">
       <DependentUpon>Zivotinje.cs</DependentUpon>
     </EmbeddedResource>

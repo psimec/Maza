@@ -38,6 +38,12 @@ namespace PI_t18024_Maza
 
         private void uiActionVlasnici_Click(object sender, EventArgs e)
         {
+            Vlasnici vlasnici = new Vlasnici();
+            this.Hide();
+            vlasnici.StartPosition = FormStartPosition.CenterParent;
+            vlasnici.ShowDialog();
+            this.Close();
+            
         }
 
         private void uiActionKontrola_Click(object sender, EventArgs e)
