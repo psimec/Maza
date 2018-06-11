@@ -15,12 +15,14 @@ namespace PI_t18024_Maza
         public Dizajn()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void uiActionKalendar_Click(object sender, EventArgs e)
         {            
             Kalendar kalendar = new Kalendar();
-            this.Hide();
+            this.Hide();           
+            kalendar.StartPosition = FormStartPosition.CenterScreen;
             kalendar.ShowDialog();
             this.Close();
         }
@@ -29,6 +31,7 @@ namespace PI_t18024_Maza
         {
             Zivotinje zivotinja = new Zivotinje();
             this.Hide();
+            zivotinja.StartPosition = FormStartPosition.CenterScreen;
             zivotinja.ShowDialog();
             this.Close();
         }

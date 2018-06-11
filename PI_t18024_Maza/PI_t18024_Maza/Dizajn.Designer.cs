@@ -218,6 +218,7 @@
             this.Controls.Add(this.ZaglavljePanel);
             this.Controls.Add(this.LijeviPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dizajn";
             this.Text = "Dizajn";
             this.LijeviPanel.ResumeLayout(false);

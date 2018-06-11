@@ -20,16 +20,26 @@ namespace PI_t18024_Maza
 
         public void PrikaziVlasnike()
         {
-            BindingList<Vlasnik> listaVlasnike = null;
+            BindingList<Vlasnik> listaVlasnika = null;
             using (var db = new MazaEntities())
             {
-                listaVlasnike = new BindingList<Vlasnik>(db.Vlasnik.ToList());
+                listaVlasnika = new BindingList<Vlasnik>(db.Vlasnik.ToList());
             }
-            vlasnikBindingSource.DataSource = listaVlasnike;
+            uiPrikazVlasnika.DataSource = listaVlasnika;
+        }
+
+        public void PrikaziZivotinje(Vlasnik vlasnik)
+        {
+            BindingList<Zivotinje> listaZivotinja = null;
+            
         }
 
         private void Zivotinje_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_18024_DBDataSet.zivotinja' table. You can move, or remove it, as needed.
+            this.zivotinjaTableAdapter.Fill(this._18024_DBDataSet.zivotinja);
+            // TODO: This line of code loads data into the '_18024_DBDataSet.vlasnik' table. You can move, or remove it, as needed.
+            this.vlasnikTableAdapter.Fill(this._18024_DBDataSet.vlasnik);
             PrikaziVlasnike();
         }
     }
