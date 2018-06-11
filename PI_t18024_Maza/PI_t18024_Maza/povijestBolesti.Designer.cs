@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class povijestBolesti
+    partial class PovijestBolesti
     {
         /// <summary>
         /// Required designer variable.

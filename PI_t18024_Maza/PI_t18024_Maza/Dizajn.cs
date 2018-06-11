@@ -42,6 +42,11 @@ namespace PI_t18024_Maza
 
         private void uiActionKontrola_Click(object sender, EventArgs e)
         {
+            KontrolaForm kontrola = new KontrolaForm(); // krivo ime forme
+            this.Hide();
+            kontrola.StartPosition = FormStartPosition.CenterScreen;
+            kontrola.ShowDialog();
+            this.Close();
         }
 
         private void uiActionClose_Click(object sender, EventArgs e)

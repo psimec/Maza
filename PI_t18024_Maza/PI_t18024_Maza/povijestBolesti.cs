@@ -12,31 +12,34 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class povijestBolesti : Form
+    public partial class PovijestBolesti : Form
     {
-        public povijestBolesti()
+        private int idZivotinja;
+
+        public PovijestBolesti(int idZivotinja)
         {
             InitializeComponent();
+            this.idZivotinja = idZivotinja;
         }
 
         private void povijestBolesti_Load(object sender, EventArgs e)
         {
             _18024_DBDataSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the '_18024_DBDataSet.Lijek' table. You can move, or remove it, as needed.
-            this.LijekTableAdapter.FillByZivotnijaId(this._18024_DBDataSet.Lijek, 3);
+            this.LijekTableAdapter.FillByZivotnijaId(this._18024_DBDataSet.Lijek, idZivotinja);
             // TODO: This line of code loads data into the '_18024_DBDataSet.bolest' table. You can move, or remove it, as needed.
             this.bolestTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.bolest, 3);
             // TODO: This line of code loads data into the '_18024_DBDataSet.dijagnoza' table. You can move, or remove it, as needed.
-            this.dijagnozaTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.dijagnoza, 3);
+            this.dijagnozaTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.dijagnoza, idZivotinja);
             // TODO: This line of code loads data into the '_18024_DBDataSet.vlasnik' table. You can move, or remove it, as needed.
-            this.vlasnikTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.vlasnik, 3);
+            this.vlasnikTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.vlasnik, idZivotinja);
             // TODO: This line of code loads data into the '_18024_DBDataSet.zivotinja' table. You can move, or remove it, as needed.
-            this.zivotinjaTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.zivotinja, 3);
+            this.zivotinjaTableAdapter.FillByZivotinjaId(this._18024_DBDataSet.zivotinja, idZivotinja);
 
             this.reportViewer1.RefreshReport();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // test
         {
             Warning[] warnings;
             string[] streamids;

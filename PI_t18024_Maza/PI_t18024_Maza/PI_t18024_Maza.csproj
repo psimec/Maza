@@ -111,6 +111,12 @@
     <Compile Include="Kontrola.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="KontrolaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KontrolaForm.Designer.cs">
+      <DependentUpon>KontrolaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lijek.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
@@ -124,11 +130,11 @@
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
     <Compile Include="Pas.cs" />
-    <Compile Include="povijestBolesti.cs">
+    <Compile Include="PovijestBolesti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="povijestBolesti.Designer.cs">
-      <DependentUpon>povijestBolesti.cs</DependentUpon>
+    <Compile Include="PovijestBolesti.Designer.cs">
+      <DependentUpon>PovijestBolesti.cs</DependentUpon>
     </Compile>
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
@@ -172,11 +178,14 @@
     <EmbeddedResource Include="Kalendar.resx">
       <DependentUpon>Kalendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KontrolaForm.resx">
+      <DependentUpon>KontrolaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NovaKontrola.resx">
       <DependentUpon>NovaKontrola.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="povijestBolesti.resx">
-      <DependentUpon>povijestBolesti.cs</DependentUpon>
+    <EmbeddedResource Include="PovijestBolesti.resx">
+      <DependentUpon>PovijestBolesti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
