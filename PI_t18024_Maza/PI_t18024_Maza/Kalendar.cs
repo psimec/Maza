@@ -29,7 +29,7 @@ namespace PI_t18024_Maza
             ispisAktivnosti();
         }
 
-        private Button kreirajAkrivnost(DateTime datum, string zivotinja, int idKontrola) 
+        private Button kreirajAkrivnost(DateTime datum, string zivotinja, int idKontrola, string opis) 
         {
             Button novi = new Button();
             novi.Click += (s, e) => 
@@ -40,7 +40,7 @@ namespace PI_t18024_Maza
                 kontrola.ShowDialog();
                 this.Close();
             };
-            novi.Text = datum.TimeOfDay + Environment.NewLine +zivotinja;
+            novi.Text = datum.TimeOfDay + Environment.NewLine +zivotinja + Environment.NewLine + opis;
             novi.Size = new Size(100, 50);
             return novi;
         }
@@ -73,7 +73,7 @@ namespace PI_t18024_Maza
                     {
                         //MessageBox.Show(datumOd.AddDays(-1).ToString());
                         Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
-                        Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime, kontrola.IdKontrola);
+                        Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime, kontrola.IdKontrola, kontrola.Opis);
                         int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.DatumKontrole.DayOfWeek);
                         if (index >= 0)
                         {
@@ -131,6 +131,7 @@ namespace PI_t18024_Maza
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
         {
             Form kreirajKontrolu = new NovaKontrola(this);
+            kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
         }
     }
