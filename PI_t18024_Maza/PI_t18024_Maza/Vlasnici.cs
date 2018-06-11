@@ -17,17 +17,32 @@ namespace PI_t18024_Maza
             InitializeComponent();
         }
 
+        public void PopuniVlasnike()
+        {
+
+        }
+        public void PopuniZivotinje(Vlasnik vlasnik)
+        {
+            BindingList<Zivotinja> listaZivotinja = null;
+            using (var db = new MazaEntities())
+            {
+                db.Vlasnik.Attach(vlasnik);
+                listaZivotinja = new BindingList<Zivotinja>(vlasnik.Zivotinja.ToList<Zivotinja>());
+            }
+            zivotinjaBindingSource.DataSource = listaZivotinja;
+        }
         private void Vlasnici_Load(object sender, EventArgs e)
         {
+            PopuniVlasnike();
         }
 
-        public void PrikaziZivotinje(int id)
+        private void uiPrikazVlasnika_SelectionChanged(object sender, EventArgs e)
         {
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            PrikaziZivotinje(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+            Vlasnik selektiraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
+            if (selektiraniVlasnik != null)
+            {
+                PopuniZivotinje(selektiraniVlasnik);
+            }
         }
     }
 }

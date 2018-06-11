@@ -102,6 +102,12 @@
     <Compile Include="Dizajn.Designer.cs">
       <DependentUpon>Dizajn.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajZivotinjuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajZivotinjuForm.Designer.cs">
+      <DependentUpon>DodajZivotinjuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="Dizajn.resx">
       <DependentUpon>Dizajn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajZivotinjuForm.resx">
+      <DependentUpon>DodajZivotinjuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
     <EmbeddedResource Include="Kalendar.resx">

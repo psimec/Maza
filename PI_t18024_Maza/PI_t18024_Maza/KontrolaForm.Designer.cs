@@ -59,6 +59,7 @@
             this.tableAdapterManager = new PI_t18024_Maza._18024_DBDataSetTableAdapters.TableAdapterManager();
             this.zivotinjaTextBox = new System.Windows.Forms.TextBox();
             this.veterinarTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             iD_kontrolaLabel = new System.Windows.Forms.Label();
             datum_kontroleLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
@@ -74,54 +75,60 @@
             // iD_kontrolaLabel
             // 
             iD_kontrolaLabel.AutoSize = true;
-            iD_kontrolaLabel.Location = new System.Drawing.Point(196, 119);
+            iD_kontrolaLabel.Location = new System.Drawing.Point(261, 146);
+            iD_kontrolaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             iD_kontrolaLabel.Name = "iD_kontrolaLabel";
-            iD_kontrolaLabel.Size = new System.Drawing.Size(69, 13);
+            iD_kontrolaLabel.Size = new System.Drawing.Size(92, 17);
             iD_kontrolaLabel.TabIndex = 3;
             iD_kontrolaLabel.Text = "Broj kontrole:";
             // 
             // datum_kontroleLabel
             // 
             datum_kontroleLabel.AutoSize = true;
-            datum_kontroleLabel.Location = new System.Drawing.Point(731, 120);
+            datum_kontroleLabel.Location = new System.Drawing.Point(975, 148);
+            datum_kontroleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             datum_kontroleLabel.Name = "datum_kontroleLabel";
-            datum_kontroleLabel.Size = new System.Drawing.Size(41, 13);
+            datum_kontroleLabel.Size = new System.Drawing.Size(53, 17);
             datum_kontroleLabel.TabIndex = 9;
             datum_kontroleLabel.Text = "Datum:";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(220, 150);
+            statusLabel.Location = new System.Drawing.Point(293, 185);
+            statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(40, 13);
+            statusLabel.Size = new System.Drawing.Size(52, 17);
             statusLabel.TabIndex = 11;
             statusLabel.Text = "Status:";
             // 
             // opisLabel
             // 
             opisLabel.AutoSize = true;
-            opisLabel.Location = new System.Drawing.Point(405, 150);
+            opisLabel.Location = new System.Drawing.Point(540, 185);
+            opisLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             opisLabel.Name = "opisLabel";
-            opisLabel.Size = new System.Drawing.Size(31, 13);
+            opisLabel.Size = new System.Drawing.Size(41, 17);
             opisLabel.TabIndex = 13;
             opisLabel.Text = "Opis:";
             // 
             // zivotinjaLabel
             // 
             zivotinjaLabel.AutoSize = true;
-            zivotinjaLabel.Location = new System.Drawing.Point(555, 119);
+            zivotinjaLabel.Location = new System.Drawing.Point(740, 146);
+            zivotinjaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             zivotinjaLabel.Name = "zivotinjaLabel";
-            zivotinjaLabel.Size = new System.Drawing.Size(50, 13);
+            zivotinjaLabel.Size = new System.Drawing.Size(65, 17);
             zivotinjaLabel.TabIndex = 15;
             zivotinjaLabel.Text = "Životinja:";
             // 
             // veterinarLabel
             // 
             veterinarLabel.AutoSize = true;
-            veterinarLabel.Location = new System.Drawing.Point(382, 120);
+            veterinarLabel.Location = new System.Drawing.Point(509, 148);
+            veterinarLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             veterinarLabel.Name = "veterinarLabel";
-            veterinarLabel.Size = new System.Drawing.Size(52, 13);
+            veterinarLabel.Size = new System.Drawing.Size(70, 17);
             veterinarLabel.TabIndex = 14;
             veterinarLabel.Text = "Veterinar:";
             // 
@@ -131,6 +138,7 @@
             this.kontrolaBindingNavigator.BindingSource = this.kontrolaBindingSource;
             this.kontrolaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.kontrolaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.kontrolaBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.kontrolaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -144,14 +152,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.kontrolaBindingNavigatorSaveItem});
-            this.kontrolaBindingNavigator.Location = new System.Drawing.Point(162, 81);
+            this.kontrolaBindingNavigator.Location = new System.Drawing.Point(216, 100);
             this.kontrolaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.kontrolaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.kontrolaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.kontrolaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.kontrolaBindingNavigator.Name = "kontrolaBindingNavigator";
             this.kontrolaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.kontrolaBindingNavigator.Size = new System.Drawing.Size(913, 25);
+            this.kontrolaBindingNavigator.Size = new System.Drawing.Size(1217, 27);
             this.kontrolaBindingNavigator.TabIndex = 2;
             this.kontrolaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -161,7 +169,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // kontrolaBindingSource
@@ -177,7 +185,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -187,7 +195,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -196,7 +204,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -205,27 +213,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -233,7 +241,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -242,54 +250,58 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // kontrolaBindingNavigatorSaveItem
             // 
             this.kontrolaBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.kontrolaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("kontrolaBindingNavigatorSaveItem.Image")));
             this.kontrolaBindingNavigatorSaveItem.Name = "kontrolaBindingNavigatorSaveItem";
-            this.kontrolaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.kontrolaBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.kontrolaBindingNavigatorSaveItem.Text = "Save Data";
             this.kontrolaBindingNavigatorSaveItem.Click += new System.EventHandler(this.kontrolaBindingNavigatorSaveItem_Click);
             // 
             // iD_kontrolaTextBox
             // 
             this.iD_kontrolaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "ID_kontrola", true));
-            this.iD_kontrolaTextBox.Location = new System.Drawing.Point(264, 116);
+            this.iD_kontrolaTextBox.Location = new System.Drawing.Point(352, 143);
+            this.iD_kontrolaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iD_kontrolaTextBox.Name = "iD_kontrolaTextBox";
             this.iD_kontrolaTextBox.ReadOnly = true;
-            this.iD_kontrolaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iD_kontrolaTextBox.Size = new System.Drawing.Size(132, 22);
             this.iD_kontrolaTextBox.TabIndex = 4;
             // 
             // datum_kontroleDateTimePicker
             // 
             this.datum_kontroleDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.kontrolaBindingSource, "datum_kontrole", true));
-            this.datum_kontroleDateTimePicker.Location = new System.Drawing.Point(775, 116);
+            this.datum_kontroleDateTimePicker.Location = new System.Drawing.Point(1033, 143);
+            this.datum_kontroleDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datum_kontroleDateTimePicker.Name = "datum_kontroleDateTimePicker";
-            this.datum_kontroleDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.datum_kontroleDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.datum_kontroleDateTimePicker.TabIndex = 10;
             // 
             // statusTextBox
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(264, 147);
+            this.statusTextBox.Location = new System.Drawing.Point(352, 181);
+            this.statusTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(100, 20);
+            this.statusTextBox.Size = new System.Drawing.Size(132, 22);
             this.statusTextBox.TabIndex = 12;
             // 
             // opisTextBox
             // 
             this.opisTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "opis", true));
-            this.opisTextBox.Location = new System.Drawing.Point(440, 147);
+            this.opisTextBox.Location = new System.Drawing.Point(587, 181);
+            this.opisTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.opisTextBox.Name = "opisTextBox";
-            this.opisTextBox.Size = new System.Drawing.Size(100, 20);
+            this.opisTextBox.Size = new System.Drawing.Size(132, 22);
             this.opisTextBox.TabIndex = 14;
             // 
             // kontrolaTableAdapter
@@ -315,24 +327,35 @@
             // zivotinjaTextBox
             // 
             this.zivotinjaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "zivotinja", true));
-            this.zivotinjaTextBox.Location = new System.Drawing.Point(609, 116);
+            this.zivotinjaTextBox.Location = new System.Drawing.Point(812, 143);
+            this.zivotinjaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zivotinjaTextBox.Name = "zivotinjaTextBox";
-            this.zivotinjaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.zivotinjaTextBox.Size = new System.Drawing.Size(132, 22);
             this.zivotinjaTextBox.TabIndex = 16;
             // 
             // veterinarTextBox
             // 
             this.veterinarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kontrolaBindingSource, "Veterinar", true));
-            this.veterinarTextBox.Location = new System.Drawing.Point(440, 117);
+            this.veterinarTextBox.Location = new System.Drawing.Point(587, 144);
+            this.veterinarTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.veterinarTextBox.Name = "veterinarTextBox";
-            this.veterinarTextBox.Size = new System.Drawing.Size(100, 20);
+            this.veterinarTextBox.Size = new System.Drawing.Size(132, 22);
             this.veterinarTextBox.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(216, 424);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(7, 100);
+            this.panel1.TabIndex = 17;
             // 
             // KontrolaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 632);
+            this.ClientSize = new System.Drawing.Size(1433, 778);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(zivotinjaLabel);
             this.Controls.Add(this.zivotinjaTextBox);
             this.Controls.Add(veterinarLabel);
@@ -346,6 +369,7 @@
             this.Controls.Add(iD_kontrolaLabel);
             this.Controls.Add(this.iD_kontrolaTextBox);
             this.Controls.Add(this.kontrolaBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KontrolaForm";
             this.Text = "Kontrola";
             this.Load += new System.EventHandler(this.KontrolaForm_Load);
@@ -362,6 +386,7 @@
             this.Controls.SetChildIndex(veterinarLabel, 0);
             this.Controls.SetChildIndex(this.zivotinjaTextBox, 0);
             this.Controls.SetChildIndex(zivotinjaLabel, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingNavigator)).EndInit();
             this.kontrolaBindingNavigator.ResumeLayout(false);
             this.kontrolaBindingNavigator.PerformLayout();
@@ -397,5 +422,6 @@
         private System.Windows.Forms.TextBox opisTextBox;
         private System.Windows.Forms.TextBox zivotinjaTextBox;
         private System.Windows.Forms.TextBox veterinarTextBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

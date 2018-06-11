@@ -16,8 +16,8 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
         }
-               
-        private void Zivotinje_Load(object sender, EventArgs e)
+
+        public void PrikaziZivotinje()
         {
             BindingList<ViewPrikazZivotinja> listaZivotinja = null;
             using (var db = new MazaEntities())
@@ -28,6 +28,16 @@ namespace PI_t18024_Maza
 
             dataGridView1.Columns[0].Visible = false;
         }
-        
+               
+        private void Zivotinje_Load(object sender, EventArgs e)
+        {
+            PrikaziZivotinje();
+        }
+
+        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
+        {
+            DodajZivotinjuForm dodaj = new DodajZivotinjuForm();
+
+        }
     }
 }
