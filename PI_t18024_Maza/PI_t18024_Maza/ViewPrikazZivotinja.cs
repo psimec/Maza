@@ -12,21 +12,17 @@ namespace PI_t18024_Maza
     using System;
     using System.Collections.Generic;
     
-    public partial class Vlasnik
+    public partial class ViewPrikazZivotinja
     {
-        public Vlasnik()
-        {
-            this.Zivotinja = new HashSet<Zivotinja>();
-        }
-    
-        public int IdVlasnik { get; set; }
+        public int ZivotinjaID { get; set; }
         public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public string AdresaStavnovanja { get; set; }
-        public string BrojTelefona1 { get; set; }
-        public string BrojTelefona2 { get; set; }
-        public string Email { get; set; }
-    
-        public virtual ICollection<Zivotinja> Zivotinja { get; set; }
+        public string Spol { get; set; }
+        public string Vrsta { get; set; }
+        public System.DateTime Datum_Rođenja { get; set; }
+        public Nullable<int> Broj_Čipa { get; set; }
+        public int Težina { get; set; }
+        public Nullable<System.DateTime> Datum_Uginuća { get; set; }
+        public string Ime_Vlasnika { get; set; }
+        public string Prezime_Vlasnika { get; set; }
     }
 }

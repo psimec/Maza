@@ -24,6 +24,7 @@
         <AssociationConnector Association="DBModel.fk_Propisani_lijek_Lijek1" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.fk_Životinja_Vlasnik" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.cjepivo_za_zivotinju" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBModel.ViewPrikazZivotinja" Width="1.75" PointX="0.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

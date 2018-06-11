@@ -125,6 +125,30 @@
           <Property Name="datum_uginuca" Type="date" />
           <Property Name="ID_vlasnik" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '18024_DB.dbo.ViewPrikazZivotinja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewPrikazZivotinja">
+          <Key>
+            <PropertyRef Name="ZivotinjaID" />
+            <PropertyRef Name="Ime" />
+            <PropertyRef Name="Spol" />
+            <PropertyRef Name="Vrsta" />
+            <PropertyRef Name="Datum Rođenja" />
+            <PropertyRef Name="Težina" />
+            <PropertyRef Name="Ime Vlasnika" />
+            <PropertyRef Name="Prezime Vlasnika" />
+          </Key>
+          <Property Name="ZivotinjaID" Type="int" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Spol" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Vrsta" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Datum Rođenja" Type="date" Nullable="false" />
+          <Property Name="Broj Čipa" Type="int" />
+          <Property Name="Težina" Type="int" Nullable="false" />
+          <Property Name="Datum Uginuća" Type="date" />
+          <Property Name="Ime Vlasnika" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Prezime Vlasnika" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <Association Name="fk_cjepivo_za_životinju_kontrola1">
           <End Role="kontrola" Type="Self.kontrola" Multiplicity="1" />
           <End Role="cjepivo_za_zivotinju" Type="Self.cjepivo_za_zivotinju" Multiplicity="*" />
@@ -257,6 +281,20 @@
           <EntitySet Name="veterinar" EntityType="Self.veterinar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vlasnik" EntityType="Self.vlasnik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zivotinja" EntityType="Self.zivotinja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewPrikazZivotinja" EntityType="Self.ViewPrikazZivotinja" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ViewPrikazZivotinja].[ZivotinjaID] AS [ZivotinjaID], 
+[ViewPrikazZivotinja].[Ime] AS [Ime], 
+[ViewPrikazZivotinja].[Spol] AS [Spol], 
+[ViewPrikazZivotinja].[Vrsta] AS [Vrsta], 
+[ViewPrikazZivotinja].[Datum Rođenja] AS [Datum Rođenja], 
+[ViewPrikazZivotinja].[Broj Čipa] AS [Broj Čipa], 
+[ViewPrikazZivotinja].[Težina] AS [Težina], 
+[ViewPrikazZivotinja].[Datum Uginuća] AS [Datum Uginuća], 
+[ViewPrikazZivotinja].[Ime Vlasnika] AS [Ime Vlasnika], 
+[ViewPrikazZivotinja].[Prezime Vlasnika] AS [Prezime Vlasnika]
+FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fk_cjepivo_za_životinju_kontrola1" Association="Self.fk_cjepivo_za_životinju_kontrola1">
             <End Role="kontrola" EntitySet="kontrola" />
             <End Role="cjepivo_za_zivotinju" EntitySet="cjepivo_za_zivotinju" />
@@ -579,7 +617,30 @@
             <End Role="kontrola" EntitySet="Kontrolas" />
             <End Role="cjepivo" EntitySet="Cjepivoes1" />
           </AssociationSet>
+          <EntitySet Name="ViewPrikazZivotinjas" EntityType="DBModel.ViewPrikazZivotinja" />
         </EntityContainer>
+        <EntityType Name="ViewPrikazZivotinja">
+          <Key>
+            <PropertyRef Name="ZivotinjaID" />
+            <PropertyRef Name="Ime" />
+            <PropertyRef Name="Spol" />
+            <PropertyRef Name="Vrsta" />
+            <PropertyRef Name="Datum_Rođenja" />
+            <PropertyRef Name="Težina" />
+            <PropertyRef Name="Ime_Vlasnika" />
+            <PropertyRef Name="Prezime_Vlasnika" />
+          </Key>
+          <Property Name="ZivotinjaID" Type="Int32" Nullable="false" />
+          <Property Name="Ime" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Spol" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Vrsta" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Datum_Rođenja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Broj_Čipa" Type="Int32" />
+          <Property Name="Težina" Type="Int32" Nullable="false" />
+          <Property Name="Datum_Uginuća" Type="DateTime" Precision="0" />
+          <Property Name="Ime_Vlasnika" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime_Vlasnika" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -714,6 +775,22 @@
               <ScalarProperty Name="IdCjepivo" ColumnName="ID_cjepiva" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="ViewPrikazZivotinjas">
+            <EntityTypeMapping TypeName="DBModel.ViewPrikazZivotinja">
+              <MappingFragment StoreEntitySet="ViewPrikazZivotinja">
+              <ScalarProperty Name="Prezime_Vlasnika" ColumnName="Prezime Vlasnika" />
+                <ScalarProperty Name="Ime_Vlasnika" ColumnName="Ime Vlasnika" />
+                <ScalarProperty Name="Datum_Uginuća" ColumnName="Datum Uginuća" />
+                <ScalarProperty Name="Težina" ColumnName="Težina" />
+                <ScalarProperty Name="Broj_Čipa" ColumnName="Broj Čipa" />
+                <ScalarProperty Name="Datum_Rođenja" ColumnName="Datum Rođenja" />
+                <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="ZivotinjaID" ColumnName="ZivotinjaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

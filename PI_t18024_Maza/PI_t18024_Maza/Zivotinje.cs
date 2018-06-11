@@ -19,10 +19,14 @@ namespace PI_t18024_Maza
                
         private void Zivotinje_Load(object sender, EventArgs e)
         {
-            _18024_DBDataSet.EnforceConstraints = false;
-            // TODO: This line of code loads data into the '_18024_DBDataSet.zivotinja' table. You can move, or remove it, as needed.
-           this.zivotinjaTableAdapter.FillZivotinje(this._18024_DBDataSet.zivotinja);
+            BindingList<ViewPrikazZivotinja> listaZivotinja = null;
+            using (var db = new MazaEntities())
+            {
+                listaZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.ToList());
+            }
+            dataGridView1.DataSource = listaZivotinja;
 
+            dataGridView1.Columns[0].Visible = false;
         }
         
     }

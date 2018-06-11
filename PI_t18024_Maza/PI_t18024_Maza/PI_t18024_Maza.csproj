@@ -151,6 +151,9 @@
     <Compile Include="Veterinar.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewPrikazZivotinja.cs">
+      <DependentUpon>db_MAZA.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vlasnici.cs">
       <SubType>Form</SubType>
     </Compile>
