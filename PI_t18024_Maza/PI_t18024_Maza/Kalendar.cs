@@ -126,7 +126,7 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
         {
-            Form kreirajKontrolu = new Kalendar();
+            Form kreirajKontrolu = new NovaKontrola();
             kreirajKontrolu.ShowDialog();
         }
     }

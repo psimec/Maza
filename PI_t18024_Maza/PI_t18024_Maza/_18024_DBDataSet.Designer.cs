@@ -7995,12 +7995,24 @@ SELECT ID_lijek, naziv, proizvodac, cijena, uputstva, rok_trajanja FROM Lijek WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_lijek, naziv, proizvodac, cijena, uputstva, rok_trajanja FROM dbo.Lijek" +
                 "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        Lijek.Naziv
+FROM            dijagnoza INNER JOIN
+                         kontrola ON dijagnoza.ID_kontrola = kontrola.ID_kontrola INNER JOIN
+                         zivotinja ON kontrola.ID_zivotinja = zivotinja.ID_zivotinja INNER JOIN
+                         vlasnik ON zivotinja.ID_vlasnik = vlasnik.ID_vlasnik LEFT JOIN
+                         propisani_lijek ON propisani_lijek.ID_dijagnoza = dijagnoza.ID_dijagnoza LEFT JOIN
+                         Lijek ON Lijek.ID_lijek = propisani_lijek.ID_lijek
+WHERE        (zivotinja.ID_zivotinja = @zivotinja)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zivotinja", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_zivotinja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8025,6 +8037,20 @@ SELECT ID_lijek, naziv, proizvodac, cijena, uputstva, rok_trajanja FROM Lijek WH
             _18024_DBDataSet.LijekDataTable dataTable = new _18024_DBDataSet.LijekDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByZivotnijaId(_18024_DBDataSet.LijekDataTable dataTable, int zivotinja) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(zivotinja));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
