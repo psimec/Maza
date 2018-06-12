@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +18,7 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
             uiUnosLozinke.UseSystemPasswordChar = true;
-        }
-
-        private void uiActionOdustani_Click(object sender, EventArgs e)
-        {
-            Close();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void prijava()
@@ -29,6 +26,14 @@ namespace PI_t18024_Maza
             string korime = uiUnosKorisnickogImena.Text;
             string lozinka = uiUnosLozinke.Text;
 
+            try
+            {
+                dohvatiPodaatke();
+            }
+            catch (ExceptionNemaInterneta ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
 
             if (korime != "" || lozinka != "")
             {
@@ -55,9 +60,16 @@ namespace PI_t18024_Maza
             }
         }
 
-        private void uiActionPrijava_Click(object sender, EventArgs e)
+        private void dohvatiPodaatke()
         {
-            prijava();
+            if (!(NetworkInterface.GetIsNetworkAvailable()))
+            {
+                throw new ExceptionNemaInterneta("Aplikacija zahtjeva stabilnu internet konekciju");
+            }
+            else
+            {
+                // code
+            }
         }
 
         private void uiUnosKorisnickogImena_TextChanged(object sender, EventArgs e)
@@ -68,6 +80,16 @@ namespace PI_t18024_Maza
         private void uiUnosLozinke_TextChanged(object sender, EventArgs e)
         {
             uiUnosLozinke.BackColor = Color.White;
+        }
+
+        private void uiActionPrijava_Click(object sender, EventArgs e)
+        {
+            prijava();
+        }
+
+        private void uiActionOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void uiUnosLozinke_KeyDown(object sender, KeyEventArgs e)

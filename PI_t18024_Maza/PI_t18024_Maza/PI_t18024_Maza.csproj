@@ -108,6 +108,7 @@
     <Compile Include="DodajZivotinjuForm.Designer.cs">
       <DependentUpon>DodajZivotinjuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionNemaInterneta.cs" />
     <Compile Include="Kalendar.cs">
       <SubType>Form</SubType>
     </Compile>
