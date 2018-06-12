@@ -28,6 +28,8 @@ namespace PI_t18024_Maza
         public string Titula { get; set; }
         public System.DateTime DatumZaposlenja { get; set; }
         public System.DateTime DatumRodenja { get; set; }
+        public string korime { get; set; }
+        public string lozinka { get; set; }
     
         public virtual ICollection<Kontrola> Kontrola { get; set; }
     }

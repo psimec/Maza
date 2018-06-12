@@ -98,6 +98,8 @@
           <Property Name="titula" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="datum_zaposljavanja" Type="date" Nullable="false" />
           <Property Name="datum_rođenja" Type="date" Nullable="false" />
+          <Property Name="korime" Type="varchar" MaxLength="50" />
+          <Property Name="lozinka" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="vlasnik">
           <Key>
@@ -440,6 +442,8 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
           <Property Name="DatumZaposlenja" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DatumRodenja" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Kontrola" Relationship="Self.fk_Životinja_has_Veterinar_Veterinar1" FromRole="veterinar" ToRole="kontrola" />
+          <Property Name="korime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lozinka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Vlasnik">
           <Key>
@@ -727,6 +731,8 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
           <EntitySetMapping Name="Veterinars1">
             <EntityTypeMapping TypeName="DBModel.Veterinar">
               <MappingFragment StoreEntitySet="veterinar">
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="korime" ColumnName="korime" />
                 <ScalarProperty Name="IdVeterinar" ColumnName="ID_veterinar" />
                 <ScalarProperty Name="Ime" ColumnName="ime" />
                 <ScalarProperty Name="Prezime" ColumnName="prezime" />
