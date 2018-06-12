@@ -8,6 +8,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace PI_t18024_Maza
 {
@@ -69,6 +70,36 @@ namespace PI_t18024_Maza
             else
             {
                 // code
+            }
+        }
+
+        private string kriptirajMD5(string input)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] podaci = ASCIIEncoding.UTF8.GetBytes(input);
+            byte[] hash = md5.ComputeHash(podaci);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                stringBuilder.Append(hash[i].ToString("x2"));
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        private bool usporediMD5(string rijec, string hash)
+        {
+            string rijecHash = kriptirajMD5(rijec);
+            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
+
+            if (stringComparer.Compare(rijecHash, hash) == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
