@@ -14,12 +14,12 @@ namespace PI_t18024_Maza
     
     public partial class Operacija
     {
-        public int IdOperacija { get; set; }
-        public string VrstaZahvata { get; set; }
-        public Nullable<System.TimeSpan> TrajanjeZahtjeva { get; set; }
-        public string Napomena { get; set; }
-        public System.DateTime DatumZahvata { get; set; }
-        public int IdKontrola { get; set; }
+        public int ID_operacija { get; set; }
+        public string vrsta_zahvata { get; set; }
+        public Nullable<System.TimeSpan> trajanje_zahtjeva { get; set; }
+        public string napomena { get; set; }
+        public System.DateTime datum_zahvata { get; set; }
+        public int ID_kontrola { get; set; }
     
         public virtual Kontrola Kontrola { get; set; }
     }

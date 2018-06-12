@@ -55,11 +55,11 @@ namespace PI_t18024_Maza
 
                     Kontrola kontrola = new Kontrola
                     {
-                        IdVeterinar = veterinar.IdVeterinar,
-                        IdZivotinja = zivotinja.IdZivotinja,
-                        DatumKontrole = uiOdabirDatum.Value,
-                        Status = uiOdabirStatus.Text,
-                        Opis = uiUnosOpis.Text,
+                        ID_veterinar = veterinar.ID_veterinar,
+                        ID_zivotinja = zivotinja.ID_zivotinja,
+                        datum_kontrole = uiOdabirDatum.Value,
+                        status = uiOdabirStatus.Text,
+                        opis = uiUnosOpis.Text,
                         Zivotinja = zivotinja,
                         Veterinar = veterinar
                     };

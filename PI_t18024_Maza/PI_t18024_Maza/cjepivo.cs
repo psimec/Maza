@@ -19,12 +19,12 @@ namespace PI_t18024_Maza
             this.Kontrola = new HashSet<Kontrola>();
         }
     
-        public int IdCjepivo { get; set; }
-        public string Ime { get; set; }
-        public double Doza { get; set; }
-        public string Proizvodac { get; set; }
-        public System.DateTime RokTrajanja { get; set; }
-        public double Cijena { get; set; }
+        public int ID_cjepivo { get; set; }
+        public string ime { get; set; }
+        public double doza { get; set; }
+        public string proizvodac { get; set; }
+        public System.DateTime rok_trajanja { get; set; }
+        public double cijena { get; set; }
     
         public virtual ICollection<Kontrola> Kontrola { get; set; }
     }

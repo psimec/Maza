@@ -19,13 +19,13 @@ namespace PI_t18024_Maza
             this.Zivotinja = new HashSet<Zivotinja>();
         }
     
-        public int IdVlasnik { get; set; }
-        public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public string AdresaStavnovanja { get; set; }
-        public string BrojTelefona1 { get; set; }
-        public string BrojTelefona2 { get; set; }
-        public string Email { get; set; }
+        public int ID_vlasnik { get; set; }
+        public string ime { get; set; }
+        public string prezime { get; set; }
+        public string adresa_stavnovanja { get; set; }
+        public string broj_telefona1 { get; set; }
+        public string broj_telefona2 { get; set; }
+        public string email { get; set; }
     
         public virtual ICollection<Zivotinja> Zivotinja { get; set; }
     }

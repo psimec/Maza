@@ -19,8 +19,8 @@ namespace PI_t18024_Maza
             this.Dijagnoza = new HashSet<Dijagnoza>();
         }
     
-        public int IdBolest { get; set; }
-        public string Naziv { get; set; }
+        public int ID_bolest { get; set; }
+        public string naziv { get; set; }
     
         public virtual ICollection<Dijagnoza> Dijagnoza { get; set; }
     }

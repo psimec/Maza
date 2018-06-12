@@ -15,6 +15,7 @@ namespace PI_t18024_Maza
         public Vlasnici()
         {
             InitializeComponent();
+            PopuniVlasnike();
         }
 
         public void PopuniVlasnike()
@@ -24,29 +25,26 @@ namespace PI_t18024_Maza
             {
                 listaVlasnika = new BindingList<Vlasnik>(db.Vlasnik.ToList());
             }
-            uiPrikazVlasnika.DataSource = listaVlasnika;
+            dataGridView1.DataSource = listaVlasnika;
         }
-        public void PopuniZivotinje(Vlasnik vlasnik)
+
+        public void PopuniZivotinje(Vlasnik oznaceni)
         {
             BindingList<Zivotinja> listaZivotinja = null;
             using (var db = new MazaEntities())
             {
-                db.Vlasnik.Attach(vlasnik);
-                listaZivotinja = new BindingList<Zivotinja>(vlasnik.Zivotinja.ToList<Zivotinja>());
+                db.Vlasnik.Attach(oznaceni);
+                listaZivotinja = new BindingList<Zivotinja>(oznaceni.Zivotinja.ToList());
             }
-            zivotinjaBindingSource.DataSource = listaZivotinja;
-        }
-        private void Vlasnici_Load(object sender, EventArgs e)
-        {
-            PopuniVlasnike();
+            dataGridView2.DataSource = listaZivotinja;
         }
 
-        private void uiPrikazVlasnika_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            Vlasnik selektiraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
-            if (selektiraniVlasnik != null)
+            Vlasnik oznaceni = vlasnikBindingSource.Current as Vlasnik;
+            if (oznaceni != null)
             {
-                PopuniZivotinje(selektiraniVlasnik);
+                PopuniZivotinje(oznaceni);
             }
         }
     }

@@ -21,12 +21,12 @@ namespace PI_t18024_Maza
             this.Cjepivo = new HashSet<Cjepivo>();
         }
     
-        public int IdKontrola { get; set; }
-        public int IdZivotinja { get; set; }
-        public int IdVeterinar { get; set; }
-        public System.DateTime DatumKontrole { get; set; }
-        public string Status { get; set; }
-        public string Opis { get; set; }
+        public int ID_kontrola { get; set; }
+        public int ID_zivotinja { get; set; }
+        public int ID_veterinar { get; set; }
+        public System.DateTime datum_kontrole { get; set; }
+        public string status { get; set; }
+        public string opis { get; set; }
     
         public virtual ICollection<Dijagnoza> Dijagnoza { get; set; }
         public virtual ICollection<Operacija> Operacija { get; set; }

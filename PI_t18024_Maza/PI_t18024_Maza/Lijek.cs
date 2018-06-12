@@ -19,12 +19,12 @@ namespace PI_t18024_Maza
             this.PropisaniLijek = new HashSet<PropisaniLijek>();
         }
     
-        public int IdLijek { get; set; }
-        public string Naziv { get; set; }
-        public string Proizvodac { get; set; }
-        public double Cijena { get; set; }
-        public string Uputstva { get; set; }
-        public Nullable<System.DateTime> RokTrajanja { get; set; }
+        public int ID_lijek { get; set; }
+        public string naziv { get; set; }
+        public string proizvodac { get; set; }
+        public double cijena { get; set; }
+        public string uputstva { get; set; }
+        public Nullable<System.DateTime> rok_trajanja { get; set; }
     
         public virtual ICollection<PropisaniLijek> PropisaniLijek { get; set; }
     }

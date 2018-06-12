@@ -69,19 +69,19 @@ namespace PI_t18024_Maza
             {
                 foreach (var kontrola in db.Kontrola)
                 {
-                    if (kontrola.DatumKontrole > datumOd.AddDays(-1) && kontrola.DatumKontrole < datumDo.AddDays(1))
+                    if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))
                     {
                         //MessageBox.Show(datumOd.AddDays(-1).ToString());
-                        Zivotinja zivotinja = db.Zivotinja.Where(z => z.IdZivotinja == kontrola.IdZivotinja).FirstOrDefault();
-                        Button aktivnost = kreirajAkrivnost(kontrola.DatumKontrole, zivotinja.Ime, kontrola.IdKontrola, kontrola.Opis);
-                        int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.DatumKontrole.DayOfWeek);
+                        Zivotinja zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault();
+                        Button aktivnost = kreirajAkrivnost(kontrola.datum_kontrole, zivotinja.ime, kontrola.ID_kontrola, kontrola.opis);
+                        int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
                         if (index >= 0)
                         {
                             listaDaniAktivnosti[index].DodajAktivnost(aktivnost);
                         }
                         else
                         {
-                            DanAktivnosti nova = new DanAktivnosti(kontrola.DatumKontrole.DayOfWeek, aktivnost);
+                            DanAktivnosti nova = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, aktivnost);
                             listaDaniAktivnosti.Add(nova);
                         }                                            
                     }                    
