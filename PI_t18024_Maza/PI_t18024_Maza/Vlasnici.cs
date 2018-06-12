@@ -19,7 +19,12 @@ namespace PI_t18024_Maza
 
         public void PopuniVlasnike()
         {
-
+            BindingList<Vlasnik> listaVlasnika = null;
+            using (var db = new MazaEntities())
+            {
+                listaVlasnika = new BindingList<Vlasnik>(db.Vlasnik.ToList());
+            }
+            uiPrikazVlasnika.DataSource = listaVlasnika;
         }
         public void PopuniZivotinje(Vlasnik vlasnik)
         {

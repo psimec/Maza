@@ -134,5 +134,11 @@ namespace PI_t18024_Maza
             kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PovijestBolesti povijestBolesti = new PovijestBolesti(3);
+            povijestBolesti.ShowDialog();
+        }
     }
 }
