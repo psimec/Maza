@@ -14,54 +14,57 @@ namespace PI_t18024_Maza
 {
     public partial class Prijava : Form
     {
+        Veterinar veterinar;
+        private static string privatniKljuc = "7BDHFJ54";
 
         public Prijava()
         {
             InitializeComponent();
+            veterinar = null;
             uiUnosLozinke.UseSystemPasswordChar = true;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void prijava()
+        private void Autentifikacija()
         {
-            string korime = uiUnosKorisnickogImena.Text;
-            string lozinka = uiUnosLozinke.Text;
-
             try
             {
-                dohvatiPodaatke();
+                if (uiUnosKorisnickogImena.Text != "" || uiUnosLozinke.Text != "")
+                {
+                    dohvatiPodatke();
+                    if (veterinar != null)
+                    {
+                        if (usporediMD5(uiUnosLozinke.Text + privatniKljuc, veterinar.lozinka))
+                        {
+                            Kalendar kalendar = new Kalendar();
+                            this.Hide();
+                            kalendar.StartPosition = FormStartPosition.CenterScreen;
+                            kalendar.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Loznika nije točna");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Korisnicko ime nije točno");
+                    }
+                }
+                else
+                {
+                    uiUnosKorisnickogImena.BackColor = Color.IndianRed;
+                    uiUnosLozinke.BackColor = Color.IndianRed;
+                }
             }
             catch (ExceptionNemaInterneta ex)
             {
                 MessageBox.Show(ex.Poruka);
             }
-
-            if (korime != "" || lozinka != "")
-            {
-                // dohvati korisnicko ime iz baze, ako ne postoji vrati gresku
-                // dohvati lozinku za korisnicko ime u bazi podataka;
-                string bazaLozinka = "testloz";
-
-                if (lozinka == bazaLozinka)
-                {
-                    Form glavnaForma = new Kalendar();
-                    this.Hide();
-                    glavnaForma.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Lozinka nije točna");
-                }
-            }
-            else
-            {
-                uiUnosKorisnickogImena.BackColor = Color.IndianRed;
-                uiUnosLozinke.BackColor = Color.IndianRed;
-            }
         }
 
-        private void dohvatiPodaatke()
+        private void dohvatiPodatke()
         {
             if (!(NetworkInterface.GetIsNetworkAvailable()))
             {
@@ -69,7 +72,10 @@ namespace PI_t18024_Maza
             }
             else
             {
-                // code
+                using (var db = new MazaEntities())
+                {
+                    veterinar = db.Veterinar.Where(v => v.korime == uiUnosKorisnickogImena.Text).FirstOrDefault();              
+                }
             }
         }
 
@@ -115,7 +121,7 @@ namespace PI_t18024_Maza
 
         private void uiActionPrijava_Click(object sender, EventArgs e)
         {
-            prijava();
+            Autentifikacija();
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -127,7 +133,7 @@ namespace PI_t18024_Maza
         {
             if (e.KeyCode == Keys.Enter)
             {
-                prijava();
+                Autentifikacija();
             }
         }
 
@@ -135,7 +141,7 @@ namespace PI_t18024_Maza
         {
             if (e.KeyCode == Keys.Enter)
             {
-                prijava();
+                Autentifikacija();
             }
         }
     }
