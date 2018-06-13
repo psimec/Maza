@@ -47,5 +47,11 @@ namespace PI_t18024_Maza
                 PopuniZivotinje(oznaceni);
             }
         }
+
+        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
+        {
+            frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnikBindingSource.Current as Vlasnik);
+            dodajZivotinju.ShowDialog();
+        }
     }
 }
