@@ -33,10 +33,15 @@ namespace PI_t18024_Maza
 
         private void uiVrsta_TextChanged(object sender, EventArgs e)
         {
-            if(uiVrsta.Text == "Pas")
+            if(uiVrsta.Text == "Pas" || uiVrsta.Text == "pas")
             {
                 lblBrojCipa.Visible = true;
                 uiBrojCipa.Visible = true;
+            }
+            else
+            {
+                lblBrojCipa.Visible = false;
+                uiBrojCipa.Visible = false;
             }
         }
     }
