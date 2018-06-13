@@ -13,6 +13,7 @@ namespace PI_t18024_Maza
     public partial class frmDetaljiKontrole : Form
     {
         Kontrola kontrola;
+        Zivotinja zivotinja;
         public frmDetaljiKontrole(Kontrola kontrola)
         {
             InitializeComponent();
@@ -26,9 +27,19 @@ namespace PI_t18024_Maza
 
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
-            this.uiDatumKontrole.Text = kontrola.datum_kontrole.ToString();
-            this.uiStatusKontrole.Text = kontrola.status;
-            this.uiOpisKontrole.Text = kontrola.opis;
+            this.uiDatumKontrole.Text += kontrola.datum_kontrole.ToString();
+            this.uiStatusKontrole.Text += kontrola.status;
+            this.uiOpisKontrole.Text += kontrola.opis;
+            Vlasnik vlasnik = null;
+            using (var db = new MazaEntities())
+            {
+                this.zivotinja = db.Zivotinja.Where(s => s.ID_zivotinja == this.kontrola.ID_zivotinja).FirstOrDefault();
+                vlasnik = db.Vlasnik.Where(s => s.ID_vlasnik == this.zivotinja.ID_vlasnika).FirstOrDefault() ;
+            }
+            this.uiImeZivotinje.Text += this.zivotinja.ime;
+            this.uiVrstaZivotinje.Text += this.zivotinja.vrsta;
+            this.uiDatumZivotinje.Text += this.zivotinja.datum_rodenja.ToShortDateString();
+            this.uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
         }
     }
 }
