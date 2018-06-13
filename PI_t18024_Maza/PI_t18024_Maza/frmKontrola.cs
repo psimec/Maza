@@ -37,6 +37,38 @@ namespace PI_t18024_Maza
             uiPrikazKontrola.Columns[0].Visible = false;
         }
 
+        private void sortirajKontrole(int stupac)
+        {
+            BindingList<viewKontrola> viewKontrola;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderBy(k => k.zivotinja).ToList());
+                        break;
+                    case 2:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderBy(k => k.veterinar).ToList());
+                        break;
+                    case 3:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderBy(k => k.opis).ToList());
+                        break;
+                    case 4:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderBy(k => k.status).ToList());
+                        break;
+                    case 5:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderBy(k => k.datum_kontrole).ToList());
+                        break;
+                    default:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
+                        break;
+                }               
+            }
+
+            uiPrikazKontrola.DataSource = viewKontrola;
+            uiPrikazKontrola.Columns[0].Visible = false;
+        }
+
         private void uiActonDodajKontrolu_Click(object sender, EventArgs e)
         {
             Form kreirajKontrolu = new frmNovaKontrola();
@@ -53,8 +85,8 @@ namespace PI_t18024_Maza
             PrikaziKontrole();
         }
 
-        private void uiPrikazKontrola_SelectionChanged(object sender, EventArgs e)
-        {       
+        private void uiPrikazKontrola_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             int idKontrola = (int)uiPrikazKontrola.CurrentRow.Cells[0].Value;
             using (var db = new MazaEntities())
             {
@@ -67,6 +99,12 @@ namespace PI_t18024_Maza
             Form detaljiKontrole = new frmDetaljiKontrole(this.kontrola);
             detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
             detaljiKontrole.ShowDialog();
+        }
+
+        private void uiPrikazKontrola_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int brojStupca = e.ColumnIndex;
+            sortirajKontrole(brojStupca);
         }
     }
 }

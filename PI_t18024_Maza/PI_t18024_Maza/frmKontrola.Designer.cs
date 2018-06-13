@@ -57,7 +57,9 @@
             this.uiPrikazKontrola.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazKontrola.Size = new System.Drawing.Size(520, 418);
             this.uiPrikazKontrola.TabIndex = 18;
-            this.uiPrikazKontrola.SelectionChanged += new System.EventHandler(this.uiPrikazKontrola_SelectionChanged);
+            this.uiPrikazKontrola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiPrikazKontrola_CellClick);
+            this.uiPrikazKontrola.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazKontrola_ColumnHeaderMouseClick);
+           
             // 
             // uiActonDodajKontrolu
             // 
