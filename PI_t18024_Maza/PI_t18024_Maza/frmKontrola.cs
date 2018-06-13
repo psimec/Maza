@@ -61,5 +61,12 @@ namespace PI_t18024_Maza
                 kontrola = db.Kontrola.Where(k => k.ID_kontrola == idKontrola).FirstOrDefault();
             }
         }
+
+        private void uiActionDetaljiKontrole_Click(object sender, EventArgs e)
+        {
+            Form detaljiKontrole = new frmDetaljiKontrole(this.kontrola);
+            detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
+            detaljiKontrole.ShowDialog();
+        }
     }
 }

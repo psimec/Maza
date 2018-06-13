@@ -87,6 +87,7 @@
             this.uiActionDetaljiKontrole.TabIndex = 21;
             this.uiActionDetaljiKontrole.Text = "Detalji kontole";
             this.uiActionDetaljiKontrole.UseVisualStyleBackColor = true;
+            this.uiActionDetaljiKontrole.Click += new System.EventHandler(this.uiActionDetaljiKontrole_Click);
             // 
             // frmKontrola
             // 
