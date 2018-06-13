@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Zivotinje : Dizajn
+    public partial class frmZivotinje : frmDizajn
     {
-        public Zivotinje()
+        public frmZivotinje()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
         {
-            DodajZivotinjuForm dodaj = new DodajZivotinjuForm();
+            frmDodajZivotinju dodaj = new frmDodajZivotinju();
 
         }
     }

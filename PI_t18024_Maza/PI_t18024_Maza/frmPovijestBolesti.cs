@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class PovijestBolesti : Form
+    public partial class frmPovijestBolesti : Form
     {
         private int idZivotinja;
 
-        public PovijestBolesti(int idZivotinja)
+        public frmPovijestBolesti(int idZivotinja)
         {
             InitializeComponent();
             this.idZivotinja = idZivotinja;

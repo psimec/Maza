@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Zivotinje
+    partial class frmZivotinje
     {
         /// <summary>
         /// Required designer variable.

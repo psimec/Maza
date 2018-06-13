@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Vlasnici : Dizajn
+    public partial class frmVlasnici : frmDizajn
     {
-        public Vlasnici()
+        public frmVlasnici()
         {
             InitializeComponent();
             PopuniVlasnike();

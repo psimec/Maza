@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class NovaKontrola
+    partial class frmNovaKontrola
     {
         /// <summary>
         /// Required designer variable.

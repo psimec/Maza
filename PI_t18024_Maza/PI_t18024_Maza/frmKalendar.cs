@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Kalendar : Dizajn
+    public partial class frmKalendar : frmDizajn
     {
         List<DanAktivnosti> listaDaniAktivnosti = new List<DanAktivnosti>();
         double brojDana;
@@ -18,7 +18,7 @@ namespace PI_t18024_Maza
         DateTime datumDo;
         //Dictionary<DayOfWeek, Dictionary<int, object>> brojAktivnostiPoDanu; mogucnost za bilježenje broja aktivnosti u redu
 
-        public Kalendar()
+        public frmKalendar()
         {
             InitializeComponent();         
             brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
@@ -34,7 +34,7 @@ namespace PI_t18024_Maza
             Button novi = new Button();
             novi.Click += (s, e) => 
             {
-                KontrolaForm kontrola = new KontrolaForm( idKontrola); 
+                frmKontrola kontrola = new frmKontrola( idKontrola); 
                 this.Hide();
                 kontrola.StartPosition = FormStartPosition.CenterScreen;
                 kontrola.ShowDialog();
@@ -130,14 +130,14 @@ namespace PI_t18024_Maza
         
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
         {
-            Form kreirajKontrolu = new NovaKontrola(this);
+            Form kreirajKontrolu = new frmNovaKontrola(this);
             kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PovijestBolesti povijestBolesti = new PovijestBolesti(3);
+            frmPovijestBolesti povijestBolesti = new frmPovijestBolesti(3);
             povijestBolesti.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Kalendar
+    partial class frmKalendar
     {
         /// <summary>
         /// Required designer variable.

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class KontrolaForm : Dizajn
+    public partial class frmKontrola : frmDizajn
     {
         private int idKontrola;
 
-        public KontrolaForm()
+        public frmKontrola()
         {
             InitializeComponent();
             this.idKontrola = -1; // ako se na formu normalno dode
         }
 
-        public KontrolaForm(int idKontrola)
+        public frmKontrola(int idKontrola)
         {
             InitializeComponent();
             this.idKontrola = idKontrola; // ako se na formu dode preko kalendara

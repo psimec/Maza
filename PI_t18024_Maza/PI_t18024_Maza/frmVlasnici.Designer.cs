@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Vlasnici
+    partial class frmVlasnici
     {
         /// <summary>
         /// Required designer variable.

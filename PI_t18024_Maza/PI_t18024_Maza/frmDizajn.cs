@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class Dizajn : Form
+    public partial class frmDizajn : Form
     {
-        public Dizajn()
+        public frmDizajn()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -20,7 +20,7 @@ namespace PI_t18024_Maza
 
         private void uiActionKalendar_Click(object sender, EventArgs e)
         {            
-            Kalendar kalendar = new Kalendar();
+            frmKalendar kalendar = new frmKalendar();
             this.Hide();           
             kalendar.StartPosition = FormStartPosition.CenterScreen;
             kalendar.ShowDialog();
@@ -29,7 +29,7 @@ namespace PI_t18024_Maza
 
         private void uiActionZivotinje_Click(object sender, EventArgs e)
         {
-            Zivotinje zivotinja = new Zivotinje();
+            frmZivotinje zivotinja = new frmZivotinje();
             this.Hide();
             zivotinja.StartPosition = FormStartPosition.CenterScreen;
             zivotinja.ShowDialog();
@@ -38,7 +38,7 @@ namespace PI_t18024_Maza
 
         private void uiActionVlasnici_Click(object sender, EventArgs e)
         {
-            Vlasnici vlasnici = new Vlasnici();
+            frmVlasnici vlasnici = new frmVlasnici();
             this.Hide();
             vlasnici.StartPosition = FormStartPosition.CenterParent;
             vlasnici.ShowDialog();
@@ -48,7 +48,7 @@ namespace PI_t18024_Maza
 
         private void uiActionKontrola_Click(object sender, EventArgs e)
         {
-            KontrolaForm kontrola = new KontrolaForm(); // krivo ime forme
+            frmKontrola kontrola = new frmKontrola(); // krivo ime forme
             this.Hide();
             kontrola.StartPosition = FormStartPosition.CenterScreen;
             kontrola.ShowDialog();

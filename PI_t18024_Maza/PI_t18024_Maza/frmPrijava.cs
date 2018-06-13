@@ -12,12 +12,12 @@ using System.Security.Cryptography;
 
 namespace PI_t18024_Maza
 {
-    public partial class Prijava : Form
+    public partial class frmPrijava : Form
     {
         Veterinar veterinar;
         private static string privatniKljuc = "7BDHFJ54";
 
-        public Prijava()
+        public frmPrijava()
         {
             InitializeComponent();
             veterinar = null;
@@ -36,7 +36,7 @@ namespace PI_t18024_Maza
                     {
                         if (usporediMD5(uiUnosLozinke.Text + privatniKljuc, veterinar.lozinka))
                         {
-                            Kalendar kalendar = new Kalendar();
+                            frmKalendar kalendar = new frmKalendar();
                             this.Hide();
                             kalendar.StartPosition = FormStartPosition.CenterScreen;
                             kalendar.ShowDialog();

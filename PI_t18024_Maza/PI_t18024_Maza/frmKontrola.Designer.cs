@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class KontrolaForm
+    partial class frmKontrola
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             System.Windows.Forms.Label opisLabel;
             System.Windows.Forms.Label zivotinjaLabel;
             System.Windows.Forms.Label veterinarLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKontrola));
             this.kontrolaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.kontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);

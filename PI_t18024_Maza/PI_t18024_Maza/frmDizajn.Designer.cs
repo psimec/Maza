@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class Dizajn
+    partial class frmDizajn
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dizajn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDizajn));
             this.LijeviPanel = new System.Windows.Forms.Panel();
             this.uiActionKontrola = new System.Windows.Forms.Button();
             this.uiActionVlasnici = new System.Windows.Forms.Button();

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class NovaKontrola : Form
+    public partial class frmNovaKontrola : Form
     {
-        Kalendar kalendar;
+        frmKalendar kalendar;
 
-        public NovaKontrola(Kalendar kalendar)
+        public frmNovaKontrola(frmKalendar kalendar)
         {
             InitializeComponent();
             this.kalendar = kalendar;

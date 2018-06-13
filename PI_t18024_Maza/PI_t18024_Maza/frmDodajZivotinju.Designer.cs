@@ -1,6 +1,6 @@
 ﻿namespace PI_t18024_Maza
 {
-    partial class DodajZivotinjuForm
+    partial class frmDodajZivotinju
     {
         /// <summary>
         /// Required designer variable.

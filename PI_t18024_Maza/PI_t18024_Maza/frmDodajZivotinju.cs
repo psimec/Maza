@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class DodajZivotinjuForm : Form
+    public partial class frmDodajZivotinju : Form
     {
-        public DodajZivotinjuForm()
+        public frmDodajZivotinju()
         {
             InitializeComponent();
             uiOdabirSpola.Items.Add("m");
