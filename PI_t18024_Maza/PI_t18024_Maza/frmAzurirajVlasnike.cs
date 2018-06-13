@@ -82,16 +82,12 @@ namespace PI_t18024_Maza
             if(vlasnik == null)
             {
                 frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(noviVlasnik);
-                this.Hide();
                 dodajZivotinju.ShowDialog();
-                this.Close();
             }
             else
             {
                 frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
-                this.Hide();
                 dodajZivotinju.ShowDialog();
-                this.Close();
             }
         }
     }

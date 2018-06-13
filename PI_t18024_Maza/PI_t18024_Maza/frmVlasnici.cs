@@ -76,5 +76,30 @@ namespace PI_t18024_Maza
             dodajVlasnika.ShowDialog();
             PopuniVlasnike();
         }
+
+        private void uiIzbrisiVlasnika_Click(object sender, EventArgs e)
+        {
+            Vlasnik selektiraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
+            if(selektiraniVlasnik != null)
+            {
+                if(MessageBox.Show("Da li ste sigurni?","Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (var db = new MazaEntities())
+                    {
+                        db.Vlasnik.Attach(selektiraniVlasnik);
+                        if(selektiraniVlasnik.Zivotinja.Count == 0)
+                        {
+                            db.Vlasnik.Remove(selektiraniVlasnik);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nije moguće obrisati vlasnika jer sadrži životinje, prvo obriši životinje");
+                        }
+                    }
+                }
+                PopuniVlasnike();
+            }
+        }
     }
 }
