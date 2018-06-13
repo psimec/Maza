@@ -196,6 +196,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmDetaljiKontrole.resx">
+      <DependentUpon>frmDetaljiKontrole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDizajn.resx">
       <DependentUpon>frmDizajn.cs</DependentUpon>
     </EmbeddedResource>

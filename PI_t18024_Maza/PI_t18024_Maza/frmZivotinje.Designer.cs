@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazZivotinja = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,24 +61,27 @@
             this.uiPrikazZivotinja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazZivotinja.Size = new System.Drawing.Size(1091, 312);
             this.uiPrikazZivotinja.TabIndex = 4;
-            this.uiPrikazZivotinja.SelectionChanged += new System.EventHandler(this.uiPrikazZivotinja_SelectionChanged);
             // 
-            // button1
+            // uiActionDodajZivotinju
             // 
-            this.button1.Location = new System.Drawing.Point(724, 567);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.uiActionDodajZivotinju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
+            this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(671, 547);
+            this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
+            this.uiActionDodajZivotinju.Size = new System.Drawing.Size(135, 44);
+            this.uiActionDodajZivotinju.TabIndex = 10;
+            this.uiActionDodajZivotinju.Text = "Dodaj Životinju";
+            this.uiActionDodajZivotinju.UseVisualStyleBackColor = false;
+            this.uiActionDodajZivotinju.Click += new System.EventHandler(this.uiActionDodajZivotinju_Click);
             // 
             // frmZivotinje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 778);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uiActionDodajZivotinju);
             this.Controls.Add(this.uiPrikazZivotinja);
             this.Controls.Add(this.panel1);
             this.Name = "frmZivotinje";
@@ -86,7 +89,7 @@
             this.Load += new System.EventHandler(this.Zivotinje_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.uiPrikazZivotinja, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.uiActionDodajZivotinju, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
             this.ResumeLayout(false);
 
@@ -98,6 +101,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private _18024_DBDataSet _18024_DBDataSet;
         private System.Windows.Forms.DataGridView uiPrikazZivotinja;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionDodajZivotinju;
     }
 }
