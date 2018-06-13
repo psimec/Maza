@@ -27,21 +27,22 @@ namespace PI_t18024_Maza
             uiPrikazZivotinja.DataSource = listaZivotinja;
 
             uiPrikazZivotinja.Columns[0].Visible = false;
+
+            
         }
                
         private void Zivotinje_Load(object sender, EventArgs e)
         {
-            PrikaziZivotinje(); 
+            PrikaziZivotinje();
+            foreach (DataGridViewColumn item in uiPrikazZivotinja.Columns)
+            {
+                item.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
         
-        private void uiPrikazZivotinja_SelectionChanged(object sender, EventArgs e)
+        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(uiPrikazZivotinja.CurrentRow != null)
+            if (uiPrikazZivotinja.CurrentRow != null)
             {
                 int idZivotinja = int.Parse(uiPrikazZivotinja.CurrentRow.Cells[0].Value.ToString());
                 Vlasnik vlasnik;
@@ -53,6 +54,7 @@ namespace PI_t18024_Maza
                 frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
                 dodajZivotinju.ShowDialog();
             }
+            PrikaziZivotinje();
         }
     }
 }

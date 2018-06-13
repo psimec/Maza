@@ -52,6 +52,15 @@ namespace PI_t18024_Maza
         {
             frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnikBindingSource.Current as Vlasnik);
             dodajZivotinju.ShowDialog();
+            PopuniZivotinje(vlasnikBindingSource.Current as Vlasnik);
+        }
+
+        private void uiPrikazVlasnika_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewColumn item in uiPrikazZivotinja.Columns)
+            {
+                item.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
     }
 }

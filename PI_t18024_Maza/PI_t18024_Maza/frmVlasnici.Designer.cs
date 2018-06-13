@@ -71,6 +71,10 @@
             // 
             // uiPrikazVlasnika
             // 
+            this.uiPrikazVlasnika.AllowUserToAddRows = false;
+            this.uiPrikazVlasnika.AllowUserToDeleteRows = false;
+            this.uiPrikazVlasnika.AllowUserToResizeColumns = false;
+            this.uiPrikazVlasnika.AllowUserToResizeRows = false;
             this.uiPrikazVlasnika.AutoGenerateColumns = false;
             this.uiPrikazVlasnika.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.uiPrikazVlasnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -92,6 +96,7 @@
             this.uiPrikazVlasnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazVlasnika.Size = new System.Drawing.Size(992, 185);
             this.uiPrikazVlasnika.TabIndex = 7;
+            this.uiPrikazVlasnika.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazVlasnika_ColumnHeaderMouseClick);
             this.uiPrikazVlasnika.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // iDvlasnikDataGridViewTextBoxColumn
@@ -149,6 +154,10 @@
             // 
             // uiPrikazZivotinja
             // 
+            this.uiPrikazZivotinja.AllowUserToAddRows = false;
+            this.uiPrikazZivotinja.AllowUserToDeleteRows = false;
+            this.uiPrikazZivotinja.AllowUserToResizeColumns = false;
+            this.uiPrikazZivotinja.AllowUserToResizeRows = false;
             this.uiPrikazZivotinja.AutoGenerateColumns = false;
             this.uiPrikazZivotinja.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.uiPrikazZivotinja.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -249,11 +258,11 @@
             // 
             // uiActionDodajZivotinju
             // 
-            this.uiActionDodajZivotinju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(125)))), ((int)(((byte)(190)))));
+            this.uiActionDodajZivotinju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
             this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(1149, 335);
+            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(1149, 336);
             this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
             this.uiActionDodajZivotinju.Size = new System.Drawing.Size(135, 44);
             this.uiActionDodajZivotinju.TabIndex = 9;

@@ -44,5 +44,51 @@ namespace PI_t18024_Maza
                 uiBrojCipa.Visible = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(uiVrsta.Text == "pas" ||uiVrsta.Text == "Pas")
+            {
+                using (var db = new MazaEntities())
+                {
+                    db.Vlasnik.Attach(vlasnik);
+
+                    Zivotinja novaZivotinja = new Zivotinja()
+                    {
+                        ime = uiIme.Text,
+                        spol = uiOdabirSpola.Text,
+                        vrsta = uiVrsta.Text,
+                        datum_rodenja = uiDatumRodenja.Value,
+                        broj_cipa = int.Parse(uiBrojCipa.Text),
+                        tezina = int.Parse(uiTezina.Text),
+                        ID_vlasnika = vlasnik.ID_vlasnik,
+                        Vlasnik = vlasnik
+                    };
+                    db.Zivotinja.Add(novaZivotinja);
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                using (var db = new MazaEntities())
+                {
+                    db.Vlasnik.Attach(vlasnik);
+
+                    Zivotinja novaZivotinja = new Zivotinja()
+                    {
+                        ime = uiIme.Text,
+                        spol = uiOdabirSpola.Text,
+                        vrsta = uiVrsta.Text,
+                        datum_rodenja = uiDatumRodenja.Value,
+                        tezina = int.Parse(uiTezina.Text),
+                        ID_vlasnika = vlasnik.ID_vlasnik,
+                        Vlasnik = vlasnik
+                    };
+                    db.Zivotinja.Add(novaZivotinja);
+                    db.SaveChanges();
+                }
+            }
+            this.Close();
+        }
     }
 }

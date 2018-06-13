@@ -54,6 +54,7 @@
             this.lblBrojMobitela = new System.Windows.Forms.Label();
             this.uiImeVlasnika = new System.Windows.Forms.TextBox();
             this.lblIme = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +154,7 @@
             // 
             // uiDatumRodenja
             // 
+            this.uiDatumRodenja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.uiDatumRodenja.Location = new System.Drawing.Point(209, 157);
             this.uiDatumRodenja.Name = "uiDatumRodenja";
             this.uiDatumRodenja.Size = new System.Drawing.Size(176, 22);
@@ -302,11 +304,23 @@
             this.lblIme.TabIndex = 0;
             this.lblIme.Text = "Ime:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(70, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 38);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Dodaj Životinju";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmDodajZivotinju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(571, 482);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDodajZivotinju";
@@ -348,5 +362,6 @@
         private System.Windows.Forms.Label lblBrojMobitela;
         private System.Windows.Forms.TextBox uiBrojTelefona;
         private System.Windows.Forms.Label lblBrojTelefona;
+        private System.Windows.Forms.Button button1;
     }
 }
