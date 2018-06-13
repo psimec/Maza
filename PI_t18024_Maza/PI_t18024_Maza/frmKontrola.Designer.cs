@@ -33,6 +33,8 @@
             this.uiActonDodajKontrolu = new System.Windows.Forms.Button();
             this.uiActionAzurirajKontrolu = new System.Windows.Forms.Button();
             this.uiActionDetaljiKontrole = new System.Windows.Forms.Button();
+            this.uiPretrazi = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.uiPrikazKontrola.AllowUserToAddRows = false;
             this.uiPrikazKontrola.AllowUserToDeleteRows = false;
             this.uiPrikazKontrola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uiPrikazKontrola.Location = new System.Drawing.Point(163, 86);
+            this.uiPrikazKontrola.Location = new System.Drawing.Point(162, 129);
             this.uiPrikazKontrola.Name = "uiPrikazKontrola";
             this.uiPrikazKontrola.ReadOnly = true;
             this.uiPrikazKontrola.RowHeadersVisible = false;
@@ -59,7 +61,6 @@
             this.uiPrikazKontrola.TabIndex = 18;
             this.uiPrikazKontrola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiPrikazKontrola_CellClick);
             this.uiPrikazKontrola.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazKontrola_ColumnHeaderMouseClick);
-           
             // 
             // uiActonDodajKontrolu
             // 
@@ -91,11 +92,30 @@
             this.uiActionDetaljiKontrole.UseVisualStyleBackColor = true;
             this.uiActionDetaljiKontrole.Click += new System.EventHandler(this.uiActionDetaljiKontrole_Click);
             // 
+            // uiPretrazi
+            // 
+            this.uiPretrazi.Location = new System.Drawing.Point(378, 97);
+            this.uiPretrazi.Name = "uiPretrazi";
+            this.uiPretrazi.Size = new System.Drawing.Size(162, 20);
+            this.uiPretrazi.TabIndex = 22;
+            this.uiPretrazi.TextChanged += new System.EventHandler(this.uiPretrazi_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(323, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Pretrazi:";
+            // 
             // frmKontrola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiPretrazi);
             this.Controls.Add(this.uiActionDetaljiKontrole);
             this.Controls.Add(this.uiActionAzurirajKontrolu);
             this.Controls.Add(this.uiActonDodajKontrolu);
@@ -110,8 +130,11 @@
             this.Controls.SetChildIndex(this.uiActonDodajKontrolu, 0);
             this.Controls.SetChildIndex(this.uiActionAzurirajKontrolu, 0);
             this.Controls.SetChildIndex(this.uiActionDetaljiKontrole, 0);
+            this.Controls.SetChildIndex(this.uiPretrazi, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -121,5 +144,7 @@
         private System.Windows.Forms.Button uiActonDodajKontrolu;
         private System.Windows.Forms.Button uiActionAzurirajKontrolu;
         private System.Windows.Forms.Button uiActionDetaljiKontrole;
+        private System.Windows.Forms.TextBox uiPretrazi;
+        private System.Windows.Forms.Label label1;
     }
 }

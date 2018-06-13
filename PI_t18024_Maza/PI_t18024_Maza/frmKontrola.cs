@@ -13,10 +13,12 @@ namespace PI_t18024_Maza
     public partial class frmKontrola : frmDizajn
     {
         Kontrola kontrola;
+        int zadnjiKliknutiStupac;
 
         public frmKontrola()
         {
             InitializeComponent();
+            this.zadnjiKliknutiStupac = 0;
             this.kontrola = null;
         }
 
@@ -37,7 +39,7 @@ namespace PI_t18024_Maza
             uiPrikazKontrola.Columns[0].Visible = false;
         }
 
-        private void sortirajKontrole(int stupac)
+        private void sortirajKontroleUzlazno(int stupac)
         {
             BindingList<viewKontrola> viewKontrola;
             using (var db = new MazaEntities())
@@ -65,6 +67,66 @@ namespace PI_t18024_Maza
                 }               
             }
 
+            uiPrikazKontrola.DataSource = viewKontrola;
+            uiPrikazKontrola.Columns[0].Visible = false;
+        }
+
+        private void sortirajKontroleSilazno(int stupac)
+        {
+            BindingList<viewKontrola> viewKontrola;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderByDescending(k => k.zivotinja).ToList());
+                        break;
+                    case 2:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderByDescending(k => k.veterinar).ToList());
+                        break;
+                    case 3:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderByDescending(k => k.opis).ToList());
+                        break;
+                    case 4:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderByDescending(k => k.status).ToList());
+                        break;
+                    case 5:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.OrderByDescending(k => k.datum_kontrole).ToList());
+                        break;
+                    default:
+                        viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
+                        break;
+                }
+            }
+
+            uiPrikazKontrola.DataSource = viewKontrola;
+            uiPrikazKontrola.Columns[0].Visible = false;
+        }
+
+        private void filtriraj(string pojam)
+        {
+
+            
+            BindingList<viewKontrola> viewKontrola;
+            using (var db = new MazaEntities())
+            {
+                if (DateTime.TryParse(pojam, out DateTime datum))
+                {
+                    viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.Where
+                    (
+                        k => (k.datum_kontrole.Year == datum.Year || k.datum_kontrole.Month == datum.Month || k.datum_kontrole.Day == datum.Day)
+                    ).ToList());
+                }
+                else
+                {
+                    viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.Where
+                    (
+                        k => (k.zivotinja.Contains(pojam) || k.veterinar.Contains(pojam) || k.opis.Contains(pojam) ||
+                             k.status.Contains(pojam))
+                    ).ToList());
+                }
+
+            }
             uiPrikazKontrola.DataSource = viewKontrola;
             uiPrikazKontrola.Columns[0].Visible = false;
         }
@@ -104,7 +166,21 @@ namespace PI_t18024_Maza
         private void uiPrikazKontrola_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int brojStupca = e.ColumnIndex;
-            sortirajKontrole(brojStupca);
+            if (zadnjiKliknutiStupac != brojStupca)
+            {
+                sortirajKontroleUzlazno(brojStupca);
+                zadnjiKliknutiStupac = brojStupca;
+            }
+            else
+            {
+                sortirajKontroleSilazno(brojStupca);
+                zadnjiKliknutiStupac = 0;
+            }         
+        }
+
+        private void uiPretrazi_TextChanged(object sender, EventArgs e)
+        {
+            filtriraj(uiPretrazi.Text);
         }
     }
 }
