@@ -135,12 +135,14 @@ warning 6002: The table/view '18024_DB.dbo.viewKontrola' does not have a primary
             <PropertyRef Name="zivotinja" />
             <PropertyRef Name="veterinar" />
             <PropertyRef Name="status" />
+            <PropertyRef Name="datum_kontrole" />
           </Key>
           <Property Name="ID_kontrola" Type="int" Nullable="false" />
           <Property Name="zivotinja" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="veterinar" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="opis" Type="varchar" MaxLength="255" />
           <Property Name="status" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="datum_kontrole" Type="datetime2" Precision="0" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view '18024_DB.dbo.ViewPrikazZivotinja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -304,7 +306,8 @@ warning 6002: The table/view '18024_DB.dbo.ViewPrikazZivotinja' does not have a 
 [viewKontrola].[zivotinja] AS [zivotinja], 
 [viewKontrola].[veterinar] AS [veterinar], 
 [viewKontrola].[opis] AS [opis], 
-[viewKontrola].[status] AS [status]
+[viewKontrola].[status] AS [status], 
+[viewKontrola].[datum_kontrole] AS [datum_kontrole]
 FROM [dbo].[viewKontrola] AS [viewKontrola]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewPrikazZivotinja" EntityType="Self.ViewPrikazZivotinja" store:Type="Views" store:Schema="dbo">
@@ -676,12 +679,14 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
             <PropertyRef Name="zivotinja" />
             <PropertyRef Name="veterinar" />
             <PropertyRef Name="status" />
+            <PropertyRef Name="datum_kontrole" />
           </Key>
           <Property Name="ID_kontrola" Type="Int32" Nullable="false" />
           <Property Name="zivotinja" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="veterinar" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="opis" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="datum_kontrole" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -838,6 +843,7 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
           <EntitySetMapping Name="viewKontrolas">
             <EntityTypeMapping TypeName="DBModel.viewKontrola">
               <MappingFragment StoreEntitySet="viewKontrola">
+                <ScalarProperty Name="datum_kontrole" ColumnName="datum_kontrole" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="opis" ColumnName="opis" />
                 <ScalarProperty Name="veterinar" ColumnName="veterinar" />

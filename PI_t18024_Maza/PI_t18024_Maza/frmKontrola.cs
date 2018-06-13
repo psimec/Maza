@@ -23,6 +23,11 @@ namespace PI_t18024_Maza
 
         private void KontrolaForm_Load(object sender, EventArgs e)
         {
+            PrikaziKontrole();
+        }
+
+        private void PrikaziKontrole()
+        {
             BindingList<viewKontrola> viewKontrola;
             using (var db = new MazaEntities())
             {
@@ -37,14 +42,15 @@ namespace PI_t18024_Maza
             Form kreirajKontrolu = new frmNovaKontrola();
             kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
+            PrikaziKontrole();
         }
 
         private void uiActionAzurirajKontrolu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(kontrola.ID_kontrola.ToString());
-            //Form kreirajKontrolu = new frmNovaKontrola();
-            //kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
-            //kreirajKontrolu.ShowDialog();
+            Form kreirajKontrolu = new frmNovaKontrola(this.kontrola);
+            kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
+            kreirajKontrolu.ShowDialog();
+            PrikaziKontrole();
         }
 
         private void uiPrikazKontrola_SelectionChanged(object sender, EventArgs e)
