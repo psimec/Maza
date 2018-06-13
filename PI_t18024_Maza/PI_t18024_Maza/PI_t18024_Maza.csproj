@@ -96,6 +96,12 @@
     <Compile Include="Dijagnoza.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDetaljiKontrole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetaljiKontrole.Designer.cs">
+      <DependentUpon>frmDetaljiKontrole.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDizajn.cs">
       <SubType>Form</SubType>
     </Compile>
