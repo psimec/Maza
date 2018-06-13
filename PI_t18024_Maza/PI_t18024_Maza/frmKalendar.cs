@@ -34,11 +34,11 @@ namespace PI_t18024_Maza
             Button novi = new Button();
             novi.Click += (s, e) => 
             {
-                frmKontrola kontrola = new frmKontrola( idKontrola); 
-                this.Hide();
-                kontrola.StartPosition = FormStartPosition.CenterScreen;
-                kontrola.ShowDialog();
-                this.Close();
+                //frmKontrola kontrola = new frmKontrola( idKontrola); 
+                //this.Hide();
+                //kontrola.StartPosition = FormStartPosition.CenterScreen;
+                //kontrola.ShowDialog();
+                //this.Close();
             };
             novi.Text = datum.TimeOfDay + Environment.NewLine +zivotinja + Environment.NewLine + opis;
             novi.Size = new Size(100, 50);

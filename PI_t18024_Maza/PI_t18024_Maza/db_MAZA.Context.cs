@@ -36,5 +36,6 @@ namespace PI_t18024_Maza
         public DbSet<Vlasnik> Vlasnik { get; set; }
         public DbSet<Zivotinja> Zivotinja { get; set; }
         public DbSet<ViewPrikazZivotinja> ViewPrikazZivotinja { get; set; }
+        public DbSet<viewKontrola> viewKontrola { get; set; }
     }
 }

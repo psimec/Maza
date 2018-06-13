@@ -20,6 +20,12 @@ namespace PI_t18024_Maza
             this.kalendar = kalendar;
         }
 
+        public frmNovaKontrola()
+        {
+            InitializeComponent();
+            this.kalendar = null;
+        }
+
         private void NovaKontrola_Load(object sender, EventArgs e)
         {
             using (var db = new MazaEntities())
@@ -77,7 +83,10 @@ namespace PI_t18024_Maza
 
         private void NovaKontrola_FormClosed(object sender, FormClosedEventArgs e)
         {
-            kalendar.Osvjezi();
+            if (kalendar != null)
+            {
+                kalendar.Osvjezi();
+            }         
         }
     }
 }

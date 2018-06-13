@@ -12,42 +12,27 @@ namespace PI_t18024_Maza
 {
     public partial class frmKontrola : frmDizajn
     {
-        private int idKontrola;
-
         public frmKontrola()
         {
             InitializeComponent();
-            this.idKontrola = -1; // ako se na formu normalno dode
         }
 
-        public frmKontrola(int idKontrola)
-        {
-            InitializeComponent();
-            this.idKontrola = idKontrola; // ako se na formu dode preko kalendara
-        }
-
-        private void kontrolaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.kontrolaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._18024_DBDataSet);
-
-        }
 
         private void KontrolaForm_Load(object sender, EventArgs e)
         {
-            if (idKontrola == -1)
+            BindingList<viewKontrola> viewKontrola;
+            using (var db = new MazaEntities())
             {
-                // TODO: This line of code loads data into the '_18024_DBDataSet.kontrola' table. You can move, or remove it, as needed.
-                this.kontrolaTableAdapter.Fill(this._18024_DBDataSet.kontrola);
+                viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
             }
-            else // preko kalendara
-            {
-                _18024_DBDataSet.EnforceConstraints = false;
-                this.kontrolaTableAdapter.FillByKontrolaId(this._18024_DBDataSet.kontrola, idKontrola);
-            }
+            uiPrikazKontrola.DataSource = viewKontrola;
+        }
 
-
+        private void uiActonDodajKontrolu_Click(object sender, EventArgs e)
+        {
+            Form kreirajKontrolu = new frmNovaKontrola();
+            kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
+            kreirajKontrolu.ShowDialog();
         }
     }
 }

@@ -128,6 +128,21 @@
           <Property Name="ID_vlasnik" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view '18024_DB.dbo.viewKontrola' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="viewKontrola">
+          <Key>
+            <PropertyRef Name="ID_kontrola" />
+            <PropertyRef Name="zivotinja" />
+            <PropertyRef Name="veterinar" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ID_kontrola" Type="int" Nullable="false" />
+          <Property Name="zivotinja" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="veterinar" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view '18024_DB.dbo.ViewPrikazZivotinja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewPrikazZivotinja">
           <Key>
@@ -283,6 +298,15 @@ warning 6002: The table/view '18024_DB.dbo.ViewPrikazZivotinja' does not have a 
           <EntitySet Name="veterinar" EntityType="Self.veterinar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vlasnik" EntityType="Self.vlasnik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zivotinja" EntityType="Self.zivotinja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="viewKontrola" EntityType="Self.viewKontrola" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[viewKontrola].[ID_kontrola] AS [ID_kontrola], 
+[viewKontrola].[zivotinja] AS [zivotinja], 
+[viewKontrola].[veterinar] AS [veterinar], 
+[viewKontrola].[opis] AS [opis], 
+[viewKontrola].[status] AS [status]
+FROM [dbo].[viewKontrola] AS [viewKontrola]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewPrikazZivotinja" EntityType="Self.ViewPrikazZivotinja" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [ViewPrikazZivotinja].[ZivotinjaID] AS [ZivotinjaID], 
@@ -622,6 +646,7 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
             <End Role="cjepivo" EntitySet="Cjepivoes1" />
           </AssociationSet>
           <EntitySet Name="ViewPrikazZivotinjas" EntityType="DBModel.ViewPrikazZivotinja" />
+          <EntitySet Name="viewKontrolas" EntityType="DBModel.viewKontrola" />
         </EntityContainer>
         <EntityType Name="ViewPrikazZivotinja">
           <Key>
@@ -644,6 +669,19 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
           <Property Name="Datum_Uginuća" Type="DateTime" Precision="0" />
           <Property Name="Ime_Vlasnika" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Prezime_Vlasnika" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="viewKontrola">
+          <Key>
+            <PropertyRef Name="ID_kontrola" />
+            <PropertyRef Name="zivotinja" />
+            <PropertyRef Name="veterinar" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ID_kontrola" Type="Int32" Nullable="false" />
+          <Property Name="zivotinja" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="veterinar" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="opis" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -794,6 +832,17 @@ FROM [dbo].[ViewPrikazZivotinja] AS [ViewPrikazZivotinja]</DefiningQuery>
                 <ScalarProperty Name="Spol" ColumnName="Spol" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="ZivotinjaID" ColumnName="ZivotinjaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="viewKontrolas">
+            <EntityTypeMapping TypeName="DBModel.viewKontrola">
+              <MappingFragment StoreEntitySet="viewKontrola">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="veterinar" ColumnName="veterinar" />
+                <ScalarProperty Name="zivotinja" ColumnName="zivotinja" />
+                <ScalarProperty Name="ID_kontrola" ColumnName="ID_kontrola" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
