@@ -19,5 +19,6 @@ namespace PI_t18024_Maza
         public string veterinar { get; set; }
         public string opis { get; set; }
         public string status { get; set; }
+        public System.DateTime datum_kontrole { get; set; }
     }
 }

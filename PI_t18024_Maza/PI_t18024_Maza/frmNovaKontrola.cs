@@ -27,6 +27,7 @@ namespace PI_t18024_Maza
             InitializeComponent();
             this.kalendar = null;
             this.kontrola = kontrola;
+            
         }
 
         public frmNovaKontrola()
@@ -49,7 +50,16 @@ namespace PI_t18024_Maza
                 uiOdabirZivotinja.ValueMember = "ID_Zivotinja";
 
                 uiOdabirStatus.SelectedIndex = 1;
-            }    
+            }
+
+            if (this.kontrola != null) // popuni s odabranim podacima
+            {
+                this.uiOdabirZivotinja.SelectedValue = kontrola.ID_zivotinja;
+                this.uiOdabirVeterinar.SelectedValue = kontrola.ID_veterinar;
+                this.uiOdabirDatum.Value = kontrola.datum_kontrole;
+                this.uiOdabirStatus.Text = kontrola.status;
+                this.uiUnosOpis.Text = kontrola.opis;
+            }
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -63,29 +73,52 @@ namespace PI_t18024_Maza
             {
                 using (var db = new MazaEntities())
                 {
-                    Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
-                    Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
-
-                    db.Zivotinja.Attach(zivotinja);
-                    db.Veterinar.Attach(veterinar);
-
-                    Kontrola kontrola = new Kontrola
+                    if (this.kontrola == null)
                     {
-                        ID_veterinar = veterinar.ID_veterinar,
-                        ID_zivotinja = zivotinja.ID_zivotinja,
-                        datum_kontrole = uiOdabirDatum.Value,
-                        status = uiOdabirStatus.Text,
-                        opis = uiUnosOpis.Text,
-                        Zivotinja = zivotinja,
-                        Veterinar = veterinar
-                    };
+                        Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
+                        Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
 
-                    db.Kontrola.Add(kontrola);
-                    db.SaveChanges();
+                        db.Zivotinja.Attach(zivotinja);
+                        db.Veterinar.Attach(veterinar);
+
+                        Kontrola kontrola = new Kontrola
+                        {
+                            ID_veterinar = veterinar.ID_veterinar,
+                            ID_zivotinja = zivotinja.ID_zivotinja,
+                            datum_kontrole = uiOdabirDatum.Value,
+                            status = uiOdabirStatus.Text,
+                            opis = uiUnosOpis.Text,
+                            Zivotinja = zivotinja,
+                            Veterinar = veterinar
+                        };
+
+                        db.Kontrola.Add(kontrola);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        db.Kontrola.Attach(kontrola);
+
+                        Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
+                        Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
+
+                        db.Zivotinja.Attach(zivotinja);
+                        db.Veterinar.Attach(veterinar);
+
+                        kontrola.ID_veterinar = veterinar.ID_veterinar;
+                        kontrola.ID_zivotinja = zivotinja.ID_zivotinja;
+                        kontrola.datum_kontrole = uiOdabirDatum.Value;
+                        kontrola.status = uiOdabirStatus.Text;
+                        kontrola.opis = uiUnosOpis.Text;
+                        kontrola.Zivotinja = zivotinja;
+                        kontrola.Veterinar = veterinar;
+
+                        db.SaveChanges();
+                    }
                 }
                 this.Close();            
             }
-            else
+            else // ako podaci nisu uneseni
             {
                 return;
             }     
