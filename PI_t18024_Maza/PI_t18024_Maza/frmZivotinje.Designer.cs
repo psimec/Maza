@@ -59,8 +59,9 @@
             this.uiPrikazZivotinja.RowHeadersVisible = false;
             this.uiPrikazZivotinja.RowTemplate.Height = 24;
             this.uiPrikazZivotinja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiPrikazZivotinja.Size = new System.Drawing.Size(1091, 312);
+            this.uiPrikazZivotinja.Size = new System.Drawing.Size(1091, 382);
             this.uiPrikazZivotinja.TabIndex = 4;
+            this.uiPrikazZivotinja.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazZivotinja_ColumnHeaderMouseClick);
             // 
             // uiActionDodajZivotinju
             // 
@@ -68,7 +69,7 @@
             this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(671, 547);
+            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(1165, 524);
             this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
             this.uiActionDodajZivotinju.Size = new System.Drawing.Size(135, 44);
             this.uiActionDodajZivotinju.TabIndex = 10;

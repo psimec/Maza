@@ -27,8 +27,6 @@ namespace PI_t18024_Maza
             uiPrikazZivotinja.DataSource = listaZivotinja;
 
             uiPrikazZivotinja.Columns[0].Visible = false;
-
-            
         }
                
         private void Zivotinje_Load(object sender, EventArgs e)
@@ -55,6 +53,11 @@ namespace PI_t18024_Maza
                 dodajZivotinju.ShowDialog();
             }
             PrikaziZivotinje();
+        }
+
+        private void uiPrikazZivotinja_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
         }
     }
 }

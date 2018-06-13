@@ -62,5 +62,19 @@ namespace PI_t18024_Maza
                 item.SortMode = DataGridViewColumnSortMode.Automatic;
             }
         }
+
+        private void uiActionAzurirajVlasnika_Click(object sender, EventArgs e)
+        {
+            frmAzurirajVlasnika azurirajVlasnika = new frmAzurirajVlasnika(vlasnikBindingSource.Current as Vlasnik);
+            azurirajVlasnika.ShowDialog();
+            PopuniVlasnike();
+        }
+
+        private void uiDodajVlasnika_Click(object sender, EventArgs e)
+        {
+            frmAzurirajVlasnika dodajVlasnika = new frmAzurirajVlasnika();
+            dodajVlasnika.ShowDialog();
+            PopuniVlasnike();
+        }
     }
 }

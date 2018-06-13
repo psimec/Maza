@@ -174,7 +174,7 @@
             this.groupBox1.Controls.Add(this.uiVrsta);
             this.groupBox1.Controls.Add(this.uiBrojCipa);
             this.groupBox1.Controls.Add(this.lblBrojCipa);
-            this.groupBox1.Location = new System.Drawing.Point(12, 220);
+            this.groupBox1.Location = new System.Drawing.Point(12, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 194);
             this.groupBox1.TabIndex = 4;
@@ -306,7 +306,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(70, 432);
+            this.button1.Location = new System.Drawing.Point(100, 416);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 38);
             this.button1.TabIndex = 6;
