@@ -25,7 +25,7 @@ namespace PI_t18024_Maza
             {
                 listaVlasnika = new BindingList<Vlasnik>(db.Vlasnik.ToList());
             }
-            dataGridView1.DataSource = listaVlasnika;
+            vlasnikBindingSource.DataSource = listaVlasnika;
         }
 
         public void PopuniZivotinje(Vlasnik oznaceni)
@@ -36,7 +36,7 @@ namespace PI_t18024_Maza
                 db.Vlasnik.Attach(oznaceni);
                 listaZivotinja = new BindingList<Zivotinja>(oznaceni.Zivotinja.ToList());
             }
-            dataGridView2.DataSource = listaZivotinja;
+            zivotinjaBindingSource.DataSource = listaZivotinja;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

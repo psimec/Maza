@@ -28,98 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblImeZivotinje = new System.Windows.Forms.Label();
             this.uiIme = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSpol = new System.Windows.Forms.Label();
+            this.lblVrsta = new System.Windows.Forms.Label();
             this.uiVrsta = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDatumRodenja = new System.Windows.Forms.Label();
+            this.lblBrojCipa = new System.Windows.Forms.Label();
             this.uiBrojCipa = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTezina = new System.Windows.Forms.Label();
             this.uiTezina = new System.Windows.Forms.TextBox();
             this.uiOdabirSpola = new System.Windows.Forms.ComboBox();
             this.uiDatumRodenja = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblImeZivotinje
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ime";
+            this.lblImeZivotinje.AutoSize = true;
+            this.lblImeZivotinje.Location = new System.Drawing.Point(10, 24);
+            this.lblImeZivotinje.Name = "lblImeZivotinje";
+            this.lblImeZivotinje.Size = new System.Drawing.Size(34, 17);
+            this.lblImeZivotinje.TabIndex = 0;
+            this.lblImeZivotinje.Text = "Ime:";
             // 
             // uiIme
             // 
-            this.uiIme.Location = new System.Drawing.Point(108, 12);
+            this.uiIme.Location = new System.Drawing.Point(90, 21);
             this.uiIme.Name = "uiIme";
             this.uiIme.Size = new System.Drawing.Size(352, 22);
             this.uiIme.TabIndex = 1;
             // 
-            // label2
+            // lblSpol
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Spol";
+            this.lblSpol.AutoSize = true;
+            this.lblSpol.Location = new System.Drawing.Point(10, 108);
+            this.lblSpol.Name = "lblSpol";
+            this.lblSpol.Size = new System.Drawing.Size(40, 17);
+            this.lblSpol.TabIndex = 0;
+            this.lblSpol.Text = "Spol:";
             // 
-            // label3
+            // lblVrsta
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Vrsta";
+            this.lblVrsta.AutoSize = true;
+            this.lblVrsta.Location = new System.Drawing.Point(10, 67);
+            this.lblVrsta.Name = "lblVrsta";
+            this.lblVrsta.Size = new System.Drawing.Size(45, 17);
+            this.lblVrsta.TabIndex = 0;
+            this.lblVrsta.Text = "Vrsta:";
             // 
             // uiVrsta
             // 
-            this.uiVrsta.Location = new System.Drawing.Point(108, 55);
+            this.uiVrsta.Location = new System.Drawing.Point(90, 64);
             this.uiVrsta.Name = "uiVrsta";
             this.uiVrsta.Size = new System.Drawing.Size(87, 22);
             this.uiVrsta.TabIndex = 1;
+            this.uiVrsta.TextChanged += new System.EventHandler(this.uiVrsta_TextChanged);
             // 
-            // label4
+            // lblDatumRodenja
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Datum rođenja";
+            this.lblDatumRodenja.AutoSize = true;
+            this.lblDatumRodenja.Location = new System.Drawing.Point(85, 157);
+            this.lblDatumRodenja.Name = "lblDatumRodenja";
+            this.lblDatumRodenja.Size = new System.Drawing.Size(101, 17);
+            this.lblDatumRodenja.TabIndex = 0;
+            this.lblDatumRodenja.Text = "Datum rođenja";
             // 
-            // label5
+            // lblBrojCipa
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(227, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Broj čipa";
+            this.lblBrojCipa.AutoSize = true;
+            this.lblBrojCipa.Location = new System.Drawing.Point(206, 67);
+            this.lblBrojCipa.Name = "lblBrojCipa";
+            this.lblBrojCipa.Size = new System.Drawing.Size(63, 17);
+            this.lblBrojCipa.TabIndex = 0;
+            this.lblBrojCipa.Text = "Broj čipa";
+            this.lblBrojCipa.Visible = false;
             // 
             // uiBrojCipa
             // 
-            this.uiBrojCipa.Location = new System.Drawing.Point(293, 55);
+            this.uiBrojCipa.Location = new System.Drawing.Point(275, 62);
             this.uiBrojCipa.Name = "uiBrojCipa";
             this.uiBrojCipa.Size = new System.Drawing.Size(167, 22);
             this.uiBrojCipa.TabIndex = 1;
+            this.uiBrojCipa.Visible = false;
             // 
-            // label6
+            // lblTezina
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(241, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Težina";
+            this.lblTezina.AutoSize = true;
+            this.lblTezina.Location = new System.Drawing.Point(206, 108);
+            this.lblTezina.Name = "lblTezina";
+            this.lblTezina.Size = new System.Drawing.Size(55, 17);
+            this.lblTezina.TabIndex = 0;
+            this.lblTezina.Text = "Težina:";
             // 
             // uiTezina
             // 
-            this.uiTezina.Location = new System.Drawing.Point(293, 95);
+            this.uiTezina.Location = new System.Drawing.Point(275, 103);
             this.uiTezina.Name = "uiTezina";
             this.uiTezina.Size = new System.Drawing.Size(167, 22);
             this.uiTezina.TabIndex = 1;
@@ -127,56 +132,68 @@
             // uiOdabirSpola
             // 
             this.uiOdabirSpola.FormattingEnabled = true;
-            this.uiOdabirSpola.Location = new System.Drawing.Point(112, 93);
+            this.uiOdabirSpola.Location = new System.Drawing.Point(90, 105);
             this.uiOdabirSpola.Name = "uiOdabirSpola";
             this.uiOdabirSpola.Size = new System.Drawing.Size(46, 24);
             this.uiOdabirSpola.TabIndex = 2;
             // 
             // uiDatumRodenja
             // 
-            this.uiDatumRodenja.Location = new System.Drawing.Point(141, 188);
+            this.uiDatumRodenja.Location = new System.Drawing.Point(209, 157);
             this.uiDatumRodenja.Name = "uiDatumRodenja";
             this.uiDatumRodenja.Size = new System.Drawing.Size(176, 22);
             this.uiDatumRodenja.TabIndex = 3;
             // 
-            // DodajZivotinjuForm
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.uiIme);
+            this.groupBox1.Controls.Add(this.uiDatumRodenja);
+            this.groupBox1.Controls.Add(this.lblDatumRodenja);
+            this.groupBox1.Controls.Add(this.lblImeZivotinje);
+            this.groupBox1.Controls.Add(this.uiOdabirSpola);
+            this.groupBox1.Controls.Add(this.lblSpol);
+            this.groupBox1.Controls.Add(this.uiTezina);
+            this.groupBox1.Controls.Add(this.lblVrsta);
+            this.groupBox1.Controls.Add(this.lblTezina);
+            this.groupBox1.Controls.Add(this.uiVrsta);
+            this.groupBox1.Controls.Add(this.uiBrojCipa);
+            this.groupBox1.Controls.Add(this.lblBrojCipa);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(448, 194);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // frmDodajZivotinju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 450);
-            this.Controls.Add(this.uiDatumRodenja);
-            this.Controls.Add(this.uiOdabirSpola);
-            this.Controls.Add(this.uiTezina);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.uiBrojCipa);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.uiVrsta);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.uiIme);
-            this.Controls.Add(this.label1);
-            this.Name = "DodajZivotinjuForm";
+            this.Controls.Add(this.groupBox1);
+            this.Name = "frmDodajZivotinju";
             this.Text = "DodajZivotinjuForm";
             this.Load += new System.EventHandler(this.DodajZivotinjuForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblImeZivotinje;
         private System.Windows.Forms.TextBox uiIme;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSpol;
+        private System.Windows.Forms.Label lblVrsta;
         private System.Windows.Forms.TextBox uiVrsta;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDatumRodenja;
+        private System.Windows.Forms.Label lblBrojCipa;
         private System.Windows.Forms.TextBox uiBrojCipa;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTezina;
         private System.Windows.Forms.TextBox uiTezina;
         private System.Windows.Forms.ComboBox uiOdabirSpola;
         private System.Windows.Forms.DateTimePicker uiDatumRodenja;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

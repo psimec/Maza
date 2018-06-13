@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
-            this.zivotinjaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.zivotinjaTableAdapter();
-            this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
+            this.uiPrikazZivotinja = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,67 +42,52 @@
             this.panel1.Size = new System.Drawing.Size(7, 100);
             this.panel1.TabIndex = 3;
             // 
-            // dataGridView1
+            // uiPrikazZivotinja
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(229, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1091, 302);
-            this.dataGridView1.TabIndex = 4;
+            this.uiPrikazZivotinja.AllowUserToAddRows = false;
+            this.uiPrikazZivotinja.AllowUserToDeleteRows = false;
+            this.uiPrikazZivotinja.AllowUserToResizeColumns = false;
+            this.uiPrikazZivotinja.AllowUserToResizeRows = false;
+            this.uiPrikazZivotinja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.uiPrikazZivotinja.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
+            this.uiPrikazZivotinja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uiPrikazZivotinja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.uiPrikazZivotinja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uiPrikazZivotinja.Location = new System.Drawing.Point(229, 106);
+            this.uiPrikazZivotinja.Name = "uiPrikazZivotinja";
+            this.uiPrikazZivotinja.ReadOnly = true;
+            this.uiPrikazZivotinja.RowHeadersVisible = false;
+            this.uiPrikazZivotinja.RowTemplate.Height = 24;
+            this.uiPrikazZivotinja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.uiPrikazZivotinja.Size = new System.Drawing.Size(1091, 312);
+            this.uiPrikazZivotinja.TabIndex = 4;
+            this.uiPrikazZivotinja.SelectionChanged += new System.EventHandler(this.uiPrikazZivotinja_SelectionChanged);
             // 
-            // zivotinjaBindingSource
+            // button1
             // 
-            this.zivotinjaBindingSource.DataMember = "zivotinja";
-            this.zivotinjaBindingSource.DataSource = this._18024_DBDataSet;
+            this.button1.Location = new System.Drawing.Point(724, 567);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // _18024_DBDataSet
-            // 
-            this._18024_DBDataSet.DataSetName = "_18024_DBDataSet";
-            this._18024_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // zivotinjaTableAdapter
-            // 
-            this.zivotinjaTableAdapter.ClearBeforeFill = true;
-            // 
-            // uiActionDodajZivotinju
-            // 
-            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(1132, 493);
-            this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
-            this.uiActionDodajZivotinju.Size = new System.Drawing.Size(133, 46);
-            this.uiActionDodajZivotinju.TabIndex = 5;
-            this.uiActionDodajZivotinju.Text = "Dodaj životinju";
-            this.uiActionDodajZivotinju.UseVisualStyleBackColor = true;
-            this.uiActionDodajZivotinju.Click += new System.EventHandler(this.uiActionDodajZivotinju_Click);
-            // 
-            // Zivotinje
+            // frmZivotinje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 778);
-            this.Controls.Add(this.uiActionDodajZivotinju);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uiPrikazZivotinja);
             this.Controls.Add(this.panel1);
-            this.Name = "Zivotinje";
+            this.Name = "frmZivotinje";
             this.Text = "Zivotinje";
             this.Load += new System.EventHandler(this.Zivotinje_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.uiActionDodajZivotinju, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
+            this.Controls.SetChildIndex(this.uiPrikazZivotinja, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,10 +96,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private _18024_DBDataSetTableAdapters.zivotinjaTableAdapter zivotinjaTableAdapter;
         private _18024_DBDataSet _18024_DBDataSet;
-        private System.Windows.Forms.BindingSource zivotinjaBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button uiActionDodajZivotinju;
+        private System.Windows.Forms.DataGridView uiPrikazZivotinja;
+        private System.Windows.Forms.Button button1;
     }
 }

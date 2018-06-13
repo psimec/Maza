@@ -24,20 +24,35 @@ namespace PI_t18024_Maza
             {
                 listaZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.ToList());
             }
-            dataGridView1.DataSource = listaZivotinja;
+            uiPrikazZivotinja.DataSource = listaZivotinja;
 
-            dataGridView1.Columns[0].Visible = false;
+            uiPrikazZivotinja.Columns[0].Visible = false;
         }
                
         private void Zivotinje_Load(object sender, EventArgs e)
         {
-            PrikaziZivotinje();
+            PrikaziZivotinje(); 
+        }
+        
+        private void uiPrikazZivotinja_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
 
-        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            frmDodajZivotinju dodaj = new frmDodajZivotinju();
-
+            if(uiPrikazZivotinja.CurrentRow != null)
+            {
+                int idZivotinja = int.Parse(uiPrikazZivotinja.CurrentRow.Cells[0].Value.ToString());
+                Vlasnik vlasnik;
+                using (var db = new MazaEntities())
+                {
+                    Zivotinja zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == idZivotinja).FirstOrDefault();
+                    vlasnik = db.Vlasnik.Where(v => v.ID_vlasnik == zivotinja.ID_vlasnika).FirstOrDefault();
+                }
+                frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
+                dodajZivotinju.ShowDialog();
+            }
         }
     }
 }

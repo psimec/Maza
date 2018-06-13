@@ -12,8 +12,10 @@ namespace PI_t18024_Maza
 {
     public partial class frmDodajZivotinju : Form
     {
-        public frmDodajZivotinju()
+        Vlasnik vlasnik;
+        public frmDodajZivotinju(Vlasnik vlasnik)
         {
+            this.vlasnik = vlasnik;
             InitializeComponent();
             uiOdabirSpola.Items.Add("m");
             uiOdabirSpola.Items.Add("ž");
@@ -21,13 +23,14 @@ namespace PI_t18024_Maza
 
         private void DodajZivotinjuForm_Load(object sender, EventArgs e)
         {
-            using (var db = new MazaEntities())
-            {
-                //uiOdabirVlasnika.DataSource = db.Vlasnik.ToList();
-                //uiOdabirVlasnika.DisplayMember = "Ime";
-                //uiOdabirVlasnika.ValueMember = "IdVlasnik";
+        }
 
-                //ui
+        private void uiVrsta_TextChanged(object sender, EventArgs e)
+        {
+            if(uiVrsta.Text == "Pas")
+            {
+                lblBrojCipa.Visible = true;
+                uiBrojCipa.Visible = true;
             }
         }
     }
