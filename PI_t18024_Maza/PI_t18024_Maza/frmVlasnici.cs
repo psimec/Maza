@@ -65,14 +65,14 @@ namespace PI_t18024_Maza
 
         private void uiActionAzurirajVlasnika_Click(object sender, EventArgs e)
         {
-            frmAzurirajVlasnika azurirajVlasnika = new frmAzurirajVlasnika(vlasnikBindingSource.Current as Vlasnik);
+            frmAzurirajVlasnike azurirajVlasnika = new frmAzurirajVlasnike(vlasnikBindingSource.Current as Vlasnik);
             azurirajVlasnika.ShowDialog();
             PopuniVlasnike();
         }
 
         private void uiDodajVlasnika_Click(object sender, EventArgs e)
         {
-            frmAzurirajVlasnika dodajVlasnika = new frmAzurirajVlasnika();
+            frmAzurirajVlasnike dodajVlasnika = new frmAzurirajVlasnike();
             dodajVlasnika.ShowDialog();
             PopuniVlasnike();
         }

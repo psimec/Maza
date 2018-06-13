@@ -96,6 +96,12 @@
     <Compile Include="Dijagnoza.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmAzurirajVlasnike.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAzurirajVlasnike.Designer.cs">
+      <DependentUpon>frmAzurirajVlasnike.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetaljiKontrole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAzurirajVlasnike.resx">
+      <DependentUpon>frmAzurirajVlasnike.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDetaljiKontrole.resx">
       <DependentUpon>frmDetaljiKontrole.cs</DependentUpon>
     </EmbeddedResource>

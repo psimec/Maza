@@ -56,6 +56,7 @@
             this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
             this.uiActionAzurirajVlasnika = new System.Windows.Forms.Button();
             this.uiDodajVlasnika = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazVlasnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
@@ -277,7 +278,7 @@
             this.uiActionAzurirajVlasnika.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionAzurirajVlasnika.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionAzurirajVlasnika.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionAzurirajVlasnika.Location = new System.Drawing.Point(1140, 319);
+            this.uiActionAzurirajVlasnika.Location = new System.Drawing.Point(983, 319);
             this.uiActionAzurirajVlasnika.Name = "uiActionAzurirajVlasnika";
             this.uiActionAzurirajVlasnika.Size = new System.Drawing.Size(144, 49);
             this.uiActionAzurirajVlasnika.TabIndex = 10;
@@ -291,7 +292,7 @@
             this.uiDodajVlasnika.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiDodajVlasnika.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiDodajVlasnika.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiDodajVlasnika.Location = new System.Drawing.Point(965, 318);
+            this.uiDodajVlasnika.Location = new System.Drawing.Point(808, 318);
             this.uiDodajVlasnika.Name = "uiDodajVlasnika";
             this.uiDodajVlasnika.Size = new System.Drawing.Size(144, 49);
             this.uiDodajVlasnika.TabIndex = 11;
@@ -299,12 +300,26 @@
             this.uiDodajVlasnika.UseVisualStyleBackColor = false;
             this.uiDodajVlasnika.Click += new System.EventHandler(this.uiDodajVlasnika_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(1156, 318);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 49);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Izbriši Vlasnika";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmVlasnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1344, 778);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.uiDodajVlasnika);
             this.Controls.Add(this.uiActionAzurirajVlasnika);
             this.Controls.Add(this.uiActionDodajZivotinju);
@@ -320,6 +335,7 @@
             this.Controls.SetChildIndex(this.uiActionDodajZivotinju, 0);
             this.Controls.SetChildIndex(this.uiActionAzurirajVlasnika, 0);
             this.Controls.SetChildIndex(this.uiDodajVlasnika, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazVlasnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
@@ -356,5 +372,6 @@
         private System.Windows.Forms.Button uiActionDodajZivotinju;
         private System.Windows.Forms.Button uiActionAzurirajVlasnika;
         private System.Windows.Forms.Button uiDodajVlasnika;
+        private System.Windows.Forms.Button button1;
     }
 }
