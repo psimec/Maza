@@ -57,6 +57,7 @@
             this.uiPrikazKontrola.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazKontrola.Size = new System.Drawing.Size(520, 418);
             this.uiPrikazKontrola.TabIndex = 18;
+            this.uiPrikazKontrola.SelectionChanged += new System.EventHandler(this.uiPrikazKontrola_SelectionChanged);
             // 
             // uiActonDodajKontrolu
             // 
@@ -76,6 +77,7 @@
             this.uiActionAzurirajKontrolu.TabIndex = 20;
             this.uiActionAzurirajKontrolu.Text = "Ažuriraj kontrolu";
             this.uiActionAzurirajKontrolu.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajKontrolu.Click += new System.EventHandler(this.uiActionAzurirajKontrolu_Click);
             // 
             // uiActionDetaljiKontrole
             // 
@@ -90,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 632);
+            this.ClientSize = new System.Drawing.Size(1008, 632);
             this.Controls.Add(this.uiActionDetaljiKontrole);
             this.Controls.Add(this.uiActionAzurirajKontrolu);
             this.Controls.Add(this.uiActonDodajKontrolu);

@@ -12,9 +12,12 @@ namespace PI_t18024_Maza
 {
     public partial class frmKontrola : frmDizajn
     {
+        Kontrola kontrola;
+
         public frmKontrola()
         {
             InitializeComponent();
+            this.kontrola = null;
         }
 
 
@@ -26,6 +29,7 @@ namespace PI_t18024_Maza
                 viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
             }
             uiPrikazKontrola.DataSource = viewKontrola;
+            uiPrikazKontrola.Columns[0].Visible = false;
         }
 
         private void uiActonDodajKontrolu_Click(object sender, EventArgs e)
@@ -33,6 +37,23 @@ namespace PI_t18024_Maza
             Form kreirajKontrolu = new frmNovaKontrola();
             kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
+        }
+
+        private void uiActionAzurirajKontrolu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(kontrola.ID_kontrola.ToString());
+            //Form kreirajKontrolu = new frmNovaKontrola();
+            //kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
+            //kreirajKontrolu.ShowDialog();
+        }
+
+        private void uiPrikazKontrola_SelectionChanged(object sender, EventArgs e)
+        {       
+            int idKontrola = (int)uiPrikazKontrola.CurrentRow.Cells[0].Value;
+            using (var db = new MazaEntities())
+            {
+                kontrola = db.Kontrola.Where(k => k.ID_kontrola == idKontrola).FirstOrDefault();
+            }
         }
     }
 }

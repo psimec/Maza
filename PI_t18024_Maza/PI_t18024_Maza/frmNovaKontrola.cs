@@ -13,17 +13,27 @@ namespace PI_t18024_Maza
     public partial class frmNovaKontrola : Form
     {
         frmKalendar kalendar;
+        Kontrola kontrola;
 
         public frmNovaKontrola(frmKalendar kalendar)
         {
             InitializeComponent();
             this.kalendar = kalendar;
+            this.kontrola = null;
+        }
+
+        public frmNovaKontrola(Kontrola kontrola)
+        {
+            InitializeComponent();
+            this.kalendar = null;
+            this.kontrola = kontrola;
         }
 
         public frmNovaKontrola()
         {
             InitializeComponent();
             this.kalendar = null;
+            this.kontrola = null;
         }
 
         private void NovaKontrola_Load(object sender, EventArgs e)
