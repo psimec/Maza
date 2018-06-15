@@ -20,7 +20,7 @@ namespace PI_t18024_Maza
 
         public frmKalendar()
         {
-            InitializeComponent();         
+            InitializeComponent();
             brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
             datumOd = DateTime.Now.AddDays(-brojDana);
             datumDo = DateTime.Now.AddDays(6 - brojDana);
@@ -45,8 +45,21 @@ namespace PI_t18024_Maza
             {
                 zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault();
             }
+
             novi.Text = kontrola.datum_kontrole.TimeOfDay + Environment.NewLine + zivotinja.ime + Environment.NewLine + kontrola.opis;
+            novi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            novi.FlatAppearance.MouseOverBackColor = Color.Gray;
             novi.Size = new Size(100, 50);
+
+            if (kontrola.status == "Obavljen")
+            {
+                novi.BackColor = Color.FromArgb(80, Color.LightGreen);
+            }
+            else if(kontrola.status == "Nije obavljen")
+            {
+                novi.BackColor = Color.IndianRed;
+            }
+
             return novi;
         }
 
@@ -127,7 +140,7 @@ namespace PI_t18024_Maza
         {
             if (e.Column == brojDana)
             {
-                e.Graphics.FillRectangle(Brushes.LightPink, e.CellBounds);
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(89, 119, 183)), e.CellBounds);
             }
         }
         
