@@ -45,6 +45,13 @@
             this.uiActionDodajAktivnost = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.uiPrikazDatuma1 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma2 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma3 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma4 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma5 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma6 = new System.Windows.Forms.Label();
+            this.uiPrikazDatuma7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uiActionKontrola
@@ -103,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(187, 105);
+            this.label1.Location = new System.Drawing.Point(187, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 19);
             this.label1.TabIndex = 2;
@@ -113,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(329, 105);
+            this.label2.Location = new System.Drawing.Point(329, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 19);
             this.label2.TabIndex = 3;
@@ -123,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(447, 105);
+            this.label3.Location = new System.Drawing.Point(447, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 4;
@@ -133,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(563, 105);
+            this.label4.Location = new System.Drawing.Point(563, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 5;
@@ -143,7 +150,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(691, 105);
+            this.label5.Location = new System.Drawing.Point(691, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 19);
             this.label5.TabIndex = 6;
@@ -153,7 +160,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(809, 105);
+            this.label6.Location = new System.Drawing.Point(808, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 19);
             this.label6.TabIndex = 7;
@@ -163,7 +170,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(908, 105);
+            this.label7.Location = new System.Drawing.Point(908, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 19);
             this.label7.TabIndex = 8;
@@ -255,11 +262,74 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // uiPrikazDatuma1
+            // 
+            this.uiPrikazDatuma1.AutoSize = true;
+            this.uiPrikazDatuma1.Location = new System.Drawing.Point(210, 121);
+            this.uiPrikazDatuma1.Name = "uiPrikazDatuma1";
+            this.uiPrikazDatuma1.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma1.TabIndex = 15;
+            // 
+            // uiPrikazDatuma2
+            // 
+            this.uiPrikazDatuma2.AutoSize = true;
+            this.uiPrikazDatuma2.Location = new System.Drawing.Point(329, 121);
+            this.uiPrikazDatuma2.Name = "uiPrikazDatuma2";
+            this.uiPrikazDatuma2.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma2.TabIndex = 16;
+            // 
+            // uiPrikazDatuma3
+            // 
+            this.uiPrikazDatuma3.AutoSize = true;
+            this.uiPrikazDatuma3.Location = new System.Drawing.Point(448, 122);
+            this.uiPrikazDatuma3.Name = "uiPrikazDatuma3";
+            this.uiPrikazDatuma3.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma3.TabIndex = 17;
+            // 
+            // uiPrikazDatuma4
+            // 
+            this.uiPrikazDatuma4.AutoSize = true;
+            this.uiPrikazDatuma4.Location = new System.Drawing.Point(566, 122);
+            this.uiPrikazDatuma4.Name = "uiPrikazDatuma4";
+            this.uiPrikazDatuma4.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma4.TabIndex = 18;
+            // 
+            // uiPrikazDatuma5
+            // 
+            this.uiPrikazDatuma5.AutoSize = true;
+            this.uiPrikazDatuma5.Location = new System.Drawing.Point(691, 122);
+            this.uiPrikazDatuma5.Name = "uiPrikazDatuma5";
+            this.uiPrikazDatuma5.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma5.TabIndex = 19;
+            // 
+            // uiPrikazDatuma6
+            // 
+            this.uiPrikazDatuma6.AutoSize = true;
+            this.uiPrikazDatuma6.Location = new System.Drawing.Point(808, 121);
+            this.uiPrikazDatuma6.Name = "uiPrikazDatuma6";
+            this.uiPrikazDatuma6.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma6.TabIndex = 20;
+            // 
+            // uiPrikazDatuma7
+            // 
+            this.uiPrikazDatuma7.AutoSize = true;
+            this.uiPrikazDatuma7.Location = new System.Drawing.Point(913, 121);
+            this.uiPrikazDatuma7.Name = "uiPrikazDatuma7";
+            this.uiPrikazDatuma7.Size = new System.Drawing.Size(0, 13);
+            this.uiPrikazDatuma7.TabIndex = 21;
+            // 
             // frmKalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.uiPrikazDatuma7);
+            this.Controls.Add(this.uiPrikazDatuma6);
+            this.Controls.Add(this.uiPrikazDatuma5);
+            this.Controls.Add(this.uiPrikazDatuma4);
+            this.Controls.Add(this.uiPrikazDatuma3);
+            this.Controls.Add(this.uiPrikazDatuma2);
+            this.Controls.Add(this.uiPrikazDatuma1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
@@ -276,6 +346,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "frmKalendar";
             this.Text = "Kalendar";
+            this.Load += new System.EventHandler(this.frmKalendar_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -289,6 +360,13 @@
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma1, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma2, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma3, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma4, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma5, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma6, 0);
+            this.Controls.SetChildIndex(this.uiPrikazDatuma7, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,6 +390,13 @@
         private System.Windows.Forms.Button uiActionKalendar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label uiPrikazDatuma1;
+        private System.Windows.Forms.Label uiPrikazDatuma2;
+        private System.Windows.Forms.Label uiPrikazDatuma3;
+        private System.Windows.Forms.Label uiPrikazDatuma4;
+        private System.Windows.Forms.Label uiPrikazDatuma5;
+        private System.Windows.Forms.Label uiPrikazDatuma6;
+        private System.Windows.Forms.Label uiPrikazDatuma7;
     }
 }
 

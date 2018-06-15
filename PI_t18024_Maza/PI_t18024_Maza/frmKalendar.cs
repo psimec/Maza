@@ -20,11 +20,14 @@ namespace PI_t18024_Maza
         public frmKalendar()
         {
             InitializeComponent();
+            uiActionOdabirDatuma.Format = DateTimePickerFormat.Custom;
+            uiActionOdabirDatuma.CustomFormat = "dd-MM-yyyy";
             brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
             datumOd = DateTime.Now.AddDays(-brojDana);
             datumDo = DateTime.Now.AddDays(6 - brojDana);
             datumOd = datumOd.Date;
             datumDo = datumDo.Date;
+            PopuniDatume();
             IspisAktivnosti();
         }
 
@@ -81,6 +84,17 @@ namespace PI_t18024_Maza
             datumDo = datumDo.Date;
         }
 
+        private void PopuniDatume()
+        {
+            uiPrikazDatuma1.Text = datumOd.ToString("dd/M/yyyy");
+            uiPrikazDatuma2.Text = datumOd.AddDays(1).ToString("dd/M/yyyy");
+            uiPrikazDatuma3.Text = datumOd.AddDays(2).ToString("dd/M/yyyy");
+            uiPrikazDatuma4.Text = datumOd.AddDays(3).ToString("dd/M/yyyy");
+            uiPrikazDatuma5.Text = datumOd.AddDays(4).ToString("dd/M/yyyy");
+            uiPrikazDatuma6.Text = datumOd.AddDays(5).ToString("dd/M/yyyy");
+            uiPrikazDatuma7.Text = datumOd.AddDays(6).ToString("dd/M/yyyy");
+        }
+
         private void DohvatiAktivnosti()
         {
             using (var db = new MazaEntities())
@@ -127,6 +141,7 @@ namespace PI_t18024_Maza
             listaDaniAktivnosti.Clear();
             uiPanelAktivnosti.Invalidate();        
             OdrediTjedan(uiActionOdabirDatuma.Value);
+            PopuniDatume();
             IspisAktivnosti();
             
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
@@ -160,5 +175,9 @@ namespace PI_t18024_Maza
             povijestBolesti.ShowDialog();
         }
 
+        private void frmKalendar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
