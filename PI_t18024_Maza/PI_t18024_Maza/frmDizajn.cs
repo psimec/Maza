@@ -48,7 +48,7 @@ namespace PI_t18024_Maza
 
         private void uiActionKontrola_Click(object sender, EventArgs e)
         {
-            frmKontrola kontrola = new frmKontrola(); // krivo ime forme
+            frmKontrola kontrola = new frmKontrola(); 
             this.Hide();
             kontrola.StartPosition = FormStartPosition.CenterScreen;
             kontrola.ShowDialog();
@@ -64,5 +64,6 @@ namespace PI_t18024_Maza
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
     }
 }

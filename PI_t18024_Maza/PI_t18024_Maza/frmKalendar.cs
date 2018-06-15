@@ -16,7 +16,6 @@ namespace PI_t18024_Maza
         double brojDana;
         DateTime datumOd;
         DateTime datumDo;
-        //Dictionary<DayOfWeek, Dictionary<int, object>> brojAktivnostiPoDanu; mogucnost za bilježenje broja aktivnosti u redu
 
         public frmKalendar()
         {
@@ -48,12 +47,13 @@ namespace PI_t18024_Maza
 
             novi.Text = kontrola.datum_kontrole.TimeOfDay + Environment.NewLine + zivotinja.ime + Environment.NewLine + kontrola.opis;
             novi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            novi.FlatAppearance.MouseOverBackColor = Color.Gray;
-            novi.Size = new Size(100, 50);
+            novi.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            novi.Size = new Size(120, 50);
+            novi.BringToFront();
 
             if (kontrola.status == "Obavljen")
             {
-                novi.BackColor = Color.FromArgb(80, Color.LightGreen);
+                novi.BackColor = Color.LightSeaGreen;
             }
             else if(kontrola.status == "Nije obavljen")
             {
@@ -125,9 +125,10 @@ namespace PI_t18024_Maza
         {
             uiPanelAktivnosti.Controls.Clear();
             listaDaniAktivnosti.Clear();
+            uiPanelAktivnosti.Invalidate();        
             OdrediTjedan(uiActionOdabirDatuma.Value);
-            uiPanelAktivnosti.Invalidate();
             IspisAktivnosti();
+            
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
 
@@ -142,6 +143,7 @@ namespace PI_t18024_Maza
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(89, 119, 183)), e.CellBounds);
             }
+
         }
         
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
@@ -157,5 +159,6 @@ namespace PI_t18024_Maza
             frmPovijestBolesti povijestBolesti = new frmPovijestBolesti(3);
             povijestBolesti.ShowDialog();
         }
+
     }
 }
