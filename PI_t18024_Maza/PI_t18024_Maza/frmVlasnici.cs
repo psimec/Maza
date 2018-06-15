@@ -101,5 +101,22 @@ namespace PI_t18024_Maza
                 PopuniVlasnike();
             }
         }
+
+        private void FiltrirajVlasnike(string vlasnik)
+        {
+            BindingList<Vlasnik> listaVlasnika;
+            using (var db = new MazaEntities())
+            {
+                listaVlasnika = new BindingList<Vlasnik>(db.Vlasnik.Where
+                    (v => (v.ime.Contains(vlasnik) || v.prezime.Contains(vlasnik) || v.adresa_stavnovanja.Contains(vlasnik) || v.broj_telefona1.Contains(vlasnik) || v.broj_telefona2.Contains(vlasnik) || v.email.Contains(vlasnik))).ToList());
+            }
+            vlasnikBindingSource.DataSource = listaVlasnika;
+        }
+
+        private void uiFiltrirajVlasnike_TextChanged(object sender, EventArgs e)
+        {
+            FiltrirajVlasnike(uiFiltrirajVlasnike.Text);
+        }
+
     }
 }

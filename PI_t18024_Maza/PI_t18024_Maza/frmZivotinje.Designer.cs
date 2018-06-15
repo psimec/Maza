@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazZivotinja = new System.Windows.Forms.DataGridView();
             this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uiFiltrirajZivotinje = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.uiPrikazZivotinja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.uiPrikazZivotinja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.uiPrikazZivotinja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uiPrikazZivotinja.Location = new System.Drawing.Point(229, 106);
+            this.uiPrikazZivotinja.Location = new System.Drawing.Point(241, 235);
             this.uiPrikazZivotinja.Name = "uiPrikazZivotinja";
             this.uiPrikazZivotinja.ReadOnly = true;
             this.uiPrikazZivotinja.RowHeadersVisible = false;
@@ -69,7 +71,7 @@
             this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(1165, 524);
+            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(698, 700);
             this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
             this.uiActionDodajZivotinju.Size = new System.Drawing.Size(135, 44);
             this.uiActionDodajZivotinju.TabIndex = 10;
@@ -77,11 +79,31 @@
             this.uiActionDodajZivotinju.UseVisualStyleBackColor = false;
             this.uiActionDodajZivotinju.Click += new System.EventHandler(this.uiActionDodajZivotinju_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(442, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Pretraži:";
+            // 
+            // uiFiltrirajZivotinje
+            // 
+            this.uiFiltrirajZivotinje.Location = new System.Drawing.Point(556, 147);
+            this.uiFiltrirajZivotinje.Name = "uiFiltrirajZivotinje";
+            this.uiFiltrirajZivotinje.Size = new System.Drawing.Size(219, 22);
+            this.uiFiltrirajZivotinje.TabIndex = 12;
+            this.uiFiltrirajZivotinje.TextChanged += new System.EventHandler(this.uiFiltrirajZivotinje_TextChanged);
+            // 
             // frmZivotinje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 778);
+            this.Controls.Add(this.uiFiltrirajZivotinje);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.uiActionDodajZivotinju);
             this.Controls.Add(this.uiPrikazZivotinja);
             this.Controls.Add(this.panel1);
@@ -91,8 +113,11 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.uiPrikazZivotinja, 0);
             this.Controls.SetChildIndex(this.uiActionDodajZivotinju, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.uiFiltrirajZivotinje, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,5 +128,7 @@
         private _18024_DBDataSet _18024_DBDataSet;
         private System.Windows.Forms.DataGridView uiPrikazZivotinja;
         private System.Windows.Forms.Button uiActionDodajZivotinju;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox uiFiltrirajZivotinje;
     }
 }

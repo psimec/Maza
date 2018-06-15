@@ -59,5 +59,33 @@ namespace PI_t18024_Maza
         {
             
         }
+
+        private void Filtriraj(string zivotinja)
+        {
+            BindingList<ViewPrikazZivotinja> viewZivotinja;
+            using (var db = new MazaEntities())
+            {
+                if(DateTime.TryParse(zivotinja, out DateTime datum))
+                {
+                    viewZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.Where
+                        (
+                            z => (z.Datum_Rođenja.Year == datum.Year || z.Datum_Rođenja.Month == datum.Month || z.Datum_Rođenja.Day == datum.Day)
+                        ).ToList());                        
+                }
+                else
+                {
+                    viewZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.Where
+                        (
+                            z => (z.Ime.Contains(zivotinja) || z.Ime_Vlasnika.Contains(zivotinja) || z.Prezime_Vlasnika.Contains(zivotinja) ||z.Vrsta.Contains(zivotinja))
+                        ).ToList());
+                }
+                uiPrikazZivotinja.DataSource = viewZivotinja;
+            }
+        }
+
+        private void uiFiltrirajZivotinje_TextChanged(object sender, EventArgs e)
+        {
+            Filtriraj(uiFiltrirajZivotinje.Text);
+        }
     }
 }
