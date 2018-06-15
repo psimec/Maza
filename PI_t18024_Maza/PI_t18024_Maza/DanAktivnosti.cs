@@ -11,22 +11,22 @@ namespace PI_t18024_Maza
     {
         public DayOfWeek Dan;
         public DateTime datum;
-        public List<Button> ListaAktivnosti = new List<Button>();
+        public List<Kontrola> ListaKontrola = new List<Kontrola>();
 
-        public DanAktivnosti(DayOfWeek dan, Button aktivnost)
+        public DanAktivnosti(DayOfWeek dan, Kontrola kontrola)
         {
             this.Dan = dan;
-            ListaAktivnosti.Add(aktivnost);
+            ListaKontrola.Add(kontrola);
         }
 
-        public void DodajAktivnost(Button aktivnost)
+        public void DodajAktivnost(Kontrola kontrola)
         {
-            ListaAktivnosti.Add(aktivnost);
+            ListaKontrola.Add(kontrola);
         }
 
         public void SortirajListuAktivnosti()
         {
-            ListaAktivnosti = ListaAktivnosti.OrderBy(a => a.Text).ToList();
+            ListaKontrola = ListaKontrola.OrderBy(k => k.datum_kontrole).ToList();
         }
     }
 }

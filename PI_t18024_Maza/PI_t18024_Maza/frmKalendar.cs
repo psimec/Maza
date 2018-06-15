@@ -26,31 +26,36 @@ namespace PI_t18024_Maza
             datumDo = DateTime.Now.AddDays(6 - brojDana);
             datumOd = datumOd.Date;
             datumDo = datumDo.Date;
-            ispisAktivnosti();
+            IspisAktivnosti();
         }
 
-        private Button kreirajAkrivnost(DateTime datum, string zivotinja, int idKontrola, string opis) 
+        private Button KreirajAkrivnost(Kontrola kontrola) 
         {
             Button novi = new Button();
             novi.Click += (s, e) => 
             {
-                //frmKontrola kontrola = new frmKontrola( idKontrola); 
-                //this.Hide();
-                //kontrola.StartPosition = FormStartPosition.CenterScreen;
-                //kontrola.ShowDialog();
-                //this.Close();
+                frmDetaljiKontrole detaljiKontrole = new frmDetaljiKontrole(kontrola);
+                detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
+                detaljiKontrole.ShowDialog();
             };
-            novi.Text = datum.TimeOfDay + Environment.NewLine +zivotinja + Environment.NewLine + opis;
+
+            Zivotinja zivotinja;
+
+            using (var db = new MazaEntities())
+            {
+                zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault();
+            }
+            novi.Text = kontrola.datum_kontrole.TimeOfDay + Environment.NewLine + zivotinja.ime + Environment.NewLine + kontrola.opis;
             novi.Size = new Size(100, 50);
             return novi;
         }
 
-        private void postaviAktivnost(Button aktivnost, int stupac, int red)
+        private void PostaviAktivnost(Button aktivnost, int stupac, int red)
         {
             uiPanelAktivnosti.Controls.Add(aktivnost, column: stupac, row: red);
         }
 
-        private void odrediTjedan(DateTime datum)
+        private void OdrediTjedan(DateTime datum)
         {
             brojDana = (int)datum.DayOfWeek - 1;
             if (brojDana == -1)
@@ -63,7 +68,7 @@ namespace PI_t18024_Maza
             datumDo = datumDo.Date;
         }
 
-        private void dohvatiAktivnosti()
+        private void DohvatiAktivnosti()
         {
             using (var db = new MazaEntities())
             {
@@ -71,35 +76,33 @@ namespace PI_t18024_Maza
                 {
                     if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))
                     {
-                        //MessageBox.Show(datumOd.AddDays(-1).ToString());
-                        Zivotinja zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault();
-                        Button aktivnost = kreirajAkrivnost(kontrola.datum_kontrole, zivotinja.ime, kontrola.ID_kontrola, kontrola.opis);
                         int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
                         if (index >= 0)
                         {
-                            listaDaniAktivnosti[index].DodajAktivnost(aktivnost);
+                            listaDaniAktivnosti[index].DodajAktivnost(kontrola);
                         }
                         else
                         {
-                            DanAktivnosti nova = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, aktivnost);
-                            listaDaniAktivnosti.Add(nova);
+                            DanAktivnosti noviDanAktivnosti = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, kontrola);
+                            listaDaniAktivnosti.Add(noviDanAktivnosti);
                         }                                            
                     }                    
                 }
             }
         }
 
-        private void ispisAktivnosti()
+        private void IspisAktivnosti()
         {
-            dohvatiAktivnosti();
+            DohvatiAktivnosti();
 
             foreach (var danTjedna in listaDaniAktivnosti)
             {
                 int red = 0;
                 danTjedna.SortirajListuAktivnosti();
-                foreach (var aktivnost in danTjedna.ListaAktivnosti)
+                foreach (var aktivnost in danTjedna.ListaKontrola)
                 {
-                    postaviAktivnost(aktivnost, (int)danTjedna.Dan -1, red);
+                    Button treuntaKontrola = KreirajAkrivnost(aktivnost);
+                    PostaviAktivnost(treuntaKontrola, (int)danTjedna.Dan -1, red);
                     red++;
                 }
             }
@@ -109,9 +112,9 @@ namespace PI_t18024_Maza
         {
             uiPanelAktivnosti.Controls.Clear();
             listaDaniAktivnosti.Clear();
-            odrediTjedan(uiActionOdabirDatuma.Value);
+            OdrediTjedan(uiActionOdabirDatuma.Value);
             uiPanelAktivnosti.Invalidate();
-            ispisAktivnosti();
+            IspisAktivnosti();
             //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
 
