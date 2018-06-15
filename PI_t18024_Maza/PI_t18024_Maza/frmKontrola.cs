@@ -17,8 +17,9 @@ namespace PI_t18024_Maza
 
         public frmKontrola()
         {
-            InitializeComponent();
+            InitializeComponent();          
             this.zadnjiKliknutiStupac = 0;
+            uiPrikazKontrola.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
             this.kontrola = null;
         }
 
@@ -35,7 +36,7 @@ namespace PI_t18024_Maza
             {
                 viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
             }
-            uiPrikazKontrola.DataSource = viewKontrola;
+            uiPrikazKontrola.DataSource = viewKontrola; 
         }
 
         private void sortirajKontroleUzlazno(int stupac)

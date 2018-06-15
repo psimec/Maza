@@ -86,13 +86,13 @@ namespace PI_t18024_Maza
 
         private void PopuniDatume()
         {
-            uiPrikazDatuma1.Text = datumOd.ToString("dd/M/yyyy");
-            uiPrikazDatuma2.Text = datumOd.AddDays(1).ToString("dd/M/yyyy");
-            uiPrikazDatuma3.Text = datumOd.AddDays(2).ToString("dd/M/yyyy");
-            uiPrikazDatuma4.Text = datumOd.AddDays(3).ToString("dd/M/yyyy");
-            uiPrikazDatuma5.Text = datumOd.AddDays(4).ToString("dd/M/yyyy");
-            uiPrikazDatuma6.Text = datumOd.AddDays(5).ToString("dd/M/yyyy");
-            uiPrikazDatuma7.Text = datumOd.AddDays(6).ToString("dd/M/yyyy");
+            uiPrikazDatuma1.Text = datumOd.ToString("dd/MM/yyyy");
+            uiPrikazDatuma2.Text = datumOd.AddDays(1).ToString("dd/MM/yyyy");
+            uiPrikazDatuma3.Text = datumOd.AddDays(2).ToString("dd/MM/yyyy");
+            uiPrikazDatuma4.Text = datumOd.AddDays(3).ToString("dd/MM/yyyy");
+            uiPrikazDatuma5.Text = datumOd.AddDays(4).ToString("dd/MM/yyyy");
+            uiPrikazDatuma6.Text = datumOd.AddDays(5).ToString("dd/MM/yyyy");
+            uiPrikazDatuma7.Text = datumOd.AddDays(6).ToString("dd/MM/yyyy");
         }
 
         private void DohvatiAktivnosti()
