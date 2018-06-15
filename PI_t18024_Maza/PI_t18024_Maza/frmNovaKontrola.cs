@@ -38,7 +38,6 @@ namespace PI_t18024_Maza
                 uiOdabirZivotinja.DisplayMember = "Ime";
                 uiOdabirZivotinja.ValueMember = "ID_Zivotinja";
 
-                uiOdabirStatus.SelectedIndex = 1;
             }
 
             if (this.kontrola != null) // popuni s odabranim podacima
@@ -46,8 +45,16 @@ namespace PI_t18024_Maza
                 this.uiOdabirZivotinja.SelectedValue = kontrola.ID_zivotinja;
                 this.uiOdabirVeterinar.SelectedValue = kontrola.ID_veterinar;
                 this.uiOdabirDatum.Value = kontrola.datum_kontrole;
-                this.uiOdabirStatus.Text = kontrola.status;
                 this.uiUnosOpis.Text = kontrola.opis;
+
+                if (kontrola.status == "Obavljen")
+                {
+                    uiOdabirStatusObavljen.Checked = true;
+                }
+                else
+                {
+                    uiOdabirStatusNijeObavljen.Checked = true;
+                }
             }
         }
 
@@ -58,8 +65,20 @@ namespace PI_t18024_Maza
 
         private void uiActionUredu_Click(object sender, EventArgs e)
         {
-            if (uiOdabirStatus.Text != "" && uiUnosOpis.Text != "" )
+            if (uiUnosOpis.Text != "" )
             {
+
+                string status = "";
+
+                if (uiOdabirStatusObavljen.Checked)
+                {
+                    status = "Obavljen";
+                }
+                else
+                {
+                    status = "Nije obavljen";
+                }
+
                 using (var db = new MazaEntities())
                 {
                     if (this.kontrola == null)
@@ -75,7 +94,7 @@ namespace PI_t18024_Maza
                             ID_veterinar = veterinar.ID_veterinar,
                             ID_zivotinja = zivotinja.ID_zivotinja,
                             datum_kontrole = uiOdabirDatum.Value,
-                            status = uiOdabirStatus.Text,
+                            status = status,
                             opis = uiUnosOpis.Text,
                             Zivotinja = zivotinja,
                             Veterinar = veterinar
@@ -97,7 +116,7 @@ namespace PI_t18024_Maza
                         kontrola.ID_veterinar = veterinar.ID_veterinar;
                         kontrola.ID_zivotinja = zivotinja.ID_zivotinja;
                         kontrola.datum_kontrole = uiOdabirDatum.Value;
-                        kontrola.status = uiOdabirStatus.Text;
+                        kontrola.status = status;
                         kontrola.opis = uiUnosOpis.Text;
                         kontrola.Zivotinja = zivotinja;
                         kontrola.Veterinar = veterinar;
@@ -112,5 +131,6 @@ namespace PI_t18024_Maza
                 return;
             }     
         }
+
     }
 }

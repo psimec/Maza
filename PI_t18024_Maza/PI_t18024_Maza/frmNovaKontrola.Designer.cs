@@ -34,12 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.uiOdabirDatum = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.uiOdabirStatus = new System.Windows.Forms.ComboBox();
             this.uiUnosOpis = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.uiActionUredu = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
+            this.uiOdabirStatusObavljen = new System.Windows.Forms.RadioButton();
+            this.uiOdabirStatusNijeObavljen = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uiOdabirZivotinja
@@ -97,26 +98,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Datum";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Status";
-            // 
-            // uiOdabirStatus
-            // 
-            this.uiOdabirStatus.FormattingEnabled = true;
-            this.uiOdabirStatus.Items.AddRange(new object[] {
-            "Obavljen",
-            "Nije obavljen"});
-            this.uiOdabirStatus.Location = new System.Drawing.Point(85, 142);
-            this.uiOdabirStatus.Name = "uiOdabirStatus";
-            this.uiOdabirStatus.Size = new System.Drawing.Size(211, 21);
-            this.uiOdabirStatus.TabIndex = 6;
-            // 
             // uiUnosOpis
             // 
             this.uiUnosOpis.Location = new System.Drawing.Point(85, 180);
@@ -154,25 +135,57 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
-            // NovaKontrola
+            // uiOdabirStatusObavljen
+            // 
+            this.uiOdabirStatusObavljen.AutoSize = true;
+            this.uiOdabirStatusObavljen.Location = new System.Drawing.Point(107, 145);
+            this.uiOdabirStatusObavljen.Name = "uiOdabirStatusObavljen";
+            this.uiOdabirStatusObavljen.Size = new System.Drawing.Size(65, 17);
+            this.uiOdabirStatusObavljen.TabIndex = 12;
+            this.uiOdabirStatusObavljen.TabStop = true;
+            this.uiOdabirStatusObavljen.Text = "obavljen";
+            this.uiOdabirStatusObavljen.UseVisualStyleBackColor = true;
+            // 
+            // uiOdabirStatusNijeObavljen
+            // 
+            this.uiOdabirStatusNijeObavljen.AutoSize = true;
+            this.uiOdabirStatusNijeObavljen.Location = new System.Drawing.Point(198, 145);
+            this.uiOdabirStatusNijeObavljen.Name = "uiOdabirStatusNijeObavljen";
+            this.uiOdabirStatusNijeObavljen.Size = new System.Drawing.Size(84, 17);
+            this.uiOdabirStatusNijeObavljen.TabIndex = 13;
+            this.uiOdabirStatusNijeObavljen.TabStop = true;
+            this.uiOdabirStatusNijeObavljen.Text = "nije obavljen";
+            this.uiOdabirStatusNijeObavljen.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Status";
+            // 
+            // frmNovaKontrola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(328, 370);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.uiOdabirStatusNijeObavljen);
+            this.Controls.Add(this.uiOdabirStatusObavljen);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionUredu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.uiUnosOpis);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.uiOdabirStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.uiOdabirDatum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOdabirVeterinar);
             this.Controls.Add(this.uiOdabirZivotinja);
-            this.Name = "NovaKontrola";
+            this.Name = "frmNovaKontrola";
             this.Text = "Kreiraj kontrolu";
             this.Load += new System.EventHandler(this.NovaKontrola_Load);
             this.ResumeLayout(false);
@@ -188,11 +201,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker uiOdabirDatum;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox uiOdabirStatus;
         private System.Windows.Forms.TextBox uiUnosOpis;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button uiActionUredu;
         private System.Windows.Forms.Button uiActionOdustani;
+        private System.Windows.Forms.RadioButton uiOdabirStatusObavljen;
+        private System.Windows.Forms.RadioButton uiOdabirStatusNijeObavljen;
+        private System.Windows.Forms.Label label4;
     }
 }
