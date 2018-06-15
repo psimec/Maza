@@ -133,9 +133,10 @@ namespace PI_t18024_Maza
         
         private void uiActionDodajAktivnost_Click(object sender, EventArgs e)
         {
-            Form kreirajKontrolu = new frmNovaKontrola(this);
+            Form kreirajKontrolu = new frmNovaKontrola();
             kreirajKontrolu.StartPosition = FormStartPosition.CenterScreen;
             kreirajKontrolu.ShowDialog();
+            Osvjezi();
         }
 
         private void button1_Click(object sender, EventArgs e)

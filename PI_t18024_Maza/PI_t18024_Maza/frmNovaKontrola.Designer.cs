@@ -174,7 +174,6 @@
             this.Controls.Add(this.uiOdabirZivotinja);
             this.Name = "NovaKontrola";
             this.Text = "Kreiraj kontrolu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NovaKontrola_FormClosed);
             this.Load += new System.EventHandler(this.NovaKontrola_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
