@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKontrola));
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazKontrola = new System.Windows.Forms.DataGridView();
             this.uiActonDodajKontrolu = new System.Windows.Forms.Button();
             this.uiActionAzurirajKontrolu = new System.Windows.Forms.Button();
             this.uiActionDetaljiKontrole = new System.Windows.Forms.Button();
             this.uiPretrazi = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.viewKontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDkontrolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zivotinjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +43,10 @@
             this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumkontroleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewKontrolaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +77,7 @@
             this.uiPrikazKontrola.ReadOnly = true;
             this.uiPrikazKontrola.RowHeadersVisible = false;
             this.uiPrikazKontrola.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiPrikazKontrola.Size = new System.Drawing.Size(520, 418);
+            this.uiPrikazKontrola.Size = new System.Drawing.Size(523, 418);
             this.uiPrikazKontrola.TabIndex = 18;
             this.uiPrikazKontrola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiPrikazKontrola_CellClick);
             this.uiPrikazKontrola.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazKontrola_ColumnHeaderMouseClick);
@@ -112,20 +114,11 @@
             // 
             // uiPretrazi
             // 
-            this.uiPretrazi.Location = new System.Drawing.Point(378, 97);
+            this.uiPretrazi.Location = new System.Drawing.Point(326, 95);
             this.uiPretrazi.Name = "uiPretrazi";
             this.uiPretrazi.Size = new System.Drawing.Size(162, 20);
             this.uiPretrazi.TabIndex = 22;
             this.uiPretrazi.TextChanged += new System.EventHandler(this.uiPretrazi_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Pretrazi:";
             // 
             // viewKontrolaBindingSource
             // 
@@ -174,12 +167,24 @@
             this.datumkontroleDataGridViewTextBoxColumn.Name = "datumkontroleDataGridViewTextBoxColumn";
             this.datumkontroleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(467, 97);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(17, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmKontrola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.uiPretrazi);
             this.Controls.Add(this.uiActionDetaljiKontrole);
             this.Controls.Add(this.uiActionAzurirajKontrolu);
@@ -196,9 +201,10 @@
             this.Controls.SetChildIndex(this.uiActionAzurirajKontrolu, 0);
             this.Controls.SetChildIndex(this.uiActionDetaljiKontrole, 0);
             this.Controls.SetChildIndex(this.uiPretrazi, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewKontrolaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +217,6 @@
         private System.Windows.Forms.Button uiActionAzurirajKontrolu;
         private System.Windows.Forms.Button uiActionDetaljiKontrole;
         private System.Windows.Forms.TextBox uiPretrazi;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource viewKontrolaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDkontrolaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zivotinjaDataGridViewTextBoxColumn;
@@ -219,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumkontroleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

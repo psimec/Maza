@@ -38,23 +38,5 @@ namespace PI_t18024_Maza
 
             this.reportViewer1.RefreshReport();
         }
-
-        private void button1_Click(object sender, EventArgs e) // test
-        {
-            Warning[] warnings;
-            string[] streamids;
-            string mimeType;
-            string encoding;
-            string filenameExtension;
-
-            byte[] bytes = reportViewer1.LocalReport.Render(
-                "PDF", null, out mimeType, out encoding, out filenameExtension,
-                out streamids, out warnings);
-
-            using (FileStream fs = new FileStream("output.pdf", FileMode.Create))
-            {
-                fs.Write(bytes, 0, bytes.Length);
-            }
-        }
     }
 }
