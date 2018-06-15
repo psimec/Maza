@@ -36,7 +36,6 @@ namespace PI_t18024_Maza
                 viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
             }
             uiPrikazKontrola.DataSource = viewKontrola;
-            uiPrikazKontrola.Columns[0].Visible = false;
         }
 
         private void sortirajKontroleUzlazno(int stupac)
@@ -68,7 +67,6 @@ namespace PI_t18024_Maza
             }
 
             uiPrikazKontrola.DataSource = viewKontrola;
-            uiPrikazKontrola.Columns[0].Visible = false;
         }
 
         private void sortirajKontroleSilazno(int stupac)
@@ -100,7 +98,6 @@ namespace PI_t18024_Maza
             }
 
             uiPrikazKontrola.DataSource = viewKontrola;
-            uiPrikazKontrola.Columns[0].Visible = false;
         }
 
         private void filtriraj(string pojam)
@@ -128,7 +125,6 @@ namespace PI_t18024_Maza
 
             }
             uiPrikazKontrola.DataSource = viewKontrola;
-            uiPrikazKontrola.Columns[0].Visible = false;
         }
 
         private void uiActonDodajKontrolu_Click(object sender, EventArgs e)

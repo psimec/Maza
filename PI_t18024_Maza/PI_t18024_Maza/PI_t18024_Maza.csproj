@@ -262,6 +262,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="viewKontrola.datasource" />
     <None Include="Vlasnik.datasource" />
     <None Include="Zivotinja.datasource" />
     <None Include="_18024_DBDataSet.xsc">

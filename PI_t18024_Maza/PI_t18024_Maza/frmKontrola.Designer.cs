@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazKontrola = new System.Windows.Forms.DataGridView();
             this.uiActonDodajKontrolu = new System.Windows.Forms.Button();
@@ -35,7 +36,15 @@
             this.uiActionDetaljiKontrole = new System.Windows.Forms.Button();
             this.uiPretrazi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.viewKontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDkontrolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zivotinjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veterinarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumkontroleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewKontrolaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,7 +60,16 @@
             // 
             this.uiPrikazKontrola.AllowUserToAddRows = false;
             this.uiPrikazKontrola.AllowUserToDeleteRows = false;
+            this.uiPrikazKontrola.AutoGenerateColumns = false;
             this.uiPrikazKontrola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uiPrikazKontrola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDkontrolaDataGridViewTextBoxColumn,
+            this.zivotinjaDataGridViewTextBoxColumn,
+            this.veterinarDataGridViewTextBoxColumn,
+            this.opisDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.datumkontroleDataGridViewTextBoxColumn});
+            this.uiPrikazKontrola.DataSource = this.viewKontrolaBindingSource;
             this.uiPrikazKontrola.Location = new System.Drawing.Point(162, 129);
             this.uiPrikazKontrola.Name = "uiPrikazKontrola";
             this.uiPrikazKontrola.ReadOnly = true;
@@ -109,6 +127,53 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Pretrazi:";
             // 
+            // viewKontrolaBindingSource
+            // 
+            this.viewKontrolaBindingSource.DataSource = typeof(PI_t18024_Maza.viewKontrola);
+            // 
+            // iDkontrolaDataGridViewTextBoxColumn
+            // 
+            this.iDkontrolaDataGridViewTextBoxColumn.DataPropertyName = "ID_kontrola";
+            this.iDkontrolaDataGridViewTextBoxColumn.HeaderText = "ID_kontrola";
+            this.iDkontrolaDataGridViewTextBoxColumn.Name = "iDkontrolaDataGridViewTextBoxColumn";
+            this.iDkontrolaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDkontrolaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // zivotinjaDataGridViewTextBoxColumn
+            // 
+            this.zivotinjaDataGridViewTextBoxColumn.DataPropertyName = "zivotinja";
+            this.zivotinjaDataGridViewTextBoxColumn.HeaderText = "Životinja";
+            this.zivotinjaDataGridViewTextBoxColumn.Name = "zivotinjaDataGridViewTextBoxColumn";
+            this.zivotinjaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // veterinarDataGridViewTextBoxColumn
+            // 
+            this.veterinarDataGridViewTextBoxColumn.DataPropertyName = "veterinar";
+            this.veterinarDataGridViewTextBoxColumn.HeaderText = "Veterinar";
+            this.veterinarDataGridViewTextBoxColumn.Name = "veterinarDataGridViewTextBoxColumn";
+            this.veterinarDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumkontroleDataGridViewTextBoxColumn
+            // 
+            this.datumkontroleDataGridViewTextBoxColumn.DataPropertyName = "datum_kontrole";
+            this.datumkontroleDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumkontroleDataGridViewTextBoxColumn.Name = "datumkontroleDataGridViewTextBoxColumn";
+            this.datumkontroleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmKontrola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +198,7 @@
             this.Controls.SetChildIndex(this.uiPretrazi, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazKontrola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewKontrolaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +212,12 @@
         private System.Windows.Forms.Button uiActionDetaljiKontrole;
         private System.Windows.Forms.TextBox uiPretrazi;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource viewKontrolaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDkontrolaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zivotinjaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veterinarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumkontroleDataGridViewTextBoxColumn;
     }
 }
