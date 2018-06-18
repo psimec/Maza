@@ -6,34 +6,37 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.69585in</Width>
+              <Width>3.72647cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83718in</Width>
+              <Width>3.72647cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83718in</Width>
+              <Width>3.72647cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.42051in</Width>
+              <Width>3.72647cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72647cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.81167cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox59">
+                    <Textbox Name="Textbox36">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Broj </Value>
+                              <Value>Broj dijagnoze</Value>
                               <Style>
-                                <FontFamily>century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -43,7 +46,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox59</rd:DefaultName>
+                      <rd:DefaultName>Textbox36</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -60,7 +63,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox61">
+                    <Textbox Name="Textbox38">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -69,7 +72,7 @@
                             <TextRun>
                               <Value>Simptomi</Value>
                               <Style>
-                                <FontFamily>century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -79,7 +82,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox61</rd:DefaultName>
+                      <rd:DefaultName>Textbox38</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -96,43 +99,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox63">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Terapija</Value>
-                              <Style>
-                                <FontFamily>century Gothic</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox63</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox65">
+                    <Textbox Name="Textbox40">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -141,7 +108,7 @@
                             <TextRun>
                               <Value>Napomena</Value>
                               <Style>
-                                <FontFamily>century Gothic</FontFamily>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -151,7 +118,79 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox65</rd:DefaultName>
+                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox42">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Bolest</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox42</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox44">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Lijek</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox44</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -169,7 +208,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -184,7 +223,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ID_dijagnoza</rd:DefaultName>
@@ -214,40 +255,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>simptomi</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="terapija">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!terapija.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>terapija</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -274,7 +287,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>napomena</rd:DefaultName>
@@ -291,12 +306,77 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="bolest">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!bolest.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>bolest</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="lijek">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(IsNothing(Fields!lijek.Value), "Nema podataka", Fields!lijek.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>lijek</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -313,237 +393,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>dijagnoza</DataSetName>
-        <Top>0.01389in</Top>
-        <Left>0.94169in</Left>
-        <Height>0.5in</Height>
-        <Width>5.79071in</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Tablix Name="Tablix4">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>1.55209in</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.25in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox98">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Bolest</Value>
-                              <Style>
-                                <FontFamily>century gothic</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox98</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.25in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Naziv">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Naziv.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Naziv</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <Group Name="Details1" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>bolest</DataSetName>
-        <Top>0.01389in</Top>
-        <Left>6.7324in</Left>
-        <Height>0.5in</Height>
-        <Width>1.55209in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>1.52303in</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.25in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Lijek</Value>
-                              <Style>
-                                <FontFamily>century Gothic</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.25in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="naziv">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=IIF(IsNothing(Fields!naziv.Value), "Nema podataka", Fields!naziv.Value)</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>naziv</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <Group Name="Details2" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>lijek</DataSetName>
-        <Top>0.01389in</Top>
-        <Left>8.28449in</Left>
-        <Height>0.5in</Height>
-        <Width>1.52303in</Width>
-        <ZIndex>2</ZIndex>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0cm</Top>
+        <Left>0.83555cm</Left>
+        <Height>1.41167cm</Height>
+        <Width>18.63236cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -551,21 +405,21 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.34375in</Height>
+    <Height>5.95313cm</Height>
     <Style />
   </Body>
-  <Width>10.42584in</Width>
+  <Width>20.6608cm</Width>
   <Page>
     <PageHeader>
-      <Height>5.59028in</Height>
+      <Height>16.15723cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Line Name="Line1">
           <Top>1.59722in</Top>
-          <Left>0.94169in</Left>
+          <Left>0.2021in</Left>
           <Height>0in</Height>
-          <Width>8.86583in</Width>
+          <Width>7.58577in</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -592,7 +446,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.74653in</Top>
-          <Left>3.03408in</Left>
+          <Left>1.63754in</Left>
           <Height>0.78125in</Height>
           <Width>4.93205in</Width>
           <ZIndex>1</ZIndex>
@@ -608,9 +462,9 @@
         </Textbox>
         <Line Name="Line2">
           <Top>2.74653in</Top>
-          <Left>0.93127in</Left>
+          <Left>0.2021in</Left>
           <Height>0in</Height>
-          <Width>8.87625in</Width>
+          <Width>7.58577in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -620,7 +474,7 @@
         </Line>
         <Line Name="Line3">
           <Top>2.74653in</Top>
-          <Left>0.93127in</Left>
+          <Left>0.19168in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>3</ZIndex>
@@ -632,9 +486,9 @@
         </Line>
         <Line Name="Line4">
           <Top>3.77083in</Top>
-          <Left>0.93127in</Left>
+          <Left>0.19168in</Left>
           <Height>0in</Height>
-          <Width>8.86583in</Width>
+          <Width>7.59619in</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -644,8 +498,8 @@
         </Line>
         <Line Name="Line5">
           <Top>2.74653in</Top>
-          <Left>9.80752in</Left>
-          <Height>1.02431in</Height>
+          <Left>7.78787in</Left>
+          <Height>1.0243in</Height>
           <Width>0in</Width>
           <ZIndex>5</ZIndex>
           <Style>
@@ -670,7 +524,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
           <Top>0.26736in</Top>
-          <Left>7.17558in</Left>
+          <Left>4.56891in</Left>
           <Height>0.25in</Height>
           <Width>2.55208in</Width>
           <ZIndex>6</ZIndex>
@@ -700,7 +554,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
           <Top>0.5868in</Top>
-          <Left>7.95113in</Left>
+          <Left>5.34446in</Left>
           <Height>0.25in</Height>
           <Width>1.77653in</Width>
           <ZIndex>7</ZIndex>
@@ -730,7 +584,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>0.87847in</Top>
-          <Left>8.72766in</Left>
+          <Left>6.12099in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>8</ZIndex>
@@ -760,7 +614,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>1.19792in</Top>
-          <Left>8.72766in</Left>
+          <Left>6.12099in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>9</ZIndex>
@@ -793,7 +647,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
           <Top>2.7743in</Top>
-          <Left>1.00071in</Left>
+          <Left>0.26112in</Left>
           <Height>0.25in</Height>
           <Width>0.80209in</Width>
           <ZIndex>10</ZIndex>
@@ -826,7 +680,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>3.04861in</Top>
-          <Left>2.66391in</Left>
+          <Left>1.92432in</Left>
           <Height>0.23958in</Height>
           <Width>0.46181in</Width>
           <ZIndex>11</ZIndex>
@@ -859,7 +713,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>3.35763in</Top>
-          <Left>2.66391in</Left>
+          <Left>1.92432in</Left>
           <Height>0.22916in</Height>
           <Width>0.77431in</Width>
           <ZIndex>12</ZIndex>
@@ -892,7 +746,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>3.04861in</Top>
-          <Left>5.44523in</Left>
+          <Left>4.70564in</Left>
           <Height>0.23958in</Height>
           <Width>0.72917in</Width>
           <ZIndex>13</ZIndex>
@@ -925,7 +779,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>3.35764in</Top>
-          <Left>5.44523in</Left>
+          <Left>4.70564in</Left>
           <Height>0.22916in</Height>
           <Width>0.72917in</Width>
           <ZIndex>14</ZIndex>
@@ -957,7 +811,7 @@
           </Paragraphs>
           <rd:DefaultName>ime</rd:DefaultName>
           <Top>3.04861in</Top>
-          <Left>3.5719in</Left>
+          <Left>2.83231in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>15</ZIndex>
@@ -989,7 +843,7 @@
           </Paragraphs>
           <rd:DefaultName>prezime</rd:DefaultName>
           <Top>3.36805in</Top>
-          <Left>3.5719in</Left>
+          <Left>2.83231in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>16</ZIndex>
@@ -1021,7 +875,7 @@
           </Paragraphs>
           <rd:DefaultName>adresa_stanovanja</rd:DefaultName>
           <Top>3.04861in</Top>
-          <Left>6.33239in</Left>
+          <Left>5.5928in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>17</ZIndex>
@@ -1053,7 +907,7 @@
           </Paragraphs>
           <rd:DefaultName>broj_telefona1</rd:DefaultName>
           <Top>3.36459in</Top>
-          <Left>6.33239in</Left>
+          <Left>5.5928in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>18</ZIndex>
@@ -1069,9 +923,9 @@
         </Textbox>
         <Line Name="Line6">
           <Top>3.99542in</Top>
-          <Left>0.94169in</Left>
+          <Left>0.2021in</Left>
           <Height>0in</Height>
-          <Width>8.86583in</Width>
+          <Width>7.58577in</Width>
           <ZIndex>19</ZIndex>
           <Style>
             <Border>
@@ -1081,7 +935,7 @@
         </Line>
         <Line Name="Line7">
           <Top>3.99542in</Top>
-          <Left>0.94169in</Left>
+          <Left>0.2021in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>20</ZIndex>
@@ -1093,9 +947,9 @@
         </Line>
         <Line Name="Line8">
           <Top>5.01972in</Top>
-          <Left>0.94169in</Left>
+          <Left>0.2021in</Left>
           <Height>0in</Height>
-          <Width>8.86583in</Width>
+          <Width>7.58577in</Width>
           <ZIndex>21</ZIndex>
           <Style>
             <Border>
@@ -1104,8 +958,8 @@
           </Style>
         </Line>
         <Line Name="Line9">
-          <Top>3.99542in</Top>
-          <Left>9.80752in</Left>
+          <Top>3.99541in</Top>
+          <Left>7.78787in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>22</ZIndex>
@@ -1134,7 +988,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
           <Top>4.03708in</Top>
-          <Left>1.01113in</Left>
+          <Left>0.27154in</Left>
           <Height>0.3125in</Height>
           <Width>0.91667in</Width>
           <ZIndex>23</ZIndex>
@@ -1167,7 +1021,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>4.25694in</Top>
-          <Left>1.98336in</Left>
+          <Left>1.24377in</Left>
           <Height>0.23959in</Height>
           <Width>0.52083in</Width>
           <ZIndex>24</ZIndex>
@@ -1199,8 +1053,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.23611in</Top>
-          <Left>5.5928in</Left>
+          <Top>4.24652in</Top>
+          <Left>4.60487in</Left>
           <Height>0.22917in</Height>
           <Width>0.625in</Width>
           <ZIndex>25</ZIndex>
@@ -1232,7 +1086,7 @@
           </Paragraphs>
           <rd:DefaultName>ime1</rd:DefaultName>
           <Top>4.24652in</Top>
-          <Left>2.57363in</Left>
+          <Left>1.83404in</Left>
           <Height>0.25in</Height>
           <Width>0.55208in</Width>
           <ZIndex>26</ZIndex>
@@ -1263,8 +1117,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>vrsta</rd:DefaultName>
-          <Top>4.21528in</Top>
-          <Left>6.33239in</Left>
+          <Top>4.22569in</Top>
+          <Left>5.34446in</Left>
           <Height>0.25in</Height>
           <Width>0.60417in</Width>
           <ZIndex>27</ZIndex>
@@ -1297,7 +1151,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
           <Top>4.55208in</Top>
-          <Left>1.98336in</Left>
+          <Left>1.24377in</Left>
           <Height>0.23959in</Height>
           <Width>1.30555in</Width>
           <ZIndex>28</ZIndex>
@@ -1329,8 +1183,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.5718in</Top>
-          <Left>5.5928in</Left>
+          <Top>4.58221in</Top>
+          <Left>4.60487in</Left>
           <Height>0.22917in</Height>
           <Width>0.625in</Width>
           <ZIndex>29</ZIndex>
@@ -1362,7 +1216,7 @@
           </Paragraphs>
           <rd:DefaultName>datum_rodenja</rd:DefaultName>
           <Top>4.5625in</Top>
-          <Left>3.35835in</Left>
+          <Left>2.61876in</Left>
           <Height>0.22917in</Height>
           <Width>1.91667in</Width>
           <ZIndex>30</ZIndex>
@@ -1393,8 +1247,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>spol</rd:DefaultName>
-          <Top>4.55097in</Top>
-          <Left>6.33239in</Left>
+          <Top>4.56138in</Top>
+          <Left>5.34446in</Left>
           <Height>0.25in</Height>
           <Width>0.20833in</Width>
           <ZIndex>31</ZIndex>
@@ -1425,8 +1279,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>težina</rd:DefaultName>
-          <Top>4.5625in</Top>
-          <Left>7.81335in</Left>
+          <Top>4.57291in</Top>
+          <Left>6.82542in</Left>
           <Height>0.25in</Height>
           <Width>0.35647in</Width>
           <ZIndex>32</ZIndex>
@@ -1458,8 +1312,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.55444in</Top>
-          <Left>7.27169in</Left>
+          <Top>4.56485in</Top>
+          <Left>6.28376in</Left>
           <Height>0.22917in</Height>
           <Width>0.69444in</Width>
           <ZIndex>33</ZIndex>
@@ -1491,7 +1345,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox58</rd:DefaultName>
           <Top>5.17708in</Top>
-          <Left>7.17558in</Left>
+          <Left>5.18032in</Left>
           <Height>0.25in</Height>
           <Width>2.265in</Width>
           <ZIndex>34</ZIndex>
@@ -1522,8 +1376,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>4.5718in</Top>
-          <Left>8.18371in</Left>
+          <Top>4.58221in</Top>
+          <Left>7.19578in</Left>
           <Height>0.25in</Height>
           <Width>0.34375in</Width>
           <ZIndex>35</ZIndex>
@@ -1541,9 +1395,9 @@
           <Source>Embedded</Source>
           <Value>Untitled1</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.94169in</Left>
+          <Left>0.2021in</Left>
           <Height>1.44792in</Height>
-          <Width>3.63021in</Width>
+          <Width>2.91146in</Width>
           <ZIndex>36</ZIndex>
           <Style>
             <Border>
@@ -1558,10 +1412,13 @@
         </Border>
       </Style>
     </PageHeader>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -1600,6 +1457,20 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>65f43507-c478-423c-b5bb-ba25bd197328</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ID_18024_DBDataSet5">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>622cf735-cf24-4b19-95d6-f188dd79b1cd</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ID_18024_DBDataSet6">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>23781d14-1855-4f19-8f85-d1b3fa9b8248</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1699,9 +1570,9 @@
         <rd:TableAdapterName>zivotinjaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="dijagnoza">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>ID_18024_DBDataSet2</DataSourceName>
+        <DataSourceName>ID_18024_DBDataSet6</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1713,94 +1584,26 @@
           <DataField>simptomi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="terapija">
-          <DataField>terapija</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="napomena">
           <DataField>napomena</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_kontrola">
-          <DataField>ID_kontrola</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="bolest">
+          <DataField>bolest</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_bolest">
-          <DataField>ID_bolest</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>_18024_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Users\Paskal\Documents\Fakultet\6semestar\PI\Projekt\PI_t18024_Maza\PI_t18024_Maza\_18024_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>dijagnoza</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>dijagnozaTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="bolest">
-      <Query>
-        <DataSourceName>ID_18024_DBDataSet3</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID_bolest">
-          <DataField>ID_bolest</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Naziv">
-          <DataField>Naziv</DataField>
+        <Field Name="lijek">
+          <DataField>lijek</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>_18024_DBDataSet</rd:DataSetName>
         <rd:SchemaPath>D:\Users\Paskal\Documents\Fakultet\6semestar\PI\Projekt\PI_t18024_Maza\PI_t18024_Maza\_18024_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>bolest</rd:TableName>
+        <rd:TableName>PovijestBolesti</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>bolestTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="lijek">
-      <Query>
-        <DataSourceName>ID_18024_DBDataSet4</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID_lijek">
-          <DataField>ID_lijek</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="naziv">
-          <DataField>naziv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="proizvodac">
-          <DataField>proizvodac</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cijena">
-          <DataField>cijena</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="uputstva">
-          <DataField>uputstva</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="rok_trajanja">
-          <DataField>rok_trajanja</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>_18024_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Users\Paskal\Documents\Fakultet\6semestar\PI\Projekt\PI_t18024_Maza\PI_t18024_Maza\_18024_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Lijek</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>LijekTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>PovijestBolestiTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -1883,6 +1686,6 @@ ew8F5MFSC4YYi/kYWRXsr1ChIrIVcY4kevcFYpgbq1QS28LY2DyZ9GJqIXRRQYHkFMFQdALD9QZFR2Hq
 ChUuHf//AQCuYs4H567ZbwAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>60bd9cc9-ccd8-471f-94ed-5ffd48f18df4</rd:ReportID>
 </Report>
