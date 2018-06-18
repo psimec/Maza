@@ -27,9 +27,6 @@ namespace PI_t18024_Maza
 
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
-            this.uiDatumKontrole.Text += kontrola.datum_kontrole.ToString();
-            this.uiStatusKontrole.Text += kontrola.status;
-            this.uiOpisKontrole.Text += kontrola.opis;
             Vlasnik vlasnik = null;
             using (var db = new MazaEntities())
             {
@@ -40,6 +37,17 @@ namespace PI_t18024_Maza
             this.uiVrstaZivotinje.Text += this.zivotinja.vrsta;
             this.uiDatumZivotinje.Text += this.zivotinja.datum_rodenja.ToShortDateString();
             this.uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+
+            this.uiDatumKontrole.Text += kontrola.datum_kontrole.ToString();
+            this.uiStatusKontrole.Text += kontrola.status;
+            this.uiOpisKontrole.Text += kontrola.opis;
+
+            //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
+        }
+
+        private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

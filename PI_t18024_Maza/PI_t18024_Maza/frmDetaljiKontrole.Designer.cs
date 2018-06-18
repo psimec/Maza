@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.uiDatumKontrole = new System.Windows.Forms.Label();
-            this.uiStatusKontrole = new System.Windows.Forms.Label();
             this.uiOpisKontrole = new System.Windows.Forms.Label();
-            this.uiImeZivotinje = new System.Windows.Forms.Label();
-            this.uiVrstaZivotinje = new System.Windows.Forms.Label();
-            this.uiDatumZivotinje = new System.Windows.Forms.Label();
+            this.uiStatusKontrole = new System.Windows.Forms.Label();
+            this.uiDatumKontrole = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.uiVlasnikZivotinje = new System.Windows.Forms.Label();
+            this.uiDatumZivotinje = new System.Windows.Forms.Label();
+            this.uiVrstaZivotinje = new System.Windows.Forms.Label();
+            this.uiImeZivotinje = new System.Windows.Forms.Label();
+            this.uiActionDodajDijagnozu = new System.Windows.Forms.Button();
+            this.uiActionDodajCijepljenje = new System.Windows.Forms.Button();
+            this.uiActionDodajOperaciju = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +56,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kontrola";
             // 
+            // uiOpisKontrole
+            // 
+            this.uiOpisKontrole.AutoSize = true;
+            this.uiOpisKontrole.Location = new System.Drawing.Point(6, 61);
+            this.uiOpisKontrole.Name = "uiOpisKontrole";
+            this.uiOpisKontrole.Size = new System.Drawing.Size(34, 13);
+            this.uiOpisKontrole.TabIndex = 4;
+            this.uiOpisKontrole.Text = "Opis: ";
+            // 
+            // uiStatusKontrole
+            // 
+            this.uiStatusKontrole.AutoSize = true;
+            this.uiStatusKontrole.Location = new System.Drawing.Point(6, 38);
+            this.uiStatusKontrole.Name = "uiStatusKontrole";
+            this.uiStatusKontrole.Size = new System.Drawing.Size(43, 13);
+            this.uiStatusKontrole.TabIndex = 3;
+            this.uiStatusKontrole.Text = "Status: ";
+            // 
+            // uiDatumKontrole
+            // 
+            this.uiDatumKontrole.AutoSize = true;
+            this.uiDatumKontrole.Location = new System.Drawing.Point(6, 16);
+            this.uiDatumKontrole.Name = "uiDatumKontrole";
+            this.uiDatumKontrole.Size = new System.Drawing.Size(85, 13);
+            this.uiDatumKontrole.TabIndex = 2;
+            this.uiDatumKontrole.Text = "Datum kontrole: ";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.uiVlasnikZivotinje);
@@ -66,50 +96,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Životinja";
             // 
-            // uiDatumKontrole
+            // uiVlasnikZivotinje
             // 
-            this.uiDatumKontrole.AutoSize = true;
-            this.uiDatumKontrole.Location = new System.Drawing.Point(6, 16);
-            this.uiDatumKontrole.Name = "uiDatumKontrole";
-            this.uiDatumKontrole.Size = new System.Drawing.Size(85, 13);
-            this.uiDatumKontrole.TabIndex = 2;
-            this.uiDatumKontrole.Text = "Datum kontrole: ";
-            // 
-            // uiStatusKontrole
-            // 
-            this.uiStatusKontrole.AutoSize = true;
-            this.uiStatusKontrole.Location = new System.Drawing.Point(6, 38);
-            this.uiStatusKontrole.Name = "uiStatusKontrole";
-            this.uiStatusKontrole.Size = new System.Drawing.Size(43, 13);
-            this.uiStatusKontrole.TabIndex = 3;
-            this.uiStatusKontrole.Text = "Status: ";
-            // 
-            // uiOpisKontrole
-            // 
-            this.uiOpisKontrole.AutoSize = true;
-            this.uiOpisKontrole.Location = new System.Drawing.Point(6, 61);
-            this.uiOpisKontrole.Name = "uiOpisKontrole";
-            this.uiOpisKontrole.Size = new System.Drawing.Size(34, 13);
-            this.uiOpisKontrole.TabIndex = 4;
-            this.uiOpisKontrole.Text = "Opis: ";
-            // 
-            // uiImeZivotinje
-            // 
-            this.uiImeZivotinje.AutoSize = true;
-            this.uiImeZivotinje.Location = new System.Drawing.Point(6, 16);
-            this.uiImeZivotinje.Name = "uiImeZivotinje";
-            this.uiImeZivotinje.Size = new System.Drawing.Size(30, 13);
-            this.uiImeZivotinje.TabIndex = 2;
-            this.uiImeZivotinje.Text = "Ime: ";
-            // 
-            // uiVrstaZivotinje
-            // 
-            this.uiVrstaZivotinje.AutoSize = true;
-            this.uiVrstaZivotinje.Location = new System.Drawing.Point(6, 38);
-            this.uiVrstaZivotinje.Name = "uiVrstaZivotinje";
-            this.uiVrstaZivotinje.Size = new System.Drawing.Size(37, 13);
-            this.uiVrstaZivotinje.TabIndex = 2;
-            this.uiVrstaZivotinje.Text = "Vrsta: ";
+            this.uiVlasnikZivotinje.AutoSize = true;
+            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(6, 83);
+            this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
+            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(47, 13);
+            this.uiVlasnikZivotinje.TabIndex = 4;
+            this.uiVlasnikZivotinje.Text = "Vlasnik: ";
             // 
             // uiDatumZivotinje
             // 
@@ -120,20 +114,60 @@
             this.uiDatumZivotinje.TabIndex = 3;
             this.uiDatumZivotinje.Text = "Datum rođenja: ";
             // 
-            // uiVlasnikZivotinje
+            // uiVrstaZivotinje
             // 
-            this.uiVlasnikZivotinje.AutoSize = true;
-            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(6, 83);
-            this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
-            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(47, 13);
-            this.uiVlasnikZivotinje.TabIndex = 4;
-            this.uiVlasnikZivotinje.Text = "Vlasnik: ";
+            this.uiVrstaZivotinje.AutoSize = true;
+            this.uiVrstaZivotinje.Location = new System.Drawing.Point(6, 38);
+            this.uiVrstaZivotinje.Name = "uiVrstaZivotinje";
+            this.uiVrstaZivotinje.Size = new System.Drawing.Size(37, 13);
+            this.uiVrstaZivotinje.TabIndex = 2;
+            this.uiVrstaZivotinje.Text = "Vrsta: ";
+            // 
+            // uiImeZivotinje
+            // 
+            this.uiImeZivotinje.AutoSize = true;
+            this.uiImeZivotinje.Location = new System.Drawing.Point(6, 16);
+            this.uiImeZivotinje.Name = "uiImeZivotinje";
+            this.uiImeZivotinje.Size = new System.Drawing.Size(30, 13);
+            this.uiImeZivotinje.TabIndex = 2;
+            this.uiImeZivotinje.Text = "Ime: ";
+            // 
+            // uiActionDodajDijagnozu
+            // 
+            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(66, 317);
+            this.uiActionDodajDijagnozu.Name = "uiActionDodajDijagnozu";
+            this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(98, 35);
+            this.uiActionDodajDijagnozu.TabIndex = 2;
+            this.uiActionDodajDijagnozu.Text = "Dodaj dijagnozu";
+            this.uiActionDodajDijagnozu.UseVisualStyleBackColor = true;
+            // 
+            // uiActionDodajCijepljenje
+            // 
+            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(266, 317);
+            this.uiActionDodajCijepljenje.Name = "uiActionDodajCijepljenje";
+            this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(95, 35);
+            this.uiActionDodajCijepljenje.TabIndex = 3;
+            this.uiActionDodajCijepljenje.Text = "Dodaj cijepljenje";
+            this.uiActionDodajCijepljenje.UseVisualStyleBackColor = true;
+            // 
+            // uiActionDodajOperaciju
+            // 
+            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(486, 317);
+            this.uiActionDodajOperaciju.Name = "uiActionDodajOperaciju";
+            this.uiActionDodajOperaciju.Size = new System.Drawing.Size(99, 35);
+            this.uiActionDodajOperaciju.TabIndex = 4;
+            this.uiActionDodajOperaciju.Text = "Dodaj operaciju";
+            this.uiActionDodajOperaciju.UseVisualStyleBackColor = true;
+            this.uiActionDodajOperaciju.Click += new System.EventHandler(this.uiActionDodajOperaciju_Click);
             // 
             // frmDetaljiKontrole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 406);
+            this.Controls.Add(this.uiActionDodajOperaciju);
+            this.Controls.Add(this.uiActionDodajCijepljenje);
+            this.Controls.Add(this.uiActionDodajDijagnozu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDetaljiKontrole";
@@ -158,5 +192,8 @@
         private System.Windows.Forms.Label uiDatumZivotinje;
         private System.Windows.Forms.Label uiVrstaZivotinje;
         private System.Windows.Forms.Label uiImeZivotinje;
+        private System.Windows.Forms.Button uiActionDodajDijagnozu;
+        private System.Windows.Forms.Button uiActionDodajCijepljenje;
+        private System.Windows.Forms.Button uiActionDodajOperaciju;
     }
 }
