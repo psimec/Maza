@@ -14,10 +14,18 @@ namespace PI_t18024_Maza
     {
         Kontrola kontrola;
         Zivotinja zivotinja;
+
+        List<Dijagnoza> listaDijagnoza;
+        List<Operacija> listaOperacija;
+        List<Cjepivo> listaCjepiva;
         public frmDetaljiKontrole(Kontrola kontrola)
         {
             InitializeComponent();
             this.kontrola = kontrola;
+
+            listaDijagnoza = new List<Dijagnoza>();
+            listaOperacija = new List<Operacija>();
+            listaCjepiva = new List<Cjepivo>();
             // ukoliko je status obavljen onda ponudi pregled stavki kontrole
             // inace nudi dodavanje novih stavki
 
@@ -46,6 +54,11 @@ namespace PI_t18024_Maza
         }
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
 
         }

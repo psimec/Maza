@@ -40,6 +40,7 @@
             this.uiActionDodajDijagnozu = new System.Windows.Forms.Button();
             this.uiActionDodajCijepljenje = new System.Windows.Forms.Button();
             this.uiActionDodajOperaciju = new System.Windows.Forms.Button();
+            this.uiStavkeKontrole = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +141,7 @@
             this.uiActionDodajDijagnozu.TabIndex = 2;
             this.uiActionDodajDijagnozu.Text = "Dodaj dijagnozu";
             this.uiActionDodajDijagnozu.UseVisualStyleBackColor = true;
+            this.uiActionDodajDijagnozu.Click += new System.EventHandler(this.uiActionDodajDijagnozu_Click);
             // 
             // uiActionDodajCijepljenje
             // 
@@ -160,11 +162,21 @@
             this.uiActionDodajOperaciju.UseVisualStyleBackColor = true;
             this.uiActionDodajOperaciju.Click += new System.EventHandler(this.uiActionDodajOperaciju_Click);
             // 
+            // uiStavkeKontrole
+            // 
+            this.uiStavkeKontrole.Location = new System.Drawing.Point(20, 172);
+            this.uiStavkeKontrole.Name = "uiStavkeKontrole";
+            this.uiStavkeKontrole.Size = new System.Drawing.Size(200, 100);
+            this.uiStavkeKontrole.TabIndex = 5;
+            this.uiStavkeKontrole.TabStop = false;
+            this.uiStavkeKontrole.Text = "Stavke";
+            // 
             // frmDetaljiKontrole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 406);
+            this.Controls.Add(this.uiStavkeKontrole);
             this.Controls.Add(this.uiActionDodajOperaciju);
             this.Controls.Add(this.uiActionDodajCijepljenje);
             this.Controls.Add(this.uiActionDodajDijagnozu);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Button uiActionDodajDijagnozu;
         private System.Windows.Forms.Button uiActionDodajCijepljenje;
         private System.Windows.Forms.Button uiActionDodajOperaciju;
+        private System.Windows.Forms.GroupBox uiStavkeKontrole;
     }
 }
