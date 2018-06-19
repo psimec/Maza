@@ -305,5 +305,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kriptiranje\Kriptografija.csproj">
+      <Project>{0c47d7e2-059b-44fc-8e69-5fa377e28cbb}</Project>
+      <Name>Kriptografija</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
