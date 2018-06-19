@@ -51,7 +51,7 @@
             this.uiZavrsi.Location = new System.Drawing.Point(465, 343);
             this.uiZavrsi.Name = "uiZavrsi";
             this.uiZavrsi.Size = new System.Drawing.Size(94, 31);
-            this.uiZavrsi.TabIndex = 9;
+            this.uiZavrsi.TabIndex = 2;
             this.uiZavrsi.Text = "Završi";
             this.uiZavrsi.UseVisualStyleBackColor = true;
             this.uiZavrsi.Click += new System.EventHandler(this.uiZavrsi_Click);
@@ -73,7 +73,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(547, 249);
-            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vlasnik";
             // 
@@ -82,7 +82,7 @@
             this.uiAdresa.Location = new System.Drawing.Point(109, 92);
             this.uiAdresa.Name = "uiAdresa";
             this.uiAdresa.Size = new System.Drawing.Size(432, 22);
-            this.uiAdresa.TabIndex = 1;
+            this.uiAdresa.TabIndex = 3;
             // 
             // lblAdresa
             // 
@@ -98,7 +98,7 @@
             this.uiPrezimeVlasnika.Location = new System.Drawing.Point(391, 37);
             this.uiPrezimeVlasnika.Name = "uiPrezimeVlasnika";
             this.uiPrezimeVlasnika.Size = new System.Drawing.Size(150, 22);
-            this.uiPrezimeVlasnika.TabIndex = 1;
+            this.uiPrezimeVlasnika.TabIndex = 2;
             // 
             // lblPrezime
             // 
@@ -114,7 +114,7 @@
             this.uiEmail.Location = new System.Drawing.Point(109, 185);
             this.uiEmail.Name = "uiEmail";
             this.uiEmail.Size = new System.Drawing.Size(160, 22);
-            this.uiEmail.TabIndex = 1;
+            this.uiEmail.TabIndex = 6;
             // 
             // lblEmail
             // 
@@ -130,7 +130,7 @@
             this.uiBrojTelefona.Location = new System.Drawing.Point(381, 138);
             this.uiBrojTelefona.Name = "uiBrojTelefona";
             this.uiBrojTelefona.Size = new System.Drawing.Size(160, 22);
-            this.uiBrojTelefona.TabIndex = 1;
+            this.uiBrojTelefona.TabIndex = 5;
             // 
             // lblBrojTelefona
             // 
@@ -146,7 +146,7 @@
             this.uiBrojMobitela.Location = new System.Drawing.Point(109, 140);
             this.uiBrojMobitela.Name = "uiBrojMobitela";
             this.uiBrojMobitela.Size = new System.Drawing.Size(160, 22);
-            this.uiBrojMobitela.TabIndex = 1;
+            this.uiBrojMobitela.TabIndex = 4;
             // 
             // lblBrojMobitela
             // 
@@ -178,7 +178,7 @@
             this.uiDodijeliZivotinju.Location = new System.Drawing.Point(432, 279);
             this.uiDodijeliZivotinju.Name = "uiDodijeliZivotinju";
             this.uiDodijeliZivotinju.Size = new System.Drawing.Size(127, 41);
-            this.uiDodijeliZivotinju.TabIndex = 10;
+            this.uiDodijeliZivotinju.TabIndex = 1;
             this.uiDodijeliZivotinju.Text = "Dodaj Životinju";
             this.uiDodijeliZivotinju.UseVisualStyleBackColor = true;
             this.uiDodijeliZivotinju.Click += new System.EventHandler(this.uiDodijeliZivotinju_Click);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.uiZavrsi);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmAzurirajVlasnike";
-            this.Text = "frmAzurirajVlasnike";
+            this.Text = "Dodaj/Azuriraj vlasnika";
             this.Load += new System.EventHandler(this.frmAzurirajVlasnike_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -103,10 +103,11 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PI_t18024_Maza.IzvjestajZivotinja.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
+            this.reportViewer1.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(790, 783);
+            this.reportViewer1.Size = new System.Drawing.Size(1053, 963);
             this.reportViewer1.TabIndex = 3;
             // 
             // vlasnikTableAdapter
@@ -135,12 +136,13 @@
             // 
             // frmPovijestBolesti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 780);
+            this.ClientSize = new System.Drawing.Size(1049, 960);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPovijestBolesti";
-            this.Text = "povijestBolseti";
+            this.Text = "Povijest bolesti";
             this.Load += new System.EventHandler(this.povijestBolesti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();

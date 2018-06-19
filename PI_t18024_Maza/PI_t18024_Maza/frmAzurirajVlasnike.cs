@@ -72,7 +72,10 @@ namespace PI_t18024_Maza
 
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
-            UrediVlasnika();
+            if (int.TryParse(uiImeVlasnika.Text, out int ime) || int.TryParse(uiPrezimeVlasnika.Text,out int prezime) || int.TryParse(uiAdresa.Text,out int adresa))
+            {
+                UrediVlasnika();
+            }
             this.Close();
         }
 
