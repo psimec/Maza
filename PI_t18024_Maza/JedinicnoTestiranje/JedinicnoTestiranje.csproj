@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="KalendarTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidacijaDodavanjaVlasnikaTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -70,11 +70,28 @@ namespace PI_t18024_Maza
             this.Close();
         }
 
+        public bool ValidacijaVlasnika(string ime, string prezime, string adresa)
+        {
+            if(!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(uiImeVlasnika.Text, out int ime) || int.TryParse(uiPrezimeVlasnika.Text,out int prezime) || int.TryParse(uiAdresa.Text,out int adresa))
+            if (ValidacijaVlasnika(uiImeVlasnika.Text, uiPrezimeVlasnika.Text, uiAdresa.Text))
             {
-                UrediVlasnika();
+                //UrediVlasnika();
+                MessageBox.Show("Radi");
+            }
+            else
+            {
+                MessageBox.Show("Podaci nisu ispravni.");
             }
             this.Close();
         }
