@@ -44,9 +44,18 @@ namespace PI_t18024_Maza
             }
         }
 
+        public bool Provjera()
+        {
+            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa))
+            {
+                return true;
+            }
+            else return false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa)) 
+            if (Provjera()) 
             {
                 string spol = "";
                 if (uiMusko.Checked == true)
