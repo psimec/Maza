@@ -395,9 +395,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0cm</Top>
-        <Left>0.83555cm</Left>
+        <Left>2.53542cm</Left>
         <Height>1.41167cm</Height>
-        <Width>18.63236cm</Width>
+        <Width>18.63235cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -408,7 +408,7 @@
     <Height>5.95313cm</Height>
     <Style />
   </Body>
-  <Width>20.6608cm</Width>
+  <Width>22.67872cm</Width>
   <Page>
     <PageHeader>
       <Height>16.15723cm</Height>
@@ -417,7 +417,7 @@
       <ReportItems>
         <Line Name="Line1">
           <Top>1.59722in</Top>
-          <Left>0.2021in</Left>
+          <Left>0.87134in</Left>
           <Height>0in</Height>
           <Width>7.58577in</Width>
           <Style>
@@ -446,7 +446,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.74653in</Top>
-          <Left>1.63754in</Left>
+          <Left>2.30678in</Left>
           <Height>0.78125in</Height>
           <Width>4.93205in</Width>
           <ZIndex>1</ZIndex>
@@ -462,7 +462,7 @@
         </Textbox>
         <Line Name="Line2">
           <Top>2.74653in</Top>
-          <Left>0.2021in</Left>
+          <Left>0.87134in</Left>
           <Height>0in</Height>
           <Width>7.58577in</Width>
           <ZIndex>2</ZIndex>
@@ -474,7 +474,7 @@
         </Line>
         <Line Name="Line3">
           <Top>2.74653in</Top>
-          <Left>0.19168in</Left>
+          <Left>0.86092in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>3</ZIndex>
@@ -486,7 +486,7 @@
         </Line>
         <Line Name="Line4">
           <Top>3.77083in</Top>
-          <Left>0.19168in</Left>
+          <Left>0.86092in</Left>
           <Height>0in</Height>
           <Width>7.59619in</Width>
           <ZIndex>4</ZIndex>
@@ -498,7 +498,7 @@
         </Line>
         <Line Name="Line5">
           <Top>2.74653in</Top>
-          <Left>7.78787in</Left>
+          <Left>8.45711in</Left>
           <Height>1.0243in</Height>
           <Width>0in</Width>
           <ZIndex>5</ZIndex>
@@ -524,7 +524,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
           <Top>0.26736in</Top>
-          <Left>4.56891in</Left>
+          <Left>5.23815in</Left>
           <Height>0.25in</Height>
           <Width>2.55208in</Width>
           <ZIndex>6</ZIndex>
@@ -554,7 +554,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
           <Top>0.5868in</Top>
-          <Left>5.34446in</Left>
+          <Left>6.0137in</Left>
           <Height>0.25in</Height>
           <Width>1.77653in</Width>
           <ZIndex>7</ZIndex>
@@ -584,7 +584,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>0.87847in</Top>
-          <Left>6.12099in</Left>
+          <Left>6.79023in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>8</ZIndex>
@@ -614,7 +614,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>1.19792in</Top>
-          <Left>6.12099in</Left>
+          <Left>6.79023in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>9</ZIndex>
@@ -635,10 +635,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Vlasnik</Value>
+                  <Value>Vlasnik:</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>CornflowerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -646,10 +647,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
-          <Top>2.7743in</Top>
-          <Left>0.26112in</Left>
+          <Top>2.77084in</Top>
+          <Left>0.93036in</Left>
           <Height>0.25in</Height>
-          <Width>0.80209in</Width>
+          <Width>0.92709in</Width>
           <ZIndex>10</ZIndex>
           <Style>
             <Border>
@@ -679,8 +680,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>3.04861in</Top>
-          <Left>1.92432in</Left>
+          <Top>3.05903in</Top>
+          <Left>2.18108in</Left>
           <Height>0.23958in</Height>
           <Width>0.46181in</Width>
           <ZIndex>11</ZIndex>
@@ -712,8 +713,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>3.35763in</Top>
-          <Left>1.92432in</Left>
+          <Top>3.36805in</Top>
+          <Left>2.18108in</Left>
           <Height>0.22916in</Height>
           <Width>0.77431in</Width>
           <ZIndex>12</ZIndex>
@@ -745,8 +746,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>3.04861in</Top>
-          <Left>4.70564in</Left>
+          <Top>3.05903in</Top>
+          <Left>4.9624in</Left>
           <Height>0.23958in</Height>
           <Width>0.72917in</Width>
           <ZIndex>13</ZIndex>
@@ -778,8 +779,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>3.35764in</Top>
-          <Left>4.70564in</Left>
+          <Top>3.36806in</Top>
+          <Left>4.9624in</Left>
           <Height>0.22916in</Height>
           <Width>0.72917in</Width>
           <ZIndex>14</ZIndex>
@@ -810,8 +811,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ime</rd:DefaultName>
-          <Top>3.04861in</Top>
-          <Left>2.83231in</Left>
+          <Top>3.05903in</Top>
+          <Left>3.08907in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>15</ZIndex>
@@ -842,8 +843,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>prezime</rd:DefaultName>
-          <Top>3.36805in</Top>
-          <Left>2.83231in</Left>
+          <Top>3.37847in</Top>
+          <Left>3.08907in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>16</ZIndex>
@@ -874,8 +875,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>adresa_stanovanja</rd:DefaultName>
-          <Top>3.04861in</Top>
-          <Left>5.5928in</Left>
+          <Top>3.05903in</Top>
+          <Left>5.84956in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>17</ZIndex>
@@ -906,8 +907,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>broj_telefona1</rd:DefaultName>
-          <Top>3.36459in</Top>
-          <Left>5.5928in</Left>
+          <Top>3.37501in</Top>
+          <Left>5.84956in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>18</ZIndex>
@@ -923,7 +924,7 @@
         </Textbox>
         <Line Name="Line6">
           <Top>3.99542in</Top>
-          <Left>0.2021in</Left>
+          <Left>0.87134in</Left>
           <Height>0in</Height>
           <Width>7.58577in</Width>
           <ZIndex>19</ZIndex>
@@ -935,7 +936,7 @@
         </Line>
         <Line Name="Line7">
           <Top>3.99542in</Top>
-          <Left>0.2021in</Left>
+          <Left>0.87134in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>20</ZIndex>
@@ -947,7 +948,7 @@
         </Line>
         <Line Name="Line8">
           <Top>5.01972in</Top>
-          <Left>0.2021in</Left>
+          <Left>0.86092in</Left>
           <Height>0in</Height>
           <Width>7.58577in</Width>
           <ZIndex>21</ZIndex>
@@ -959,7 +960,7 @@
         </Line>
         <Line Name="Line9">
           <Top>3.99541in</Top>
-          <Left>7.78787in</Left>
+          <Left>8.45711in</Left>
           <Height>1.02431in</Height>
           <Width>0in</Width>
           <ZIndex>22</ZIndex>
@@ -976,10 +977,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Životinja</Value>
+                  <Value>Životinja:</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>CornflowerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -987,10 +989,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
-          <Top>4.03708in</Top>
-          <Left>0.27154in</Left>
+          <Top>4.03709in</Top>
+          <Left>0.94078in</Left>
           <Height>0.3125in</Height>
-          <Width>0.91667in</Width>
+          <Width>1.02084in</Width>
           <ZIndex>23</ZIndex>
           <Style>
             <Border>
@@ -1020,8 +1022,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.25694in</Top>
-          <Left>1.24377in</Left>
+          <Top>4.26736in</Top>
+          <Left>2.18108in</Left>
           <Height>0.23959in</Height>
           <Width>0.52083in</Width>
           <ZIndex>24</ZIndex>
@@ -1053,8 +1055,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.24652in</Top>
-          <Left>4.60487in</Left>
+          <Top>4.26736in</Top>
+          <Left>4.22281in</Left>
           <Height>0.22917in</Height>
           <Width>0.625in</Width>
           <ZIndex>25</ZIndex>
@@ -1085,10 +1087,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ime1</rd:DefaultName>
-          <Top>4.24652in</Top>
-          <Left>1.83404in</Left>
+          <Top>4.25694in</Top>
+          <Left>2.77135in</Left>
           <Height>0.25in</Height>
-          <Width>0.55208in</Width>
+          <Width>1.27952in</Width>
           <ZIndex>26</ZIndex>
           <Style>
             <Border>
@@ -1117,8 +1119,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>vrsta</rd:DefaultName>
-          <Top>4.22569in</Top>
-          <Left>5.34446in</Left>
+          <Top>4.28125in</Top>
+          <Left>4.9624in</Left>
           <Height>0.25in</Height>
           <Width>0.60417in</Width>
           <ZIndex>27</ZIndex>
@@ -1150,8 +1152,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.55208in</Top>
-          <Left>1.24377in</Left>
+          <Top>4.5625in</Top>
+          <Left>2.18108in</Left>
           <Height>0.23959in</Height>
           <Width>1.30555in</Width>
           <ZIndex>28</ZIndex>
@@ -1183,8 +1185,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.58221in</Top>
-          <Left>4.60487in</Left>
+          <Top>4.25694in</Top>
+          <Left>6.07842in</Left>
           <Height>0.22917in</Height>
           <Width>0.625in</Width>
           <ZIndex>29</ZIndex>
@@ -1215,8 +1217,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>datum_rodenja</rd:DefaultName>
-          <Top>4.5625in</Top>
-          <Left>2.61876in</Left>
+          <Top>4.57292in</Top>
+          <Left>3.55607in</Left>
           <Height>0.22917in</Height>
           <Width>1.91667in</Width>
           <ZIndex>30</ZIndex>
@@ -1247,8 +1249,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>spol</rd:DefaultName>
-          <Top>4.56138in</Top>
-          <Left>5.34446in</Left>
+          <Top>4.25695in</Top>
+          <Left>6.79023in</Left>
           <Height>0.25in</Height>
           <Width>0.20833in</Width>
           <ZIndex>31</ZIndex>
@@ -1279,8 +1281,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>težina</rd:DefaultName>
-          <Top>4.57291in</Top>
-          <Left>6.82542in</Left>
+          <Top>4.52778in</Top>
+          <Left>6.46852in</Left>
           <Height>0.25in</Height>
           <Width>0.35647in</Width>
           <ZIndex>32</ZIndex>
@@ -1312,8 +1314,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>4.56485in</Top>
-          <Left>6.28376in</Left>
+          <Top>4.54402in</Top>
+          <Left>5.94293in</Left>
           <Height>0.22917in</Height>
           <Width>0.69444in</Width>
           <ZIndex>33</ZIndex>
@@ -1345,7 +1347,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox58</rd:DefaultName>
           <Top>5.17708in</Top>
-          <Left>5.18032in</Left>
+          <Left>5.84956in</Left>
           <Height>0.25in</Height>
           <Width>2.265in</Width>
           <ZIndex>34</ZIndex>
@@ -1376,8 +1378,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>4.58221in</Top>
-          <Left>7.19578in</Left>
+          <Top>4.52319in</Top>
+          <Left>6.83888in</Left>
           <Height>0.25in</Height>
           <Width>0.34375in</Width>
           <ZIndex>35</ZIndex>
@@ -1395,7 +1397,7 @@
           <Source>Embedded</Source>
           <Value>Untitled1</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.2021in</Left>
+          <Left>0.87134in</Left>
           <Height>1.44792in</Height>
           <Width>2.91146in</Width>
           <ZIndex>36</ZIndex>
