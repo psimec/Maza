@@ -50,7 +50,7 @@
             this.groupBox1.Controls.Add(this.uiOpisKontrole);
             this.groupBox1.Controls.Add(this.uiStatusKontrole);
             this.groupBox1.Controls.Add(this.uiDatumKontrole);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(90, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(283, 125);
             this.groupBox1.TabIndex = 0;
@@ -90,7 +90,7 @@
             this.groupBox2.Controls.Add(this.uiDatumZivotinje);
             this.groupBox2.Controls.Add(this.uiVrstaZivotinje);
             this.groupBox2.Controls.Add(this.uiImeZivotinje);
-            this.groupBox2.Location = new System.Drawing.Point(358, 12);
+            this.groupBox2.Location = new System.Drawing.Point(436, 129);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(250, 125);
             this.groupBox2.TabIndex = 1;
@@ -135,7 +135,7 @@
             // 
             // uiActionDodajDijagnozu
             // 
-            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(66, 317);
+            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(144, 434);
             this.uiActionDodajDijagnozu.Name = "uiActionDodajDijagnozu";
             this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(98, 35);
             this.uiActionDodajDijagnozu.TabIndex = 2;
@@ -145,7 +145,7 @@
             // 
             // uiActionDodajCijepljenje
             // 
-            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(266, 317);
+            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(344, 434);
             this.uiActionDodajCijepljenje.Name = "uiActionDodajCijepljenje";
             this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(95, 35);
             this.uiActionDodajCijepljenje.TabIndex = 3;
@@ -154,7 +154,7 @@
             // 
             // uiActionDodajOperaciju
             // 
-            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(486, 317);
+            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(564, 434);
             this.uiActionDodajOperaciju.Name = "uiActionDodajOperaciju";
             this.uiActionDodajOperaciju.Size = new System.Drawing.Size(99, 35);
             this.uiActionDodajOperaciju.TabIndex = 4;
@@ -164,7 +164,7 @@
             // 
             // uiStavkeKontrole
             // 
-            this.uiStavkeKontrole.Location = new System.Drawing.Point(20, 172);
+            this.uiStavkeKontrole.Location = new System.Drawing.Point(98, 289);
             this.uiStavkeKontrole.Name = "uiStavkeKontrole";
             this.uiStavkeKontrole.Size = new System.Drawing.Size(200, 100);
             this.uiStavkeKontrole.TabIndex = 5;
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 406);
+            this.ClientSize = new System.Drawing.Size(754, 531);
             this.Controls.Add(this.uiStavkeKontrole);
             this.Controls.Add(this.uiActionDodajOperaciju);
             this.Controls.Add(this.uiActionDodajCijepljenje);
@@ -185,6 +185,12 @@
             this.Name = "frmDetaljiKontrole";
             this.Text = "frmDetaljiKontrole";
             this.Load += new System.EventHandler(this.frmDetaljiKontrole_Load);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.uiActionDodajDijagnozu, 0);
+            this.Controls.SetChildIndex(this.uiActionDodajCijepljenje, 0);
+            this.Controls.SetChildIndex(this.uiActionDodajOperaciju, 0);
+            this.Controls.SetChildIndex(this.uiStavkeKontrole, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

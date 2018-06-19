@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PI_t18024_Maza
 {
-    public partial class frmDetaljiKontrole : Form
+    public partial class frmDetaljiKontrole : frmDizajnDijagnoza
     {
         Kontrola kontrola;
         Zivotinja zivotinja;
