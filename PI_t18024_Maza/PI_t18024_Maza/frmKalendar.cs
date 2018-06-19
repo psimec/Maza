@@ -23,10 +23,8 @@ namespace PI_t18024_Maza
             uiActionOdabirDatuma.Format = DateTimePickerFormat.Custom;
             uiActionOdabirDatuma.CustomFormat = "dd-MM-yyyy";
             brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
-            datumOd = DateTime.Now.AddDays(-brojDana);
-            datumDo = DateTime.Now.AddDays(6 - brojDana);
-            datumOd = datumOd.Date;
-            datumDo = datumDo.Date;
+            datumOd = DateTime.Now.AddDays(-brojDana).Date;
+            datumDo = DateTime.Now.AddDays(6 - brojDana).Date;
             PopuniDatume();
             IspisAktivnosti();
         }
@@ -78,10 +76,8 @@ namespace PI_t18024_Maza
             {
                 brojDana = 6;
             }
-            datumOd = datum.AddDays(-brojDana);
-            datumDo = datum.AddDays(6 - brojDana);
-            datumOd = datumOd.Date;
-            datumDo = datumDo.Date;
+            datumOd = datum.AddDays(-brojDana).Date;
+            datumDo = datum.AddDays(6 - brojDana).Date;
         }
 
         private void PopuniDatume()
