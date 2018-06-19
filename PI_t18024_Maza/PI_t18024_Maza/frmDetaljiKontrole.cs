@@ -14,6 +14,7 @@ namespace PI_t18024_Maza
     {
         Kontrola kontrola;
         Zivotinja zivotinja;
+        Vlasnik vlasnik;
 
         List<Dijagnoza> listaDijagnoza;
         List<Operacija> listaOperacija;
@@ -35,7 +36,7 @@ namespace PI_t18024_Maza
 
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
-            Vlasnik vlasnik = null;
+            vlasnik = null;
             using (var db = new MazaEntities())
             {
                 this.zivotinja = db.Zivotinja.Where(s => s.ID_zivotinja == this.kontrola.ID_zivotinja).FirstOrDefault();
@@ -60,10 +61,22 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
-            Button test = new Button();
-            uiStavkeKontrole.Controls.Add(test);
-            //frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu();
-            //novaDijagnoza.ShowDialog();
+            frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu(vlasnik,zivotinja);
+            var rezultat = novaDijagnoza.ShowDialog();
+
+            if(rezultat == DialogResult.OK)
+            {
+                listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
+
+                //kreiraj gumb
+                Button kreiranaDijagnoza = new Button();
+                kreiranaDijagnoza.Width = 50;
+                kreiranaDijagnoza.Height = 50;
+                kreiranaDijagnoza.Name = "Dijagnoza 1";
+                //kreiranaDijagnoza.Click += dodaj funkcionalnost ispunjavanja forme za dijagnozu temeljem podataka u listi dijagnoza
+                kreiranaDijagnoza.Location = new Point(uiStavkeKontrole.Location.X + 50, uiStavkeKontrole.Location.Y + 50);
+                uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
+            }
         }
     }
 }
