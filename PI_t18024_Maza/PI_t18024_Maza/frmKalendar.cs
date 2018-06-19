@@ -29,7 +29,7 @@ namespace PI_t18024_Maza
             IspisAktivnosti();
         }
 
-        private Button KreirajAkrivnost(Kontrola kontrola) 
+        public Button KreirajAkrivnost(Kontrola kontrola) 
         {
             Button novi = new Button();
             novi.Click += (s, e) => 
