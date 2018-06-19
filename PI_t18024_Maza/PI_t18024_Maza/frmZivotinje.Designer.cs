@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmZivotinje));
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazZivotinja = new System.Windows.Forms.DataGridView();
-            this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.uiFiltrirajZivotinje = new System.Windows.Forms.TextBox();
-            this.viewPrikazZivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zivotinjaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,17 +42,23 @@
             this.datumUginućaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeVlasnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeVlasnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewPrikazZivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionDodajZivotinju = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.uiFiltrirajZivotinje = new System.Windows.Forms.TextBox();
+            this.uiActionPovijestBolesti = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPrikazZivotinjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(216, 212);
+            this.panel1.Location = new System.Drawing.Point(162, 172);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(7, 100);
+            this.panel1.Size = new System.Drawing.Size(5, 81);
             this.panel1.TabIndex = 3;
             // 
             // uiPrikazZivotinja
@@ -83,55 +85,16 @@
             this.imeVlasnikaDataGridViewTextBoxColumn,
             this.prezimeVlasnikaDataGridViewTextBoxColumn});
             this.uiPrikazZivotinja.DataSource = this.viewPrikazZivotinjaBindingSource;
-            this.uiPrikazZivotinja.Location = new System.Drawing.Point(241, 235);
+            this.uiPrikazZivotinja.Location = new System.Drawing.Point(181, 191);
+            this.uiPrikazZivotinja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uiPrikazZivotinja.Name = "uiPrikazZivotinja";
             this.uiPrikazZivotinja.ReadOnly = true;
             this.uiPrikazZivotinja.RowHeadersVisible = false;
             this.uiPrikazZivotinja.RowTemplate.Height = 24;
             this.uiPrikazZivotinja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiPrikazZivotinja.Size = new System.Drawing.Size(1091, 382);
+            this.uiPrikazZivotinja.Size = new System.Drawing.Size(818, 310);
             this.uiPrikazZivotinja.TabIndex = 4;
             this.uiPrikazZivotinja.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazZivotinja_ColumnHeaderMouseClick);
-            // 
-            // uiActionDodajZivotinju
-            // 
-            this.uiActionDodajZivotinju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
-            this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(698, 700);
-            this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
-            this.uiActionDodajZivotinju.Size = new System.Drawing.Size(135, 44);
-            this.uiActionDodajZivotinju.TabIndex = 10;
-            this.uiActionDodajZivotinju.Text = "Dodaj Životinju";
-            this.uiActionDodajZivotinju.UseVisualStyleBackColor = false;
-            this.uiActionDodajZivotinju.Click += new System.EventHandler(this.uiActionDodajZivotinju_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(709, 152);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // uiFiltrirajZivotinje
-            // 
-            this.uiFiltrirajZivotinje.Location = new System.Drawing.Point(521, 150);
-            this.uiFiltrirajZivotinje.Margin = new System.Windows.Forms.Padding(4);
-            this.uiFiltrirajZivotinje.Name = "uiFiltrirajZivotinje";
-            this.uiFiltrirajZivotinje.Size = new System.Drawing.Size(215, 22);
-            this.uiFiltrirajZivotinje.TabIndex = 25;
-            this.uiFiltrirajZivotinje.TextChanged += new System.EventHandler(this.uiFiltrirajZivotinje_TextChanged);
-            // 
-            // viewPrikazZivotinjaBindingSource
-            // 
-            this.viewPrikazZivotinjaBindingSource.DataSource = typeof(PI_t18024_Maza.ViewPrikazZivotinja);
             // 
             // zivotinjaIDDataGridViewTextBoxColumn
             // 
@@ -148,7 +111,7 @@
             this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
             this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             this.imeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeDataGridViewTextBoxColumn.Width = 59;
+            this.imeDataGridViewTextBoxColumn.Width = 49;
             // 
             // spolDataGridViewTextBoxColumn
             // 
@@ -156,7 +119,7 @@
             this.spolDataGridViewTextBoxColumn.HeaderText = "Spol";
             this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
             this.spolDataGridViewTextBoxColumn.ReadOnly = true;
-            this.spolDataGridViewTextBoxColumn.Width = 65;
+            this.spolDataGridViewTextBoxColumn.Width = 53;
             // 
             // vrstaDataGridViewTextBoxColumn
             // 
@@ -164,7 +127,7 @@
             this.vrstaDataGridViewTextBoxColumn.HeaderText = "Vrsta";
             this.vrstaDataGridViewTextBoxColumn.Name = "vrstaDataGridViewTextBoxColumn";
             this.vrstaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vrstaDataGridViewTextBoxColumn.Width = 70;
+            this.vrstaDataGridViewTextBoxColumn.Width = 56;
             // 
             // datumRođenjaDataGridViewTextBoxColumn
             // 
@@ -172,7 +135,7 @@
             this.datumRođenjaDataGridViewTextBoxColumn.HeaderText = "Datum rođenja";
             this.datumRođenjaDataGridViewTextBoxColumn.Name = "datumRođenjaDataGridViewTextBoxColumn";
             this.datumRođenjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumRođenjaDataGridViewTextBoxColumn.Width = 130;
+            this.datumRođenjaDataGridViewTextBoxColumn.Width = 94;
             // 
             // brojČipaDataGridViewTextBoxColumn
             // 
@@ -180,7 +143,7 @@
             this.brojČipaDataGridViewTextBoxColumn.HeaderText = "Broj čipa";
             this.brojČipaDataGridViewTextBoxColumn.Name = "brojČipaDataGridViewTextBoxColumn";
             this.brojČipaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojČipaDataGridViewTextBoxColumn.Width = 92;
+            this.brojČipaDataGridViewTextBoxColumn.Width = 68;
             // 
             // težinaDataGridViewTextBoxColumn
             // 
@@ -188,7 +151,7 @@
             this.težinaDataGridViewTextBoxColumn.HeaderText = "Težina";
             this.težinaDataGridViewTextBoxColumn.Name = "težinaDataGridViewTextBoxColumn";
             this.težinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.težinaDataGridViewTextBoxColumn.Width = 80;
+            this.težinaDataGridViewTextBoxColumn.Width = 64;
             // 
             // datumUginućaDataGridViewTextBoxColumn
             // 
@@ -196,7 +159,7 @@
             this.datumUginućaDataGridViewTextBoxColumn.HeaderText = "Datum uginuća";
             this.datumUginućaDataGridViewTextBoxColumn.Name = "datumUginućaDataGridViewTextBoxColumn";
             this.datumUginućaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumUginućaDataGridViewTextBoxColumn.Width = 121;
+            this.datumUginućaDataGridViewTextBoxColumn.Width = 96;
             // 
             // imeVlasnikaDataGridViewTextBoxColumn
             // 
@@ -204,7 +167,7 @@
             this.imeVlasnikaDataGridViewTextBoxColumn.HeaderText = "Ime vlasnika";
             this.imeVlasnikaDataGridViewTextBoxColumn.Name = "imeVlasnikaDataGridViewTextBoxColumn";
             this.imeVlasnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeVlasnikaDataGridViewTextBoxColumn.Width = 105;
+            this.imeVlasnikaDataGridViewTextBoxColumn.Width = 84;
             // 
             // prezimeVlasnikaDataGridViewTextBoxColumn
             // 
@@ -212,13 +175,68 @@
             this.prezimeVlasnikaDataGridViewTextBoxColumn.HeaderText = "Prezime vlasnika";
             this.prezimeVlasnikaDataGridViewTextBoxColumn.Name = "prezimeVlasnikaDataGridViewTextBoxColumn";
             this.prezimeVlasnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prezimeVlasnikaDataGridViewTextBoxColumn.Width = 131;
+            this.prezimeVlasnikaDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // viewPrikazZivotinjaBindingSource
+            // 
+            this.viewPrikazZivotinjaBindingSource.DataSource = typeof(PI_t18024_Maza.ViewPrikazZivotinja);
+            // 
+            // uiActionDodajZivotinju
+            // 
+            this.uiActionDodajZivotinju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
+            this.uiActionDodajZivotinju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.uiActionDodajZivotinju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionDodajZivotinju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajZivotinju.Location = new System.Drawing.Point(524, 569);
+            this.uiActionDodajZivotinju.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uiActionDodajZivotinju.Name = "uiActionDodajZivotinju";
+            this.uiActionDodajZivotinju.Size = new System.Drawing.Size(101, 36);
+            this.uiActionDodajZivotinju.TabIndex = 10;
+            this.uiActionDodajZivotinju.Text = "Dodaj Životinju";
+            this.uiActionDodajZivotinju.UseVisualStyleBackColor = false;
+            this.uiActionDodajZivotinju.Click += new System.EventHandler(this.uiActionDodajZivotinju_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(532, 124);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(17, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // uiFiltrirajZivotinje
+            // 
+            this.uiFiltrirajZivotinje.Location = new System.Drawing.Point(391, 122);
+            this.uiFiltrirajZivotinje.Name = "uiFiltrirajZivotinje";
+            this.uiFiltrirajZivotinje.Size = new System.Drawing.Size(162, 20);
+            this.uiFiltrirajZivotinje.TabIndex = 25;
+            this.uiFiltrirajZivotinje.TextChanged += new System.EventHandler(this.uiFiltrirajZivotinje_TextChanged);
+            // 
+            // uiActionPovijestBolesti
+            // 
+            this.uiActionPovijestBolesti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
+            this.uiActionPovijestBolesti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.uiActionPovijestBolesti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPovijestBolesti.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPovijestBolesti.Location = new System.Drawing.Point(647, 569);
+            this.uiActionPovijestBolesti.Margin = new System.Windows.Forms.Padding(2);
+            this.uiActionPovijestBolesti.Name = "uiActionPovijestBolesti";
+            this.uiActionPovijestBolesti.Size = new System.Drawing.Size(101, 36);
+            this.uiActionPovijestBolesti.TabIndex = 27;
+            this.uiActionPovijestBolesti.Text = "Povijest bolesti";
+            this.uiActionPovijestBolesti.UseVisualStyleBackColor = false;
+            this.uiActionPovijestBolesti.Click += new System.EventHandler(this.uiActionPovijestBolesti_Click);
             // 
             // frmZivotinje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 778);
+            this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.uiActionPovijestBolesti);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.uiFiltrirajZivotinje);
             this.Controls.Add(this.uiActionDodajZivotinju);
@@ -232,9 +250,10 @@
             this.Controls.SetChildIndex(this.uiActionDodajZivotinju, 0);
             this.Controls.SetChildIndex(this.uiFiltrirajZivotinje, 0);
             this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.uiActionPovijestBolesti, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPrikazZivotinjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn imeVlasnikaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeVlasnikaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource viewPrikazZivotinjaBindingSource;
+        private System.Windows.Forms.Button uiActionPovijestBolesti;
     }
 }

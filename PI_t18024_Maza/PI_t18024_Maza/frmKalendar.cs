@@ -169,15 +169,5 @@ namespace PI_t18024_Maza
             Osvjezi();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmPovijestBolesti povijestBolesti = new frmPovijestBolesti(3);
-            povijestBolesti.ShowDialog();
-        }
-
-        private void frmKalendar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

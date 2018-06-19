@@ -35,6 +35,7 @@
             this.vlasnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._18024_DBDataSet = new PI_t18024_Maza._18024_DBDataSet();
             this.zivotinjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PovijestBolestiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dijagnozaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bolestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,15 +45,14 @@
             this.dijagnozaTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.dijagnozaTableAdapter();
             this.bolestTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.bolestTableAdapter();
             this.LijekTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.LijekTableAdapter();
-            this.PovijestBolestiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PovijestBolestiTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.PovijestBolestiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PovijestBolestiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dijagnozaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LijekBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PovijestBolestiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // vlasnikBindingSource
@@ -69,6 +69,11 @@
             // 
             this.zivotinjaBindingSource.DataMember = "zivotinja";
             this.zivotinjaBindingSource.DataSource = this._18024_DBDataSet;
+            // 
+            // PovijestBolestiBindingSource
+            // 
+            this.PovijestBolestiBindingSource.DataMember = "PovijestBolesti";
+            this.PovijestBolestiBindingSource.DataSource = this._18024_DBDataSet;
             // 
             // dijagnozaBindingSource
             // 
@@ -101,7 +106,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(757, 783);
+            this.reportViewer1.Size = new System.Drawing.Size(790, 783);
             this.reportViewer1.TabIndex = 3;
             // 
             // vlasnikTableAdapter
@@ -124,11 +129,6 @@
             // 
             this.LijekTableAdapter.ClearBeforeFill = true;
             // 
-            // PovijestBolestiBindingSource
-            // 
-            this.PovijestBolestiBindingSource.DataMember = "PovijestBolesti";
-            this.PovijestBolestiBindingSource.DataSource = this._18024_DBDataSet;
-            // 
             // PovijestBolestiTableAdapter
             // 
             this.PovijestBolestiTableAdapter.ClearBeforeFill = true;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 780);
+            this.ClientSize = new System.Drawing.Size(787, 780);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmPovijestBolesti";
             this.Text = "povijestBolseti";
@@ -145,10 +145,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PovijestBolestiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dijagnozaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LijekBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PovijestBolestiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -44,7 +44,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.uiActionDodajAktivnost = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.uiPrikazDatuma1 = new System.Windows.Forms.Label();
             this.uiPrikazDatuma2 = new System.Windows.Forms.Label();
             this.uiPrikazDatuma3 = new System.Windows.Forms.Label();
@@ -251,17 +250,6 @@
             this.panel1.Size = new System.Drawing.Size(5, 81);
             this.panel1.TabIndex = 13;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(744, 84);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // uiPrikazDatuma1
             // 
             this.uiPrikazDatuma1.AutoSize = true;
@@ -330,7 +318,6 @@
             this.Controls.Add(this.uiPrikazDatuma3);
             this.Controls.Add(this.uiPrikazDatuma2);
             this.Controls.Add(this.uiPrikazDatuma1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.uiActionOdabirDatuma);
@@ -359,7 +346,6 @@
             this.Controls.SetChildIndex(this.uiActionOdabirDatuma, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.uiPrikazDatuma1, 0);
             this.Controls.SetChildIndex(this.uiPrikazDatuma2, 0);
             this.Controls.SetChildIndex(this.uiPrikazDatuma3, 0);
@@ -389,7 +375,6 @@
         private System.Windows.Forms.Button uiActionZivotinje;
         private System.Windows.Forms.Button uiActionKalendar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label uiPrikazDatuma1;
         private System.Windows.Forms.Label uiPrikazDatuma2;
         private System.Windows.Forms.Label uiPrikazDatuma3;

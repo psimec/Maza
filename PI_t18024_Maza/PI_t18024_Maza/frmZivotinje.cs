@@ -34,10 +34,6 @@ namespace PI_t18024_Maza
         private void Zivotinje_Load(object sender, EventArgs e)
         {
             PrikaziZivotinje();
-            foreach (DataGridViewColumn item in uiPrikazZivotinja.Columns)
-            {
-                item.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
         }
         
         private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
@@ -183,5 +179,26 @@ namespace PI_t18024_Maza
             }
 
         }
+
+        private void uiActionPovijestBolesti_Click(object sender, EventArgs e)
+        {
+            if (uiPrikazZivotinja.CurrentRow != null)
+            {
+                int idZivotinja = int.Parse(uiPrikazZivotinja.CurrentRow.Cells[0].Value.ToString());
+                Zivotinja oznacenaZivotinja;
+                using (var db = new MazaEntities())
+                {
+                    oznacenaZivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == idZivotinja).FirstOrDefault();
+                }
+
+                if (oznacenaZivotinja != null)
+                {
+                    frmPovijestBolesti povijestBolesti = new frmPovijestBolesti(oznacenaZivotinja);
+                    povijestBolesti.ShowDialog();
+                }
+
+            }
+        }
+
     }
 }

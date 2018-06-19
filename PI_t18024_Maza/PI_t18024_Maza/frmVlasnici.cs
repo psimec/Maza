@@ -192,5 +192,19 @@ namespace PI_t18024_Maza
             }
             uiPrikazVlasnika.DataSource = vlasnici;
         }
+
+        private void uiActionPovijestBolesti_Click(object sender, EventArgs e)
+        {
+            if (uiPrikazZivotinja.Rows.Count > 0)
+            {
+                Zivotinja oznacenaZivotinja = zivotinjaBindingSource.Current as Zivotinja;
+
+                if (oznacenaZivotinja != null)
+                {
+                    frmPovijestBolesti povijestBolesti = new frmPovijestBolesti(oznacenaZivotinja);
+                    povijestBolesti.ShowDialog();
+                }
+            }
+        }
     }
 }
