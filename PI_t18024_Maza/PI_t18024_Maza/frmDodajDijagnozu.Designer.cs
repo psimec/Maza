@@ -229,6 +229,7 @@
             this.uiActionDodajDijagnozu.TabIndex = 15;
             this.uiActionDodajDijagnozu.Text = "Dodaj dijagnozu";
             this.uiActionDodajDijagnozu.UseVisualStyleBackColor = true;
+            this.uiActionDodajDijagnozu.Click += new System.EventHandler(this.uiActionDodajDijagnozu_Click);
             // 
             // uiActionOdustani
             // 
@@ -238,6 +239,7 @@
             this.uiActionOdustani.TabIndex = 16;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // frmDodajDijagnozu
             // 
@@ -263,6 +265,7 @@
             this.Controls.Add(this.uiPodaciOZivotinji);
             this.Name = "frmDodajDijagnozu";
             this.Text = "frmDodajDijagnozu";
+            this.Load += new System.EventHandler(this.frmDodajDijagnozu_Load);
             this.uiPodaciOZivotinji.ResumeLayout(false);
             this.uiPodaciOZivotinji.PerformLayout();
             this.ResumeLayout(false);

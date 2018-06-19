@@ -66,16 +66,17 @@ namespace PI_t18024_Maza
 
             if(rezultat == DialogResult.OK)
             {
-                listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
+                //listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
 
                 //kreiraj gumb
                 Button kreiranaDijagnoza = new Button();
-                kreiranaDijagnoza.Width = 50;
-                kreiranaDijagnoza.Height = 50;
-                kreiranaDijagnoza.Name = "Dijagnoza 1";
+                kreiranaDijagnoza.Width = 75;
+                kreiranaDijagnoza.Height = 25;
+                kreiranaDijagnoza.Text = "Dijagnoza 1";
                 //kreiranaDijagnoza.Click += dodaj funkcionalnost ispunjavanja forme za dijagnozu temeljem podataka u listi dijagnoza
-                kreiranaDijagnoza.Location = new Point(uiStavkeKontrole.Location.X + 50, uiStavkeKontrole.Location.Y + 50);
                 uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
+                kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y+25);
+
             }
         }
     }
