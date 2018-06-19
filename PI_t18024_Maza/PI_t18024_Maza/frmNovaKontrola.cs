@@ -28,6 +28,7 @@ namespace PI_t18024_Maza
 
         private void NovaKontrola_Load(object sender, EventArgs e)
         {
+            uiOdabirStatusObavljen.Checked = true;
             uiOdabirDatum.Format = DateTimePickerFormat.Custom;
             uiOdabirDatum.CustomFormat = "dd-MM-yyyy H:mm:ss";
 

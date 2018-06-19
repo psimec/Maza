@@ -50,7 +50,7 @@
             this.uiOdabirZivotinja.Location = new System.Drawing.Point(85, 28);
             this.uiOdabirZivotinja.Name = "uiOdabirZivotinja";
             this.uiOdabirZivotinja.Size = new System.Drawing.Size(211, 21);
-            this.uiOdabirZivotinja.TabIndex = 0;
+            this.uiOdabirZivotinja.TabIndex = 1;
             this.uiOdabirZivotinja.ValueMember = "ID_zivotinja";
             // 
             // uiOdabirVeterinar
@@ -60,7 +60,7 @@
             this.uiOdabirVeterinar.Location = new System.Drawing.Point(85, 65);
             this.uiOdabirVeterinar.Name = "uiOdabirVeterinar";
             this.uiOdabirVeterinar.Size = new System.Drawing.Size(211, 21);
-            this.uiOdabirVeterinar.TabIndex = 1;
+            this.uiOdabirVeterinar.TabIndex = 5;
             this.uiOdabirVeterinar.ValueMember = "ID_veterinar";
             // 
             // label1
@@ -69,7 +69,7 @@
             this.label1.Location = new System.Drawing.Point(22, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Životinja";
             // 
             // label2
@@ -87,7 +87,7 @@
             this.uiOdabirDatum.Location = new System.Drawing.Point(85, 105);
             this.uiOdabirDatum.Name = "uiOdabirDatum";
             this.uiOdabirDatum.Size = new System.Drawing.Size(211, 20);
-            this.uiOdabirDatum.TabIndex = 1;
+            this.uiOdabirDatum.TabIndex = 6;
             // 
             // label3
             // 
@@ -104,7 +104,7 @@
             this.uiUnosOpis.Multiline = true;
             this.uiUnosOpis.Name = "uiUnosOpis";
             this.uiUnosOpis.Size = new System.Drawing.Size(211, 128);
-            this.uiUnosOpis.TabIndex = 8;
+            this.uiUnosOpis.TabIndex = 9;
             // 
             // label5
             // 
@@ -112,7 +112,7 @@
             this.label5.Location = new System.Drawing.Point(23, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 12;
             this.label5.Text = "Opis";
             // 
             // uiActionUredu
@@ -141,7 +141,7 @@
             this.uiOdabirStatusObavljen.Location = new System.Drawing.Point(107, 145);
             this.uiOdabirStatusObavljen.Name = "uiOdabirStatusObavljen";
             this.uiOdabirStatusObavljen.Size = new System.Drawing.Size(65, 17);
-            this.uiOdabirStatusObavljen.TabIndex = 12;
+            this.uiOdabirStatusObavljen.TabIndex = 7;
             this.uiOdabirStatusObavljen.TabStop = true;
             this.uiOdabirStatusObavljen.Text = "obavljen";
             this.uiOdabirStatusObavljen.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.uiOdabirStatusNijeObavljen.Location = new System.Drawing.Point(198, 145);
             this.uiOdabirStatusNijeObavljen.Name = "uiOdabirStatusNijeObavljen";
             this.uiOdabirStatusNijeObavljen.Size = new System.Drawing.Size(84, 17);
-            this.uiOdabirStatusNijeObavljen.TabIndex = 13;
+            this.uiOdabirStatusNijeObavljen.TabIndex = 8;
             this.uiOdabirStatusNijeObavljen.TabStop = true;
             this.uiOdabirStatusNijeObavljen.Text = "nije obavljen";
             this.uiOdabirStatusNijeObavljen.UseVisualStyleBackColor = true;
@@ -186,7 +186,6 @@
             this.Controls.Add(this.uiOdabirVeterinar);
             this.Controls.Add(this.uiOdabirZivotinja);
             this.Name = "frmNovaKontrola";
-            this.Text = "Kreiraj kontrolu";
             this.Load += new System.EventHandler(this.NovaKontrola_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
