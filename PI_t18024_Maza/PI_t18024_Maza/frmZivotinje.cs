@@ -12,9 +12,11 @@ namespace PI_t18024_Maza
 {
     public partial class frmZivotinje : frmDizajn
     {
+        int zadnjiKliknutiStupac;
         public frmZivotinje()
         {
             InitializeComponent();
+            zadnjiKliknutiStupac = 0;
         }
 
         public void PrikaziZivotinje()
@@ -55,11 +57,6 @@ namespace PI_t18024_Maza
             PrikaziZivotinje();
         }
 
-        private void uiPrikazZivotinja_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            
-        }
-
         private void Filtriraj(string zivotinja)
         {
             BindingList<ViewPrikazZivotinja> viewZivotinja;
@@ -86,6 +83,105 @@ namespace PI_t18024_Maza
         private void uiFiltrirajZivotinje_TextChanged(object sender, EventArgs e)
         {
             Filtriraj(uiFiltrirajZivotinje.Text);
+        }
+
+        private void SortirajZivotinjeUzlazno(int stupac)
+        {
+            BindingList<ViewPrikazZivotinja> zivotinje;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Ime).ToList());
+                        break;
+                    case 2:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Spol).ToList());
+                        break;
+                    case 3:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Vrsta).ToList());
+                        break;
+                    case 4:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Datum_Rođenja).ToList());
+                        break;
+                    case 5:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Broj_Čipa).ToList());
+                        break;
+                    case 6:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Težina).ToList());
+                        break;
+                    case 7:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Datum_Uginuća).ToList());
+                        break;
+                    case 8:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Ime_Vlasnika).ToList());
+                        break;
+                    case 9:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderBy(z => z.Prezime_Vlasnika).ToList());
+                        break;
+                    default:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.ToList());
+                        break;
+                }
+            }
+            uiPrikazZivotinja.DataSource = zivotinje;
+        }
+
+        private void SortirajZivotinjeSilazno(int stupac)
+        {
+            BindingList<ViewPrikazZivotinja> zivotinje;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Ime).ToList());
+                        break;
+                    case 2:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Spol).ToList());
+                        break;
+                    case 3:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Vrsta).ToList());
+                        break;
+                    case 4:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Datum_Rođenja).ToList());
+                        break;
+                    case 5:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Broj_Čipa).ToList());
+                        break;
+                    case 6:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Težina).ToList());
+                        break;
+                    case 7:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Datum_Uginuća).ToList());
+                        break;
+                    case 8:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Ime_Vlasnika).ToList());
+                        break;
+                    case 9:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.OrderByDescending(z => z.Prezime_Vlasnika).ToList());
+                        break;
+                    default:
+                        zivotinje = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.ToList());
+                        break;
+                }
+            }
+            uiPrikazZivotinja.DataSource = zivotinje;
+        }
+        private void uiPrikazZivotinja_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int brojStupaca = e.ColumnIndex;
+            if (zadnjiKliknutiStupac != brojStupaca)
+            {
+                SortirajZivotinjeUzlazno(brojStupaca);
+                zadnjiKliknutiStupac = brojStupaca;
+            }
+            else
+            {
+                SortirajZivotinjeSilazno(brojStupaca);
+                zadnjiKliknutiStupac = 0;
+            }
+
         }
     }
 }

@@ -12,9 +12,11 @@ namespace PI_t18024_Maza
 {
     public partial class frmVlasnici : frmDizajn
     {
+        int zadnjiKliknutiStupac;
         public frmVlasnici()
         {
             InitializeComponent();
+            zadnjiKliknutiStupac = 0;
             PopuniVlasnike();
         }
 
@@ -57,9 +59,16 @@ namespace PI_t18024_Maza
 
         private void uiPrikazVlasnika_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            foreach (DataGridViewColumn item in uiPrikazZivotinja.Columns)
+            int brojStupaca = e.ColumnIndex;
+            if(zadnjiKliknutiStupac != brojStupaca)
             {
-                item.SortMode = DataGridViewColumnSortMode.Automatic;
+                SortirajVlasnikeUzlazno(brojStupaca);
+                zadnjiKliknutiStupac = brojStupaca;
+            }
+            else
+            {
+                SortirajVlasnikeSilazno(brojStupaca);
+                zadnjiKliknutiStupac = 0;
             }
         }
 
@@ -118,5 +127,70 @@ namespace PI_t18024_Maza
             FiltrirajVlasnike(uiFiltrirajVlasnike.Text);
         }
 
+        private void SortirajVlasnikeUzlazno(int stupac)
+        {
+            BindingList<Vlasnik> vlasnici;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.ime).ToList());
+                        break;
+                    case 2:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.prezime).ToList());
+                        break;
+                    case 3:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.adresa_stavnovanja).ToList());
+                        break;
+                    case 4:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.broj_telefona1).ToList());
+                        break;
+                    case 5:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.broj_telefona2).ToList());
+                        break;
+                    case 6:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderBy(v => v.email).ToList());
+                        break;
+                    default:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.ToList());
+                        break;
+                }
+            }
+            uiPrikazVlasnika.DataSource = vlasnici;
+        }
+
+        private void SortirajVlasnikeSilazno(int stupac)
+        {
+            BindingList<Vlasnik> vlasnici;
+            using (var db = new MazaEntities())
+            {
+                switch (stupac)
+                {
+                    case 1:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.ime).ToList());
+                        break;
+                    case 2:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.prezime).ToList());
+                        break;
+                    case 3:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.adresa_stavnovanja).ToList());
+                        break;
+                    case 4:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.broj_telefona1).ToList());
+                        break;
+                    case 5:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.broj_telefona2).ToList());
+                        break;
+                    case 6:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.OrderByDescending(v => v.email).ToList());
+                        break;
+                    default:
+                        vlasnici = new BindingList<Vlasnik>(db.Vlasnik.ToList());
+                        break;
+                }
+            }
+            uiPrikazVlasnika.DataSource = vlasnici;
+        }
     }
 }

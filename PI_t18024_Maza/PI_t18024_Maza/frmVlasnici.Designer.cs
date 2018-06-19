@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVlasnici));
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiPrikazVlasnika = new System.Windows.Forms.DataGridView();
             this.iDvlasnikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +58,13 @@
             this.uiActionAzurirajVlasnika = new System.Windows.Forms.Button();
             this.uiDodajVlasnika = new System.Windows.Forms.Button();
             this.uiIzbrisiVlasnika = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uiFiltrirajVlasnike = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazVlasnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -338,23 +340,27 @@
             this.uiIzbrisiVlasnika.UseVisualStyleBackColor = false;
             this.uiIzbrisiVlasnika.Click += new System.EventHandler(this.uiIzbrisiVlasnika_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(431, 151);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
             // uiFiltrirajVlasnike
             // 
-            this.uiFiltrirajVlasnike.Location = new System.Drawing.Point(304, 149);
+            this.uiFiltrirajVlasnike.Location = new System.Drawing.Point(243, 149);
+            this.uiFiltrirajVlasnike.Margin = new System.Windows.Forms.Padding(4);
             this.uiFiltrirajVlasnike.Name = "uiFiltrirajVlasnike";
-            this.uiFiltrirajVlasnike.Size = new System.Drawing.Size(165, 22);
-            this.uiFiltrirajVlasnike.TabIndex = 13;
+            this.uiFiltrirajVlasnike.Size = new System.Drawing.Size(215, 22);
+            this.uiFiltrirajVlasnike.TabIndex = 27;
             this.uiFiltrirajVlasnike.TextChanged += new System.EventHandler(this.uiFiltrirajVlasnike_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(238, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Pretraži:";
             // 
             // frmVlasnici
             // 
@@ -362,7 +368,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1344, 778);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.uiFiltrirajVlasnike);
             this.Controls.Add(this.uiIzbrisiVlasnika);
             this.Controls.Add(this.uiDodajVlasnika);
@@ -382,11 +388,12 @@
             this.Controls.SetChildIndex(this.uiDodajVlasnika, 0);
             this.Controls.SetChildIndex(this.uiIzbrisiVlasnika, 0);
             this.Controls.SetChildIndex(this.uiFiltrirajVlasnike, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazVlasnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiPrikazZivotinja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +428,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDvlasnikaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kontrolaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlasnikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox uiFiltrirajVlasnike;
-        private System.Windows.Forms.Label label1;
     }
 }
