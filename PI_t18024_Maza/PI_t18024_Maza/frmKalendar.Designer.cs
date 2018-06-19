@@ -333,7 +333,6 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "frmKalendar";
             this.Text = "Kalendar";
-            this.Load += new System.EventHandler(this.frmKalendar_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
