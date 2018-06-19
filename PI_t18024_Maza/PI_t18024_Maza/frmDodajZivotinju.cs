@@ -17,8 +17,6 @@ namespace PI_t18024_Maza
         {
             this.vlasnik = vlasnik;
             InitializeComponent();
-            uiOdabirSpola.Items.Add("m");
-            uiOdabirSpola.Items.Add("ž");
         }
 
         private void DodajZivotinjuForm_Load(object sender, EventArgs e)
@@ -29,6 +27,7 @@ namespace PI_t18024_Maza
             uiBrojMobitela.Text = vlasnik.broj_telefona1;
             uiBrojTelefona.Text = vlasnik.broj_telefona2;
             uiEmail.Text = vlasnik.email;
+            uiMusko.Checked = true;
         }
 
         private void uiVrsta_TextChanged(object sender, EventArgs e)
@@ -47,48 +46,64 @@ namespace PI_t18024_Maza
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(uiVrsta.Text == "pas" ||uiVrsta.Text == "Pas")
+            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa)) 
             {
-                using (var db = new MazaEntities())
+                string spol = "";
+                if (uiMusko.Checked == true)
                 {
-                    db.Vlasnik.Attach(vlasnik);
-
-                    Zivotinja novaZivotinja = new Zivotinja()
-                    {
-                        ime = uiIme.Text,
-                        spol = uiOdabirSpola.Text,
-                        vrsta = uiVrsta.Text,
-                        datum_rodenja = uiDatumRodenja.Value,
-                        broj_cipa = int.Parse(uiBrojCipa.Text),
-                        tezina = int.Parse(uiTezina.Text),
-                        ID_vlasnika = vlasnik.ID_vlasnik,
-                        Vlasnik = vlasnik
-                    };
-                    db.Zivotinja.Add(novaZivotinja);
-                    db.SaveChanges();
+                    spol = "m";
                 }
+                else
+                {
+                    spol = "ž";
+                }
+                if (uiVrsta.Text == "pas" || uiVrsta.Text == "Pas")
+                {
+                    using (var db = new MazaEntities())
+                    {
+                        db.Vlasnik.Attach(vlasnik);
+
+                        Zivotinja novaZivotinja = new Zivotinja()
+                        {
+                            ime = uiIme.Text,
+                            spol = spol,
+                            vrsta = uiVrsta.Text,
+                            datum_rodenja = uiDatumRodenja.Value,
+                            broj_cipa = int.Parse(uiBrojCipa.Text),
+                            tezina = int.Parse(uiTezina.Text),
+                            ID_vlasnika = vlasnik.ID_vlasnik,
+                            Vlasnik = vlasnik
+                        };
+                        db.Zivotinja.Add(novaZivotinja);
+                        db.SaveChanges();
+                    }
+                }
+                else
+                {
+                    using (var db = new MazaEntities())
+                    {
+                        db.Vlasnik.Attach(vlasnik);
+
+                        Zivotinja novaZivotinja = new Zivotinja()
+                        {
+                            ime = uiIme.Text,
+                            spol = spol,
+                            vrsta = uiVrsta.Text,
+                            datum_rodenja = uiDatumRodenja.Value,
+                            tezina = int.Parse(uiTezina.Text),
+                            ID_vlasnika = vlasnik.ID_vlasnik,
+                            Vlasnik = vlasnik
+                        };
+                        db.Zivotinja.Add(novaZivotinja);
+                        db.SaveChanges();
+                    }
+                }
+                this.Close();
             }
             else
             {
-                using (var db = new MazaEntities())
-                {
-                    db.Vlasnik.Attach(vlasnik);
-
-                    Zivotinja novaZivotinja = new Zivotinja()
-                    {
-                        ime = uiIme.Text,
-                        spol = uiOdabirSpola.Text,
-                        vrsta = uiVrsta.Text,
-                        datum_rodenja = uiDatumRodenja.Value,
-                        tezina = int.Parse(uiTezina.Text),
-                        ID_vlasnika = vlasnik.ID_vlasnik,
-                        Vlasnik = vlasnik
-                    };
-                    db.Zivotinja.Add(novaZivotinja);
-                    db.SaveChanges();
-                }
+                MessageBox.Show("Unešeni podaci nisu u dobrom formatu!");
             }
-            this.Close();
         }
     }
 }

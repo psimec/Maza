@@ -38,7 +38,6 @@
             this.uiBrojCipa = new System.Windows.Forms.TextBox();
             this.lblTezina = new System.Windows.Forms.Label();
             this.uiTezina = new System.Windows.Forms.TextBox();
-            this.uiOdabirSpola = new System.Windows.Forms.ComboBox();
             this.uiDatumRodenja = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,6 +54,8 @@
             this.uiImeVlasnika = new System.Windows.Forms.TextBox();
             this.lblIme = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.uiMusko = new System.Windows.Forms.RadioButton();
+            this.uiZensko = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             // lblSpol
             // 
             this.lblSpol.AutoSize = true;
-            this.lblSpol.Location = new System.Drawing.Point(10, 108);
+            this.lblSpol.Location = new System.Drawing.Point(10, 120);
             this.lblSpol.Name = "lblSpol";
             this.lblSpol.Size = new System.Drawing.Size(40, 17);
             this.lblSpol.TabIndex = 0;
@@ -98,7 +99,7 @@
             this.uiVrsta.Location = new System.Drawing.Point(90, 64);
             this.uiVrsta.Name = "uiVrsta";
             this.uiVrsta.Size = new System.Drawing.Size(87, 22);
-            this.uiVrsta.TabIndex = 1;
+            this.uiVrsta.TabIndex = 2;
             this.uiVrsta.TextChanged += new System.EventHandler(this.uiVrsta_TextChanged);
             // 
             // lblDatumRodenja
@@ -125,7 +126,7 @@
             this.uiBrojCipa.Location = new System.Drawing.Point(275, 62);
             this.uiBrojCipa.Name = "uiBrojCipa";
             this.uiBrojCipa.Size = new System.Drawing.Size(167, 22);
-            this.uiBrojCipa.TabIndex = 1;
+            this.uiBrojCipa.TabIndex = 3;
             this.uiBrojCipa.Visible = false;
             // 
             // lblTezina
@@ -142,15 +143,7 @@
             this.uiTezina.Location = new System.Drawing.Point(275, 103);
             this.uiTezina.Name = "uiTezina";
             this.uiTezina.Size = new System.Drawing.Size(167, 22);
-            this.uiTezina.TabIndex = 1;
-            // 
-            // uiOdabirSpola
-            // 
-            this.uiOdabirSpola.FormattingEnabled = true;
-            this.uiOdabirSpola.Location = new System.Drawing.Point(90, 105);
-            this.uiOdabirSpola.Name = "uiOdabirSpola";
-            this.uiOdabirSpola.Size = new System.Drawing.Size(46, 24);
-            this.uiOdabirSpola.TabIndex = 2;
+            this.uiTezina.TabIndex = 4;
             // 
             // uiDatumRodenja
             // 
@@ -158,15 +151,16 @@
             this.uiDatumRodenja.Location = new System.Drawing.Point(209, 157);
             this.uiDatumRodenja.Name = "uiDatumRodenja";
             this.uiDatumRodenja.Size = new System.Drawing.Size(176, 22);
-            this.uiDatumRodenja.TabIndex = 3;
+            this.uiDatumRodenja.TabIndex = 8;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.uiZensko);
+            this.groupBox1.Controls.Add(this.uiMusko);
             this.groupBox1.Controls.Add(this.uiIme);
             this.groupBox1.Controls.Add(this.uiDatumRodenja);
             this.groupBox1.Controls.Add(this.lblDatumRodenja);
             this.groupBox1.Controls.Add(this.lblImeZivotinje);
-            this.groupBox1.Controls.Add(this.uiOdabirSpola);
             this.groupBox1.Controls.Add(this.lblSpol);
             this.groupBox1.Controls.Add(this.uiTezina);
             this.groupBox1.Controls.Add(this.lblVrsta);
@@ -177,7 +171,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 194);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Životinja";
             // 
@@ -309,10 +303,32 @@
             this.button1.Location = new System.Drawing.Point(100, 416);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 38);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Dodaj Životinju";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // uiMusko
+            // 
+            this.uiMusko.AutoSize = true;
+            this.uiMusko.Location = new System.Drawing.Point(88, 103);
+            this.uiMusko.Name = "uiMusko";
+            this.uiMusko.Size = new System.Drawing.Size(70, 21);
+            this.uiMusko.TabIndex = 7;
+            this.uiMusko.TabStop = true;
+            this.uiMusko.Text = "Muško";
+            this.uiMusko.UseVisualStyleBackColor = true;
+            // 
+            // uiZensko
+            // 
+            this.uiZensko.AutoSize = true;
+            this.uiZensko.Location = new System.Drawing.Point(88, 130);
+            this.uiZensko.Name = "uiZensko";
+            this.uiZensko.Size = new System.Drawing.Size(76, 21);
+            this.uiZensko.TabIndex = 6;
+            this.uiZensko.TabStop = true;
+            this.uiZensko.Text = "Žensko";
+            this.uiZensko.UseVisualStyleBackColor = true;
             // 
             // frmDodajZivotinju
             // 
@@ -324,7 +340,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDodajZivotinju";
-            this.Text = "DodajZivotinjuForm";
+            this.Text = "Dodaj životinju";
             this.Load += new System.EventHandler(this.DodajZivotinjuForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -346,7 +362,6 @@
         private System.Windows.Forms.TextBox uiBrojCipa;
         private System.Windows.Forms.Label lblTezina;
         private System.Windows.Forms.TextBox uiTezina;
-        private System.Windows.Forms.ComboBox uiOdabirSpola;
         private System.Windows.Forms.DateTimePicker uiDatumRodenja;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -363,5 +378,7 @@
         private System.Windows.Forms.TextBox uiBrojTelefona;
         private System.Windows.Forms.Label lblBrojTelefona;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton uiZensko;
+        private System.Windows.Forms.RadioButton uiMusko;
     }
 }
