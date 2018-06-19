@@ -14,8 +14,8 @@ namespace PI_t18024_Maza
     {
         List<DanAktivnosti> listaDaniAktivnosti = new List<DanAktivnosti>();
         double brojDana;
-        DateTime datumOd;
-        DateTime datumDo;
+        public DateTime datumOd;
+        public DateTime datumDo;
 
         public frmKalendar()
         {

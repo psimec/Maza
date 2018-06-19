@@ -18,12 +18,9 @@ namespace JedinicnoTestiranje
         {    
             frmKalendar frmKalendar = new frmKalendar();
 
-            DateTime datumOd = DateTime.Now;
-            DateTime datumDo = DateTime.Now;
-
             frmKalendar.OdrediTjedan(new DateTime(2018, 6, 19).Date);
             
-            Assert.IsTrue(datumOd.Date == new DateTime(2018, 6, 18).Date && datumDo.Date == new DateTime(2018, 6, 24).Date);
+            Assert.IsTrue(frmKalendar.datumOd == new DateTime(2018, 6, 18).Date && frmKalendar.datumDo == new DateTime(2018, 6, 24).Date);
         }
 
         [TestMethod]
