@@ -65,11 +65,6 @@ namespace PI_t18024_Maza
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void uiActionOdjava_Click(object sender, EventArgs e)
         {
             Form prijava = new frmPrijava();
