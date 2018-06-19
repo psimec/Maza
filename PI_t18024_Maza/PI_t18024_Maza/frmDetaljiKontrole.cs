@@ -60,7 +60,10 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
-
+            Button test = new Button();
+            uiStavkeKontrole.Controls.Add(test);
+            //frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu();
+            //novaDijagnoza.ShowDialog();
         }
     }
 }
