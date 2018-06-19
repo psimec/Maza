@@ -8,14 +8,13 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
+using Kriptografija;
 
 namespace PI_t18024_Maza
 {
     public partial class frmPrijava : Form
     {
         Veterinar veterinar;
-        private static string privatniKljuc = "7BDHFJ54";
 
         public frmPrijava()
         {
@@ -34,7 +33,7 @@ namespace PI_t18024_Maza
                     dohvatiPodatke();
                     if (veterinar != null)
                     {
-                        if (usporediMD5(uiUnosLozinke.Text + privatniKljuc, veterinar.lozinka))
+                        if (Kriptiranje.usporediMD5(uiUnosLozinke.Text , veterinar.lozinka))
                         {
                             frmKalendar kalendar = new frmKalendar();
                             this.Hide();
@@ -76,36 +75,6 @@ namespace PI_t18024_Maza
                 {
                     veterinar = db.Veterinar.Where(v => v.korime == uiUnosKorisnickogImena.Text).FirstOrDefault();              
                 }
-            }
-        }
-
-        private string kriptirajMD5(string input)
-        {
-            MD5 md5 = MD5.Create();
-            byte[] podaci = ASCIIEncoding.UTF8.GetBytes(input);
-            byte[] hash = md5.ComputeHash(podaci);
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                stringBuilder.Append(hash[i].ToString("x2"));
-            }
-
-            return stringBuilder.ToString();
-        }
-
-        private bool usporediMD5(string rijec, string hash)
-        {
-            string rijecHash = kriptirajMD5(rijec);
-            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
-
-            if (stringComparer.Compare(rijecHash, hash) == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
