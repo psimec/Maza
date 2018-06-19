@@ -209,7 +209,7 @@
             // 
             this.uiActionOdabirDatuma.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionOdabirDatuma.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uiActionOdabirDatuma.Location = new System.Drawing.Point(432, 56);
+            this.uiActionOdabirDatuma.Location = new System.Drawing.Point(419, 52);
             this.uiActionOdabirDatuma.Name = "uiActionOdabirDatuma";
             this.uiActionOdabirDatuma.Size = new System.Drawing.Size(126, 24);
             this.uiActionOdabirDatuma.TabIndex = 10;
@@ -220,7 +220,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(323, 61);
+            this.label8.Location = new System.Drawing.Point(310, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 16);
             this.label8.TabIndex = 11;
@@ -228,12 +228,12 @@
             // 
             // uiActionDodajAktivnost
             // 
-            this.uiActionDodajAktivnost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionDodajAktivnost.BackColor = System.Drawing.Color.WhiteSmoke;
             this.uiActionDodajAktivnost.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.uiActionDodajAktivnost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.uiActionDodajAktivnost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajAktivnost.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajAktivnost.Location = new System.Drawing.Point(872, 53);
+            this.uiActionDodajAktivnost.Location = new System.Drawing.Point(588, 49);
             this.uiActionDodajAktivnost.Name = "uiActionDodajAktivnost";
             this.uiActionDodajAktivnost.Size = new System.Drawing.Size(127, 27);
             this.uiActionDodajAktivnost.TabIndex = 12;
