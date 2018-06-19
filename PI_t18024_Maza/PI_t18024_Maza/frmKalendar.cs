@@ -69,7 +69,7 @@ namespace PI_t18024_Maza
             uiPanelAktivnosti.Controls.Add(aktivnost, column: stupac, row: red);
         }
 
-        private void OdrediTjedan(DateTime datum)
+        public void OdrediTjedan(DateTime datum)
         {
             brojDana = (int)datum.DayOfWeek - 1;
             if (brojDana == -1)
