@@ -258,9 +258,11 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db_MAZA.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Bolest.datasource" />
     <None Include="db_MAZA.edmx.diagram">
       <DependentUpon>db_MAZA.edmx</DependentUpon>
     </None>
+    <None Include="Lijek.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

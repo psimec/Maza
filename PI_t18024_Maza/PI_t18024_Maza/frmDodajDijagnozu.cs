@@ -15,12 +15,15 @@ namespace PI_t18024_Maza
         Vlasnik vlasnik;
         Zivotinja zivotinja;
 
+        List<string> listaNapomenaZaLijekove;
+
         public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja)
         {
             InitializeComponent();
 
             this.vlasnik = vlasnik;
             this.zivotinja = zivotinja;
+            this.listaNapomenaZaLijekove = new List<string>();
         }
 
         private void frmDodajDijagnozu_Load(object sender, EventArgs e)
@@ -29,6 +32,12 @@ namespace PI_t18024_Maza
             uiImeZivotinje.Text += zivotinja.ime;
             uiVrstaZivotinje.Text += zivotinja.vrsta;
             uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja;
+
+            uiPropisaniLijekovi.DisplayMember = "naziv";
+            uiPropisaniLijekovi.ValueMember = "ID_lijek";
+
+            PopuniLijekove();
+            PopuniBolesti();
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -46,6 +55,37 @@ namespace PI_t18024_Maza
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void uiActionDodajLijek_Click(object sender, EventArgs e)
+        {
+            //dohvati lijek iz comboboxa
+            //upisi napomenu
+            //prebaci lijek u listbox
+            // upisi lijek u bazu
+            // upisi napomenu u bazu
+            //isprazni polje za napomenu
+
+            Lijek odabraniLijek = uiActionOdaberiLijek.SelectedItem as Lijek;
+            listaNapomenaZaLijekove.Add(uiNapomenaLijekUnos.Text);
+            uiPropisaniLijekovi.Items.Add(odabraniLijek);
+            uiNapomenaLijekUnos.Text = "";
+        }
+
+        private void PopuniLijekove()
+        {
+            using (var db = new MazaEntities())
+            {
+                uiActionOdaberiLijek.DataSource = db.Lijek.ToList();                
+            }
+        }
+
+        private void PopuniBolesti()
+        {
+            using (var db = new MazaEntities())
+            {
+                uiActionOdaberiBolest.DataSource = db.Bolest.ToList();
+            }
         }
     }
 }

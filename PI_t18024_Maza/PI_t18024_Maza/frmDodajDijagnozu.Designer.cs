@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiPodaciOZivotinji = new System.Windows.Forms.GroupBox();
-            this.uiVlasnikZivotinje = new System.Windows.Forms.Label();
-            this.uiImeZivotinje = new System.Windows.Forms.Label();
-            this.uiVrstaZivotinje = new System.Windows.Forms.Label();
             this.uiDatumRodenjaZivotinje = new System.Windows.Forms.Label();
+            this.uiVrstaZivotinje = new System.Windows.Forms.Label();
+            this.uiImeZivotinje = new System.Windows.Forms.Label();
+            this.uiVlasnikZivotinje = new System.Windows.Forms.Label();
             this.uiSimptomi = new System.Windows.Forms.TextBox();
             this.uiTerapija = new System.Windows.Forms.TextBox();
             this.uiNapomena = new System.Windows.Forms.TextBox();
             this.uiNaslovSimptomi = new System.Windows.Forms.Label();
             this.uiNaslovTerapija = new System.Windows.Forms.Label();
             this.uiNaslovNapomena = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uiActionOdaberiLijek = new System.Windows.Forms.ComboBox();
+            this.uiNapomenaLijekUnos = new System.Windows.Forms.TextBox();
             this.uiActionDodajLijek = new System.Windows.Forms.Button();
             this.uiPropisaniLijekovi = new System.Windows.Forms.ListBox();
             this.uiActionObrisiLijek = new System.Windows.Forms.Button();
@@ -49,7 +50,12 @@
             this.uiNaslovPropisaniLijekovi = new System.Windows.Forms.Label();
             this.uiActionDodajDijagnozu = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
+            this.uiActionOdaberiBolest = new System.Windows.Forms.ComboBox();
+            this.bolestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiPodaciOZivotinji.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiPodaciOZivotinji
@@ -65,23 +71,14 @@
             this.uiPodaciOZivotinji.TabStop = false;
             this.uiPodaciOZivotinji.Text = "Podaci o životinji";
             // 
-            // uiVlasnikZivotinje
+            // uiDatumRodenjaZivotinje
             // 
-            this.uiVlasnikZivotinje.AutoSize = true;
-            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(24, 35);
-            this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
-            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(47, 13);
-            this.uiVlasnikZivotinje.TabIndex = 0;
-            this.uiVlasnikZivotinje.Text = "Vlasnik: ";
-            // 
-            // uiImeZivotinje
-            // 
-            this.uiImeZivotinje.AutoSize = true;
-            this.uiImeZivotinje.Location = new System.Drawing.Point(24, 71);
-            this.uiImeZivotinje.Name = "uiImeZivotinje";
-            this.uiImeZivotinje.Size = new System.Drawing.Size(30, 13);
-            this.uiImeZivotinje.TabIndex = 1;
-            this.uiImeZivotinje.Text = "Ime: ";
+            this.uiDatumRodenjaZivotinje.AutoSize = true;
+            this.uiDatumRodenjaZivotinje.Location = new System.Drawing.Point(26, 148);
+            this.uiDatumRodenjaZivotinje.Name = "uiDatumRodenjaZivotinje";
+            this.uiDatumRodenjaZivotinje.Size = new System.Drawing.Size(83, 13);
+            this.uiDatumRodenjaZivotinje.TabIndex = 3;
+            this.uiDatumRodenjaZivotinje.Text = "Datum rođenja: ";
             // 
             // uiVrstaZivotinje
             // 
@@ -92,14 +89,23 @@
             this.uiVrstaZivotinje.TabIndex = 2;
             this.uiVrstaZivotinje.Text = "Vrsta: ";
             // 
-            // uiDatumRodenjaZivotinje
+            // uiImeZivotinje
             // 
-            this.uiDatumRodenjaZivotinje.AutoSize = true;
-            this.uiDatumRodenjaZivotinje.Location = new System.Drawing.Point(26, 148);
-            this.uiDatumRodenjaZivotinje.Name = "uiDatumRodenjaZivotinje";
-            this.uiDatumRodenjaZivotinje.Size = new System.Drawing.Size(83, 13);
-            this.uiDatumRodenjaZivotinje.TabIndex = 3;
-            this.uiDatumRodenjaZivotinje.Text = "Datum rođenja: ";
+            this.uiImeZivotinje.AutoSize = true;
+            this.uiImeZivotinje.Location = new System.Drawing.Point(24, 71);
+            this.uiImeZivotinje.Name = "uiImeZivotinje";
+            this.uiImeZivotinje.Size = new System.Drawing.Size(30, 13);
+            this.uiImeZivotinje.TabIndex = 1;
+            this.uiImeZivotinje.Text = "Ime: ";
+            // 
+            // uiVlasnikZivotinje
+            // 
+            this.uiVlasnikZivotinje.AutoSize = true;
+            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(24, 35);
+            this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
+            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(47, 13);
+            this.uiVlasnikZivotinje.TabIndex = 0;
+            this.uiVlasnikZivotinje.Text = "Vlasnik: ";
             // 
             // uiSimptomi
             // 
@@ -152,21 +158,24 @@
             this.uiNaslovNapomena.TabIndex = 6;
             this.uiNaslovNapomena.Text = "Napomena:";
             // 
-            // comboBox1
+            // uiActionOdaberiLijek
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(257, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.uiActionOdaberiLijek.DataSource = this.lijekBindingSource;
+            this.uiActionOdaberiLijek.DisplayMember = "naziv";
+            this.uiActionOdaberiLijek.FormattingEnabled = true;
+            this.uiActionOdaberiLijek.Location = new System.Drawing.Point(257, 42);
+            this.uiActionOdaberiLijek.Name = "uiActionOdaberiLijek";
+            this.uiActionOdaberiLijek.Size = new System.Drawing.Size(121, 21);
+            this.uiActionOdaberiLijek.TabIndex = 7;
+            this.uiActionOdaberiLijek.ValueMember = "ID_lijek";
             // 
-            // textBox1
+            // uiNapomenaLijekUnos
             // 
-            this.textBox1.Location = new System.Drawing.Point(259, 88);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 70);
-            this.textBox1.TabIndex = 8;
+            this.uiNapomenaLijekUnos.Location = new System.Drawing.Point(259, 88);
+            this.uiNapomenaLijekUnos.Multiline = true;
+            this.uiNapomenaLijekUnos.Name = "uiNapomenaLijekUnos";
+            this.uiNapomenaLijekUnos.Size = new System.Drawing.Size(119, 70);
+            this.uiNapomenaLijekUnos.TabIndex = 8;
             // 
             // uiActionDodajLijek
             // 
@@ -176,6 +185,7 @@
             this.uiActionDodajLijek.TabIndex = 9;
             this.uiActionDodajLijek.Text = "Dodaj lijek";
             this.uiActionDodajLijek.UseVisualStyleBackColor = true;
+            this.uiActionDodajLijek.Click += new System.EventHandler(this.uiActionDodajLijek_Click);
             // 
             // uiPropisaniLijekovi
             // 
@@ -241,11 +251,31 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
+            // uiActionOdaberiBolest
+            // 
+            this.uiActionOdaberiBolest.DataSource = this.bolestBindingSource;
+            this.uiActionOdaberiBolest.DisplayMember = "naziv";
+            this.uiActionOdaberiBolest.FormattingEnabled = true;
+            this.uiActionOdaberiBolest.Location = new System.Drawing.Point(439, 272);
+            this.uiActionOdaberiBolest.Name = "uiActionOdaberiBolest";
+            this.uiActionOdaberiBolest.Size = new System.Drawing.Size(121, 21);
+            this.uiActionOdaberiBolest.TabIndex = 17;
+            this.uiActionOdaberiBolest.ValueMember = "ID_bolest";
+            // 
+            // bolestBindingSource
+            // 
+            this.bolestBindingSource.DataSource = typeof(PI_t18024_Maza.Bolest);
+            // 
+            // lijekBindingSource
+            // 
+            this.lijekBindingSource.DataSource = typeof(PI_t18024_Maza.Lijek);
+            // 
             // frmDodajDijagnozu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 562);
+            this.Controls.Add(this.uiActionOdaberiBolest);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionDodajDijagnozu);
             this.Controls.Add(this.uiNaslovPropisaniLijekovi);
@@ -254,8 +284,8 @@
             this.Controls.Add(this.uiActionObrisiLijek);
             this.Controls.Add(this.uiPropisaniLijekovi);
             this.Controls.Add(this.uiActionDodajLijek);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.uiNapomenaLijekUnos);
+            this.Controls.Add(this.uiActionOdaberiLijek);
             this.Controls.Add(this.uiNaslovNapomena);
             this.Controls.Add(this.uiNaslovTerapija);
             this.Controls.Add(this.uiNaslovSimptomi);
@@ -268,6 +298,8 @@
             this.Load += new System.EventHandler(this.frmDodajDijagnozu_Load);
             this.uiPodaciOZivotinji.ResumeLayout(false);
             this.uiPodaciOZivotinji.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +318,8 @@
         private System.Windows.Forms.Label uiNaslovSimptomi;
         private System.Windows.Forms.Label uiNaslovTerapija;
         private System.Windows.Forms.Label uiNaslovNapomena;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox uiActionOdaberiLijek;
+        private System.Windows.Forms.TextBox uiNapomenaLijekUnos;
         private System.Windows.Forms.Button uiActionDodajLijek;
         private System.Windows.Forms.ListBox uiPropisaniLijekovi;
         private System.Windows.Forms.Button uiActionObrisiLijek;
@@ -296,5 +328,8 @@
         private System.Windows.Forms.Label uiNaslovPropisaniLijekovi;
         private System.Windows.Forms.Button uiActionDodajDijagnozu;
         private System.Windows.Forms.Button uiActionOdustani;
+        private System.Windows.Forms.BindingSource lijekBindingSource;
+        private System.Windows.Forms.ComboBox uiActionOdaberiBolest;
+        private System.Windows.Forms.BindingSource bolestBindingSource;
     }
 }
