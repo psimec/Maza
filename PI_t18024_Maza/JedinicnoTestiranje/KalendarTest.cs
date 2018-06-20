@@ -16,22 +16,30 @@ namespace JedinicnoTestiranje
         [TestMethod]
         public void OdrediTjedanTest()
         {    
+            //ARRANGE
             frmKalendar frmKalendar = new frmKalendar();
 
+            //ACT
             frmKalendar.OdrediTjedan(new DateTime(2018, 6, 19).Date);
             
+            //ASSERT
             Assert.IsTrue(frmKalendar.datumOd == new DateTime(2018, 6, 18).Date && frmKalendar.datumDo == new DateTime(2018, 6, 24).Date);
         }
 
         [TestMethod]
         public void KreirajAktivnostTest()
         {
+            //ARRANGE
             frmKalendar frmKalendar = new frmKalendar();
 
             using(var db = new MazaEntities())
             {
                 Kontrola kontrola = db.Kontrola.FirstOrDefault();
+
+                //ACT
                 var test = frmKalendar.KreirajAkrivnost(kontrola);
+
+                //ASSERT
                 Assert.IsTrue(test != null && test.Text != "");
             }        
         }
