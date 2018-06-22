@@ -15,6 +15,7 @@ namespace PI_t18024_Maza
         Kontrola kontrola;
         Zivotinja zivotinja;
         Vlasnik vlasnik;
+        bool status;
 
         List<Dijagnoza> listaDijagnoza;
         List<Operacija> listaOperacija;
@@ -51,6 +52,7 @@ namespace PI_t18024_Maza
             this.uiOpisTekst.Text = this.kontrola.opis;
             this.uiStatusTekst.Text = this.kontrola.status;
 
+            ProvjeriStatus();
 
             //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
@@ -78,6 +80,20 @@ namespace PI_t18024_Maza
                 uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
                 kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y+25);
 
+            }
+        }
+
+        public void ProvjeriStatus()
+        {
+            if (this.kontrola.status == "Obavljen")
+            {
+                this.status = true;
+                this.uiStatusTekst.ForeColor = Color.Green;
+            }
+            else
+            {
+                this.status = false;
+                this.uiStatusTekst.ForeColor = Color.Red;
             }
         }
     }
