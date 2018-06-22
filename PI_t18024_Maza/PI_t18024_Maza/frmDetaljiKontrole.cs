@@ -36,20 +36,21 @@ namespace PI_t18024_Maza
 
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
-            vlasnik = null;
+            this.vlasnik = null;
             using (var db = new MazaEntities())
             {
                 this.zivotinja = db.Zivotinja.Where(s => s.ID_zivotinja == this.kontrola.ID_zivotinja).FirstOrDefault();
-                vlasnik = db.Vlasnik.Where(s => s.ID_vlasnik == this.zivotinja.ID_vlasnika).FirstOrDefault() ;
+                this.vlasnik = db.Vlasnik.Where(s => s.ID_vlasnik == this.zivotinja.ID_vlasnika).FirstOrDefault() ;
             }
-            this.uiImeZivotinje.Text += this.zivotinja.ime;
-            this.uiVrstaZivotinje.Text += this.zivotinja.vrsta;
-            this.uiDatumZivotinje.Text += this.zivotinja.datum_rodenja.ToShortDateString();
-            this.uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+            this.uiImeZivotinjeTekst.Text = this.zivotinja.ime;
+            this.uiVrstaZivotinjeTekst.Text = this.zivotinja.vrsta;
+            this.uiDatumZivotinjeTekst.Text = this.zivotinja.datum_rodenja.ToShortDateString();
+            this.uiVlasnikZivotinjeTekst.Text = this.vlasnik.ime + " " + this.vlasnik.prezime;
+            
+            this.uiDatumKontroleTekst.Text = this.kontrola.datum_kontrole.ToString();
+            this.uiOpisTekst.Text = this.kontrola.opis;
+            this.uiStatusTekst.Text = this.kontrola.status;
 
-            this.uiDatumKontrole.Text += kontrola.datum_kontrole.ToString();
-            this.uiStatusKontrole.Text += kontrola.status;
-            this.uiOpisKontrole.Text += kontrola.opis;
 
             //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
