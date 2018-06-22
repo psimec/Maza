@@ -20,6 +20,9 @@ namespace PI_t18024_Maza
             PopuniVlasnike();
         }
 
+        /// <summary>
+        /// Popunjava se datagridview uiPrikazVlasnika podacima o vlasnicima zivotinja iz baze
+        /// </summary>
         public void PopuniVlasnike()
         {
             BindingList<Vlasnik> listaVlasnika = null;
@@ -30,6 +33,10 @@ namespace PI_t18024_Maza
             vlasnikBindingSource.DataSource = listaVlasnika;
         }
 
+        /// <summary>
+        /// Popunjava se datagridview uiPrikazZivotinja podacima o zivotinjama od vlasnika prenesenog parametrom
+        /// </summary>
+        /// <param name="oznaceni">Označeni vlasnik</param>
         public void PopuniZivotinje(Vlasnik oznaceni)
         {
             BindingList<Zivotinja> listaZivotinja = null;
@@ -40,7 +47,7 @@ namespace PI_t18024_Maza
             }
             zivotinjaBindingSource.DataSource = listaZivotinja;
         }
-
+        
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             Vlasnik oznaceni = vlasnikBindingSource.Current as Vlasnik;
@@ -110,7 +117,10 @@ namespace PI_t18024_Maza
                 PopuniVlasnike();
             }
         }
-
+        /// <summary>
+        /// Filtrira vlasnike na temelju unešenog teksta iz textboxa
+        /// </summary>
+        /// <param name="vlasnik">Vrijednost koju unosi korisnik</param>
         private void FiltrirajVlasnike(string vlasnik)
         {
             BindingList<Vlasnik> listaVlasnika;
@@ -126,7 +136,10 @@ namespace PI_t18024_Maza
         {
             FiltrirajVlasnike(uiFiltrirajVlasnike.Text);
         }
-
+        /// <summary>
+        /// Uzlazno sortira datagridview uiPrikazVlasnika na temelju odabranog stupca
+        /// </summary>
+        /// <param name="stupac">Broj stupca na temelju kojeg korisnik želi sortirati datagridview uiPrikazVlasnika</param>
         private void SortirajVlasnikeUzlazno(int stupac)
         {
             BindingList<Vlasnik> vlasnici;
@@ -160,6 +173,10 @@ namespace PI_t18024_Maza
             uiPrikazVlasnika.DataSource = vlasnici;
         }
 
+        /// <summary>
+        /// Silazno sortira datagridview uiPrikazVlasnika na temelju odabranog stupca
+        /// </summary>
+        /// <param name="stupac">Broj stupca na temelju kojeg korisnik želi sortirati datagridview uiPrikazVlasnika</param>
         private void SortirajVlasnikeSilazno(int stupac)
         {
             BindingList<Vlasnik> vlasnici;
