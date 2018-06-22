@@ -223,5 +223,22 @@ namespace PI_t18024_Maza
                 }
             }
         }
+
+        private void uiAzurirajZivotinju_Click(object sender, EventArgs e)
+        {
+            Vlasnik odabraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
+            
+            if (uiPrikazZivotinja.Rows.Count > 0)
+            {
+                Zivotinja odabranaZivotinje = zivotinjaBindingSource.Current as Zivotinja;
+
+                if(odabranaZivotinje != null)
+                {
+                    frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(odabraniVlasnik, odabranaZivotinje);
+                    dodajZivotinju.ShowDialog();
+                    PopuniZivotinje(odabraniVlasnik);
+                }
+            }
+        }
     }
 }

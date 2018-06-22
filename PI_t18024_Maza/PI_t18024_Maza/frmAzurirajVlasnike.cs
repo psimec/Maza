@@ -14,10 +14,17 @@ namespace PI_t18024_Maza
     {
         Vlasnik vlasnik;
         Vlasnik noviVlasnik;
+        /// <summary>
+        /// Kontruktor klase za dodavanje novog vlasnika
+        /// </summary>
         public frmAzurirajVlasnike()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Konstruktor klase za ažuriranje vlasnika
+        /// </summary>
+        /// <param name="vlasnik">Odabrani vlasnik za ažuriranje</param>
         public frmAzurirajVlasnike(Vlasnik vlasnik)
         {
             this.vlasnik = vlasnik;
@@ -36,7 +43,9 @@ namespace PI_t18024_Maza
                 uiEmail.Text = vlasnik.email;
             }
         }
-
+        /// <summary>
+        /// Ažurira postojećeg, odnosno dodaje novog vlasnika u bazu podataka
+        /// </summary>
         public void UrediVlasnika()
         {
             using (var db = new MazaEntities())
@@ -69,7 +78,13 @@ namespace PI_t18024_Maza
             }
             this.Close();
         }
-
+        /// <summary>
+        /// Validacija unešenih podataka o vlasniku
+        /// </summary>
+        /// <param name="ime">Ime vlasnika</param>
+        /// <param name="prezime">Prezime vlasnika</param>
+        /// <param name="adresa">Adresa stanovanja vlasnika</param>
+        /// <returns>Ukoliko su unešeni podaci ispravni vraća True, u suprotnom vraća False</returns>
         public bool ValidacijaVlasnika(string ime, string prezime, string adresa)
         {
             if(!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)))
@@ -86,8 +101,7 @@ namespace PI_t18024_Maza
         {
             if (ValidacijaVlasnika(uiImeVlasnika.Text, uiPrezimeVlasnika.Text, uiAdresa.Text))
             {
-                //UrediVlasnika();
-                MessageBox.Show("Radi");
+                UrediVlasnika();
             }
             else
             {
