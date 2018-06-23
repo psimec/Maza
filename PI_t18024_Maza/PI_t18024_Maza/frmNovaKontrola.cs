@@ -12,19 +12,29 @@ namespace PI_t18024_Maza
 {
     public partial class frmNovaKontrola : Form
     {
+        #region Globalne varijable
+
         Kontrola kontrola;
 
-        public frmNovaKontrola(Kontrola kontrola)
-        {
-            InitializeComponent();
-            this.kontrola = kontrola;  
-        }
+        #endregion
+
+        #region Konstruktori
 
         public frmNovaKontrola()
         {
             InitializeComponent();
             this.kontrola = null;
         }
+
+        public frmNovaKontrola(Kontrola kontrola)
+        {
+            InitializeComponent();
+            this.kontrola = kontrola;
+        }
+
+        #endregion
+
+        #region Dogadaji
 
         private void NovaKontrola_Load(object sender, EventArgs e)
         {
@@ -44,7 +54,9 @@ namespace PI_t18024_Maza
 
             }
 
-            if (this.kontrola != null) // popuni s odabranim podacima
+            // Popuni elemente forme temeljem podataka kontrole
+
+            if (this.kontrola != null)
             {
                 this.uiOdabirZivotinja.SelectedValue = kontrola.ID_zivotinja;
                 this.uiOdabirVeterinar.SelectedValue = kontrola.ID_veterinar;
@@ -83,6 +95,8 @@ namespace PI_t18024_Maza
                     status = "Nije obavljen";
                 }
 
+                // Dodaj novu kontrolu u bazu podataka
+
                 using (var db = new MazaEntities())
                 {
                     if (this.kontrola == null)
@@ -107,6 +121,9 @@ namespace PI_t18024_Maza
                         db.Kontrola.Add(kontrola);
                         db.SaveChanges();
                     }
+
+                    // Ažurira postojecu kontrolu
+
                     else
                     {
                         db.Kontrola.Attach(kontrola);
@@ -130,11 +147,13 @@ namespace PI_t18024_Maza
                 }
                 this.Close();            
             }
-            else // ako podaci nisu uneseni
+            else 
             {
                 return;
             }     
         }
+
+        #endregion
 
     }
 }

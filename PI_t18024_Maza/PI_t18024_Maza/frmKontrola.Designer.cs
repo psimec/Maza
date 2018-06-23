@@ -53,7 +53,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(162, 344);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 81);
             this.panel1.TabIndex = 17;
@@ -171,6 +171,7 @@
             this.uiActionDetaljiKontrole.TabIndex = 21;
             this.uiActionDetaljiKontrole.Text = "Detalji kontole";
             this.uiActionDetaljiKontrole.UseVisualStyleBackColor = false;
+            this.uiActionDetaljiKontrole.Click += new System.EventHandler(this.uiActionDetaljiKontrole_Click);
             // 
             // uiPretrazi
             // 
@@ -204,7 +205,7 @@
             this.Controls.Add(this.uiActonDodajKontrolu);
             this.Controls.Add(this.uiPrikazKontrola);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "frmKontrola";
             this.Text = "Kontrola";
             this.Load += new System.EventHandler(this.KontrolaForm_Load);
