@@ -14,13 +14,23 @@ namespace PI_t18024_Maza
 {
     public partial class frmPovijestBolesti : Form
     {
+        #region Globalne varijable
+
         private Zivotinja zivotinja;
+
+        #endregion
+
+        #region Konstruktor
 
         public frmPovijestBolesti(Zivotinja zivotinja)
         {
             InitializeComponent();
             this.zivotinja = zivotinja;
         }
+
+        #endregion
+
+        #region Dogadaji
 
         private void povijestBolesti_Load(object sender, EventArgs e)
         {
@@ -34,5 +44,7 @@ namespace PI_t18024_Maza
 
             this.reportViewer1.RefreshReport();
         }
+
+        #endregion
     }
 }
