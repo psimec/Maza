@@ -42,7 +42,7 @@ namespace PI_t18024_Maza
         {
             PopuniOsnovnePodatke();
 
-            if (status != null && !status)
+            if (status != null && !status && this.operacija != null)
             {
                 PopuniPodatkeOOperaciji();
                 uiActionDodajOperaciju.Text = "Ažuriraj operaciju";
