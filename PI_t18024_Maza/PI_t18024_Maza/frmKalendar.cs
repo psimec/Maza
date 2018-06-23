@@ -99,7 +99,7 @@ namespace PI_t18024_Maza
             {
                 foreach (var kontrola in db.Kontrola)
                 {
-                    if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))
+                    if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
                     {
                         int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
                         if (index >= 0)

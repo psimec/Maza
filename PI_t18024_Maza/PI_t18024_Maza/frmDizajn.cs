@@ -16,7 +16,19 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            uiPrikazPrijavljenogVeterinara.Text = PrijavljeniVeterinar.Veterinar.korime;
+            PrikaziPrijavljenogVeterinara();
+        }
+
+        private void PrikaziPrijavljenogVeterinara()
+        {
+            if (PrijavljeniVeterinar.Veterinar != null)
+            {
+                uiPrikazPrijavljenogVeterinara.Text = PrijavljeniVeterinar.Veterinar.korime;
+            }
+            else
+            {
+                uiPrikazPrijavljenogVeterinara.Text = "";
+            }
         }
 
         private void uiActionKalendar_Click(object sender, EventArgs e)
