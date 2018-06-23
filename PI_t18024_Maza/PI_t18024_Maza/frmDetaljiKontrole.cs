@@ -54,6 +54,9 @@ namespace PI_t18024_Maza
 
             ProvjeriStatus();
 
+            DohvatiDijagnoze();
+            PopuniStavkeDijagnozama();
+
             //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
 
@@ -95,6 +98,48 @@ namespace PI_t18024_Maza
                 this.status = false;
                 this.uiStatusTekst.ForeColor = Color.Red;
             }
+        }
+
+        public void DohvatiDijagnoze()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var dijagnoza in db.Dijagnoza)
+                {
+                    if(dijagnoza.ID_kontrola == this.kontrola.ID_kontrola)
+                    {
+                        this.listaDijagnoza.Add(dijagnoza);
+                    }
+                }
+            }
+        }
+
+        public void PopuniStavkeDijagnozama()
+        {
+            if(this.listaDijagnoza.Count>0)
+            {
+                for(int i=1;i<=listaDijagnoza.Count;i++)
+                {
+                    Button kreiranaDijagnoza = new Button();
+                    kreiranaDijagnoza.Width = 75;
+                    kreiranaDijagnoza.Height = 25;
+                    kreiranaDijagnoza.Text = "Dijagnoza " + i;
+                    kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
+                    uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
+                    kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (30*(i-1)));
+                }
+            }
+        }
+
+        public void OtvoriDijagnozu(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string polje[] = gumb.Text.Split(" ");
+            int indexDijagnoze = int.Parse(polje[1]);
+            Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
+
+            frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza);
+            var rezultat = postojecaDijagnoza.ShowDialog();
         }
     }
 }
