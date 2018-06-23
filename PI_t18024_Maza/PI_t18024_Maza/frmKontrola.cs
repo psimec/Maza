@@ -12,8 +12,14 @@ namespace PI_t18024_Maza
 {
     public partial class frmKontrola : frmDizajn
     {
+        #region Globalne varijable
+
         Kontrola kontrola;
         int zadnjiKliknutiStupac;
+
+        #endregion
+
+        #region Konstruktor
 
         public frmKontrola()
         {
@@ -23,21 +29,14 @@ namespace PI_t18024_Maza
             this.kontrola = null;
         }
 
+        #endregion
 
-        private void KontrolaForm_Load(object sender, EventArgs e)
-        {
-            PrikaziKontrole();
-        }
+        #region Sortiranje
 
-        private void PrikaziKontrole()
-        {
-            BindingList<viewKontrola> viewKontrola;
-            using (var db = new MazaEntities())
-            {
-                viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
-            }
-            uiPrikazKontrola.DataSource = viewKontrola; 
-        }
+        /// <summary>
+        /// Sortiranje tablice uzlazno temeljem odabranog stupca
+        /// </summary>
+        /// <param name="stupac"> Odabrani stupac </param>
 
         private void sortirajKontroleUzlazno(int stupac)
         {
@@ -70,6 +69,11 @@ namespace PI_t18024_Maza
             uiPrikazKontrola.DataSource = viewKontrola;
         }
 
+        /// <summary>
+        /// Sortiranje tablice silazno temeljem odabranog stupca
+        /// </summary>
+        /// <param name="stupac"> Odabrani stupac </param>
+
         private void sortirajKontroleSilazno(int stupac)
         {
             BindingList<viewKontrola> viewKontrola;
@@ -101,10 +105,17 @@ namespace PI_t18024_Maza
             uiPrikazKontrola.DataSource = viewKontrola;
         }
 
-        private void filtriraj(string pojam)
-        {
+        #endregion
 
-            
+        #region Filtriranje
+
+        /// <summary>
+        /// Filtrira tablicu temeljem upisanog pojma
+        /// </summary>
+        /// <param name="pojam"> Upisani pojam </param>
+
+        private void filtriraj(string pojam)
+        {     
             BindingList<viewKontrola> viewKontrola;
             using (var db = new MazaEntities())
             {
@@ -126,6 +137,33 @@ namespace PI_t18024_Maza
 
             }
             uiPrikazKontrola.DataSource = viewKontrola;
+        }
+
+        #endregion
+
+        #region Funkcije
+
+        /// <summary>
+        /// Prikaz kontrola iz baze podataka
+        /// </summary>
+
+        private void PrikaziKontrole()
+        {
+            BindingList<viewKontrola> viewKontrola;
+            using (var db = new MazaEntities())
+            {
+                viewKontrola = new BindingList<viewKontrola>(db.viewKontrola.ToList());
+            }
+            uiPrikazKontrola.DataSource = viewKontrola;
+        }
+
+        #endregion
+
+        #region Dogadaji
+
+        private void KontrolaForm_Load(object sender, EventArgs e)
+        {
+            PrikaziKontrole();
         }
 
         private void uiActonDodajKontrolu_Click(object sender, EventArgs e)
@@ -162,6 +200,8 @@ namespace PI_t18024_Maza
             this.Show();
         }
 
+        // Odabirom stupca poziva se funkcija za sortiranje istog
+
         private void uiPrikazKontrola_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int brojStupca = e.ColumnIndex;
@@ -181,5 +221,7 @@ namespace PI_t18024_Maza
         {
             filtriraj(uiPretrazi.Text);
         }
+
+        #endregion
     }
 }
