@@ -120,6 +120,12 @@
     <Compile Include="frmDizajn.Designer.cs">
       <DependentUpon>frmDizajn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDodajCijepljenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajCijepljenje.Designer.cs">
+      <DependentUpon>frmDodajCijepljenje.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDodajDijagnozu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDizajn.resx">
       <DependentUpon>frmDizajn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajCijepljenje.resx">
+      <DependentUpon>frmDodajCijepljenje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDodajDijagnozu.resx">
       <DependentUpon>frmDodajDijagnozu.cs</DependentUpon>
