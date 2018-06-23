@@ -75,7 +75,7 @@ namespace PI_t18024_Maza
 
             if(rezultat == DialogResult.OK)
             {
-                listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
+                listaDijagnoza.Add(novaDijagnoza.dijagnoza);
 
                 int i = listaDijagnoza.Count;
                 Button kreiranaDijagnoza = new Button();

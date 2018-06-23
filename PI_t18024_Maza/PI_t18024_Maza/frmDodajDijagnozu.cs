@@ -16,7 +16,7 @@ namespace PI_t18024_Maza
         Vlasnik vlasnik;
         Zivotinja zivotinja;
         Kontrola kontrola;
-        Dijagnoza dijagnoza;
+        public Dijagnoza dijagnoza;
         bool status;
 
         List<string> listaNapomenaZaLijekove;
