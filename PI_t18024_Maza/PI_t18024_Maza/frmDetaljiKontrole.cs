@@ -57,6 +57,9 @@ namespace PI_t18024_Maza
             DohvatiDijagnoze();
             PopuniStavkeDijagnozama();
 
+            DohvatiCjepljenja();
+            PopuniStavkeCjepljenjima();
+
             //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
 
@@ -114,6 +117,14 @@ namespace PI_t18024_Maza
             }
         }
 
+        public void DohvatiCjepljenja()
+        {
+            using (var db = new MazaEntities())
+            {
+                this.listaCjepiva=db.Cjepivo.Where(s => s.Kontrola.Any(c => c.ID_kontrola == this.kontrola.ID_kontrola)).ToList();
+            }
+        }
+
         public void PopuniStavkeDijagnozama()
         {
             if(this.listaDijagnoza.Count>0)
@@ -131,6 +142,23 @@ namespace PI_t18024_Maza
             }
         }
 
+        public void PopuniStavkeCjepljenjima()
+        {
+            if(this.listaCjepiva.Count>0)
+            {
+                for (int i = 1; i <= listaCjepiva.Count; i++)
+                {
+                    Button kreiranoCjepljenje = new Button();
+                    kreiranoCjepljenje.Width = 75;
+                    kreiranoCjepljenje.Height = 25;
+                    kreiranoCjepljenje.Text = "Cjepljenje " + i;
+                    kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
+                    uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
+                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (30 * (i - 1)));
+                }
+            }
+        }
+
         public void OtvoriDijagnozu(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
@@ -140,6 +168,17 @@ namespace PI_t18024_Maza
 
             frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza, this.status);
             var rezultat = postojecaDijagnoza.ShowDialog();
+        }
+
+        public void OtvoriCjepljenje(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string[] polje = gumb.Text.Split(' ');
+            int indexCjepljenja = int.Parse(polje[1]);
+            Cjepivo cjepivo = listaCjepiva[indexCjepljenja - 1];
+
+            frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
+            var rezultat = postojeceCijepljenje.ShowDialog();
         }
     }
 }
