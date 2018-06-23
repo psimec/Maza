@@ -12,8 +12,12 @@ namespace PI_t18024_Maza
 {
     public partial class frmAzurirajVlasnike : Form
     {
+        #region Globalne varijable
         Vlasnik vlasnik;
         Vlasnik noviVlasnik;
+        #endregion
+
+        #region Konstruktori forme frmAzurirajVlasnike
         /// <summary>
         /// Kontruktor klase za dodavanje novog vlasnika
         /// </summary>
@@ -21,6 +25,7 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
         }
+        
         /// <summary>
         /// Konstruktor klase za ažuriranje vlasnika
         /// </summary>
@@ -30,19 +35,9 @@ namespace PI_t18024_Maza
             this.vlasnik = vlasnik;
             InitializeComponent();
         }
+        #endregion
 
-        private void frmAzurirajVlasnike_Load(object sender, EventArgs e)
-        {
-            if(vlasnik != null)
-            {
-                uiImeVlasnika.Text = vlasnik.ime;
-                uiPrezimeVlasnika.Text = vlasnik.prezime;
-                uiAdresa.Text = vlasnik.adresa_stavnovanja;
-                uiBrojMobitela.Text = vlasnik.broj_telefona1;
-                uiBrojTelefona.Text = vlasnik.broj_telefona2;
-                uiEmail.Text = vlasnik.email;
-            }
-        }
+        #region Funkcije
         /// <summary>
         /// Ažurira postojećeg, odnosno dodaje novog vlasnika u bazu podataka
         /// </summary>
@@ -87,13 +82,30 @@ namespace PI_t18024_Maza
         /// <returns>Ukoliko su unešeni podaci ispravni vraća True, u suprotnom vraća False</returns>
         public bool ValidacijaVlasnika(string ime, string prezime, string adresa)
         {
-            if(!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)))
+            if (!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)))
             {
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+
+        #endregion
+
+        #region Događaji
+
+        private void frmAzurirajVlasnike_Load(object sender, EventArgs e)
+        {
+            if (vlasnik != null)
+            {
+                uiImeVlasnika.Text = vlasnik.ime;
+                uiPrezimeVlasnika.Text = vlasnik.prezime;
+                uiAdresa.Text = vlasnik.adresa_stavnovanja;
+                uiBrojMobitela.Text = vlasnik.broj_telefona1;
+                uiBrojTelefona.Text = vlasnik.broj_telefona2;
+                uiEmail.Text = vlasnik.email;
             }
         }
 
@@ -113,7 +125,7 @@ namespace PI_t18024_Maza
         private void uiDodijeliZivotinju_Click(object sender, EventArgs e)
         {
             UrediVlasnika();
-            if(vlasnik == null)
+            if (vlasnik == null)
             {
                 frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(noviVlasnik);
                 dodajZivotinju.ShowDialog();
@@ -124,5 +136,7 @@ namespace PI_t18024_Maza
                 dodajZivotinju.ShowDialog();
             }
         }
+        #endregion
+
     }
 }

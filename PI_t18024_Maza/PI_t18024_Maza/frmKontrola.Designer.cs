@@ -52,10 +52,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(162, 344);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(216, 423);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 81);
+            this.panel1.Size = new System.Drawing.Size(7, 100);
             this.panel1.TabIndex = 17;
             // 
             // uiPrikazKontrola
@@ -74,15 +74,16 @@
             this.statusDataGridViewTextBoxColumn,
             this.datumkontroleDataGridViewTextBoxColumn});
             this.uiPrikazKontrola.DataSource = this.viewKontrolaBindingSource;
-            this.uiPrikazKontrola.Location = new System.Drawing.Point(172, 130);
+            this.uiPrikazKontrola.Location = new System.Drawing.Point(229, 160);
+            this.uiPrikazKontrola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiPrikazKontrola.Name = "uiPrikazKontrola";
             this.uiPrikazKontrola.ReadOnly = true;
             this.uiPrikazKontrola.RowHeadersVisible = false;
             this.uiPrikazKontrola.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiPrikazKontrola.Size = new System.Drawing.Size(523, 418);
+            this.uiPrikazKontrola.Size = new System.Drawing.Size(697, 514);
             this.uiPrikazKontrola.TabIndex = 18;
-            this.uiPrikazKontrola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiPrikazKontrola_CellClick);
             this.uiPrikazKontrola.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazKontrola_ColumnHeaderMouseClick);
+            this.uiPrikazKontrola.SelectionChanged += new System.EventHandler(this.uiPrikazKontrola_SelectionChanged);
             // 
             // iDkontrolaDataGridViewTextBoxColumn
             // 
@@ -137,9 +138,10 @@
             this.uiActonDodajKontrolu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActonDodajKontrolu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActonDodajKontrolu.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActonDodajKontrolu.Location = new System.Drawing.Point(757, 124);
+            this.uiActonDodajKontrolu.Location = new System.Drawing.Point(1009, 153);
+            this.uiActonDodajKontrolu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActonDodajKontrolu.Name = "uiActonDodajKontrolu";
-            this.uiActonDodajKontrolu.Size = new System.Drawing.Size(144, 49);
+            this.uiActonDodajKontrolu.Size = new System.Drawing.Size(192, 60);
             this.uiActonDodajKontrolu.TabIndex = 19;
             this.uiActonDodajKontrolu.Text = "Dodaj kontrolu";
             this.uiActonDodajKontrolu.UseVisualStyleBackColor = false;
@@ -151,9 +153,10 @@
             this.uiActionAzurirajKontrolu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionAzurirajKontrolu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionAzurirajKontrolu.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionAzurirajKontrolu.Location = new System.Drawing.Point(757, 194);
+            this.uiActionAzurirajKontrolu.Location = new System.Drawing.Point(1009, 239);
+            this.uiActionAzurirajKontrolu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionAzurirajKontrolu.Name = "uiActionAzurirajKontrolu";
-            this.uiActionAzurirajKontrolu.Size = new System.Drawing.Size(144, 49);
+            this.uiActionAzurirajKontrolu.Size = new System.Drawing.Size(192, 60);
             this.uiActionAzurirajKontrolu.TabIndex = 20;
             this.uiActionAzurirajKontrolu.Text = "Ažuriraj kontrolu";
             this.uiActionAzurirajKontrolu.UseVisualStyleBackColor = false;
@@ -165,9 +168,10 @@
             this.uiActionDetaljiKontrole.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.uiActionDetaljiKontrole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDetaljiKontrole.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDetaljiKontrole.Location = new System.Drawing.Point(757, 269);
+            this.uiActionDetaljiKontrole.Location = new System.Drawing.Point(1009, 331);
+            this.uiActionDetaljiKontrole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionDetaljiKontrole.Name = "uiActionDetaljiKontrole";
-            this.uiActionDetaljiKontrole.Size = new System.Drawing.Size(144, 49);
+            this.uiActionDetaljiKontrole.Size = new System.Drawing.Size(192, 60);
             this.uiActionDetaljiKontrole.TabIndex = 21;
             this.uiActionDetaljiKontrole.Text = "Detalji kontole";
             this.uiActionDetaljiKontrole.UseVisualStyleBackColor = false;
@@ -175,9 +179,10 @@
             // 
             // uiPretrazi
             // 
-            this.uiPretrazi.Location = new System.Drawing.Point(326, 95);
+            this.uiPretrazi.Location = new System.Drawing.Point(435, 117);
+            this.uiPretrazi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiPretrazi.Name = "uiPretrazi";
-            this.uiPretrazi.Size = new System.Drawing.Size(162, 20);
+            this.uiPretrazi.Size = new System.Drawing.Size(215, 22);
             this.uiPretrazi.TabIndex = 22;
             this.uiPretrazi.TextChanged += new System.EventHandler(this.uiPretrazi_TextChanged);
             // 
@@ -186,18 +191,19 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(467, 97);
+            this.pictureBox2.Location = new System.Drawing.Point(623, 119);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(17, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
             // frmKontrola
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.ClientSize = new System.Drawing.Size(1344, 778);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.uiPretrazi);
             this.Controls.Add(this.uiActionDetaljiKontrole);
@@ -205,7 +211,7 @@
             this.Controls.Add(this.uiActonDodajKontrolu);
             this.Controls.Add(this.uiPrikazKontrola);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmKontrola";
             this.Text = "Kontrola";
             this.Load += new System.EventHandler(this.KontrolaForm_Load);

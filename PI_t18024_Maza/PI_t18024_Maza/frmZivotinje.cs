@@ -12,13 +12,23 @@ namespace PI_t18024_Maza
 {
     public partial class frmZivotinje : frmDizajn
     {
+        #region Globalne varijable
         int zadnjiKliknutiStupac;
+        #endregion
+
+        #region Konstruktor forme frmZivotinje
         public frmZivotinje()
         {
             InitializeComponent();
             zadnjiKliknutiStupac = 0;
         }
+        #endregion
 
+        #region Funkcije        
+        
+        /// <summary>
+        /// Funkcija za prikaz životinja u datagridview
+        /// </summary>
         public void PrikaziZivotinje()
         {
             BindingList<ViewPrikazZivotinja> listaZivotinja = null;
@@ -30,57 +40,39 @@ namespace PI_t18024_Maza
 
             uiPrikazZivotinja.Columns[0].Visible = false;
         }
-               
-        private void Zivotinje_Load(object sender, EventArgs e)
-        {
-            PrikaziZivotinje();
-        }
-        
-        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
-        {
-            if (uiPrikazZivotinja.CurrentRow != null)
-            {
-                int idZivotinja = int.Parse(uiPrikazZivotinja.CurrentRow.Cells[0].Value.ToString());
-                Vlasnik vlasnik;
-                using (var db = new MazaEntities())
-                {
-                    Zivotinja zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == idZivotinja).FirstOrDefault();
-                    vlasnik = db.Vlasnik.Where(v => v.ID_vlasnik == zivotinja.ID_vlasnika).FirstOrDefault();
-                }
-                frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
-                dodajZivotinju.ShowDialog();
-            }
-            PrikaziZivotinje();
-        }
 
+        /// <summary>
+        /// Funkcija za filtriranje životinja po unesenom parametru
+        /// </summary>
+        /// <param name="zivotinja">Unešeni parametar u textboxu po kojem se filtrira datagridview</param>
         private void Filtriraj(string zivotinja)
         {
             BindingList<ViewPrikazZivotinja> viewZivotinja;
             using (var db = new MazaEntities())
             {
-                if(DateTime.TryParse(zivotinja, out DateTime datum))
+                if (DateTime.TryParse(zivotinja, out DateTime datum))
                 {
                     viewZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.Where
                         (
                             z => (z.Datum_Rođenja.Year == datum.Year || z.Datum_Rođenja.Month == datum.Month || z.Datum_Rođenja.Day == datum.Day)
-                        ).ToList());                        
+                        ).ToList());
                 }
                 else
                 {
                     viewZivotinja = new BindingList<ViewPrikazZivotinja>(db.ViewPrikazZivotinja.Where
                         (
-                            z => (z.Ime.Contains(zivotinja) || z.Ime_Vlasnika.Contains(zivotinja) || z.Prezime_Vlasnika.Contains(zivotinja) ||z.Vrsta.Contains(zivotinja))
+                            z => (z.Ime.Contains(zivotinja) || z.Ime_Vlasnika.Contains(zivotinja) || z.Prezime_Vlasnika.Contains(zivotinja) || z.Vrsta.Contains(zivotinja))
                         ).ToList());
                 }
                 uiPrikazZivotinja.DataSource = viewZivotinja;
             }
         }
-
-        private void uiFiltrirajZivotinje_TextChanged(object sender, EventArgs e)
-        {
-            Filtriraj(uiFiltrirajZivotinje.Text);
-        }
-
+        
+        
+        /// <summary>
+        /// Funkcija za sortiranje zivotinja uzlazno
+        /// </summary>
+        /// <param name="stupac">Odabrani stupac po kojemu se sortira</param>
         private void SortirajZivotinjeUzlazno(int stupac)
         {
             BindingList<ViewPrikazZivotinja> zivotinje;
@@ -123,6 +115,10 @@ namespace PI_t18024_Maza
             uiPrikazZivotinja.DataSource = zivotinje;
         }
 
+        /// <summary>
+        /// Funkcija za sortiranje zivotinja silazno
+        /// </summary>
+        /// <param name="stupac">Odabrani stupac po kojemu se sortira</param>
         private void SortirajZivotinjeSilazno(int stupac)
         {
             BindingList<ViewPrikazZivotinja> zivotinje;
@@ -164,6 +160,21 @@ namespace PI_t18024_Maza
             }
             uiPrikazZivotinja.DataSource = zivotinje;
         }
+        #endregion
+
+        #region Događaji
+
+        private void Zivotinje_Load(object sender, EventArgs e)
+        {
+            PrikaziZivotinje();
+        }
+
+        private void uiFiltrirajZivotinje_TextChanged(object sender, EventArgs e)
+        {
+            Filtriraj(uiFiltrirajZivotinje.Text);
+        }
+
+        
         private void uiPrikazZivotinja_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int brojStupaca = e.ColumnIndex;
@@ -178,6 +189,24 @@ namespace PI_t18024_Maza
                 zadnjiKliknutiStupac = 0;
             }
 
+        }
+
+
+        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
+        {
+            if (uiPrikazZivotinja.CurrentRow != null)
+            {
+                int idZivotinja = int.Parse(uiPrikazZivotinja.CurrentRow.Cells[0].Value.ToString());
+                Vlasnik vlasnik;
+                using (var db = new MazaEntities())
+                {
+                    Zivotinja zivotinja = db.Zivotinja.Where(z => z.ID_zivotinja == idZivotinja).FirstOrDefault();
+                    vlasnik = db.Vlasnik.Where(v => v.ID_vlasnik == zivotinja.ID_vlasnika).FirstOrDefault();
+                }
+                frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
+                dodajZivotinju.ShowDialog();
+            }
+            PrikaziZivotinje();
         }
 
         private void uiActionPovijestBolesti_Click(object sender, EventArgs e)
@@ -199,6 +228,6 @@ namespace PI_t18024_Maza
 
             }
         }
-
+        #endregion
     }
 }
