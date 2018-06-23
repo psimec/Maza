@@ -56,12 +56,12 @@ namespace PI_t18024_Maza
 
             PopuniLijekove();
             PopuniBolesti();
-            if(status != null && status)
+            if(status != null && !status)
             {
                 PopuniPodatkeODijagnozi();
                 uiActionDodajDijagnozu.Text = "Ažuriraj dijagnozu";
             }
-            else if(status != null && !status)
+            else if(status != null && status)
             {
                 PopuniPodatkeODijagnozi();
                 uiActionOdustani.Text = "Zatvori";
