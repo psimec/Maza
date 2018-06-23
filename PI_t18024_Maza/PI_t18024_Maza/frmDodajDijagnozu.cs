@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,7 +40,8 @@ namespace PI_t18024_Maza
             this.kontrola = kontrola;
             this.dijagnoza = dijagnoza;
             this.status = status;
-            this.listaNapomenaZaLijekove = new List<string>();            
+            this.listaNapomenaZaLijekove = new List<string>();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void frmDodajDijagnozu_Load(object sender, EventArgs e)
@@ -54,9 +56,17 @@ namespace PI_t18024_Maza
 
             PopuniLijekove();
             PopuniBolesti();
-            if(status || !status)
+            if(status != null && status)
             {
                 PopuniPodatkeODijagnozi();
+                uiActionDodajDijagnozu.Text = "Ažuriraj dijagnozu";
+            }
+            else if(status != null && !status)
+            {
+                PopuniPodatkeODijagnozi();
+                //uiActionDodajDijagnozu.Hide();
+                //uiActionOdustani.Text = "Zatvori";
+                //dodaj funkciju za onemogucavanje unosa
             }
         }
 
@@ -71,11 +81,10 @@ namespace PI_t18024_Maza
             // TODO: 
             // Spremi podatke u bazu
             // Promijeni funkcionalnost gumba temeljem moda u kojem je forma
-
-            using (var db = new MazaEntities())
+            //Nova dijagnoza
+            if (this.dijagnoza == null)
             {
-                //Nova dijagnoza
-                if (this.dijagnoza == null)
+                using (var db = new MazaEntities())
                 {
                     Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
 
@@ -107,15 +116,34 @@ namespace PI_t18024_Maza
 
                         db.PropisaniLijek.Add(propisaniLijek);
                     }
+                    db.SaveChanges();
+                }
+
+            }
+            else
+            {
+                //Azuriraj jednostavne podatke
+                using (var db = new MazaEntities())
+                {
+                    Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
+                    db.Dijagnoza.Attach(this.dijagnoza);
+
+                    this.dijagnoza.simptomi = uiSimptomi.Text;
+                    this.dijagnoza.terapija = uiTerapija.Text;
+                    this.dijagnoza.napomena = uiNapomena.Text;
+                    this.dijagnoza.ID_kontrola = this.kontrola.ID_kontrola;
+                    this.dijagnoza.ID_bolest = bolest.ID_bolest;
 
                     db.SaveChanges();
-
                 }
+                Thread dretvaZaBrisanje = new Thread(new ThreadStart(DodajLijekove));
+                dretvaZaBrisanje.Start();
             }
-
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+
 
         private void uiActionDodajLijek_Click(object sender, EventArgs e)
         {
@@ -202,6 +230,98 @@ namespace PI_t18024_Maza
         private void uiActionOdaberiLijek_SelectedIndexChanged(object sender, EventArgs e)
         {
             uiNapomenaLijekUnos.Text = "";
+        }
+
+        public void ObrisiLijekove()
+        {
+            using (var db = new MazaEntities())
+            {
+                Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
+
+                db.Bolest.Attach(bolest);
+                db.Kontrola.Attach(this.kontrola);
+                db.Dijagnoza.Attach(this.dijagnoza);
+
+                foreach (var propisaniLijek in db.PropisaniLijek)
+                {
+                    if (propisaniLijek.ID_dijagnoza == this.dijagnoza.ID_dijagnoza)
+                    {
+                        db.PropisaniLijek.Attach(propisaniLijek);
+                        db.PropisaniLijek.Remove(propisaniLijek);
+                    }
+                }
+                db.SaveChanges();
+            }
+
+            Thread.Sleep(500);
+            Thread dretva = new Thread(new ThreadStart(DodajLijekove));
+            dretva.Start();
+        }
+
+        public void DodajLijekove()
+        {
+            using (var db = new MazaEntities())
+            {
+                Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
+
+                db.Bolest.Attach(bolest);
+                db.Kontrola.Attach(this.kontrola);
+                db.Dijagnoza.Attach(this.dijagnoza);
+
+                List<Lijek> listaLijekova = new List<Lijek>();
+                foreach (var propisaniLijek in db.PropisaniLijek)
+                {
+                    Lijek lijek = null;
+                    lijek = db.Lijek.Where(s => s.ID_lijek == propisaniLijek.ID_lijek && propisaniLijek.ID_dijagnoza == this.dijagnoza.ID_dijagnoza).FirstOrDefault();
+
+                    if (lijek != null)
+                    {
+                        listaLijekova.Add(lijek);
+                    }
+                }
+
+                foreach (Lijek lijekIzListe in listaLijekova)
+                {
+                    bool pronadjen = false;
+                    PropisaniLijek propisaniLijek = null;
+                    for (int i = 0; i < uiPropisaniLijekovi.Items.Count; i++)
+                    {
+                        Lijek lijek = uiPropisaniLijekovi.Items[i] as Lijek;
+                        if (lijekIzListe.ID_lijek == lijek.ID_lijek)
+                        {
+                            propisaniLijek = db.PropisaniLijek.Where(s => s.ID_lijek == lijek.ID_lijek && s.ID_dijagnoza == this.dijagnoza.ID_dijagnoza).FirstOrDefault();
+                            db.PropisaniLijek.Attach(propisaniLijek);
+                            propisaniLijek.napomena = listaNapomenaZaLijekove[i];
+                            listaNapomenaZaLijekove[i] = "#343";
+                            pronadjen = true;
+                        }
+                    }
+
+                    if (!pronadjen)
+                    {
+                        propisaniLijek = db.PropisaniLijek.Where(s => s.ID_lijek == lijekIzListe.ID_lijek && s.ID_dijagnoza == this.dijagnoza.ID_dijagnoza).FirstOrDefault();
+                        db.PropisaniLijek.Attach(propisaniLijek);
+                        db.PropisaniLijek.Remove(propisaniLijek);
+                    }
+                }
+
+                for (int i = 0; i < uiPropisaniLijekovi.Items.Count; i++)
+                {
+                    Lijek lijek = uiPropisaniLijekovi.Items[i] as Lijek;
+                    if (listaNapomenaZaLijekove[i] != "#343")
+                    {
+                        PropisaniLijek propisaniLijek = new PropisaniLijek
+                        {
+                            ID_dijagnoza = this.dijagnoza.ID_dijagnoza,
+                            ID_lijek = lijek.ID_lijek,
+                            napomena = listaNapomenaZaLijekove[i]
+                        };
+
+                        db.PropisaniLijek.Add(propisaniLijek);
+                    }
+                }
+                db.SaveChanges();
+            }
         }
 
         private void uiActionObrisiLijek_Click(object sender, EventArgs e)
