@@ -40,6 +40,7 @@ namespace PI_t18024_Maza
                 this.Hide();
                 detaljiKontrole.ShowDialog();
                 this.Show();
+                Osvjezi();
             };
 
             Zivotinja zivotinja;
