@@ -16,6 +16,7 @@ namespace PI_t18024_Maza
         double brojDana;
         public DateTime datumOd;
         public DateTime datumDo;
+        private bool sviVeterinari = false;
 
         public frmKalendar()
         {
@@ -99,19 +100,38 @@ namespace PI_t18024_Maza
             {
                 foreach (var kontrola in db.Kontrola)
                 {
-                    if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
+                    if (!sviVeterinari)
                     {
-                        int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
-                        if (index >= 0)
+                        if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
                         {
-                            listaDaniAktivnosti[index].DodajAktivnost(kontrola);
+                            int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
+                            if (index >= 0)
+                            {
+                                listaDaniAktivnosti[index].DodajAktivnost(kontrola);
+                            }
+                            else
+                            {
+                                DanAktivnosti noviDanAktivnosti = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, kontrola);
+                                listaDaniAktivnosti.Add(noviDanAktivnosti);
+                            }
                         }
-                        else
+                    }
+                    else
+                    {
+                        if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))
                         {
-                            DanAktivnosti noviDanAktivnosti = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, kontrola);
-                            listaDaniAktivnosti.Add(noviDanAktivnosti);
-                        }                                            
-                    }                    
+                            int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
+                            if (index >= 0)
+                            {
+                                listaDaniAktivnosti[index].DodajAktivnost(kontrola);
+                            }
+                            else
+                            {
+                                DanAktivnosti noviDanAktivnosti = new DanAktivnosti(kontrola.datum_kontrole.DayOfWeek, kontrola);
+                                listaDaniAktivnosti.Add(noviDanAktivnosti);
+                            }
+                        }
+                    }              
                 }
             }
         }
@@ -167,5 +187,19 @@ namespace PI_t18024_Maza
             Osvjezi();
         }
 
+        private void uiActionPrikaziSveAktivnosti_Click(object sender, EventArgs e)
+        {
+            sviVeterinari = !sviVeterinari;
+            if (sviVeterinari)
+            {
+                uiActionPrikaziSveAktivnosti.Text = "Prikazi vlastite aktivnosti";
+            }
+            else
+            {
+                uiActionPrikaziSveAktivnosti.Text = "Prikazi sve aktivnosti";
+            }
+
+            Osvjezi();
+        }
     }
 }

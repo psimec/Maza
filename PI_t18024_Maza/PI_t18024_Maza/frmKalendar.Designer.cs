@@ -51,6 +51,7 @@
             this.uiPrikazDatuma5 = new System.Windows.Forms.Label();
             this.uiPrikazDatuma6 = new System.Windows.Forms.Label();
             this.uiPrikazDatuma7 = new System.Windows.Forms.Label();
+            this.uiActionPrikaziSveAktivnosti = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uiActionKontrola
@@ -109,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(187, 98);
+            this.label1.Location = new System.Drawing.Point(199, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 19);
             this.label1.TabIndex = 2;
@@ -119,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(329, 98);
+            this.label2.Location = new System.Drawing.Point(341, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 19);
             this.label2.TabIndex = 3;
@@ -129,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(447, 98);
+            this.label3.Location = new System.Drawing.Point(459, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 4;
@@ -139,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(563, 98);
+            this.label4.Location = new System.Drawing.Point(575, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 5;
@@ -149,7 +150,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(691, 98);
+            this.label5.Location = new System.Drawing.Point(703, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 19);
             this.label5.TabIndex = 6;
@@ -159,7 +160,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(808, 98);
+            this.label6.Location = new System.Drawing.Point(820, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 19);
             this.label6.TabIndex = 7;
@@ -169,7 +170,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(908, 98);
+            this.label7.Location = new System.Drawing.Point(920, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 19);
             this.label7.TabIndex = 8;
@@ -186,7 +187,7 @@
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.uiPanelAktivnosti.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.uiPanelAktivnosti.Cursor = System.Windows.Forms.Cursors.Default;
-            this.uiPanelAktivnosti.Location = new System.Drawing.Point(175, 140);
+            this.uiPanelAktivnosti.Location = new System.Drawing.Point(187, 147);
             this.uiPanelAktivnosti.Name = "uiPanelAktivnosti";
             this.uiPanelAktivnosti.RowCount = 10;
             this.uiPanelAktivnosti.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -209,7 +210,7 @@
             // 
             this.uiActionOdabirDatuma.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionOdabirDatuma.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uiActionOdabirDatuma.Location = new System.Drawing.Point(419, 52);
+            this.uiActionOdabirDatuma.Location = new System.Drawing.Point(309, 50);
             this.uiActionOdabirDatuma.Name = "uiActionOdabirDatuma";
             this.uiActionOdabirDatuma.Size = new System.Drawing.Size(126, 24);
             this.uiActionOdabirDatuma.TabIndex = 10;
@@ -219,23 +220,23 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(310, 57);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(187, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 16);
+            this.label8.Size = new System.Drawing.Size(121, 19);
             this.label8.TabIndex = 11;
             this.label8.Text = "Željeni tjedan: ";
             // 
             // uiActionDodajAktivnost
             // 
-            this.uiActionDodajAktivnost.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.uiActionDodajAktivnost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
             this.uiActionDodajAktivnost.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.uiActionDodajAktivnost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.uiActionDodajAktivnost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajAktivnost.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajAktivnost.Location = new System.Drawing.Point(588, 49);
+            this.uiActionDodajAktivnost.Location = new System.Drawing.Point(455, 47);
             this.uiActionDodajAktivnost.Name = "uiActionDodajAktivnost";
-            this.uiActionDodajAktivnost.Size = new System.Drawing.Size(127, 27);
+            this.uiActionDodajAktivnost.Size = new System.Drawing.Size(117, 30);
             this.uiActionDodajAktivnost.TabIndex = 12;
             this.uiActionDodajAktivnost.Text = "Dodaj kontrolu";
             this.uiActionDodajAktivnost.UseVisualStyleBackColor = false;
@@ -253,7 +254,7 @@
             // uiPrikazDatuma1
             // 
             this.uiPrikazDatuma1.AutoSize = true;
-            this.uiPrikazDatuma1.Location = new System.Drawing.Point(210, 121);
+            this.uiPrikazDatuma1.Location = new System.Drawing.Point(222, 128);
             this.uiPrikazDatuma1.Name = "uiPrikazDatuma1";
             this.uiPrikazDatuma1.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma1.TabIndex = 15;
@@ -261,7 +262,7 @@
             // uiPrikazDatuma2
             // 
             this.uiPrikazDatuma2.AutoSize = true;
-            this.uiPrikazDatuma2.Location = new System.Drawing.Point(329, 121);
+            this.uiPrikazDatuma2.Location = new System.Drawing.Point(341, 128);
             this.uiPrikazDatuma2.Name = "uiPrikazDatuma2";
             this.uiPrikazDatuma2.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma2.TabIndex = 16;
@@ -269,7 +270,7 @@
             // uiPrikazDatuma3
             // 
             this.uiPrikazDatuma3.AutoSize = true;
-            this.uiPrikazDatuma3.Location = new System.Drawing.Point(448, 122);
+            this.uiPrikazDatuma3.Location = new System.Drawing.Point(460, 129);
             this.uiPrikazDatuma3.Name = "uiPrikazDatuma3";
             this.uiPrikazDatuma3.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma3.TabIndex = 17;
@@ -277,7 +278,7 @@
             // uiPrikazDatuma4
             // 
             this.uiPrikazDatuma4.AutoSize = true;
-            this.uiPrikazDatuma4.Location = new System.Drawing.Point(566, 122);
+            this.uiPrikazDatuma4.Location = new System.Drawing.Point(578, 129);
             this.uiPrikazDatuma4.Name = "uiPrikazDatuma4";
             this.uiPrikazDatuma4.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma4.TabIndex = 18;
@@ -285,7 +286,7 @@
             // uiPrikazDatuma5
             // 
             this.uiPrikazDatuma5.AutoSize = true;
-            this.uiPrikazDatuma5.Location = new System.Drawing.Point(691, 122);
+            this.uiPrikazDatuma5.Location = new System.Drawing.Point(703, 129);
             this.uiPrikazDatuma5.Name = "uiPrikazDatuma5";
             this.uiPrikazDatuma5.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma5.TabIndex = 19;
@@ -293,7 +294,7 @@
             // uiPrikazDatuma6
             // 
             this.uiPrikazDatuma6.AutoSize = true;
-            this.uiPrikazDatuma6.Location = new System.Drawing.Point(808, 121);
+            this.uiPrikazDatuma6.Location = new System.Drawing.Point(820, 128);
             this.uiPrikazDatuma6.Name = "uiPrikazDatuma6";
             this.uiPrikazDatuma6.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma6.TabIndex = 20;
@@ -301,16 +302,32 @@
             // uiPrikazDatuma7
             // 
             this.uiPrikazDatuma7.AutoSize = true;
-            this.uiPrikazDatuma7.Location = new System.Drawing.Point(913, 121);
+            this.uiPrikazDatuma7.Location = new System.Drawing.Point(925, 128);
             this.uiPrikazDatuma7.Name = "uiPrikazDatuma7";
             this.uiPrikazDatuma7.Size = new System.Drawing.Size(0, 13);
             this.uiPrikazDatuma7.TabIndex = 21;
+            // 
+            // uiActionPrikaziSveAktivnosti
+            // 
+            this.uiActionPrikaziSveAktivnosti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionPrikaziSveAktivnosti.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.uiActionPrikaziSveAktivnosti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
+            this.uiActionPrikaziSveAktivnosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPrikaziSveAktivnosti.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPrikaziSveAktivnosti.Location = new System.Drawing.Point(579, 47);
+            this.uiActionPrikaziSveAktivnosti.Name = "uiActionPrikaziSveAktivnosti";
+            this.uiActionPrikaziSveAktivnosti.Size = new System.Drawing.Size(164, 30);
+            this.uiActionPrikaziSveAktivnosti.TabIndex = 22;
+            this.uiActionPrikaziSveAktivnosti.Text = "Prikazi sve aktivnosti";
+            this.uiActionPrikaziSveAktivnosti.UseVisualStyleBackColor = false;
+            this.uiActionPrikaziSveAktivnosti.Click += new System.EventHandler(this.uiActionPrikaziSveAktivnosti_Click);
             // 
             // frmKalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.uiActionPrikaziSveAktivnosti);
             this.Controls.Add(this.uiPrikazDatuma7);
             this.Controls.Add(this.uiPrikazDatuma6);
             this.Controls.Add(this.uiPrikazDatuma5);
@@ -352,6 +369,7 @@
             this.Controls.SetChildIndex(this.uiPrikazDatuma5, 0);
             this.Controls.SetChildIndex(this.uiPrikazDatuma6, 0);
             this.Controls.SetChildIndex(this.uiPrikazDatuma7, 0);
+            this.Controls.SetChildIndex(this.uiActionPrikaziSveAktivnosti, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,6 +399,7 @@
         private System.Windows.Forms.Label uiPrikazDatuma5;
         private System.Windows.Forms.Label uiPrikazDatuma6;
         private System.Windows.Forms.Label uiPrikazDatuma7;
+        private System.Windows.Forms.Button uiActionPrikaziSveAktivnosti;
     }
 }
 
