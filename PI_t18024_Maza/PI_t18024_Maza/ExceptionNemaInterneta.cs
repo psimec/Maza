@@ -8,11 +8,19 @@ namespace PI_t18024_Maza
 {
     class ExceptionNemaInterneta : Exception
     {
+        #region Varijable
+   
         public string Poruka;
+
+        #endregion
+
+        #region Konstruktor
 
         public ExceptionNemaInterneta(string poruka)
         {
             this.Poruka = poruka;
         }
+
+        #endregion
     }
 }

@@ -9,7 +9,19 @@ namespace Kriptografija
 {
     public class Kriptiranje
     {
+        #region Varijable
+
         private static string privatniKljuc = "7BDHFJ54";
+
+        #endregion
+
+        #region Metode
+
+        /// <summary>
+        /// Kriptira proslijedene znakove pomocu MD5 algoritma
+        /// </summary>
+        /// <param name="input"> Proslijedeni znakovi </param>
+        /// <returns> Kriptirani znakovi </returns>
 
         public static string kriptirajMD5(string input)
         {
@@ -26,6 +38,13 @@ namespace Kriptografija
             return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Usporeduje proslijedene znakove i proslijedene kriptirane znakove
+        /// </summary>
+        /// <param name="rijec"> Proslijedeni znakovi </param>
+        /// <param name="hash"> Proslijedeni kriptirani znakovi </param>
+        /// <returns> Rezultat usporedbe </returns>
+
         public static bool usporediMD5(string rijec, string hash)
         {
             string rijecHash = kriptirajMD5(rijec + privatniKljuc);
@@ -40,6 +59,8 @@ namespace Kriptografija
                 return false;
             }
         }
+
+        #endregion
 
     }
 }
