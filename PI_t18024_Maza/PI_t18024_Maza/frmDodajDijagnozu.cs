@@ -56,7 +56,7 @@ namespace PI_t18024_Maza
 
             PopuniLijekove();
             PopuniBolesti();
-            if(status != null && !status)
+            if(status != null && !status && this.dijagnoza!=null)
             {
                 PopuniPodatkeODijagnozi();
                 uiActionDodajDijagnozu.Text = "Ažuriraj dijagnozu";
