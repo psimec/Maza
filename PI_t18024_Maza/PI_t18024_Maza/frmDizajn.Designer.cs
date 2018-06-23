@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDizajn));
             this.LijeviPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionStatistika = new System.Windows.Forms.Button();
             this.uiActionKontrola = new System.Windows.Forms.Button();
             this.uiActionVlasnici = new System.Windows.Forms.Button();
             this.uiActionZivotinje = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             // 
             // LijeviPanel
             // 
-            this.LijeviPanel.Controls.Add(this.button1);
+            this.LijeviPanel.Controls.Add(this.uiActionStatistika);
             this.LijeviPanel.Controls.Add(this.uiActionKontrola);
             this.LijeviPanel.Controls.Add(this.uiActionVlasnici);
             this.LijeviPanel.Controls.Add(this.uiActionZivotinje);
@@ -62,20 +62,21 @@
             this.LijeviPanel.Size = new System.Drawing.Size(162, 632);
             this.LijeviPanel.TabIndex = 0;
             // 
-            // button1
+            // uiActionStatistika
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1, 428);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 81);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Statistika";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.uiActionStatistika.FlatAppearance.BorderSize = 0;
+            this.uiActionStatistika.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionStatistika.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionStatistika.Image = ((System.Drawing.Image)(resources.GetObject("uiActionStatistika.Image")));
+            this.uiActionStatistika.Location = new System.Drawing.Point(1, 428);
+            this.uiActionStatistika.Margin = new System.Windows.Forms.Padding(2);
+            this.uiActionStatistika.Name = "uiActionStatistika";
+            this.uiActionStatistika.Size = new System.Drawing.Size(159, 81);
+            this.uiActionStatistika.TabIndex = 4;
+            this.uiActionStatistika.Text = "Statistika";
+            this.uiActionStatistika.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.uiActionStatistika.UseVisualStyleBackColor = true;
+            this.uiActionStatistika.Click += new System.EventHandler(this.uiActionStatistika_Click);
             // 
             // uiActionKontrola
             // 
@@ -251,7 +252,7 @@
         private System.Windows.Forms.Button uiActionMinimize;
         private System.Windows.Forms.Button uiActionClose;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionStatistika;
         private System.Windows.Forms.Button uiActionOdjava;
     }
 }

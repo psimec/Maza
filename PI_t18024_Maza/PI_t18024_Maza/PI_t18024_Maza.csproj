@@ -151,6 +151,12 @@
     <Compile Include="frmKalendar.Designer.cs">
       <DependentUpon>frmKalendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatistike.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistike.Designer.cs">
+      <DependentUpon>frmStatistike.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kontrola.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDodajZivotinju.resx">
       <DependentUpon>frmDodajZivotinju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistike.resx">
+      <DependentUpon>frmStatistike.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
     <EmbeddedResource Include="frmKalendar.resx">

@@ -72,5 +72,14 @@ namespace PI_t18024_Maza
             prijava.ShowDialog();
             this.Close();            
         }
+
+        private void uiActionStatistika_Click(object sender, EventArgs e)
+        {
+            frmStatistike statistike = new frmStatistike();
+            this.Hide();
+            statistike.StartPosition = FormStartPosition.CenterScreen;
+            statistike.ShowDialog();
+            this.Close();
+        }
     }
 }
