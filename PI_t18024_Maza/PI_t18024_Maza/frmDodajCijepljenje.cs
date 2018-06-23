@@ -15,6 +15,17 @@ namespace PI_t18024_Maza
         public frmDodajCijepljenje()
         {
             InitializeComponent();
+            
+        }
+
+        private void frmDodajCijepljenje_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiOdabirCjepiva_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
