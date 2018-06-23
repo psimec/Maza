@@ -180,5 +180,26 @@ namespace PI_t18024_Maza
             frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
             var rezultat = postojeceCijepljenje.ShowDialog();
         }
+
+        private void uiActionDodajCijepljenje_Click(object sender, EventArgs e)
+        {
+            frmDodajCijepljenje novoCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola);
+            var rezultat = novoCijepljenje.ShowDialog();
+
+            if (rezultat == DialogResult.OK)
+            {
+                //listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
+                listaCjepiva.Add(novoCijepljenje.cjepivo);
+
+                int i = listaCjepiva.Count - 0;
+                Button kreiranoCjepljenje = new Button();
+                kreiranoCjepljenje.Width = 75;
+                kreiranoCjepljenje.Height = 25;
+                kreiranoCjepljenje.Text = "Cjepljenje " + i;
+                kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
+                uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
+                kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (30 * (i - 1)));
+            }
+        }
     }
 }

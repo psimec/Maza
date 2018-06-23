@@ -15,7 +15,7 @@ namespace PI_t18024_Maza
         Vlasnik vlasnik;
         Zivotinja zivotinja;
         Kontrola kontrola;
-        Cjepivo cjepivo;
+        public Cjepivo cjepivo;
         bool status;
 
         public frmDodajCijepljenje(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
@@ -46,19 +46,14 @@ namespace PI_t18024_Maza
             if(this.cjepivo != null)
             {
                 uiActionOdaberiCjepivo.SelectedValue = this.cjepivo.ID_cjepivo;
-            }
-
-
-            if (status != null && !status)
-            {
-                //PopuniPodatkeODijagnozi();
                 uiActionDodajCjepivo.Text = "Ažuriraj cjepljenje";
             }
-            else if (status != null && status)
+
+
+            if (status != null && status)
             {
-                //PopuniPodatkeODijagnozi();
                 uiActionOdustani.Text = "Zatvori";
-                //OnemoguciUnos();
+                OnemoguciUnos();
             }
         }
 
@@ -77,7 +72,41 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajCjepivo_Click(object sender, EventArgs e)
         {
+            using (var db = new MazaEntities())
+            {
+                if(this.cjepivo==null)
+                {
+                    Cjepivo cjepivo = uiActionOdaberiCjepivo.SelectedItem as Cjepivo;
 
+                    db.Cjepivo.Attach(cjepivo);
+                    db.Kontrola.Attach(this.kontrola);
+
+                    this.kontrola.Cjepivo.Add(cjepivo);
+                    cjepivo.Kontrola.Add(this.kontrola);
+
+                    this.cjepivo = cjepivo;
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    Cjepivo cjepivo = uiActionOdaberiCjepivo.SelectedItem as Cjepivo;
+
+                    db.Cjepivo.Attach(this.cjepivo);
+                    db.Kontrola.Attach(this.kontrola);
+
+                    //this.cjepivo.Kontrola.Remove(this.kontrola);
+                    //this.kontrola.Cjepivo.Remove(this.cjepivo);
+
+                    //db.Entry(this.kontrola).Collection("Cjepivo").Load();
+                    this.kontrola.Cjepivo.Remove(this.cjepivo);
+
+                    db.Cjepivo.Attach(cjepivo);
+                    this.kontrola.Cjepivo.Add(cjepivo);
+                    //cjepivo.Kontrola.Add(this.kontrola);
+                }
+                db.SaveChanges();
+            }
+            this.Close();
         }
 
         private void PopuniOsnovnePodatke()
@@ -85,7 +114,7 @@ namespace PI_t18024_Maza
             uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
             uiImeZivotinje.Text += zivotinja.ime;
             uiVrstaZivotinje.Text += zivotinja.vrsta;
-            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
         }
 
         private void PopuniCjepiva()
@@ -94,18 +123,28 @@ namespace PI_t18024_Maza
             {
                 uiActionOdaberiCjepivo.DataSource = db.Cjepivo.ToList();
             }
+
+            uiActionOdaberiCjepivo.DisplayMember = "ime";
+            uiActionOdaberiCjepivo.ValueMember = "ID_cjepivo";
         }
 
         private void PopuniPodatkeOCjepivu(Cjepivo cjepivo)
         {
             if(cjepivo != null)
             {
-                uiImeCjepiva.Text += cjepivo.ime;
-                uiProizvodac.Text += cjepivo.proizvodac;
-                uiRokTrajanja.Text += cjepivo.rok_trajanja;
-                uiCijenaCjepiva.Text += cjepivo.cijena + " kn";
-                uiDozaCjepiva.Text += cjepivo.doza + " mg";
+                uiImeCjepivaTekst.Text = cjepivo.ime;
+                uiProizvodacTekst.Text = cjepivo.proizvodac;
+                uiRokTrajanjaTekst.Text = cjepivo.rok_trajanja.ToShortDateString();
+                uiCijenaCjepivaTekst.Text = cjepivo.cijena + " kn";
+                uiDozaCjepivaTekst.Text = cjepivo.doza + " mg";
             }
+        }
+
+        private void OnemoguciUnos()
+        {
+            uiActionOdaberiCjepivo.Enabled = false;
+
+            uiActionDodajCjepivo.Hide();
         }
     }
 }

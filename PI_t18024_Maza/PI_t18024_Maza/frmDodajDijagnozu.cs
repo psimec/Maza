@@ -117,6 +117,7 @@ namespace PI_t18024_Maza
                     }
                     db.SaveChanges();
                 }
+                this.DialogResult = DialogResult.OK;
 
             }
             else
@@ -138,7 +139,6 @@ namespace PI_t18024_Maza
                 Thread dretvaZaBrisanje = new Thread(new ThreadStart(DodajLijekove));
                 dretvaZaBrisanje.Start();
             }
-            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -164,7 +164,7 @@ namespace PI_t18024_Maza
             uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
             uiImeZivotinje.Text += zivotinja.ime;
             uiVrstaZivotinje.Text += zivotinja.vrsta;
-            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
         }
 
         private void PopuniPodatkeODijagnozi()

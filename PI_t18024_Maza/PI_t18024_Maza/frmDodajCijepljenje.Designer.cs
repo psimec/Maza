@@ -43,6 +43,11 @@
             this.cjepivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajCjepivo = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
+            this.uiImeCjepivaTekst = new System.Windows.Forms.Label();
+            this.uiDozaCjepivaTekst = new System.Windows.Forms.Label();
+            this.uiProizvodacTekst = new System.Windows.Forms.Label();
+            this.uiRokTrajanjaTekst = new System.Windows.Forms.Label();
+            this.uiCijenaCjepivaTekst = new System.Windows.Forms.Label();
             this.uiPodaciOZivotinji.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cjepivoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -144,23 +149,21 @@
             // uiActionOdaberiCjepivo
             // 
             this.uiActionOdaberiCjepivo.DataSource = this.cjepivoBindingSource;
-            this.uiActionOdaberiCjepivo.DisplayMember = "ime_cjepiva";
             this.uiActionOdaberiCjepivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdaberiCjepivo.FormattingEnabled = true;
             this.uiActionOdaberiCjepivo.Location = new System.Drawing.Point(317, 77);
             this.uiActionOdaberiCjepivo.Name = "uiActionOdaberiCjepivo";
             this.uiActionOdaberiCjepivo.Size = new System.Drawing.Size(121, 21);
             this.uiActionOdaberiCjepivo.TabIndex = 7;
-            this.uiActionOdaberiCjepivo.ValueMember = "ID_cjepiva";
             this.uiActionOdaberiCjepivo.SelectedIndexChanged += new System.EventHandler(this.uiOdabirCjepiva_SelectedIndexChanged);
             // 
             // uiActionDodajCjepivo
             // 
-            this.uiActionDodajCjepivo.Location = new System.Drawing.Point(329, 463);
+            this.uiActionDodajCjepivo.Location = new System.Drawing.Point(317, 463);
             this.uiActionDodajCjepivo.Name = "uiActionDodajCjepivo";
-            this.uiActionDodajCjepivo.Size = new System.Drawing.Size(87, 23);
+            this.uiActionDodajCjepivo.Size = new System.Drawing.Size(99, 23);
             this.uiActionDodajCjepivo.TabIndex = 8;
-            this.uiActionDodajCjepivo.Text = "Dodaj cjepivo";
+            this.uiActionDodajCjepivo.Text = "Dodaj cjepljenje";
             this.uiActionDodajCjepivo.UseVisualStyleBackColor = true;
             this.uiActionDodajCjepivo.Click += new System.EventHandler(this.uiActionDodajCjepivo_Click);
             // 
@@ -174,11 +177,61 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
+            // uiImeCjepivaTekst
+            // 
+            this.uiImeCjepivaTekst.AutoSize = true;
+            this.uiImeCjepivaTekst.Location = new System.Drawing.Point(129, 249);
+            this.uiImeCjepivaTekst.Name = "uiImeCjepivaTekst";
+            this.uiImeCjepivaTekst.Size = new System.Drawing.Size(67, 13);
+            this.uiImeCjepivaTekst.TabIndex = 10;
+            this.uiImeCjepivaTekst.Text = "Ime cjepiva: ";
+            // 
+            // uiDozaCjepivaTekst
+            // 
+            this.uiDozaCjepivaTekst.AutoSize = true;
+            this.uiDozaCjepivaTekst.Location = new System.Drawing.Point(134, 304);
+            this.uiDozaCjepivaTekst.Name = "uiDozaCjepivaTekst";
+            this.uiDozaCjepivaTekst.Size = new System.Drawing.Size(75, 13);
+            this.uiDozaCjepivaTekst.TabIndex = 11;
+            this.uiDozaCjepivaTekst.Text = "Doza cjepiva: ";
+            // 
+            // uiProizvodacTekst
+            // 
+            this.uiProizvodacTekst.AutoSize = true;
+            this.uiProizvodacTekst.Location = new System.Drawing.Point(134, 357);
+            this.uiProizvodacTekst.Name = "uiProizvodacTekst";
+            this.uiProizvodacTekst.Size = new System.Drawing.Size(67, 13);
+            this.uiProizvodacTekst.TabIndex = 12;
+            this.uiProizvodacTekst.Text = "Proizvođač: ";
+            // 
+            // uiRokTrajanjaTekst
+            // 
+            this.uiRokTrajanjaTekst.AutoSize = true;
+            this.uiRokTrajanjaTekst.Location = new System.Drawing.Point(133, 403);
+            this.uiRokTrajanjaTekst.Name = "uiRokTrajanjaTekst";
+            this.uiRokTrajanjaTekst.Size = new System.Drawing.Size(70, 13);
+            this.uiRokTrajanjaTekst.TabIndex = 13;
+            this.uiRokTrajanjaTekst.Text = "Rok trajanja: ";
+            // 
+            // uiCijenaCjepivaTekst
+            // 
+            this.uiCijenaCjepivaTekst.AutoSize = true;
+            this.uiCijenaCjepivaTekst.Location = new System.Drawing.Point(149, 456);
+            this.uiCijenaCjepivaTekst.Name = "uiCijenaCjepivaTekst";
+            this.uiCijenaCjepivaTekst.Size = new System.Drawing.Size(79, 13);
+            this.uiCijenaCjepivaTekst.TabIndex = 14;
+            this.uiCijenaCjepivaTekst.Text = "Cijena cjepiva: ";
+            // 
             // frmDodajCijepljenje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 508);
+            this.Controls.Add(this.uiCijenaCjepivaTekst);
+            this.Controls.Add(this.uiRokTrajanjaTekst);
+            this.Controls.Add(this.uiProizvodacTekst);
+            this.Controls.Add(this.uiDozaCjepivaTekst);
+            this.Controls.Add(this.uiImeCjepivaTekst);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionDodajCjepivo);
             this.Controls.Add(this.uiActionOdaberiCjepivo);
@@ -215,5 +268,10 @@
         private System.Windows.Forms.BindingSource cjepivoBindingSource;
         private System.Windows.Forms.Button uiActionDodajCjepivo;
         private System.Windows.Forms.Button uiActionOdustani;
+        private System.Windows.Forms.Label uiImeCjepivaTekst;
+        private System.Windows.Forms.Label uiDozaCjepivaTekst;
+        private System.Windows.Forms.Label uiProizvodacTekst;
+        private System.Windows.Forms.Label uiRokTrajanjaTekst;
+        private System.Windows.Forms.Label uiCijenaCjepivaTekst;
     }
 }
