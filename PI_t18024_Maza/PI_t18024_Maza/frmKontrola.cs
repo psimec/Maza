@@ -157,7 +157,9 @@ namespace PI_t18024_Maza
         {
             Form detaljiKontrole = new frmDetaljiKontrole(this.kontrola);
             detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
+            this.Hide();
             detaljiKontrole.ShowDialog();
+            this.Show();
         }
 
         private void uiPrikazKontrola_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

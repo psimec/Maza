@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uiOpisTekst = new System.Windows.Forms.Label();
-            this.uiStatusTekst = new System.Windows.Forms.Label();
-            this.uiDatumKontroleTekst = new System.Windows.Forms.Label();
-            this.uiOpisKontrole = new System.Windows.Forms.Label();
-            this.uiStatusKontrole = new System.Windows.Forms.Label();
-            this.uiDatumKontrole = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.uiVlasnikZivotinjeTekst = new System.Windows.Forms.Label();
             this.uiDatumZivotinjeTekst = new System.Windows.Forms.Label();
@@ -49,89 +42,16 @@
             this.uiActionDodajOperaciju = new System.Windows.Forms.Button();
             this.uiStavkeKontrole = new System.Windows.Forms.GroupBox();
             this.uiActionZatvoriDetaljeKontrole = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.uiDatumKontroleTekst = new System.Windows.Forms.Label();
+            this.uiOpisKontrole = new System.Windows.Forms.Label();
+            this.uiStatusKontrole = new System.Windows.Forms.Label();
+            this.uiOpisTekst = new System.Windows.Forms.Label();
+            this.uiDatumKontrole = new System.Windows.Forms.Label();
+            this.uiStatusTekst = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.uiOpisTekst);
-            this.groupBox1.Controls.Add(this.uiStatusTekst);
-            this.groupBox1.Controls.Add(this.uiDatumKontroleTekst);
-            this.groupBox1.Controls.Add(this.uiOpisKontrole);
-            this.groupBox1.Controls.Add(this.uiStatusKontrole);
-            this.groupBox1.Controls.Add(this.uiDatumKontrole);
-            this.groupBox1.Location = new System.Drawing.Point(120, 159);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(377, 154);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kontrola";
-            // 
-            // uiOpisTekst
-            // 
-            this.uiOpisTekst.AutoSize = true;
-            this.uiOpisTekst.Location = new System.Drawing.Point(56, 75);
-            this.uiOpisTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiOpisTekst.Name = "uiOpisTekst";
-            this.uiOpisTekst.Size = new System.Drawing.Size(45, 17);
-            this.uiOpisTekst.TabIndex = 7;
-            this.uiOpisTekst.Text = "Opis: ";
-            // 
-            // uiStatusTekst
-            // 
-            this.uiStatusTekst.AutoSize = true;
-            this.uiStatusTekst.Location = new System.Drawing.Point(71, 47);
-            this.uiStatusTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiStatusTekst.Name = "uiStatusTekst";
-            this.uiStatusTekst.Size = new System.Drawing.Size(56, 17);
-            this.uiStatusTekst.TabIndex = 6;
-            this.uiStatusTekst.Text = "Status: ";
-            // 
-            // uiDatumKontroleTekst
-            // 
-            this.uiDatumKontroleTekst.AutoSize = true;
-            this.uiDatumKontroleTekst.Location = new System.Drawing.Point(137, 20);
-            this.uiDatumKontroleTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiDatumKontroleTekst.Name = "uiDatumKontroleTekst";
-            this.uiDatumKontroleTekst.Size = new System.Drawing.Size(112, 17);
-            this.uiDatumKontroleTekst.TabIndex = 5;
-            this.uiDatumKontroleTekst.Text = "Datum kontrole: ";
-            // 
-            // uiOpisKontrole
-            // 
-            this.uiOpisKontrole.AutoSize = true;
-            this.uiOpisKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiOpisKontrole.Location = new System.Drawing.Point(8, 75);
-            this.uiOpisKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiOpisKontrole.Name = "uiOpisKontrole";
-            this.uiOpisKontrole.Size = new System.Drawing.Size(51, 17);
-            this.uiOpisKontrole.TabIndex = 4;
-            this.uiOpisKontrole.Text = "Opis: ";
-            // 
-            // uiStatusKontrole
-            // 
-            this.uiStatusKontrole.AutoSize = true;
-            this.uiStatusKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiStatusKontrole.Location = new System.Drawing.Point(8, 47);
-            this.uiStatusKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiStatusKontrole.Name = "uiStatusKontrole";
-            this.uiStatusKontrole.Size = new System.Drawing.Size(64, 17);
-            this.uiStatusKontrole.TabIndex = 3;
-            this.uiStatusKontrole.Text = "Status: ";
-            // 
-            // uiDatumKontrole
-            // 
-            this.uiDatumKontrole.AutoSize = true;
-            this.uiDatumKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiDatumKontrole.Location = new System.Drawing.Point(8, 20);
-            this.uiDatumKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiDatumKontrole.Name = "uiDatumKontrole";
-            this.uiDatumKontrole.Size = new System.Drawing.Size(128, 17);
-            this.uiDatumKontrole.TabIndex = 2;
-            this.uiDatumKontrole.Text = "Datum kontrole: ";
             // 
             // groupBox2
             // 
@@ -144,9 +64,9 @@
             this.groupBox2.Controls.Add(this.uiVrstaZivotinje);
             this.groupBox2.Controls.Add(this.uiImeZivotinje);
             this.groupBox2.Location = new System.Drawing.Point(607, 159);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(333, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -238,98 +158,186 @@
             // 
             // uiActionDodajDijagnozu
             // 
-            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(192, 534);
-            this.uiActionDodajDijagnozu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionDodajDijagnozu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionDodajDijagnozu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionDodajDijagnozu.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(193, 544);
+            this.uiActionDodajDijagnozu.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionDodajDijagnozu.Name = "uiActionDodajDijagnozu";
-            this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(131, 43);
+            this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(153, 43);
             this.uiActionDodajDijagnozu.TabIndex = 2;
             this.uiActionDodajDijagnozu.Text = "Dodaj dijagnozu";
-            this.uiActionDodajDijagnozu.UseVisualStyleBackColor = true;
+            this.uiActionDodajDijagnozu.UseVisualStyleBackColor = false;
             this.uiActionDodajDijagnozu.Click += new System.EventHandler(this.uiActionDodajDijagnozu_Click);
             // 
             // uiActionDodajCijepljenje
             // 
-            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(459, 534);
-            this.uiActionDodajCijepljenje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionDodajCijepljenje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionDodajCijepljenje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionDodajCijepljenje.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajCijepljenje.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(470, 544);
+            this.uiActionDodajCijepljenje.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionDodajCijepljenje.Name = "uiActionDodajCijepljenje";
-            this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(127, 43);
+            this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(145, 43);
             this.uiActionDodajCijepljenje.TabIndex = 3;
             this.uiActionDodajCijepljenje.Text = "Dodaj cijepljenje";
-            this.uiActionDodajCijepljenje.UseVisualStyleBackColor = true;
+            this.uiActionDodajCijepljenje.UseVisualStyleBackColor = false;
             this.uiActionDodajCijepljenje.Click += new System.EventHandler(this.uiActionDodajCijepljenje_Click);
             // 
             // uiActionDodajOperaciju
             // 
-            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(752, 534);
-            this.uiActionDodajOperaciju.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionDodajOperaciju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionDodajOperaciju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionDodajOperaciju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajOperaciju.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(752, 544);
+            this.uiActionDodajOperaciju.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionDodajOperaciju.Name = "uiActionDodajOperaciju";
-            this.uiActionDodajOperaciju.Size = new System.Drawing.Size(132, 43);
+            this.uiActionDodajOperaciju.Size = new System.Drawing.Size(145, 43);
             this.uiActionDodajOperaciju.TabIndex = 4;
             this.uiActionDodajOperaciju.Text = "Dodaj operaciju";
-            this.uiActionDodajOperaciju.UseVisualStyleBackColor = true;
+            this.uiActionDodajOperaciju.UseVisualStyleBackColor = false;
             this.uiActionDodajOperaciju.Click += new System.EventHandler(this.uiActionDodajOperaciju_Click);
             // 
             // uiStavkeKontrole
             // 
-            this.uiStavkeKontrole.Location = new System.Drawing.Point(120, 357);
-            this.uiStavkeKontrole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiStavkeKontrole.Location = new System.Drawing.Point(120, 342);
+            this.uiStavkeKontrole.Margin = new System.Windows.Forms.Padding(4);
             this.uiStavkeKontrole.Name = "uiStavkeKontrole";
-            this.uiStavkeKontrole.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.uiStavkeKontrole.Size = new System.Drawing.Size(455, 151);
+            this.uiStavkeKontrole.Padding = new System.Windows.Forms.Padding(4);
+            this.uiStavkeKontrole.Size = new System.Drawing.Size(455, 184);
             this.uiStavkeKontrole.TabIndex = 5;
             this.uiStavkeKontrole.TabStop = false;
             this.uiStavkeKontrole.Text = "Stavke";
             // 
             // uiActionZatvoriDetaljeKontrole
             // 
-            this.uiActionZatvoriDetaljeKontrole.Location = new System.Drawing.Point(755, 590);
-            this.uiActionZatvoriDetaljeKontrole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionZatvoriDetaljeKontrole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionZatvoriDetaljeKontrole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionZatvoriDetaljeKontrole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionZatvoriDetaljeKontrole.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uiActionZatvoriDetaljeKontrole.Location = new System.Drawing.Point(752, 598);
+            this.uiActionZatvoriDetaljeKontrole.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionZatvoriDetaljeKontrole.Name = "uiActionZatvoriDetaljeKontrole";
-            this.uiActionZatvoriDetaljeKontrole.Size = new System.Drawing.Size(131, 43);
+            this.uiActionZatvoriDetaljeKontrole.Size = new System.Drawing.Size(145, 43);
             this.uiActionZatvoriDetaljeKontrole.TabIndex = 6;
             this.uiActionZatvoriDetaljeKontrole.Text = "Zatvori";
-            this.uiActionZatvoriDetaljeKontrole.UseVisualStyleBackColor = true;
+            this.uiActionZatvoriDetaljeKontrole.UseVisualStyleBackColor = false;
             this.uiActionZatvoriDetaljeKontrole.Click += new System.EventHandler(this.uiActionZatvoriDetaljeKontrole_Click);
+            // 
+            // uiDatumKontroleTekst
+            // 
+            this.uiDatumKontroleTekst.AutoSize = true;
+            this.uiDatumKontroleTekst.Location = new System.Drawing.Point(136, 30);
+            this.uiDatumKontroleTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiDatumKontroleTekst.Name = "uiDatumKontroleTekst";
+            this.uiDatumKontroleTekst.Size = new System.Drawing.Size(112, 17);
+            this.uiDatumKontroleTekst.TabIndex = 5;
+            this.uiDatumKontroleTekst.Text = "Datum kontrole: ";
+            // 
+            // uiOpisKontrole
+            // 
+            this.uiOpisKontrole.AutoSize = true;
+            this.uiOpisKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiOpisKontrole.Location = new System.Drawing.Point(7, 85);
+            this.uiOpisKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiOpisKontrole.Name = "uiOpisKontrole";
+            this.uiOpisKontrole.Size = new System.Drawing.Size(51, 17);
+            this.uiOpisKontrole.TabIndex = 4;
+            this.uiOpisKontrole.Text = "Opis: ";
+            // 
+            // uiStatusKontrole
+            // 
+            this.uiStatusKontrole.AutoSize = true;
+            this.uiStatusKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiStatusKontrole.Location = new System.Drawing.Point(7, 57);
+            this.uiStatusKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiStatusKontrole.Name = "uiStatusKontrole";
+            this.uiStatusKontrole.Size = new System.Drawing.Size(64, 17);
+            this.uiStatusKontrole.TabIndex = 3;
+            this.uiStatusKontrole.Text = "Status: ";
+            // 
+            // uiOpisTekst
+            // 
+            this.uiOpisTekst.AutoSize = true;
+            this.uiOpisTekst.Location = new System.Drawing.Point(55, 85);
+            this.uiOpisTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiOpisTekst.Name = "uiOpisTekst";
+            this.uiOpisTekst.Size = new System.Drawing.Size(45, 17);
+            this.uiOpisTekst.TabIndex = 7;
+            this.uiOpisTekst.Text = "Opis: ";
+            // 
+            // uiDatumKontrole
+            // 
+            this.uiDatumKontrole.AutoSize = true;
+            this.uiDatumKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiDatumKontrole.Location = new System.Drawing.Point(7, 30);
+            this.uiDatumKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiDatumKontrole.Name = "uiDatumKontrole";
+            this.uiDatumKontrole.Size = new System.Drawing.Size(128, 17);
+            this.uiDatumKontrole.TabIndex = 2;
+            this.uiDatumKontrole.Text = "Datum kontrole: ";
+            // 
+            // uiStatusTekst
+            // 
+            this.uiStatusTekst.AutoSize = true;
+            this.uiStatusTekst.Location = new System.Drawing.Point(70, 57);
+            this.uiStatusTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiStatusTekst.Name = "uiStatusTekst";
+            this.uiStatusTekst.Size = new System.Drawing.Size(56, 17);
+            this.uiStatusTekst.TabIndex = 6;
+            this.uiStatusTekst.Text = "Status: ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.uiDatumKontrole);
+            this.groupBox1.Controls.Add(this.uiStatusTekst);
+            this.groupBox1.Controls.Add(this.uiDatumKontroleTekst);
+            this.groupBox1.Controls.Add(this.uiOpisKontrole);
+            this.groupBox1.Controls.Add(this.uiStatusKontrole);
+            this.groupBox1.Controls.Add(this.uiOpisTekst);
+            this.groupBox1.Location = new System.Drawing.Point(120, 159);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(360, 154);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kontrola";
             // 
             // frmDetaljiKontrole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1005, 654);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uiActionZatvoriDetaljeKontrole);
             this.Controls.Add(this.uiStavkeKontrole);
             this.Controls.Add(this.uiActionDodajOperaciju);
             this.Controls.Add(this.uiActionDodajCijepljenje);
             this.Controls.Add(this.uiActionDodajDijagnozu);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDetaljiKontrole";
             this.Text = "frmDetaljiKontrole";
             this.Load += new System.EventHandler(this.frmDetaljiKontrole_Load);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.uiActionDodajDijagnozu, 0);
             this.Controls.SetChildIndex(this.uiActionDodajCijepljenje, 0);
             this.Controls.SetChildIndex(this.uiActionDodajOperaciju, 0);
             this.Controls.SetChildIndex(this.uiStavkeKontrole, 0);
             this.Controls.SetChildIndex(this.uiActionZatvoriDetaljeKontrole, 0);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label uiOpisKontrole;
-        private System.Windows.Forms.Label uiStatusKontrole;
-        private System.Windows.Forms.Label uiDatumKontrole;
         private System.Windows.Forms.Label uiVlasnikZivotinje;
         private System.Windows.Forms.Label uiDatumZivotinje;
         private System.Windows.Forms.Label uiVrstaZivotinje;
@@ -338,13 +346,17 @@
         private System.Windows.Forms.Button uiActionDodajCijepljenje;
         private System.Windows.Forms.Button uiActionDodajOperaciju;
         private System.Windows.Forms.GroupBox uiStavkeKontrole;
-        private System.Windows.Forms.Label uiOpisTekst;
-        private System.Windows.Forms.Label uiStatusTekst;
-        private System.Windows.Forms.Label uiDatumKontroleTekst;
         private System.Windows.Forms.Label uiVlasnikZivotinjeTekst;
         private System.Windows.Forms.Label uiDatumZivotinjeTekst;
         private System.Windows.Forms.Label uiVrstaZivotinjeTekst;
         private System.Windows.Forms.Label uiImeZivotinjeTekst;
         private System.Windows.Forms.Button uiActionZatvoriDetaljeKontrole;
+        private System.Windows.Forms.Label uiDatumKontroleTekst;
+        private System.Windows.Forms.Label uiOpisKontrole;
+        private System.Windows.Forms.Label uiStatusKontrole;
+        private System.Windows.Forms.Label uiOpisTekst;
+        private System.Windows.Forms.Label uiDatumKontrole;
+        private System.Windows.Forms.Label uiStatusTekst;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

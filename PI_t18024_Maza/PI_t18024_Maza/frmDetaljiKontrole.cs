@@ -172,10 +172,12 @@ namespace PI_t18024_Maza
                     Button kreiranaDijagnoza = new Button();
                     kreiranaDijagnoza.Width = 75;
                     kreiranaDijagnoza.Height = 25;
+                    kreiranaDijagnoza.FlatStyle = FlatStyle.Flat;
+                    kreiranaDijagnoza.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranaDijagnoza.Text = "Dijagnoza " + i;
                     kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
                     uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
-                    kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (30*(i-1)));
+                    kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (40*(i-1)));
                 }
             }
         }
@@ -189,10 +191,12 @@ namespace PI_t18024_Maza
                     Button kreiranoCjepljenje = new Button();
                     kreiranoCjepljenje.Width = 75;
                     kreiranoCjepljenje.Height = 25;
+                    kreiranoCjepljenje.FlatStyle = FlatStyle.Flat;
+                    kreiranoCjepljenje.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranoCjepljenje.Text = "Cjepljenje " + i;
                     kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
                     uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
-                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (30 * (i - 1)));
+                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 125, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
                 }
             }
         }
@@ -206,10 +210,12 @@ namespace PI_t18024_Maza
                     Button kreiranaOperacija = new Button();
                     kreiranaOperacija.Width = 75;
                     kreiranaOperacija.Height = 25;
+                    kreiranaOperacija.FlatStyle = FlatStyle.Flat;
+                    kreiranaOperacija.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranaOperacija.Text = "Operacija " + i;
                     kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
                     uiStavkeKontrole.Controls.Add(kreiranaOperacija);
-                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 175, kreiranaOperacija.Location.Y + 25 + (30 * (i - 1)));
+                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 225, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
                 }
             }
         }
