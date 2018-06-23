@@ -14,15 +14,29 @@ namespace PI_t18024_Maza
     {
         Vlasnik vlasnik;
         Zivotinja zivotinja;
+        Kontrola kontrola;
+        Dijagnoza dijagnoza;
 
         List<string> listaNapomenaZaLijekove;
 
-        public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja)
+        public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
 
             this.vlasnik = vlasnik;
             this.zivotinja = zivotinja;
+            this.kontrola = kontrola;
+            this.listaNapomenaZaLijekove = new List<string>();
+        }
+
+        public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Dijagnoza dijagnoza)
+        {
+            InitializeComponent();
+
+            this.vlasnik = vlasnik;
+            this.zivotinja = zivotinja;
+            this.kontrola = kontrola;
+            this.dijagnoza = dijagnoza;
             this.listaNapomenaZaLijekove = new List<string>();
         }
 
@@ -48,10 +62,50 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
-
             // TODO: 
             // Spremi podatke u bazu
             // Promijeni funkcionalnost gumba temeljem moda u kojem je forma
+
+            using (var db = new MazaEntities())
+            {
+                //Nova dijagnoza
+                if (this.dijagnoza == null)
+                {
+                    Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
+
+                    db.Bolest.Attach(bolest);
+                    db.Kontrola.Attach(this.kontrola);
+
+                    dijagnoza = new Dijagnoza
+                    {
+                        simptomi = uiSimptomi.Text,
+                        terapija = uiTerapija.Text,
+                        napomena = uiNapomena.Text,
+                        ID_kontrola = this.kontrola.ID_kontrola,
+                        ID_bolest = bolest.ID_bolest
+                    };
+                    db.Dijagnoza.Add(dijagnoza);
+
+                    int idDijagnoza = dijagnoza.ID_dijagnoza;
+                    for (int i = 0; i < uiPropisaniLijekovi.Items.Count; i++)
+                    {
+                        Lijek lijek = uiPropisaniLijekovi.Items[i] as Lijek;
+                        db.Lijek.Attach(lijek);
+
+                        PropisaniLijek propisaniLijek = new PropisaniLijek
+                        {
+                            ID_dijagnoza = idDijagnoza,
+                            ID_lijek = lijek.ID_lijek,
+                            napomena = listaNapomenaZaLijekove[i]
+                        };
+
+                        db.PropisaniLijek.Add(propisaniLijek);
+                    }
+
+                    db.SaveChanges();
+
+                }
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

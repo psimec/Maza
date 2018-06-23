@@ -64,7 +64,7 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
-            frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu(vlasnik,zivotinja);
+            frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu(this.vlasnik,this.zivotinja,this.kontrola);
             var rezultat = novaDijagnoza.ShowDialog();
 
             if(rezultat == DialogResult.OK)
