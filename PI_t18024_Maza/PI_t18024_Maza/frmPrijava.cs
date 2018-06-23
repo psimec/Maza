@@ -35,6 +35,8 @@ namespace PI_t18024_Maza
                     {
                         if (Kriptiranje.usporediMD5(uiUnosLozinke.Text , veterinar.lozinka))
                         {
+
+                            PrijavljeniVeterinar.PrijaviVeterinara(veterinar);
                             frmKalendar kalendar = new frmKalendar();
                             this.Hide();
                             kalendar.StartPosition = FormStartPosition.CenterScreen;

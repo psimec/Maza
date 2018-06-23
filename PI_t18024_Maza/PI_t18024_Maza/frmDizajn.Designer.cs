@@ -41,10 +41,13 @@
             this.uiActionOdjava = new System.Windows.Forms.Button();
             this.uiActionMinimize = new System.Windows.Forms.Button();
             this.uiActionClose = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.uiPrikazPrijavljenogVeterinara = new System.Windows.Forms.Label();
             this.LijeviPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ZaglavljePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LijeviPanel
@@ -166,6 +169,8 @@
             // ZaglavljePanel
             // 
             this.ZaglavljePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.ZaglavljePanel.Controls.Add(this.uiPrikazPrijavljenogVeterinara);
+            this.ZaglavljePanel.Controls.Add(this.pictureBox2);
             this.ZaglavljePanel.Controls.Add(this.uiActionOdjava);
             this.ZaglavljePanel.Controls.Add(this.uiActionMinimize);
             this.ZaglavljePanel.Controls.Add(this.uiActionClose);
@@ -219,6 +224,25 @@
             this.uiActionClose.UseVisualStyleBackColor = true;
             this.uiActionClose.Click += new System.EventHandler(this.uiActionClose_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(611, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // uiPrikazPrijavljenogVeterinara
+            // 
+            this.uiPrikazPrijavljenogVeterinara.AutoSize = true;
+            this.uiPrikazPrijavljenogVeterinara.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiPrikazPrijavljenogVeterinara.Location = new System.Drawing.Point(655, 11);
+            this.uiPrikazPrijavljenogVeterinara.Name = "uiPrikazPrijavljenogVeterinara";
+            this.uiPrikazPrijavljenogVeterinara.Size = new System.Drawing.Size(0, 19);
+            this.uiPrikazPrijavljenogVeterinara.TabIndex = 15;
+            // 
             // frmDizajn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +260,8 @@
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ZaglavljePanel.ResumeLayout(false);
+            this.ZaglavljePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +280,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button uiActionStatistika;
         private System.Windows.Forms.Button uiActionOdjava;
+        private System.Windows.Forms.Label uiPrikazPrijavljenogVeterinara;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
