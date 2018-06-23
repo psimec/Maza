@@ -36,7 +36,9 @@ namespace PI_t18024_Maza
             {
                 frmDetaljiKontrole detaljiKontrole = new frmDetaljiKontrole(kontrola);
                 detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
+                this.Hide();
                 detaljiKontrole.ShowDialog();
+                this.Show();
             };
 
             Zivotinja zivotinja;
