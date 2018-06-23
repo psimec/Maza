@@ -179,7 +179,6 @@
     <Compile Include="Operacija.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pas.cs" />
     <Compile Include="frmPovijestBolesti.cs">
       <SubType>Form</SubType>
     </Compile>
