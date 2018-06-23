@@ -134,7 +134,7 @@ namespace PI_t18024_Maza
         public void OtvoriDijagnozu(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
-            string polje[] = gumb.Text.Split(" ");
+            string[] polje = gumb.Text.Split(' ');
             int indexDijagnoze = int.Parse(polje[1]);
             Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
 
