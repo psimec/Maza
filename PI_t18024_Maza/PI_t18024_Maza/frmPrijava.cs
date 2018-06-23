@@ -14,7 +14,13 @@ namespace PI_t18024_Maza
 {
     public partial class frmPrijava : Form
     {
+        #region Globalne Varijable
+
         Veterinar veterinar;
+
+        #endregion
+
+        #region Konstruktor
 
         public frmPrijava()
         {
@@ -23,6 +29,14 @@ namespace PI_t18024_Maza
             uiUnosLozinke.UseSystemPasswordChar = true;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+
+        #endregion
+
+        #region Funkcije
+
+        /// <summary>
+        /// Provjera valjanost unesnih podataka
+        /// </summary>
 
         private void Autentifikacija()
         {
@@ -65,8 +79,13 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Provjera postoji li uneseni podaci u bazi
+        /// </summary>
+
         private void dohvatiPodatke()
         {
+            // Provjera internet veze
             if (!(NetworkInterface.GetIsNetworkAvailable()))
             {
                 throw new ExceptionNemaInterneta("Aplikacija zahtjeva stabilnu internet konekciju");
@@ -79,6 +98,10 @@ namespace PI_t18024_Maza
                 }
             }
         }
+
+        #endregion
+
+        #region Dogadaji
 
         private void uiUnosKorisnickogImena_TextChanged(object sender, EventArgs e)
         {
@@ -115,5 +138,7 @@ namespace PI_t18024_Maza
                 Autentifikacija();
             }
         }
+
+        #endregion
     }
 }
