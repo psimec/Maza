@@ -75,16 +75,16 @@ namespace PI_t18024_Maza
 
             if(rezultat == DialogResult.OK)
             {
-                //listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
+                listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
 
-                //kreiraj gumb
+                int i = listaDijagnoza.Count;
                 Button kreiranaDijagnoza = new Button();
                 kreiranaDijagnoza.Width = 75;
                 kreiranaDijagnoza.Height = 25;
-                kreiranaDijagnoza.Text = "Dijagnoza 1";
-                //kreiranaDijagnoza.Click += dodaj funkcionalnost ispunjavanja forme za dijagnozu temeljem podataka u listi dijagnoza
+                kreiranaDijagnoza.Text = "Dijagnoza " + i;
+                kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
                 uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
-                kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y+25);
+                kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (30 * (i - 1)));
 
             }
         }
@@ -191,7 +191,7 @@ namespace PI_t18024_Maza
                 //listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
                 listaCjepiva.Add(novoCijepljenje.cjepivo);
 
-                int i = listaCjepiva.Count - 0;
+                int i = listaCjepiva.Count;
                 Button kreiranoCjepljenje = new Button();
                 kreiranoCjepljenje.Width = 75;
                 kreiranoCjepljenje.Height = 25;
