@@ -68,8 +68,18 @@ namespace PI_t18024_Maza
         private void PopuniPodatkeOOperaciji()
         {
             uiNapomenaUnos.Text = this.operacija.napomena;
-            uiVrstaZahvata.Text = this.operacija.vrsta_zahvata;
-            uiTrajanjeZahvata.Text = this.operacija.trajanje_zahtjeva;
+            uiVrstaZahvataUnos.Text = this.operacija.vrsta_zahvata;
+
+            TimeSpan vrijeme;
+            if(!TimeSpan.TryParse(this.operacija.trajanje_zahtjeva.ToString(), out vrijeme))
+            {
+                MessageBox.Show("Neispravan format trajanja zahtjeva! Molimo Vas da kontaktirate Administratora.");
+                this.Close();
+            }
+            else
+            {
+                uiTrajanjeZahvataUnos.Value = uiTrajanjeZahvataUnos.Value + vrijeme;
+            }            
         }
 
         private void OnemoguciUnos()
@@ -77,9 +87,44 @@ namespace PI_t18024_Maza
             uiNapomenaUnos.ReadOnly = true;
             uiVrstaZahvataUnos.ReadOnly = true;
 
-            uiTrajanjeZahvata.Enabled = false;
+            uiTrajanjeZahvataUnos.Enabled = false;
 
             uiActionDodajOperaciju.Hide();
+        }
+
+        private void uiActionOdustani_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
+        {
+            using (var db = new MazaEntities())
+            {
+                if(this.operacija==null)
+                {
+                    db.Kontrola.Attach(this.kontrola);                    
+                    TimeSpan vrijemeSati = TimeSpan.Parse(uiTrajanjeZahvataUnos.Value.ToLongTimeString());
+
+                    this.operacija = new Operacija
+                    {
+                        vrsta_zahvata = uiVrstaZahvataUnos.Text,
+                        datum_zahvata = DateTime.Parse(uiDatumZahvataTekst.Text),
+                        ID_kontrola = this.kontrola.ID_kontrola,
+                        napomena = uiNapomenaUnos.Text,
+                        trajanje_zahtjeva = vrijemeSati
+                    };
+                    db.Operacija.Add(this.operacija);
+
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+
+                }
+                db.SaveChanges();
+            }
+
         }
     }
 }

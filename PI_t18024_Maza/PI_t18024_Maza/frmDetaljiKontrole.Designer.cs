@@ -251,7 +251,7 @@
             // 
             this.uiStavkeKontrole.Location = new System.Drawing.Point(98, 289);
             this.uiStavkeKontrole.Name = "uiStavkeKontrole";
-            this.uiStavkeKontrole.Size = new System.Drawing.Size(200, 100);
+            this.uiStavkeKontrole.Size = new System.Drawing.Size(341, 100);
             this.uiStavkeKontrole.TabIndex = 5;
             this.uiStavkeKontrole.TabStop = false;
             this.uiStavkeKontrole.Text = "Stavke";

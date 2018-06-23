@@ -60,12 +60,31 @@ namespace PI_t18024_Maza
             DohvatiCjepljenja();
             PopuniStavkeCjepljenjima();
 
+            DohvatiOperacije();
+            PopuniStavkeOperacijama();
+
             //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
+            frmDodajOperaciju novaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola);
+            var rezultat = novaOperacija.ShowDialog();
 
+            if (rezultat == DialogResult.OK)
+            {
+                listaOperacija.Add(novaOperacija.operacija);
+
+                int i = listaOperacija.Count;
+                Button kreiranaOperacija = new Button();
+                kreiranaOperacija.Width = 75;
+                kreiranaOperacija.Height = 25;
+                kreiranaOperacija.Text = "Operacija " + i;
+                kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
+                uiStavkeKontrole.Controls.Add(kreiranaOperacija);
+                kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 175, kreiranaOperacija.Location.Y + 25 + (30 * (i - 1)));
+
+            }
         }
 
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
@@ -125,6 +144,20 @@ namespace PI_t18024_Maza
             }
         }
 
+        public void DohvatiOperacije()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var operacija in db.Operacija)
+                {
+                    if(operacija.ID_kontrola == this.kontrola.ID_kontrola)
+                    {
+                        this.listaOperacija.Add(operacija);
+                    }
+                }
+            }
+        }
+
         public void PopuniStavkeDijagnozama()
         {
             if(this.listaDijagnoza.Count>0)
@@ -159,7 +192,24 @@ namespace PI_t18024_Maza
             }
         }
 
-        public void OtvoriDijagnozu(object sender, EventArgs e)
+        public void PopuniStavkeOperacijama()
+        {
+            if(this.listaOperacija.Count>0)
+            {
+                for (int i = 1; i <= listaOperacija.Count; i++)
+                {
+                    Button kreiranaOperacija = new Button();
+                    kreiranaOperacija.Width = 75;
+                    kreiranaOperacija.Height = 25;
+                    kreiranaOperacija.Text = "Operacija " + i;
+                    kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
+                    uiStavkeKontrole.Controls.Add(kreiranaOperacija);
+                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 175, kreiranaOperacija.Location.Y + 25 + (30 * (i - 1)));
+                }
+            }
+        }
+
+        private void OtvoriDijagnozu(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
             string[] polje = gumb.Text.Split(' ');
@@ -170,7 +220,7 @@ namespace PI_t18024_Maza
             var rezultat = postojecaDijagnoza.ShowDialog();
         }
 
-        public void OtvoriCjepljenje(object sender, EventArgs e)
+        private void OtvoriCjepljenje(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
             string[] polje = gumb.Text.Split(' ');
@@ -179,6 +229,17 @@ namespace PI_t18024_Maza
 
             frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
             var rezultat = postojeceCijepljenje.ShowDialog();
+        }
+
+        private void OtvoriOperaciju(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string[] polje = gumb.Text.Split(' ');
+            int indexOperacije = int.Parse(polje[1]);
+            Operacija operacija = listaOperacija[indexOperacije - 1];
+
+            frmDodajOperaciju postojecaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola, operacija, this.status);
+            var rezultat = postojecaOperacija.ShowDialog();
         }
 
         private void uiActionDodajCijepljenje_Click(object sender, EventArgs e)

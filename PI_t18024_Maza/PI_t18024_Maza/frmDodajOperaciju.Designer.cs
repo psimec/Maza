@@ -163,6 +163,7 @@
             this.uiTrajanjeZahvataUnos.ShowUpDown = true;
             this.uiTrajanjeZahvataUnos.Size = new System.Drawing.Size(89, 20);
             this.uiTrajanjeZahvataUnos.TabIndex = 10;
+            this.uiTrajanjeZahvataUnos.Value = new System.DateTime(2018, 6, 23, 0, 0, 0, 0);
             // 
             // uiActionDodajOperaciju
             // 
@@ -172,6 +173,7 @@
             this.uiActionDodajOperaciju.TabIndex = 11;
             this.uiActionDodajOperaciju.Text = "Dodaj operaciju";
             this.uiActionDodajOperaciju.UseVisualStyleBackColor = true;
+            this.uiActionDodajOperaciju.Click += new System.EventHandler(this.uiActionDodajOperaciju_Click);
             // 
             // uiActionOdustani
             // 
@@ -181,6 +183,7 @@
             this.uiActionOdustani.TabIndex = 12;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // frmDodajOperaciju
             // 
