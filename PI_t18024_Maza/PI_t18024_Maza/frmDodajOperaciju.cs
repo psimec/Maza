@@ -12,9 +12,74 @@ namespace PI_t18024_Maza
 {
     public partial class frmDodajOperaciju : Form
     {
-        public frmDodajOperaciju()
+        Vlasnik vlasnik;
+        Zivotinja zivotinja;
+        Kontrola kontrola;
+        public Operacija operacija;
+        bool status;
+
+        public frmDodajOperaciju(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
+
+            this.vlasnik = vlasnik;
+            this.zivotinja = zivotinja;
+            this.kontrola = kontrola;
+        }
+
+        public frmDodajOperaciju(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Operacija operacija, bool status)
+        {
+            InitializeComponent();
+
+            this.vlasnik = vlasnik;
+            this.zivotinja = zivotinja;
+            this.kontrola = kontrola;
+            this.operacija = operacija;
+            this.status = status;
+        }
+
+        private void frmDodajOperaciju_Load(object sender, EventArgs e)
+        {
+            PopuniOsnovnePodatke();
+
+            if (status != null && !status)
+            {
+                PopuniPodatkeOOperaciji();
+                uiActionDodajOperaciju.Text = "Ažuriraj operaciju";
+            }
+            else if (status != null && status)
+            {
+                PopuniPodatkeOOperaciji();
+                uiActionOdustani.Text = "Zatvori";
+                OnemoguciUnos();
+            }
+        }
+
+        private void PopuniOsnovnePodatke()
+        {
+            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+            uiImeZivotinje.Text += zivotinja.ime;
+            uiVrstaZivotinje.Text += zivotinja.vrsta;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
+
+            uiDatumZahvataTekst.Text = this.kontrola.datum_kontrole.ToShortDateString();
+        }
+
+        private void PopuniPodatkeOOperaciji()
+        {
+            uiNapomenaUnos.Text = this.operacija.napomena;
+            uiVrstaZahvata.Text = this.operacija.vrsta_zahvata;
+            uiTrajanjeZahvata.Text = this.operacija.trajanje_zahtjeva;
+        }
+
+        private void OnemoguciUnos()
+        {
+            uiNapomenaUnos.ReadOnly = true;
+            uiVrstaZahvataUnos.ReadOnly = true;
+
+            uiTrajanjeZahvata.Enabled = false;
+
+            uiActionDodajOperaciju.Hide();
         }
     }
 }

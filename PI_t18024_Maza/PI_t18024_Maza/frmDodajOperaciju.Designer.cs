@@ -200,6 +200,7 @@
             this.Controls.Add(this.uiPodaciOZivotinji);
             this.Name = "frmDodajOperaciju";
             this.Text = "frmDodajOperaciju";
+            this.Load += new System.EventHandler(this.frmDodajOperaciju_Load);
             this.uiPodaciOZivotinji.ResumeLayout(false);
             this.uiPodaciOZivotinji.PerformLayout();
             this.ResumeLayout(false);
