@@ -12,23 +12,78 @@ namespace PI_t18024_Maza
 {
     public partial class frmKalendar : frmDizajn
     {
+        #region Globlane varijable
+
         List<DanAktivnosti> listaDaniAktivnosti = new List<DanAktivnosti>();
-        double brojDana;
+        double brojOdabranogDana;
         public DateTime datumOd;
         public DateTime datumDo;
         private bool sviVeterinari = false;
+
+        #endregion
+
+        #region Kontruktor
+
+        /// <summary>
+        /// Konstruktor forme Kalendar
+        /// </summary>
 
         public frmKalendar()
         {
             InitializeComponent();
             uiActionOdabirDatuma.Format = DateTimePickerFormat.Custom;
             uiActionOdabirDatuma.CustomFormat = "dd-MM-yyyy";
-            brojDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
-            datumOd = DateTime.Now.AddDays(-brojDana).Date;
-            datumDo = DateTime.Now.AddDays(6 - brojDana).Date;
+            brojOdabranogDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
+            datumOd = DateTime.Now.AddDays(-brojOdabranogDana).Date;
+            datumDo = DateTime.Now.AddDays(6 - brojOdabranogDana).Date;
             PopuniDatume();
             IspisAktivnosti();
         }
+
+        #endregion
+
+        #region Fukncije baratanja odabranim datumom
+
+        /// <summary>
+        /// Odreduje datum pocetka i zavrsetka tjedna na temelju proslijedenog datuma
+        /// </summary>
+        /// <param name="datum"> Datum za koji se zeli odrediti datum pocetka i kraja tog tjedna </param>
+
+        public void OdrediTjedan(DateTime datum)
+        {
+            brojOdabranogDana = (int)datum.DayOfWeek - 1;
+            if (brojOdabranogDana == -1)
+            {
+                brojOdabranogDana = 6;
+            }
+            datumOd = datum.AddDays(-brojOdabranogDana).Date;
+            datumDo = datum.AddDays(6 - brojOdabranogDana).Date;
+        }
+
+        /// <summary>
+        /// Popunjava labele na na kalendaru na temelju trenutnog tjedna
+        /// </summary>
+
+        private void PopuniDatume()
+        {
+            uiPrikazDatuma1.Text = datumOd.ToString("dd/MM/yyyy");
+            uiPrikazDatuma2.Text = datumOd.AddDays(1).ToString("dd/MM/yyyy");
+            uiPrikazDatuma3.Text = datumOd.AddDays(2).ToString("dd/MM/yyyy");
+            uiPrikazDatuma4.Text = datumOd.AddDays(3).ToString("dd/MM/yyyy");
+            uiPrikazDatuma5.Text = datumOd.AddDays(4).ToString("dd/MM/yyyy");
+            uiPrikazDatuma6.Text = datumOd.AddDays(5).ToString("dd/MM/yyyy");
+            uiPrikazDatuma7.Text = datumOd.AddDays(6).ToString("dd/MM/yyyy");
+        }
+
+        #endregion
+
+        #region Aktivnosti na kalendaru
+
+        /// <summary>
+        /// Kreiranje nove aktivnosti (termin kontrole) koja se dodaje na kalendar
+        /// </summary>
+        /// <param name="kontrola"> Kontrola na temelju koje se kreira aktivnost </param>
+        /// <returns> Aktvinost u obliku buttona-a sa svim potrebim informacijama i zadovoljavajucim izgledom </returns>
 
         public Button KreirajAkrivnost(Kontrola kontrola) 
         {
@@ -68,31 +123,16 @@ namespace PI_t18024_Maza
             return novi;
         }
 
+        /// <summary>
+        /// Prikazuje aktivnost na kalendaru
+        /// </summary>
+        /// <param name="aktivnost"> Aktivnost za prikaz na kalendaru </param>
+        /// <param name="stupac"> Dan u tjednu za koji zelimo dodati aktivnost </param>
+        /// <param name="red"> Redoljed aktivnosti za odredeni dan </param>
+
         private void PostaviAktivnost(Button aktivnost, int stupac, int red)
         {
             uiPanelAktivnosti.Controls.Add(aktivnost, column: stupac, row: red);
-        }
-
-        public void OdrediTjedan(DateTime datum)
-        {
-            brojDana = (int)datum.DayOfWeek - 1;
-            if (brojDana == -1)
-            {
-                brojDana = 6;
-            }
-            datumOd = datum.AddDays(-brojDana).Date;
-            datumDo = datum.AddDays(6 - brojDana).Date;
-        }
-
-        private void PopuniDatume()
-        {
-            uiPrikazDatuma1.Text = datumOd.ToString("dd/MM/yyyy");
-            uiPrikazDatuma2.Text = datumOd.AddDays(1).ToString("dd/MM/yyyy");
-            uiPrikazDatuma3.Text = datumOd.AddDays(2).ToString("dd/MM/yyyy");
-            uiPrikazDatuma4.Text = datumOd.AddDays(3).ToString("dd/MM/yyyy");
-            uiPrikazDatuma5.Text = datumOd.AddDays(4).ToString("dd/MM/yyyy");
-            uiPrikazDatuma6.Text = datumOd.AddDays(5).ToString("dd/MM/yyyy");
-            uiPrikazDatuma7.Text = datumOd.AddDays(6).ToString("dd/MM/yyyy");
         }
 
         private void DohvatiAktivnosti()
@@ -137,6 +177,10 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Postavljanje pozicija aktivnosti na kalendaru temeljem aktivnosti u objektima klase DanAktivnosti
+        /// </summary>
+
         private void IspisAktivnosti()
         {
             DohvatiAktivnosti();
@@ -154,6 +198,14 @@ namespace PI_t18024_Maza
             }
         }
 
+        #endregion
+
+        #region Funkcije
+
+        /// <summary>
+        /// Osvjezava stanje kalendara
+        /// </summary>
+
         public void Osvjezi()
         {
             uiPanelAktivnosti.Controls.Clear();
@@ -162,18 +214,22 @@ namespace PI_t18024_Maza
             OdrediTjedan(uiActionOdabirDatuma.Value);
             PopuniDatume();
             IspisAktivnosti();
-            
-            //uiPanelAktivnosti.RowCount++; dodavanje redova u panel
         }
+
+        #endregion
+
+        #region Dogadaji
 
         private void uiActionOdabirDatuma_ValueChanged(object sender, EventArgs e)
         {
             Osvjezi();
         }
 
+        // Promjeni pozadinsku boju trenutno selektiranog datuma
+
         private void uiPanelAktivnosti_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            if (e.Column == brojDana)
+            if (e.Column == brojOdabranogDana)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(89, 119, 183)), e.CellBounds);
             }
@@ -187,6 +243,8 @@ namespace PI_t18024_Maza
             kreirajKontrolu.ShowDialog();
             Osvjezi();
         }
+
+        // Nacin prikaza kalendara
 
         private void uiActionPrikaziSveAktivnosti_Click(object sender, EventArgs e)
         {
@@ -202,5 +260,7 @@ namespace PI_t18024_Maza
 
             Osvjezi();
         }
+
+        #endregion
     }
 }
