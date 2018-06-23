@@ -16,5 +16,25 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
         }
+
+        private void uiActionPrikaziGraf_Click(object sender, EventArgs e)
+        {
+            List<Zivotinja> listaZivotinja = null;
+            using (var db = new MazaEntities())
+            {
+                listaZivotinja = db.Zivotinja.ToList();
+            }
+
+            var brojZivotinja = listaZivotinja.GroupBy(n => n.vrsta).Select(group => new
+            {
+                vrsta = group.Key,
+                broj = group.Count()
+            });
+
+            foreach (var item in brojZivotinja)
+            {
+                this.uiGraf.Series["Broj životinja"].Points.AddXY(item.vrsta, item.broj);
+            }
+        }
     }
 }
