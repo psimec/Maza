@@ -114,11 +114,16 @@ namespace PI_t18024_Maza
             {
                 this.status = true;
                 this.uiStatusTekst.ForeColor = Color.Green;
+
+                this.uiActionDodajCijepljenje.Hide();
+                this.uiActionDodajDijagnozu.Hide();
+                this.uiActionDodajOperaciju.Hide();
             }
             else
             {
                 this.status = false;
                 this.uiStatusTekst.ForeColor = Color.Red;
+                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
             }
         }
 
@@ -249,7 +254,6 @@ namespace PI_t18024_Maza
 
             if (rezultat == DialogResult.OK)
             {
-                //listaDijagnoza.Add(novaDijagnoza.Dijagnoza);
                 listaCjepiva.Add(novoCijepljenje.cjepivo);
 
                 int i = listaCjepiva.Count;
@@ -261,6 +265,13 @@ namespace PI_t18024_Maza
                 uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
                 kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (30 * (i - 1)));
             }
+        }
+
+        private void uiActionZatvoriDetaljeKontrole_Click(object sender, EventArgs e)
+        {
+            //dodaj update da status kontrole bude obavljen ukoliko je u modu neobavljenog
+            //pitaj paskala za promjenu boje na kalendaru
+            this.Close();
         }
     }
 }

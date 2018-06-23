@@ -120,11 +120,19 @@ namespace PI_t18024_Maza
                 }
                 else
                 {
+                    db.Kontrola.Attach(this.kontrola);
+                    db.Operacija.Attach(this.operacija);
+                    TimeSpan vrijemeSati = TimeSpan.Parse(uiTrajanjeZahvataUnos.Value.ToLongTimeString());
 
+                    this.operacija.vrsta_zahvata = uiVrstaZahvataUnos.Text;
+                    this.operacija.datum_zahvata = DateTime.Parse(uiDatumZahvataTekst.Text);
+                    this.operacija.ID_kontrola = this.kontrola.ID_kontrola;
+                    this.operacija.napomena = uiNapomenaUnos.Text;
+                    this.operacija.trajanje_zahtjeva = vrijemeSati;
                 }
                 db.SaveChanges();
             }
-
+            this.Close();
         }
     }
 }

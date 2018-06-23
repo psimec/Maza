@@ -48,6 +48,7 @@
             this.uiActionDodajCijepljenje = new System.Windows.Forms.Button();
             this.uiActionDodajOperaciju = new System.Windows.Forms.Button();
             this.uiStavkeKontrole = new System.Windows.Forms.GroupBox();
+            this.uiActionZatvoriDetaljeKontrole = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -256,11 +257,22 @@
             this.uiStavkeKontrole.TabStop = false;
             this.uiStavkeKontrole.Text = "Stavke";
             // 
+            // uiActionZatvoriDetaljeKontrole
+            // 
+            this.uiActionZatvoriDetaljeKontrole.Location = new System.Drawing.Point(566, 479);
+            this.uiActionZatvoriDetaljeKontrole.Name = "uiActionZatvoriDetaljeKontrole";
+            this.uiActionZatvoriDetaljeKontrole.Size = new System.Drawing.Size(98, 35);
+            this.uiActionZatvoriDetaljeKontrole.TabIndex = 6;
+            this.uiActionZatvoriDetaljeKontrole.Text = "Zatvori";
+            this.uiActionZatvoriDetaljeKontrole.UseVisualStyleBackColor = true;
+            this.uiActionZatvoriDetaljeKontrole.Click += new System.EventHandler(this.uiActionZatvoriDetaljeKontrole_Click);
+            // 
             // frmDetaljiKontrole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 531);
+            this.Controls.Add(this.uiActionZatvoriDetaljeKontrole);
             this.Controls.Add(this.uiStavkeKontrole);
             this.Controls.Add(this.uiActionDodajOperaciju);
             this.Controls.Add(this.uiActionDodajCijepljenje);
@@ -276,6 +288,7 @@
             this.Controls.SetChildIndex(this.uiActionDodajCijepljenje, 0);
             this.Controls.SetChildIndex(this.uiActionDodajOperaciju, 0);
             this.Controls.SetChildIndex(this.uiStavkeKontrole, 0);
+            this.Controls.SetChildIndex(this.uiActionZatvoriDetaljeKontrole, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -306,5 +319,6 @@
         private System.Windows.Forms.Label uiDatumZivotinjeTekst;
         private System.Windows.Forms.Label uiVrstaZivotinjeTekst;
         private System.Windows.Forms.Label uiImeZivotinjeTekst;
+        private System.Windows.Forms.Button uiActionZatvoriDetaljeKontrole;
     }
 }
