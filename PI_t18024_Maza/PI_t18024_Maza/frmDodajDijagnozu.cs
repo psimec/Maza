@@ -64,9 +64,8 @@ namespace PI_t18024_Maza
             else if(status != null && !status)
             {
                 PopuniPodatkeODijagnozi();
-                //uiActionDodajDijagnozu.Hide();
-                //uiActionOdustani.Text = "Zatvori";
-                //dodaj funkciju za onemogucavanje unosa
+                uiActionOdustani.Text = "Zatvori";
+                OnemoguciUnos();
             }
         }
 
@@ -333,6 +332,21 @@ namespace PI_t18024_Maza
                 uiPropisaniLijekovi.Items.RemoveAt(index);
                 listaNapomenaZaLijekove.RemoveAt(index);
             }
+        }
+
+        private void OnemoguciUnos()
+        {
+            uiNapomena.ReadOnly = true;
+            uiTerapija.ReadOnly = true;
+            uiNapomenaLijekUnos.ReadOnly = true;
+            uiSimptomi.ReadOnly = true;
+
+            uiActionOdaberiLijek.Enabled = false;
+            uiActionOdaberiBolest.Enabled = false;
+
+            uiActionDodajDijagnozu.Hide();
+            uiActionObrisiLijek.Hide();
+            uiActionDodajLijek.Hide();
         }
     }
 }
