@@ -87,5 +87,35 @@ namespace PI_t18024_Maza
                 uiActionOdaberiBolest.DataSource = db.Bolest.ToList();
             }
         }
+
+        private void uiPropisaniLijekovi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = uiPropisaniLijekovi.SelectedIndex;
+            
+            try
+            {
+                uiNapomenaLijekUnos.Text = listaNapomenaZaLijekove[index];
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                uiNapomenaLijekUnos.Text = "";
+            }
+        }
+
+        private void uiActionOdaberiLijek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            uiNapomenaLijekUnos.Text = "";
+        }
+
+        private void uiActionObrisiLijek_Click(object sender, EventArgs e)
+        {
+            int index = uiPropisaniLijekovi.SelectedIndex;
+            
+            if(index != -1)
+            {
+                uiPropisaniLijekovi.Items.RemoveAt(index);
+                listaNapomenaZaLijekove.RemoveAt(index);
+            }
+        }
     }
 }

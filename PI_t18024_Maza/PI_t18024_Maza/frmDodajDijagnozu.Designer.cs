@@ -41,6 +41,7 @@
             this.uiNaslovTerapija = new System.Windows.Forms.Label();
             this.uiNaslovNapomena = new System.Windows.Forms.Label();
             this.uiActionOdaberiLijek = new System.Windows.Forms.ComboBox();
+            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiNapomenaLijekUnos = new System.Windows.Forms.TextBox();
             this.uiActionDodajLijek = new System.Windows.Forms.Button();
             this.uiPropisaniLijekovi = new System.Windows.Forms.ListBox();
@@ -52,10 +53,10 @@
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionOdaberiBolest = new System.Windows.Forms.ComboBox();
             this.bolestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiBolest = new System.Windows.Forms.Label();
             this.uiPodaciOZivotinji.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiPodaciOZivotinji
@@ -162,12 +163,18 @@
             // 
             this.uiActionOdaberiLijek.DataSource = this.lijekBindingSource;
             this.uiActionOdaberiLijek.DisplayMember = "naziv";
+            this.uiActionOdaberiLijek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdaberiLijek.FormattingEnabled = true;
             this.uiActionOdaberiLijek.Location = new System.Drawing.Point(257, 42);
             this.uiActionOdaberiLijek.Name = "uiActionOdaberiLijek";
             this.uiActionOdaberiLijek.Size = new System.Drawing.Size(121, 21);
             this.uiActionOdaberiLijek.TabIndex = 7;
             this.uiActionOdaberiLijek.ValueMember = "ID_lijek";
+            this.uiActionOdaberiLijek.SelectedIndexChanged += new System.EventHandler(this.uiActionOdaberiLijek_SelectedIndexChanged);
+            // 
+            // lijekBindingSource
+            // 
+            this.lijekBindingSource.DataSource = typeof(PI_t18024_Maza.Lijek);
             // 
             // uiNapomenaLijekUnos
             // 
@@ -194,6 +201,7 @@
             this.uiPropisaniLijekovi.Name = "uiPropisaniLijekovi";
             this.uiPropisaniLijekovi.Size = new System.Drawing.Size(120, 121);
             this.uiPropisaniLijekovi.TabIndex = 10;
+            this.uiPropisaniLijekovi.SelectedIndexChanged += new System.EventHandler(this.uiPropisaniLijekovi_SelectedIndexChanged);
             // 
             // uiActionObrisiLijek
             // 
@@ -203,6 +211,7 @@
             this.uiActionObrisiLijek.TabIndex = 11;
             this.uiActionObrisiLijek.Text = "Obrisi lijek";
             this.uiActionObrisiLijek.UseVisualStyleBackColor = true;
+            this.uiActionObrisiLijek.Click += new System.EventHandler(this.uiActionObrisiLijek_Click);
             // 
             // uiNaslovLijekovi
             // 
@@ -255,6 +264,7 @@
             // 
             this.uiActionOdaberiBolest.DataSource = this.bolestBindingSource;
             this.uiActionOdaberiBolest.DisplayMember = "naziv";
+            this.uiActionOdaberiBolest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdaberiBolest.FormattingEnabled = true;
             this.uiActionOdaberiBolest.Location = new System.Drawing.Point(439, 272);
             this.uiActionOdaberiBolest.Name = "uiActionOdaberiBolest";
@@ -266,15 +276,21 @@
             // 
             this.bolestBindingSource.DataSource = typeof(PI_t18024_Maza.Bolest);
             // 
-            // lijekBindingSource
+            // uiBolest
             // 
-            this.lijekBindingSource.DataSource = typeof(PI_t18024_Maza.Lijek);
+            this.uiBolest.AutoSize = true;
+            this.uiBolest.Location = new System.Drawing.Point(440, 254);
+            this.uiBolest.Name = "uiBolest";
+            this.uiBolest.Size = new System.Drawing.Size(36, 13);
+            this.uiBolest.TabIndex = 18;
+            this.uiBolest.Text = "Bolest";
             // 
             // frmDodajDijagnozu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 562);
+            this.Controls.Add(this.uiBolest);
             this.Controls.Add(this.uiActionOdaberiBolest);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionDodajDijagnozu);
@@ -298,8 +314,8 @@
             this.Load += new System.EventHandler(this.frmDodajDijagnozu_Load);
             this.uiPodaciOZivotinji.ResumeLayout(false);
             this.uiPodaciOZivotinji.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bolestBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +347,6 @@
         private System.Windows.Forms.BindingSource lijekBindingSource;
         private System.Windows.Forms.ComboBox uiActionOdaberiBolest;
         private System.Windows.Forms.BindingSource bolestBindingSource;
+        private System.Windows.Forms.Label uiBolest;
     }
 }
