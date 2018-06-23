@@ -39,7 +39,7 @@
             this.uiProizvodac = new System.Windows.Forms.Label();
             this.uiRokTrajanja = new System.Windows.Forms.Label();
             this.uiCijenaCjepiva = new System.Windows.Forms.Label();
-            this.uiOdabirCjepiva = new System.Windows.Forms.ComboBox();
+            this.uiActionOdaberiCjepivo = new System.Windows.Forms.ComboBox();
             this.cjepivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajCjepivo = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
@@ -141,18 +141,18 @@
             this.uiCijenaCjepiva.TabIndex = 6;
             this.uiCijenaCjepiva.Text = "Cijena cjepiva: ";
             // 
-            // uiOdabirCjepiva
+            // uiActionOdaberiCjepivo
             // 
-            this.uiOdabirCjepiva.DataSource = this.cjepivoBindingSource;
-            this.uiOdabirCjepiva.DisplayMember = "ime_cjepiva";
-            this.uiOdabirCjepiva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uiOdabirCjepiva.FormattingEnabled = true;
-            this.uiOdabirCjepiva.Location = new System.Drawing.Point(317, 77);
-            this.uiOdabirCjepiva.Name = "uiOdabirCjepiva";
-            this.uiOdabirCjepiva.Size = new System.Drawing.Size(121, 21);
-            this.uiOdabirCjepiva.TabIndex = 7;
-            this.uiOdabirCjepiva.ValueMember = "ID_cjepiva";
-            this.uiOdabirCjepiva.SelectedIndexChanged += new System.EventHandler(this.uiOdabirCjepiva_SelectedIndexChanged);
+            this.uiActionOdaberiCjepivo.DataSource = this.cjepivoBindingSource;
+            this.uiActionOdaberiCjepivo.DisplayMember = "ime_cjepiva";
+            this.uiActionOdaberiCjepivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uiActionOdaberiCjepivo.FormattingEnabled = true;
+            this.uiActionOdaberiCjepivo.Location = new System.Drawing.Point(317, 77);
+            this.uiActionOdaberiCjepivo.Name = "uiActionOdaberiCjepivo";
+            this.uiActionOdaberiCjepivo.Size = new System.Drawing.Size(121, 21);
+            this.uiActionOdaberiCjepivo.TabIndex = 7;
+            this.uiActionOdaberiCjepivo.ValueMember = "ID_cjepiva";
+            this.uiActionOdaberiCjepivo.SelectedIndexChanged += new System.EventHandler(this.uiOdabirCjepiva_SelectedIndexChanged);
             // 
             // uiActionDodajCjepivo
             // 
@@ -162,6 +162,7 @@
             this.uiActionDodajCjepivo.TabIndex = 8;
             this.uiActionDodajCjepivo.Text = "Dodaj cjepivo";
             this.uiActionDodajCjepivo.UseVisualStyleBackColor = true;
+            this.uiActionDodajCjepivo.Click += new System.EventHandler(this.uiActionDodajCjepivo_Click);
             // 
             // uiActionOdustani
             // 
@@ -171,6 +172,7 @@
             this.uiActionOdustani.TabIndex = 9;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // frmDodajCijepljenje
             // 
@@ -179,7 +181,7 @@
             this.ClientSize = new System.Drawing.Size(521, 508);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionDodajCjepivo);
-            this.Controls.Add(this.uiOdabirCjepiva);
+            this.Controls.Add(this.uiActionOdaberiCjepivo);
             this.Controls.Add(this.uiCijenaCjepiva);
             this.Controls.Add(this.uiRokTrajanja);
             this.Controls.Add(this.uiProizvodac);
@@ -209,7 +211,7 @@
         private System.Windows.Forms.Label uiProizvodac;
         private System.Windows.Forms.Label uiRokTrajanja;
         private System.Windows.Forms.Label uiCijenaCjepiva;
-        private System.Windows.Forms.ComboBox uiOdabirCjepiva;
+        private System.Windows.Forms.ComboBox uiActionOdaberiCjepivo;
         private System.Windows.Forms.BindingSource cjepivoBindingSource;
         private System.Windows.Forms.Button uiActionDodajCjepivo;
         private System.Windows.Forms.Button uiActionOdustani;
