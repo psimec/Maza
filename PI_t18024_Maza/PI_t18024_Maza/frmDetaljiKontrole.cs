@@ -138,7 +138,7 @@ namespace PI_t18024_Maza
             int indexDijagnoze = int.Parse(polje[1]);
             Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
 
-            frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza);
+            frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza, this.status);
             var rezultat = postojecaDijagnoza.ShowDialog();
         }
     }

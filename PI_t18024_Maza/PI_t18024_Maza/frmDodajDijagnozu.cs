@@ -16,6 +16,7 @@ namespace PI_t18024_Maza
         Zivotinja zivotinja;
         Kontrola kontrola;
         Dijagnoza dijagnoza;
+        bool status;
 
         List<string> listaNapomenaZaLijekove;
 
@@ -29,7 +30,7 @@ namespace PI_t18024_Maza
             this.listaNapomenaZaLijekove = new List<string>();
         }
 
-        public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Dijagnoza dijagnoza)
+        public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Dijagnoza dijagnoza, bool status)
         {
             InitializeComponent();
 
@@ -37,21 +38,26 @@ namespace PI_t18024_Maza
             this.zivotinja = zivotinja;
             this.kontrola = kontrola;
             this.dijagnoza = dijagnoza;
-            this.listaNapomenaZaLijekove = new List<string>();
+            this.status = status;
+            this.listaNapomenaZaLijekove = new List<string>();            
         }
 
         private void frmDodajDijagnozu_Load(object sender, EventArgs e)
         {
-            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
-            uiImeZivotinje.Text += zivotinja.ime;
-            uiVrstaZivotinje.Text += zivotinja.vrsta;
-            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja;
+            PopuniOsnovnePodatke();
+
+            //status true, onemoguci azuriranje
+            //status false, omoguci azuriranje
 
             uiPropisaniLijekovi.DisplayMember = "naziv";
             uiPropisaniLijekovi.ValueMember = "ID_lijek";
 
             PopuniLijekove();
             PopuniBolesti();
+            if(status || !status)
+            {
+                PopuniPodatkeODijagnozi();
+            }
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -124,6 +130,43 @@ namespace PI_t18024_Maza
             listaNapomenaZaLijekove.Add(uiNapomenaLijekUnos.Text);
             uiPropisaniLijekovi.Items.Add(odabraniLijek);
             uiNapomenaLijekUnos.Text = "";
+        }
+
+        private void PopuniOsnovnePodatke()
+        {
+            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+            uiImeZivotinje.Text += zivotinja.ime;
+            uiVrstaZivotinje.Text += zivotinja.vrsta;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja;
+        }
+
+        private void PopuniPodatkeODijagnozi()
+        {
+            uiNapomena.Text = dijagnoza.napomena;
+            uiTerapija.Text = dijagnoza.terapija;
+            uiSimptomi.Text = dijagnoza.simptomi;
+
+            List<PropisaniLijek> propisaniLijekovi = null;
+            using (var db = new MazaEntities())
+            {
+                propisaniLijekovi = db.PropisaniLijek.Where(s => s.ID_dijagnoza == dijagnoza.ID_dijagnoza).ToList();
+
+                foreach (var lijek in db.PropisaniLijek)
+                {
+                    if(lijek.ID_dijagnoza == dijagnoza.ID_dijagnoza)
+                    {
+                        uiPropisaniLijekovi.Items.Add(db.Lijek.Where(s => s.ID_lijek == lijek.ID_lijek).FirstOrDefault());
+                    }
+                }
+
+                Bolest bolest = null;
+                bolest = db.Bolest.Where(s => s.ID_bolest == dijagnoza.ID_bolest).FirstOrDefault();
+                uiActionOdaberiBolest.SelectedValue = bolest.ID_bolest;
+            }
+            foreach (PropisaniLijek propisaniLijek in propisaniLijekovi)
+            {
+                listaNapomenaZaLijekove.Add(propisaniLijek.napomena);
+            }
         }
 
         private void PopuniLijekove()
