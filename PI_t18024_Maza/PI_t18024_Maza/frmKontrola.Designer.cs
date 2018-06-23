@@ -81,8 +81,8 @@
             this.uiPrikazKontrola.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazKontrola.Size = new System.Drawing.Size(523, 418);
             this.uiPrikazKontrola.TabIndex = 18;
-            this.uiPrikazKontrola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiPrikazKontrola_CellClick);
             this.uiPrikazKontrola.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazKontrola_ColumnHeaderMouseClick);
+            this.uiPrikazKontrola.SelectionChanged += new System.EventHandler(this.uiPrikazKontrola_SelectionChanged);
             // 
             // iDkontrolaDataGridViewTextBoxColumn
             // 
@@ -171,7 +171,6 @@
             this.uiActionDetaljiKontrole.TabIndex = 21;
             this.uiActionDetaljiKontrole.Text = "Detalji kontole";
             this.uiActionDetaljiKontrole.UseVisualStyleBackColor = false;
-            this.uiActionDetaljiKontrole.Click += new System.EventHandler(this.uiActionDetaljiKontrole_Click);
             // 
             // uiPretrazi
             // 

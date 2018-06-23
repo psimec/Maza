@@ -164,6 +164,7 @@ namespace PI_t18024_Maza
         private void KontrolaForm_Load(object sender, EventArgs e)
         {
             PrikaziKontrole();
+            uiPrikazKontrola.Rows[0].Selected = true;
         }
 
         private void uiActonDodajKontrolu_Click(object sender, EventArgs e)
@@ -182,22 +183,16 @@ namespace PI_t18024_Maza
             PrikaziKontrole();
         }
 
-        private void uiPrikazKontrola_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int idKontrola = (int)uiPrikazKontrola.CurrentRow.Cells[0].Value;
-            using (var db = new MazaEntities())
-            {
-                kontrola = db.Kontrola.Where(k => k.ID_kontrola == idKontrola).FirstOrDefault();
-            }
-        }
-
         private void uiActionDetaljiKontrole_Click(object sender, EventArgs e)
         {
-            Form detaljiKontrole = new frmDetaljiKontrole(this.kontrola);
-            detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
-            this.Hide();
-            detaljiKontrole.ShowDialog();
-            this.Show();
+            if(this.kontrola != null)
+            {
+                Form detaljiKontrole = new frmDetaljiKontrole(this.kontrola);
+                detaljiKontrole.StartPosition = FormStartPosition.CenterScreen;
+                this.Hide();
+                detaljiKontrole.ShowDialog();
+                this.Show();
+            }
         }
 
         // Odabirom stupca poziva se funkcija za sortiranje istog
@@ -220,6 +215,15 @@ namespace PI_t18024_Maza
         private void uiPretrazi_TextChanged(object sender, EventArgs e)
         {
             filtriraj(uiPretrazi.Text);
+        }
+
+        private void uiPrikazKontrola_SelectionChanged(object sender, EventArgs e)
+        {
+            int idKontrola = (int)uiPrikazKontrola.CurrentRow.Cells[0].Value;
+            using (var db = new MazaEntities())
+            {
+                kontrola = db.Kontrola.Where(k => k.ID_kontrola == idKontrola).FirstOrDefault();
+            }
         }
 
         #endregion

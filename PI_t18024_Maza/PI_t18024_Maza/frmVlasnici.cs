@@ -12,14 +12,20 @@ namespace PI_t18024_Maza
 {
     public partial class frmVlasnici : frmDizajn
     {
+        #region Globalne varijable
         int zadnjiKliknutiStupac;
+        #endregion
+
+        #region Konstruktor forme frmVlasnici
         public frmVlasnici()
         {
             InitializeComponent();
             zadnjiKliknutiStupac = 0;
             PopuniVlasnike();
         }
+        #endregion
 
+        #region Funkcije
         /// <summary>
         /// Popunjava se datagridview uiPrikazVlasnika podacima o vlasnicima zivotinja iz baze
         /// </summary>
@@ -47,76 +53,7 @@ namespace PI_t18024_Maza
             }
             zivotinjaBindingSource.DataSource = listaZivotinja;
         }
-        
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            Vlasnik oznaceni = vlasnikBindingSource.Current as Vlasnik;
-            if (oznaceni != null)
-            {
-                PopuniZivotinje(oznaceni);
-            }
-        }
 
-        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
-        {
-            frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnikBindingSource.Current as Vlasnik);
-            dodajZivotinju.ShowDialog();
-            PopuniZivotinje(vlasnikBindingSource.Current as Vlasnik);
-        }
-
-        private void uiPrikazVlasnika_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int brojStupaca = e.ColumnIndex;
-            if(zadnjiKliknutiStupac != brojStupaca)
-            {
-                SortirajVlasnikeUzlazno(brojStupaca);
-                zadnjiKliknutiStupac = brojStupaca;
-            }
-            else
-            {
-                SortirajVlasnikeSilazno(brojStupaca);
-                zadnjiKliknutiStupac = 0;
-            }
-        }
-
-        private void uiActionAzurirajVlasnika_Click(object sender, EventArgs e)
-        {
-            frmAzurirajVlasnike azurirajVlasnika = new frmAzurirajVlasnike(vlasnikBindingSource.Current as Vlasnik);
-            azurirajVlasnika.ShowDialog();
-            PopuniVlasnike();
-        }
-
-        private void uiDodajVlasnika_Click(object sender, EventArgs e)
-        {
-            frmAzurirajVlasnike dodajVlasnika = new frmAzurirajVlasnike();
-            dodajVlasnika.ShowDialog();
-            PopuniVlasnike();
-        }
-
-        private void uiIzbrisiVlasnika_Click(object sender, EventArgs e)
-        {
-            Vlasnik selektiraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
-            if(selektiraniVlasnik != null)
-            {
-                if(MessageBox.Show("Da li ste sigurni?","Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    using (var db = new MazaEntities())
-                    {
-                        db.Vlasnik.Attach(selektiraniVlasnik);
-                        if(selektiraniVlasnik.Zivotinja.Count == 0)
-                        {
-                            db.Vlasnik.Remove(selektiraniVlasnik);
-                            db.SaveChanges();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nije moguće obrisati vlasnika jer sadrži životinje, prvo obriši životinje");
-                        }
-                    }
-                }
-                PopuniVlasnike();
-            }
-        }
         /// <summary>
         /// Filtrira vlasnike na temelju unešenog teksta iz textboxa
         /// </summary>
@@ -209,6 +146,70 @@ namespace PI_t18024_Maza
             }
             uiPrikazVlasnika.DataSource = vlasnici;
         }
+        #endregion
+
+        #region Događaji
+        private void uiActionDodajZivotinju_Click(object sender, EventArgs e)
+        {
+            frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnikBindingSource.Current as Vlasnik);
+            dodajZivotinju.ShowDialog();
+            PopuniZivotinje(vlasnikBindingSource.Current as Vlasnik);
+        }
+
+        private void uiPrikazVlasnika_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int brojStupaca = e.ColumnIndex;
+            if(zadnjiKliknutiStupac != brojStupaca)
+            {
+                SortirajVlasnikeUzlazno(brojStupaca);
+                zadnjiKliknutiStupac = brojStupaca;
+            }
+            else
+            {
+                SortirajVlasnikeSilazno(brojStupaca);
+                zadnjiKliknutiStupac = 0;
+            }
+        }
+
+        private void uiActionAzurirajVlasnika_Click(object sender, EventArgs e)
+        {
+            frmAzurirajVlasnike azurirajVlasnika = new frmAzurirajVlasnike(vlasnikBindingSource.Current as Vlasnik);
+            azurirajVlasnika.ShowDialog();
+            PopuniVlasnike();
+        }
+
+        private void uiDodajVlasnika_Click(object sender, EventArgs e)
+        {
+            frmAzurirajVlasnike dodajVlasnika = new frmAzurirajVlasnike();
+            dodajVlasnika.ShowDialog();
+            PopuniVlasnike();
+        }
+
+        private void uiIzbrisiVlasnika_Click(object sender, EventArgs e)
+        {
+            Vlasnik selektiraniVlasnik = vlasnikBindingSource.Current as Vlasnik;
+            if(selektiraniVlasnik != null)
+            {
+                if(MessageBox.Show("Da li ste sigurni?","Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (var db = new MazaEntities())
+                    {
+                        db.Vlasnik.Attach(selektiraniVlasnik);
+                        if(selektiraniVlasnik.Zivotinja.Count == 0)
+                        {
+                            db.Vlasnik.Remove(selektiraniVlasnik);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nije moguće obrisati vlasnika jer sadrži životinje, prvo obriši životinje");
+                        }
+                    }
+                }
+                PopuniVlasnike();
+            }
+        }
+
 
         private void uiActionPovijestBolesti_Click(object sender, EventArgs e)
         {
@@ -240,5 +241,15 @@ namespace PI_t18024_Maza
                 }
             }
         }
+
+        private void uiPrikazVlasnika_SelectionChanged(object sender, EventArgs e)
+        {
+            Vlasnik oznaceni = vlasnikBindingSource.Current as Vlasnik;
+            if (oznaceni != null)
+            {
+                PopuniZivotinje(oznaceni);
+            }
+        }
+        #endregion
     }
 }

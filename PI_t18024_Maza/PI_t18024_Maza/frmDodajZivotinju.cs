@@ -12,8 +12,12 @@ namespace PI_t18024_Maza
 {
     public partial class frmDodajZivotinju : Form
     {
+        #region Globalne varijable
         Vlasnik vlasnik;
         Zivotinja zivotinja;
+        #endregion
+
+        #region Konstruktor forme frmDodajZivotinju
         /// <summary>
         /// Kontruktor klase za dodavanje nove životinje odabranom vlasniku
         /// </summary>
@@ -24,6 +28,23 @@ namespace PI_t18024_Maza
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Konstruktor klase ukoliko se žele ažurirati podaci o životinji
+        /// </summary>
+        /// <param name="vlasnik">Odabrani vasnik životinje</param>
+        /// <param name="zivotinja">Odabrana životinja</param>
+        public frmDodajZivotinju(Vlasnik vlasnik, Zivotinja zivotinja)
+        {
+            this.vlasnik = vlasnik;
+            this.zivotinja = zivotinja;
+            InitializeComponent();
+        }
+        #endregion
+
+        #region Funkcije
+        /// <summary>
+        /// Funkcija za prikaz, odnosno sakrivanje labele uiLblDatumUginuca i datetimepicker uiDatumUginuca
+        /// </summary>
         private void PrikaziDatumUginuca()
         {
             if(uiZiv.Checked == true)
@@ -38,16 +59,21 @@ namespace PI_t18024_Maza
             }
         }
         /// <summary>
-        /// Konstruktor klase ukoliko se žele ažurirati podaci o životinji
+        /// Validacija unešenih podataka o zivotinji
         /// </summary>
-        /// <param name="vlasnik">Odabrani vasnik životinje</param>
-        /// <param name="zivotinja">Odabrana životinja</param>
-        public frmDodajZivotinju(Vlasnik vlasnik, Zivotinja zivotinja)
+        /// <returns>True ukoliko su unešeni podaci ispravni, u suprotnome Flase</returns>
+        public bool Provjera()
         {
-            this.vlasnik = vlasnik;
-            this.zivotinja = zivotinja;
-            InitializeComponent();
+            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa))
+            {
+                return true;
+            }
+            else return false;
         }
+        #endregion
+
+        #region Događaji
+
 
         private void DodajZivotinjuForm_Load(object sender, EventArgs e)
         {
@@ -59,18 +85,20 @@ namespace PI_t18024_Maza
             uiEmail.Text = vlasnik.email;
             uiMusko.Checked = true;
 
-            if(zivotinja.datum_uginuca != null)
-            {
-                uiZiv.Checked = false;
-                uiDatumUginuca.Text = zivotinja.datum_uginuca.ToString();
-            }
-            else
-            {
-                uiZiv.Checked = true;
-            }
-
+           
+            //Provjerava se da li je životinja prenesena konstruktorom, ukoliko je podaci o njoj se prosljeđuju u za njih
+            // predviđene kontrole i priprema se za ažuriranje označene životinje, u suprotnom se priprema za unos nove životinje
             if (zivotinja != null)
             {
+                if(zivotinja.datum_uginuca != null)
+                {
+                    uiZiv.Checked = false;
+                    uiDatumUginuca.Text = zivotinja.datum_uginuca.ToString();
+                }
+                else
+                {
+                    uiZiv.Checked = true;
+                }
                 uiIme.Text = zivotinja.ime;
                 uiVrsta.Text = zivotinja.vrsta;
 
@@ -97,8 +125,7 @@ namespace PI_t18024_Maza
             }
             else
             {
-                uiDatumUginuca.Visible = false;
-                uiLblDatumUginuca.Visible = false;
+                uiZiv.Checked = true;
             }
         }
 
@@ -116,19 +143,7 @@ namespace PI_t18024_Maza
             }
         }
 
-        /// <summary>
-        /// Validacija unešenih podataka o zivotinji
-        /// </summary>
-        /// <returns>True ukoliko su unešeni podaci ispravni, u suprotnome Flase</returns>
-        public bool Provjera()
-        {
-            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa))
-            {
-                return true;
-            }
-            else return false;
-        }
-
+        //Ažuriranje postojeće, odnosno dodavanje nove životinje
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
             if(zivotinja == null)
@@ -144,6 +159,7 @@ namespace PI_t18024_Maza
                     {
                         spol = "ž";
                     }
+                    //Ako je životinja vrste pas onda se prikazuje textbox za unos broja cipa
                     if (uiVrsta.Text == "pas" || uiVrsta.Text == "Pas")
                     {
                         using (var db = new MazaEntities())
@@ -231,4 +247,5 @@ namespace PI_t18024_Maza
             PrikaziDatumUginuca();
         }
     }
+    #endregion
 }

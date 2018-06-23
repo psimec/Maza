@@ -100,14 +100,14 @@
             this.zivotinjaDataGridViewTextBoxColumn});
             this.uiPrikazVlasnika.DataSource = this.vlasnikBindingSource;
             this.uiPrikazVlasnika.Location = new System.Drawing.Point(485, 145);
-            this.uiPrikazVlasnika.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiPrikazVlasnika.Margin = new System.Windows.Forms.Padding(4);
             this.uiPrikazVlasnika.Name = "uiPrikazVlasnika";
             this.uiPrikazVlasnika.RowHeadersVisible = false;
             this.uiPrikazVlasnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiPrikazVlasnika.Size = new System.Drawing.Size(845, 331);
             this.uiPrikazVlasnika.TabIndex = 7;
             this.uiPrikazVlasnika.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uiPrikazVlasnika_ColumnHeaderMouseClick);
-            this.uiPrikazVlasnika.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.uiPrikazVlasnika.SelectionChanged += new System.EventHandler(this.uiPrikazVlasnika_SelectionChanged);
             // 
             // iDvlasnikDataGridViewTextBoxColumn
             // 
@@ -194,7 +194,7 @@
             this.vlasnikDataGridViewTextBoxColumn});
             this.uiPrikazZivotinja.DataSource = this.zivotinjaBindingSource;
             this.uiPrikazZivotinja.Location = new System.Drawing.Point(516, 537);
-            this.uiPrikazZivotinja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiPrikazZivotinja.Margin = new System.Windows.Forms.Padding(4);
             this.uiPrikazZivotinja.Name = "uiPrikazZivotinja";
             this.uiPrikazZivotinja.RowHeadersVisible = false;
             this.uiPrikazZivotinja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -352,7 +352,7 @@
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(431, 151);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,7 +362,7 @@
             // uiFiltrirajVlasnike
             // 
             this.uiFiltrirajVlasnike.Location = new System.Drawing.Point(243, 149);
-            this.uiFiltrirajVlasnike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiFiltrirajVlasnike.Margin = new System.Windows.Forms.Padding(4);
             this.uiFiltrirajVlasnike.Name = "uiFiltrirajVlasnike";
             this.uiFiltrirajVlasnike.Size = new System.Drawing.Size(215, 22);
             this.uiFiltrirajVlasnike.TabIndex = 27;
