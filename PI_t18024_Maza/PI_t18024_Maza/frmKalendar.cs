@@ -33,7 +33,10 @@ namespace PI_t18024_Maza
             InitializeComponent();
             uiActionOdabirDatuma.Format = DateTimePickerFormat.Custom;
             uiActionOdabirDatuma.CustomFormat = "dd-MM-yyyy";
+
+            //Odreduje broj treutnog dana na temelju trenutnog datuma
             brojOdabranogDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
+
             datumOd = DateTime.Now.AddDays(-brojOdabranogDana).Date;
             datumDo = DateTime.Now.AddDays(6 - brojOdabranogDana).Date;
             PopuniDatume();
@@ -141,6 +144,7 @@ namespace PI_t18024_Maza
             {
                 foreach (var kontrola in db.Kontrola)
                 {
+                    // Dohvacanje aktivnosti prijavljenog veterinara
                     if (!sviVeterinari)
                     {
                         if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
@@ -157,6 +161,7 @@ namespace PI_t18024_Maza
                             }
                         }
                     }
+                    // Dohvacanje aktivnosti za sve veterinare
                     else
                     {
                         if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))

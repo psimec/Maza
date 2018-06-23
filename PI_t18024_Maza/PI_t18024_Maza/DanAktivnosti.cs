@@ -9,9 +9,15 @@ namespace PI_t18024_Maza
 {
     public class DanAktivnosti
     {
+        #region Varijable
+
         public DayOfWeek Dan;
         public DateTime datum;
         public List<Kontrola> ListaKontrola = new List<Kontrola>();
+
+        #endregion
+
+        #region Konstruktor
 
         public DanAktivnosti(DayOfWeek dan, Kontrola kontrola)
         {
@@ -19,14 +25,29 @@ namespace PI_t18024_Maza
             ListaKontrola.Add(kontrola);
         }
 
+        #endregion
+
+        #region Metode
+
+        /// <summary>
+        /// Dodaje kontrolu u listu kontrola
+        /// </summary>
+        /// <param name="kontrola"> Kontrola za dodati u listu </param>
+
         public void DodajAktivnost(Kontrola kontrola)
         {
             ListaKontrola.Add(kontrola);
         }
 
+        /// <summary>
+        /// Sortira kontrole u listi kontrola prema datumu kontrole
+        /// </summary>
+
         public void SortirajListuAktivnosti()
         {
             ListaKontrola = ListaKontrola.OrderBy(k => k.datum_kontrole).ToList();
         }
+
+        #endregion
     }
 }
