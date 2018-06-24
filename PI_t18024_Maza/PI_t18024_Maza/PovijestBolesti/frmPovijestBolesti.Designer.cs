@@ -102,7 +102,7 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PI_t18024_Maza.IzvjestajZivotinja.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PI_t18024_Maza.PovijestBolesti.IzvjestajZivotinja.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
