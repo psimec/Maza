@@ -78,7 +78,7 @@
     <Compile Include="Cjepivo.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="DanAktivnosti.cs" />
+    <Compile Include="Kalendar\DanAktivnosti.cs" />
     <Compile Include="db_MAZA.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,101 +97,101 @@
     <Compile Include="Dijagnoza.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmDizajnDijagnoza.cs">
+    <Compile Include="Dizajn\frmDizajnDijagnoza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDizajnDijagnoza.Designer.cs">
+    <Compile Include="Dizajn\frmDizajnDijagnoza.Designer.cs">
       <DependentUpon>frmDizajnDijagnoza.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAzurirajVlasnike.cs">
+    <Compile Include="Vlasnici\frmAzurirajVlasnike.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAzurirajVlasnike.Designer.cs">
+    <Compile Include="Vlasnici\frmAzurirajVlasnike.Designer.cs">
       <DependentUpon>frmAzurirajVlasnike.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDetaljiKontrole.cs">
+    <Compile Include="StvakeKontrole\frmDetaljiKontrole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDetaljiKontrole.Designer.cs">
+    <Compile Include="StvakeKontrole\frmDetaljiKontrole.Designer.cs">
       <DependentUpon>frmDetaljiKontrole.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDizajn.cs">
+    <Compile Include="Dizajn\frmDizajn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDizajn.Designer.cs">
+    <Compile Include="Dizajn\frmDizajn.Designer.cs">
       <DependentUpon>frmDizajn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDodajCijepljenje.cs">
+    <Compile Include="StvakeKontrole\frmDodajCijepljenje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDodajCijepljenje.Designer.cs">
+    <Compile Include="StvakeKontrole\frmDodajCijepljenje.Designer.cs">
       <DependentUpon>frmDodajCijepljenje.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDodajDijagnozu.cs">
+    <Compile Include="StvakeKontrole\frmDodajDijagnozu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDodajDijagnozu.Designer.cs">
+    <Compile Include="StvakeKontrole\frmDodajDijagnozu.Designer.cs">
       <DependentUpon>frmDodajDijagnozu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDodajOperaciju.cs">
+    <Compile Include="StvakeKontrole\frmDodajOperaciju.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDodajOperaciju.Designer.cs">
+    <Compile Include="StvakeKontrole\frmDodajOperaciju.Designer.cs">
       <DependentUpon>frmDodajOperaciju.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDodajZivotinju.cs">
+    <Compile Include="Zivotinje\frmDodajZivotinju.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDodajZivotinju.Designer.cs">
+    <Compile Include="Zivotinje\frmDodajZivotinju.Designer.cs">
       <DependentUpon>frmDodajZivotinju.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExceptionNemaInterneta.cs" />
-    <Compile Include="frmKalendar.cs">
+    <Compile Include="Prijava\ExceptionNemaInterneta.cs" />
+    <Compile Include="Kalendar\frmKalendar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKalendar.Designer.cs">
+    <Compile Include="Kalendar\frmKalendar.Designer.cs">
       <DependentUpon>frmKalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStatistike.cs">
+    <Compile Include="Statistika\frmStatistike.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStatistike.Designer.cs">
+    <Compile Include="Statistika\frmStatistike.Designer.cs">
       <DependentUpon>frmStatistike.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontrola.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmKontrola.cs">
+    <Compile Include="Kontrola\frmKontrola.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKontrola.Designer.cs">
+    <Compile Include="Kontrola\frmKontrola.Designer.cs">
       <DependentUpon>frmKontrola.cs</DependentUpon>
     </Compile>
     <Compile Include="Lijek.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmNovaKontrola.cs">
+    <Compile Include="Kontrola\frmNovaKontrola.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNovaKontrola.Designer.cs">
+    <Compile Include="Kontrola\frmNovaKontrola.Designer.cs">
       <DependentUpon>frmNovaKontrola.cs</DependentUpon>
     </Compile>
     <Compile Include="Operacija.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmPovijestBolesti.cs">
+    <Compile Include="PovijestBolesti\frmPovijestBolesti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPovijestBolesti.Designer.cs">
+    <Compile Include="PovijestBolesti\frmPovijestBolesti.Designer.cs">
       <DependentUpon>frmPovijestBolesti.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrijava.cs">
+    <Compile Include="Prijava\frmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrijava.Designer.cs">
+    <Compile Include="Prijava\frmPrijava.Designer.cs">
       <DependentUpon>frmPrijava.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrijavljeniVeterinar.cs" />
+    <Compile Include="Prijava\PrijavljeniVeterinar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropisaniLijek.cs">
@@ -207,10 +207,10 @@
     <Compile Include="ViewPrikazZivotinja.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmVlasnici.cs">
+    <Compile Include="Vlasnici\frmVlasnici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVlasnici.Designer.cs">
+    <Compile Include="Vlasnici\frmVlasnici.Designer.cs">
       <DependentUpon>frmVlasnici.cs</DependentUpon>
     </Compile>
     <Compile Include="Vlasnik.cs">
@@ -219,10 +219,10 @@
     <Compile Include="Zivotinja.cs">
       <DependentUpon>db_MAZA.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmZivotinje.cs">
+    <Compile Include="Zivotinje\frmZivotinje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmZivotinje.Designer.cs">
+    <Compile Include="Zivotinje\frmZivotinje.Designer.cs">
       <DependentUpon>frmZivotinje.cs</DependentUpon>
     </Compile>
     <Compile Include="_18024_DBDataSet.cs">
@@ -233,47 +233,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmDizajnDijagnoza.resx">
+    <EmbeddedResource Include="Dizajn\frmDizajnDijagnoza.resx">
       <DependentUpon>frmDizajnDijagnoza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAzurirajVlasnike.resx">
+    <EmbeddedResource Include="Vlasnici\frmAzurirajVlasnike.resx">
       <DependentUpon>frmAzurirajVlasnike.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDetaljiKontrole.resx">
+    <EmbeddedResource Include="StvakeKontrole\frmDetaljiKontrole.resx">
       <DependentUpon>frmDetaljiKontrole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDizajn.resx">
+    <EmbeddedResource Include="Dizajn\frmDizajn.resx">
       <DependentUpon>frmDizajn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDodajCijepljenje.resx">
+    <EmbeddedResource Include="StvakeKontrole\frmDodajCijepljenje.resx">
       <DependentUpon>frmDodajCijepljenje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDodajDijagnozu.resx">
+    <EmbeddedResource Include="StvakeKontrole\frmDodajDijagnozu.resx">
       <DependentUpon>frmDodajDijagnozu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDodajOperaciju.resx">
+    <EmbeddedResource Include="StvakeKontrole\frmDodajOperaciju.resx">
       <DependentUpon>frmDodajOperaciju.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDodajZivotinju.resx">
+    <EmbeddedResource Include="Zivotinje\frmDodajZivotinju.resx">
       <DependentUpon>frmDodajZivotinju.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStatistike.resx">
+    <EmbeddedResource Include="Statistika\frmStatistike.resx">
       <DependentUpon>frmStatistike.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IzvjestajZivotinja.rdlc" />
-    <EmbeddedResource Include="frmKalendar.resx">
+    <EmbeddedResource Include="PovijestBolesti\IzvjestajZivotinja.rdlc" />
+    <EmbeddedResource Include="Kalendar\frmKalendar.resx">
       <DependentUpon>frmKalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKontrola.resx">
+    <EmbeddedResource Include="Kontrola\frmKontrola.resx">
       <DependentUpon>frmKontrola.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNovaKontrola.resx">
+    <EmbeddedResource Include="Kontrola\frmNovaKontrola.resx">
       <DependentUpon>frmNovaKontrola.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPovijestBolesti.resx">
+    <EmbeddedResource Include="PovijestBolesti\frmPovijestBolesti.resx">
       <DependentUpon>frmPovijestBolesti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrijava.resx">
+    <EmbeddedResource Include="Prijava\frmPrijava.resx">
       <DependentUpon>frmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -285,10 +285,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmVlasnici.resx">
+    <EmbeddedResource Include="Vlasnici\frmVlasnici.resx">
       <DependentUpon>frmVlasnici.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmZivotinje.resx">
+    <EmbeddedResource Include="Zivotinje\frmZivotinje.resx">
       <DependentUpon>frmZivotinje.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="db_MAZA.edmx">
@@ -308,7 +308,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Veterinar.datasource" />
     <None Include="_18024_DBDataSet.xsc">
       <DependentUpon>_18024_DBDataSet.xsd</DependentUpon>
     </None>
