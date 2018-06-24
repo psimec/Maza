@@ -156,6 +156,11 @@ namespace PI_t18024_Maza
             PopuniZivotinje(vlasnikBindingSource.Current as Vlasnik);
         }
 
+        /// <summary>
+        /// Sortiranje datagridviewa prema odabranom stupcu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiPrikazVlasnika_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int brojStupaca = e.ColumnIndex;

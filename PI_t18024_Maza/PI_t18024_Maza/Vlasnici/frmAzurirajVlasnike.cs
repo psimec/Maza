@@ -95,7 +95,11 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Događaji
-
+        /// <summary>
+        /// Ukoliko se vlasnik ažurira onda se popunjuju kontrole s informacijama o vlasniku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmAzurirajVlasnike_Load(object sender, EventArgs e)
         {
             if (vlasnik != null)
@@ -114,8 +118,7 @@ namespace PI_t18024_Maza
         {
             if (ValidacijaVlasnika(uiImeVlasnika.Text, uiPrezimeVlasnika.Text, uiAdresa.Text))
             {
-                MessageBox.Show("Ispravna validacija");
-                // UrediVlasnika();
+                 UrediVlasnika();
                 this.Close();
             }
             else

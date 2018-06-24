@@ -88,7 +88,12 @@ namespace PI_t18024_Maza
 
         #region Događaji
 
-
+        /// <summary>
+        /// Ukoliko se sortira životinja, popunjavaju se kontrole s informacijama o željenoj životinji, u suprotnom 
+        /// kontrole ostaju prazne i čekaju ispunjenje s podacima o novoj životinji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DodajZivotinjuForm_Load(object sender, EventArgs e)
         {
             uiImeVlasnika.Text = vlasnik.ime;
@@ -157,7 +162,11 @@ namespace PI_t18024_Maza
             }
         }
 
-        //Ažuriranje postojeće, odnosno dodavanje nove životinje
+        /// <summary>
+        /// Ažuriranje postojeće, odnosno dodavanje nove životinje
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
             if (Provjera())

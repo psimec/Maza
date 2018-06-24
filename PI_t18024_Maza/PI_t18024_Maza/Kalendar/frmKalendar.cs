@@ -237,7 +237,11 @@ namespace PI_t18024_Maza
             Osvjezi();
         }
 
-        // Promjeni pozadinsku boju trenutno selektiranog datuma
+        /// <summary>
+        /// Promjeni pozadinsku boju trenutno selektiranog datuma
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void uiPanelAktivnosti_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
@@ -256,7 +260,11 @@ namespace PI_t18024_Maza
             Osvjezi();
         }
 
-        // Nacin prikaza kalendara
+        /// <summary>
+        /// Nacin prikaza kalendara
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void uiActionPrikaziSveAktivnosti_Click(object sender, EventArgs e)
         {

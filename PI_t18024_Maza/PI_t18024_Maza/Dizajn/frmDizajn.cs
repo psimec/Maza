@@ -12,13 +12,16 @@ namespace PI_t18024_Maza
 {
     public partial class frmDizajn : Form
     {
+        #region Konstruktor forme frmDizajn
         public frmDizajn()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             PrikaziPrijavljenogVeterinara();
         }
+        #endregion
 
+        #region Metode
         private void PrikaziPrijavljenogVeterinara()
         {
             if (PrijavljeniVeterinar.Veterinar != null)
@@ -30,11 +33,14 @@ namespace PI_t18024_Maza
                 uiPrikazPrijavljenogVeterinara.Text = "";
             }
         }
+        #endregion
+
+        #region Događaji
 
         private void uiActionKalendar_Click(object sender, EventArgs e)
-        {            
+        {
             frmKalendar kalendar = new frmKalendar();
-            this.Hide();           
+            this.Hide();
             kalendar.StartPosition = FormStartPosition.CenterScreen;
             kalendar.ShowDialog();
             this.Close();
@@ -56,12 +62,12 @@ namespace PI_t18024_Maza
             vlasnici.StartPosition = FormStartPosition.CenterParent;
             vlasnici.ShowDialog();
             this.Close();
-            
+
         }
 
         private void uiActionKontrola_Click(object sender, EventArgs e)
         {
-            frmKontrola kontrola = new frmKontrola(); 
+            frmKontrola kontrola = new frmKontrola();
             this.Hide();
             kontrola.StartPosition = FormStartPosition.CenterScreen;
             kontrola.ShowDialog();
@@ -83,7 +89,7 @@ namespace PI_t18024_Maza
             Form prijava = new frmPrijava();
             this.Hide();
             prijava.ShowDialog();
-            this.Close();            
+            this.Close();
         }
 
         private void uiActionStatistika_Click(object sender, EventArgs e)
@@ -94,5 +100,6 @@ namespace PI_t18024_Maza
             statistike.ShowDialog();
             this.Close();
         }
+        #endregion
     }
 }

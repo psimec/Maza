@@ -183,7 +183,11 @@ namespace PI_t18024_Maza
 
         #region Dogadaji
 
-        // Inicijalizira izgled forme, popunjava elemnte temeljem podaataka iz baze ili podacima proslijedene kontrole
+        /// <summary>
+        /// Inicijalizira izgled forme, popunjava elemnte temeljem podaataka iz baze ili podacima proslijedene kontrole
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void NovaKontrola_Load(object sender, EventArgs e)
         {
@@ -226,8 +230,11 @@ namespace PI_t18024_Maza
             }
         }
 
-        // Popuni combobox uiOdabirZivotinje temeljem odabranog vlasnika
-
+        /// <summary>
+        /// Popuni combobox uiOdabirZivotinje temeljem odabranog vlasnika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiOdabirVlasnik_SelectedIndexChanged(object sender, EventArgs e)
         {
             KeyValuePair<int, string> oznaceniVlasnik = (KeyValuePair<int, string>)uiOdabirVlasnik.SelectedItem;

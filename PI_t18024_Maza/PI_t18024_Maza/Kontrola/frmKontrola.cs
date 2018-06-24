@@ -199,7 +199,11 @@ namespace PI_t18024_Maza
             }
         }
 
-        // Odabirom stupca poziva se funkcija za sortiranje istog
+        /// <summary>
+        /// Odabirom stupca poziva se funkcija za sortiranje istog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void uiPrikazKontrola_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
