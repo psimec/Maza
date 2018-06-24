@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.uiActionPrikaziGraf = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.uiGraf)).BeginInit();
             this.SuspendLayout();
             // 
             // uiGraf
             // 
-            chartArea1.Name = "ChartArea1";
-            this.uiGraf.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.uiGraf.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.uiGraf.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.uiGraf.Legends.Add(legend3);
             this.uiGraf.Location = new System.Drawing.Point(293, 216);
             this.uiGraf.Name = "uiGraf";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Broj životinja";
-            this.uiGraf.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Broj životinja";
+            this.uiGraf.Series.Add(series3);
             this.uiGraf.Size = new System.Drawing.Size(539, 344);
             this.uiGraf.TabIndex = 2;
             this.uiGraf.Text = "chart1";
@@ -62,17 +63,28 @@
             this.uiActionPrikaziGraf.UseVisualStyleBackColor = true;
             this.uiActionPrikaziGraf.Click += new System.EventHandler(this.uiActionPrikaziGraf_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(162, 428);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 81);
+            this.panel1.TabIndex = 14;
+            // 
             // frmStatistike
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.uiActionPrikaziGraf);
             this.Controls.Add(this.uiGraf);
             this.Name = "frmStatistike";
             this.Text = "frmStatistike";
             this.Controls.SetChildIndex(this.uiGraf, 0);
             this.Controls.SetChildIndex(this.uiActionPrikaziGraf, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiGraf)).EndInit();
             this.ResumeLayout(false);
 
@@ -82,5 +94,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart uiGraf;
         private System.Windows.Forms.Button uiActionPrikaziGraf;
+        private System.Windows.Forms.Panel panel1;
     }
 }
