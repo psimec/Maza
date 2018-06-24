@@ -82,7 +82,7 @@ namespace PI_t18024_Maza
         /// <returns>Ukoliko su unešeni podaci ispravni vraća True, u suprotnom vraća False</returns>
         public bool ValidacijaVlasnika(string ime, string prezime, string adresa)
         {
-            if (!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)))
+            if (!(int.TryParse(ime, out int Ime) || int.TryParse(prezime, out int Prezime) || int.TryParse(adresa, out int Adresa)) && ime != "" && prezime != "" && adresa != "")
             {
                 return true;
             }
@@ -109,33 +109,46 @@ namespace PI_t18024_Maza
             }
         }
 
+        #region Gumb događaj
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
             if (ValidacijaVlasnika(uiImeVlasnika.Text, uiPrezimeVlasnika.Text, uiAdresa.Text))
             {
-                UrediVlasnika();
+                MessageBox.Show("Ispravna validacija");
+                // UrediVlasnika();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Podaci nisu ispravni.");
             }
-            this.Close();
+            
         }
 
         private void uiDodijeliZivotinju_Click(object sender, EventArgs e)
         {
-            UrediVlasnika();
-            if (vlasnik == null)
+            
+            if (ValidacijaVlasnika(uiImeVlasnika.Text, uiPrezimeVlasnika.Text,uiAdresa.Text))
             {
-                frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(noviVlasnik);
-                dodajZivotinju.ShowDialog();
+                UrediVlasnika();
+                if (vlasnik == null)
+                {
+                    frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(noviVlasnik);
+                    dodajZivotinju.ShowDialog();
+                }
+                else
+                {
+                    frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
+                    dodajZivotinju.ShowDialog();
+                }
             }
             else
             {
-                frmDodajZivotinju dodajZivotinju = new frmDodajZivotinju(vlasnik);
-                dodajZivotinju.ShowDialog();
+                MessageBox.Show("Podaci nisu ispravni.");
             }
         }
+        #endregion
+
         #endregion
 
     }

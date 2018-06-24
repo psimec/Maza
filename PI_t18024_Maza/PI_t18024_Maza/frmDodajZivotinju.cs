@@ -64,9 +64,23 @@ namespace PI_t18024_Maza
         /// <returns>True ukoliko su unešeni podaci ispravni, u suprotnome Flase</returns>
         public bool Provjera()
         {
-            if (!(int.TryParse(uiIme.Text, out int ime) && int.TryParse(uiVrsta.Text, out int vrsta)) && int.TryParse(uiBrojCipa.Text, out int brCipa))
+            if (!(int.TryParse(uiIme.Text, out int ime) || int.TryParse(uiVrsta.Text, out int vrsta)) && uiIme.Text != "" && uiVrsta.Text != "" && uiTezina.Text != "")
             {
-                return true;
+                if(uiVrsta.Text == "Pas" || uiVrsta.Text == "pas")
+                {
+                    if(int.TryParse(uiBrojCipa.Text, out int brojCipa))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
             }
             else return false;
         }
@@ -146,9 +160,9 @@ namespace PI_t18024_Maza
         //Ažuriranje postojeće, odnosno dodavanje nove životinje
         private void uiZavrsi_Click(object sender, EventArgs e)
         {
-            if(zivotinja == null)
+            if (Provjera())
             {
-                if (Provjera())
+                if (zivotinja == null)
                 {
                     string spol = "";
                     if (uiMusko.Checked == true)
@@ -159,7 +173,9 @@ namespace PI_t18024_Maza
                     {
                         spol = "ž";
                     }
+
                     //Ako je životinja vrste pas onda se prikazuje textbox za unos broja cipa
+                    // i dodaje se novi pas, u suprotnom se dodaje zivotinja koja ne mora imati čip
                     if (uiVrsta.Text == "pas" || uiVrsta.Text == "Pas")
                     {
                         using (var db = new MazaEntities())
@@ -181,6 +197,7 @@ namespace PI_t18024_Maza
                             db.SaveChanges();
                         }
                     }
+
                     else
                     {
                         using (var db = new MazaEntities())
@@ -203,12 +220,10 @@ namespace PI_t18024_Maza
                     }
                     this.Close();
                 }
-            }
-            else
-            {
-                using (var db = new MazaEntities())
+
+                else
                 {
-                    if (Provjera())
+                    using (var db = new MazaEntities())
                     {
                         db.Zivotinja.Attach(zivotinja);
                         zivotinja.ime = uiIme.Text;
@@ -227,18 +242,19 @@ namespace PI_t18024_Maza
                             zivotinja.broj_cipa = int.Parse(uiBrojCipa.Text);
                         }
                         zivotinja.datum_rodenja = DateTime.Parse(uiDatumRodenja.Text);
-                        if(uiZiv.Checked == false)
+                        if (uiZiv.Checked == false)
                         {
                             zivotinja.datum_uginuca = DateTime.Parse(uiDatumUginuca.Text);
                         }
                         db.SaveChanges();
                         this.Close();
-                    }                   
-                    else
-                    {
-                        MessageBox.Show("Unešeni podaci nisu u dobrom formatu!");
                     }
-                }               
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Unešeni podaci nisu u dobrom formatu!");
             }
         }
 
