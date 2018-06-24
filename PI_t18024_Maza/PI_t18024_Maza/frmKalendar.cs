@@ -146,7 +146,7 @@ namespace PI_t18024_Maza
                 {
                     // Dohvacanje aktivnosti prijavljenog veterinara
                     if (!sviVeterinari)
-                    {
+                    {                    
                         if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
                         {
                             int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
@@ -197,7 +197,14 @@ namespace PI_t18024_Maza
                 foreach (var aktivnost in danTjedna.ListaKontrola)
                 {
                     Button treuntaKontrola = KreirajAkrivnost(aktivnost);
-                    PostaviAktivnost(treuntaKontrola, (int)danTjedna.Dan -1, red);
+                    int stupac = (int)danTjedna.Dan - 1;
+
+                    if (stupac == -1)
+                    {
+                        stupac = 6;
+                    }
+
+                    PostaviAktivnost(treuntaKontrola, stupac, red);
                     red++;
                 }
             }

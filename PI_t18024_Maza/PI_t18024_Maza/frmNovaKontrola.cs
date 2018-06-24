@@ -34,6 +34,22 @@ namespace PI_t18024_Maza
 
         #endregion
 
+        #region Funkcije
+
+        private void PopuniZivotinje(int idVlasnik)
+        {
+            using (var db = new MazaEntities())
+            {
+                List<Zivotinja> listaTrazenihZivotinja = db.Zivotinja.Where(z => z.ID_vlasnika == idVlasnik).ToList();
+
+                uiOdabirZivotinja.DataSource = listaTrazenihZivotinja;
+                uiOdabirZivotinja.DisplayMember = "ime";
+                uiOdabirZivotinja.ValueMember = "ID_zivotinja";
+            }
+        }
+
+        #endregion
+
         #region Dogadaji
 
         private void NovaKontrola_Load(object sender, EventArgs e)
@@ -44,14 +60,28 @@ namespace PI_t18024_Maza
 
             using (var db = new MazaEntities())
             {
-                uiOdabirVeterinar.DataSource = db.Veterinar.ToList();
-                uiOdabirVeterinar.DisplayMember = "Ime";
-                uiOdabirVeterinar.ValueMember = "ID_Veterinar";
+                List<KeyValuePair<int, string>> listaVlasnika = new List<KeyValuePair<int, string>>();
+                List<KeyValuePair<int, string>> listaVeterinara = new List<KeyValuePair<int, string>>();
 
-                uiOdabirZivotinja.DataSource = db.Zivotinja.ToList();
-                uiOdabirZivotinja.DisplayMember = "Ime";
-                uiOdabirZivotinja.ValueMember = "ID_Zivotinja";
+                foreach (Vlasnik item in db.Vlasnik)
+                {
+                    listaVlasnika.Add(new KeyValuePair<int, string>(item.ID_vlasnik, item.ime + " " + item.prezime));
+                }
 
+                foreach (Veterinar item in db.Veterinar)
+                {
+                    listaVeterinara.Add(new KeyValuePair<int, string>(item.ID_veterinar, item.ime + " " + item.prezime));
+                }
+
+                uiOdabirVlasnik.DataSource = listaVlasnika;
+                uiOdabirVlasnik.DisplayMember = "Value";
+                uiOdabirVlasnik.ValueMember = "Key";
+
+                uiOdabirVeterinar.DataSource = listaVeterinara;
+                uiOdabirVeterinar.DisplayMember = "Value";
+                uiOdabirVeterinar.ValueMember = "Key";
+               
+                uiOdabirVeterinar.SelectedValue = PrijavljeniVeterinar.Veterinar.ID_veterinar;
             }
 
             // Popuni elemente forme temeljem podataka kontrole
@@ -72,6 +102,12 @@ namespace PI_t18024_Maza
                     uiOdabirStatusNijeObavljen.Checked = true;
                 }
             }
+        }
+
+        private void uiOdabirVlasnik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KeyValuePair<int, string> oznaceniVlasnik = (KeyValuePair<int, string>)uiOdabirVlasnik.SelectedItem;
+            PopuniZivotinje(oznaceniVlasnik.Key);          
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
@@ -99,10 +135,12 @@ namespace PI_t18024_Maza
 
                 using (var db = new MazaEntities())
                 {
+                    KeyValuePair<int, string> oznaceniVeterinar = (KeyValuePair<int, string>)uiOdabirVeterinar.SelectedItem;
+                    Veterinar veterinar = db.Veterinar.Where(v => v.ID_veterinar == oznaceniVeterinar.Key).FirstOrDefault();
+                    
                     if (this.kontrola == null)
-                    {
+                    {          
                         Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
-                        Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
 
                         db.Zivotinja.Attach(zivotinja);
                         db.Veterinar.Attach(veterinar);
@@ -129,7 +167,6 @@ namespace PI_t18024_Maza
                         db.Kontrola.Attach(kontrola);
 
                         Zivotinja zivotinja = uiOdabirZivotinja.SelectedItem as Zivotinja;
-                        Veterinar veterinar = uiOdabirVeterinar.SelectedItem as Veterinar;
 
                         db.Zivotinja.Attach(zivotinja);
                         db.Veterinar.Attach(veterinar);
@@ -154,6 +191,5 @@ namespace PI_t18024_Maza
         }
 
         #endregion
-
     }
 }
