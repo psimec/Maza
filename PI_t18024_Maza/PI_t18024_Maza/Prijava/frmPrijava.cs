@@ -48,7 +48,7 @@ namespace PI_t18024_Maza
             {
                 if (uiUnosKorisnickogImena.Text != "" || uiUnosLozinke.Text != "")
                 {
-                    dohvatiPodatke();
+                    DohvatiPodatke();
                     if (veterinar != null)
                     {
                         if (Kriptiranje.usporediMD5(uiUnosLozinke.Text , veterinar.lozinka))
@@ -87,7 +87,7 @@ namespace PI_t18024_Maza
         /// Provjera postoji li uneseni podaci u bazi
         /// </summary>
 
-        private void dohvatiPodatke()
+        private void DohvatiPodatke()
         {
             // Provjera internet veze
             if (!(NetworkInterface.GetIsNetworkAvailable()))
@@ -133,6 +133,11 @@ namespace PI_t18024_Maza
             {
                 Autentifikacija();
             }
+
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("hhh");
+            }
         }
 
         private void uiUnosKorisnickogImena_KeyDown(object sender, KeyEventArgs e)
@@ -141,7 +146,13 @@ namespace PI_t18024_Maza
             {
                 Autentifikacija();
             }
+
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("hhh");
+            }
         }
+
 
         #endregion
     }
