@@ -21,6 +21,10 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Konstruktor
+        
+        /// <summary>
+        /// Konstruktor forme Prijava
+        /// </summary>
 
         public frmPrijava()
         {

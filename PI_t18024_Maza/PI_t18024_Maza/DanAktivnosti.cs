@@ -19,6 +19,12 @@ namespace PI_t18024_Maza
 
         #region Konstruktor
 
+        /// <summary>
+        /// Konstruktor klase dan aktivnosti
+        /// </summary>
+        /// <param name="dan"> Proslijedeni dan u tjednu </param>
+        /// <param name="kontrola"> Proslijedena kontrola </param>
+
         public DanAktivnosti(DayOfWeek dan, Kontrola kontrola)
         {
             this.Dan = dan;

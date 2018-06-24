@@ -21,6 +21,10 @@ namespace PI_t18024_Maza
 
         #region Konstruktor
 
+        /// <summary>
+        /// Konstruktor forme Kontrola
+        /// </summary>
+
         public frmKontrola()
         {
             InitializeComponent();          

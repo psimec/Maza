@@ -16,6 +16,11 @@ namespace PI_t18024_Maza
 
         #region Konstruktor
 
+        /// <summary>
+        /// Kontruktor iznimke ExceptionNemaInterneta
+        /// </summary>
+        /// <param name="poruka"> Proslijedena poruka </param>
+
         public ExceptionNemaInterneta(string poruka)
         {
             this.Poruka = poruka;

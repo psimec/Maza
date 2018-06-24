@@ -22,6 +22,11 @@ namespace PI_t18024_Maza
 
         #region Konstruktor
 
+        /// <summary>
+        /// Konstrukor forme Povijest bolesti
+        /// </summary>
+        /// <param name="zivotinja"> Proslijedena zivotinja </param>
+
         public frmPovijestBolesti(Zivotinja zivotinja)
         {
             InitializeComponent();
