@@ -136,7 +136,7 @@ namespace PI_t18024_Maza
 
             if (e.KeyCode == Keys.F1)
             {
-                MessageBox.Show("hhh");
+                
             }
         }
 
@@ -149,7 +149,7 @@ namespace PI_t18024_Maza
 
             if (e.KeyCode == Keys.F1)
             {
-                MessageBox.Show("hhh");
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18024/wiki/3.-Korisni%C4%8Dka-dokumentacija#prijava");
             }
         }
 
