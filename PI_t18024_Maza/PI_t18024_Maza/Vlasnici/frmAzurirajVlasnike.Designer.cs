@@ -43,6 +43,7 @@
             this.uiImeVlasnika = new System.Windows.Forms.TextBox();
             this.lblIme = new System.Windows.Forms.Label();
             this.uiDodijeliZivotinju = new System.Windows.Forms.Button();
+            this.korisnickaPodrska = new System.Windows.Forms.HelpProvider();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,5 +219,6 @@
         private System.Windows.Forms.TextBox uiImeVlasnika;
         private System.Windows.Forms.Label lblIme;
         private System.Windows.Forms.Button uiDodijeliZivotinju;
+        private System.Windows.Forms.HelpProvider korisnickaPodrska;
     }
 }

@@ -32,6 +32,9 @@ namespace PI_t18024_Maza
             veterinar = null;
             uiUnosLozinke.UseSystemPasswordChar = true;
             this.StartPosition = FormStartPosition.CenterScreen;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
+
         }
 
         #endregion

@@ -51,6 +51,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.uiStavkeKontroleCijepljenja = new System.Windows.Forms.GroupBox();
             this.uiStavkeKontroleOperacije = new System.Windows.Forms.GroupBox();
+            this.korisnickaPodrska = new System.Windows.Forms.HelpProvider();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,9 +66,11 @@
             this.groupBox2.Controls.Add(this.uiDatumZivotinje);
             this.groupBox2.Controls.Add(this.uiVrstaZivotinje);
             this.groupBox2.Controls.Add(this.uiImeZivotinje);
-            this.groupBox2.Location = new System.Drawing.Point(455, 129);
+            this.groupBox2.Location = new System.Drawing.Point(607, 159);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 125);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(333, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Životinja";
@@ -75,36 +78,40 @@
             // uiVlasnikZivotinjeTekst
             // 
             this.uiVlasnikZivotinjeTekst.AutoSize = true;
-            this.uiVlasnikZivotinjeTekst.Location = new System.Drawing.Point(59, 84);
+            this.uiVlasnikZivotinjeTekst.Location = new System.Drawing.Point(79, 103);
+            this.uiVlasnikZivotinjeTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiVlasnikZivotinjeTekst.Name = "uiVlasnikZivotinjeTekst";
-            this.uiVlasnikZivotinjeTekst.Size = new System.Drawing.Size(47, 13);
+            this.uiVlasnikZivotinjeTekst.Size = new System.Drawing.Size(61, 17);
             this.uiVlasnikZivotinjeTekst.TabIndex = 8;
             this.uiVlasnikZivotinjeTekst.Text = "Vlasnik: ";
             // 
             // uiDatumZivotinjeTekst
             // 
             this.uiDatumZivotinjeTekst.AutoSize = true;
-            this.uiDatumZivotinjeTekst.Location = new System.Drawing.Point(101, 61);
+            this.uiDatumZivotinjeTekst.Location = new System.Drawing.Point(135, 75);
+            this.uiDatumZivotinjeTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiDatumZivotinjeTekst.Name = "uiDatumZivotinjeTekst";
-            this.uiDatumZivotinjeTekst.Size = new System.Drawing.Size(83, 13);
+            this.uiDatumZivotinjeTekst.Size = new System.Drawing.Size(109, 17);
             this.uiDatumZivotinjeTekst.TabIndex = 7;
             this.uiDatumZivotinjeTekst.Text = "Datum rođenja: ";
             // 
             // uiVrstaZivotinjeTekst
             // 
             this.uiVrstaZivotinjeTekst.AutoSize = true;
-            this.uiVrstaZivotinjeTekst.Location = new System.Drawing.Point(45, 38);
+            this.uiVrstaZivotinjeTekst.Location = new System.Drawing.Point(60, 47);
+            this.uiVrstaZivotinjeTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiVrstaZivotinjeTekst.Name = "uiVrstaZivotinjeTekst";
-            this.uiVrstaZivotinjeTekst.Size = new System.Drawing.Size(37, 13);
+            this.uiVrstaZivotinjeTekst.Size = new System.Drawing.Size(49, 17);
             this.uiVrstaZivotinjeTekst.TabIndex = 6;
             this.uiVrstaZivotinjeTekst.Text = "Vrsta: ";
             // 
             // uiImeZivotinjeTekst
             // 
             this.uiImeZivotinjeTekst.AutoSize = true;
-            this.uiImeZivotinjeTekst.Location = new System.Drawing.Point(40, 17);
+            this.uiImeZivotinjeTekst.Location = new System.Drawing.Point(53, 21);
+            this.uiImeZivotinjeTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiImeZivotinjeTekst.Name = "uiImeZivotinjeTekst";
-            this.uiImeZivotinjeTekst.Size = new System.Drawing.Size(30, 13);
+            this.uiImeZivotinjeTekst.Size = new System.Drawing.Size(38, 17);
             this.uiImeZivotinjeTekst.TabIndex = 5;
             this.uiImeZivotinjeTekst.Text = "Ime: ";
             // 
@@ -112,9 +119,10 @@
             // 
             this.uiVlasnikZivotinje.AutoSize = true;
             this.uiVlasnikZivotinje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(6, 83);
+            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(8, 102);
+            this.uiVlasnikZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
-            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(56, 13);
+            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(70, 17);
             this.uiVlasnikZivotinje.TabIndex = 4;
             this.uiVlasnikZivotinje.Text = "Vlasnik: ";
             // 
@@ -122,9 +130,10 @@
             // 
             this.uiDatumZivotinje.AutoSize = true;
             this.uiDatumZivotinje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiDatumZivotinje.Location = new System.Drawing.Point(6, 61);
+            this.uiDatumZivotinje.Location = new System.Drawing.Point(8, 75);
+            this.uiDatumZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiDatumZivotinje.Name = "uiDatumZivotinje";
-            this.uiDatumZivotinje.Size = new System.Drawing.Size(98, 13);
+            this.uiDatumZivotinje.Size = new System.Drawing.Size(124, 17);
             this.uiDatumZivotinje.TabIndex = 3;
             this.uiDatumZivotinje.Text = "Datum rođenja: ";
             // 
@@ -132,9 +141,10 @@
             // 
             this.uiVrstaZivotinje.AutoSize = true;
             this.uiVrstaZivotinje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiVrstaZivotinje.Location = new System.Drawing.Point(6, 38);
+            this.uiVrstaZivotinje.Location = new System.Drawing.Point(8, 47);
+            this.uiVrstaZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiVrstaZivotinje.Name = "uiVrstaZivotinje";
-            this.uiVrstaZivotinje.Size = new System.Drawing.Size(44, 13);
+            this.uiVrstaZivotinje.Size = new System.Drawing.Size(56, 17);
             this.uiVrstaZivotinje.TabIndex = 2;
             this.uiVrstaZivotinje.Text = "Vrsta: ";
             // 
@@ -142,9 +152,10 @@
             // 
             this.uiImeZivotinje.AutoSize = true;
             this.uiImeZivotinje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiImeZivotinje.Location = new System.Drawing.Point(6, 16);
+            this.uiImeZivotinje.Location = new System.Drawing.Point(8, 20);
+            this.uiImeZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiImeZivotinje.Name = "uiImeZivotinje";
-            this.uiImeZivotinje.Size = new System.Drawing.Size(35, 13);
+            this.uiImeZivotinje.Size = new System.Drawing.Size(43, 17);
             this.uiImeZivotinje.TabIndex = 2;
             this.uiImeZivotinje.Text = "Ime: ";
             // 
@@ -153,9 +164,10 @@
             this.uiActionDodajDijagnozu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
             this.uiActionDodajDijagnozu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajDijagnozu.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(145, 442);
+            this.uiActionDodajDijagnozu.Location = new System.Drawing.Point(193, 544);
+            this.uiActionDodajDijagnozu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionDodajDijagnozu.Name = "uiActionDodajDijagnozu";
-            this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(115, 35);
+            this.uiActionDodajDijagnozu.Size = new System.Drawing.Size(153, 43);
             this.uiActionDodajDijagnozu.TabIndex = 2;
             this.uiActionDodajDijagnozu.Text = "Dodaj dijagnozu";
             this.uiActionDodajDijagnozu.UseVisualStyleBackColor = false;
@@ -167,9 +179,10 @@
             this.uiActionDodajCijepljenje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajCijepljenje.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionDodajCijepljenje.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(352, 442);
+            this.uiActionDodajCijepljenje.Location = new System.Drawing.Point(469, 544);
+            this.uiActionDodajCijepljenje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionDodajCijepljenje.Name = "uiActionDodajCijepljenje";
-            this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(109, 35);
+            this.uiActionDodajCijepljenje.Size = new System.Drawing.Size(145, 43);
             this.uiActionDodajCijepljenje.TabIndex = 3;
             this.uiActionDodajCijepljenje.Text = "Dodaj cijepljenje";
             this.uiActionDodajCijepljenje.UseVisualStyleBackColor = false;
@@ -181,9 +194,10 @@
             this.uiActionDodajOperaciju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionDodajOperaciju.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionDodajOperaciju.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(564, 442);
+            this.uiActionDodajOperaciju.Location = new System.Drawing.Point(752, 544);
+            this.uiActionDodajOperaciju.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionDodajOperaciju.Name = "uiActionDodajOperaciju";
-            this.uiActionDodajOperaciju.Size = new System.Drawing.Size(109, 35);
+            this.uiActionDodajOperaciju.Size = new System.Drawing.Size(145, 43);
             this.uiActionDodajOperaciju.TabIndex = 4;
             this.uiActionDodajOperaciju.Text = "Dodaj operaciju";
             this.uiActionDodajOperaciju.UseVisualStyleBackColor = false;
@@ -191,9 +205,11 @@
             // 
             // uiStavkeKontroleDijagnoze
             // 
-            this.uiStavkeKontroleDijagnoze.Location = new System.Drawing.Point(90, 278);
+            this.uiStavkeKontroleDijagnoze.Location = new System.Drawing.Point(120, 342);
+            this.uiStavkeKontroleDijagnoze.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiStavkeKontroleDijagnoze.Name = "uiStavkeKontroleDijagnoze";
-            this.uiStavkeKontroleDijagnoze.Size = new System.Drawing.Size(187, 150);
+            this.uiStavkeKontroleDijagnoze.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiStavkeKontroleDijagnoze.Size = new System.Drawing.Size(249, 185);
             this.uiStavkeKontroleDijagnoze.TabIndex = 5;
             this.uiStavkeKontroleDijagnoze.TabStop = false;
             this.uiStavkeKontroleDijagnoze.Text = "Dijagnoze";
@@ -204,9 +220,10 @@
             this.uiActionZatvoriDetaljeKontrole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionZatvoriDetaljeKontrole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionZatvoriDetaljeKontrole.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uiActionZatvoriDetaljeKontrole.Location = new System.Drawing.Point(564, 486);
+            this.uiActionZatvoriDetaljeKontrole.Location = new System.Drawing.Point(752, 598);
+            this.uiActionZatvoriDetaljeKontrole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionZatvoriDetaljeKontrole.Name = "uiActionZatvoriDetaljeKontrole";
-            this.uiActionZatvoriDetaljeKontrole.Size = new System.Drawing.Size(109, 35);
+            this.uiActionZatvoriDetaljeKontrole.Size = new System.Drawing.Size(145, 43);
             this.uiActionZatvoriDetaljeKontrole.TabIndex = 6;
             this.uiActionZatvoriDetaljeKontrole.Text = "Zatvori";
             this.uiActionZatvoriDetaljeKontrole.UseVisualStyleBackColor = false;
@@ -215,9 +232,10 @@
             // uiDatumKontroleTekst
             // 
             this.uiDatumKontroleTekst.AutoSize = true;
-            this.uiDatumKontroleTekst.Location = new System.Drawing.Point(102, 24);
+            this.uiDatumKontroleTekst.Location = new System.Drawing.Point(136, 30);
+            this.uiDatumKontroleTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiDatumKontroleTekst.Name = "uiDatumKontroleTekst";
-            this.uiDatumKontroleTekst.Size = new System.Drawing.Size(85, 13);
+            this.uiDatumKontroleTekst.Size = new System.Drawing.Size(112, 17);
             this.uiDatumKontroleTekst.TabIndex = 5;
             this.uiDatumKontroleTekst.Text = "Datum kontrole: ";
             // 
@@ -225,9 +243,10 @@
             // 
             this.uiOpisKontrole.AutoSize = true;
             this.uiOpisKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiOpisKontrole.Location = new System.Drawing.Point(5, 69);
+            this.uiOpisKontrole.Location = new System.Drawing.Point(7, 85);
+            this.uiOpisKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiOpisKontrole.Name = "uiOpisKontrole";
-            this.uiOpisKontrole.Size = new System.Drawing.Size(40, 13);
+            this.uiOpisKontrole.Size = new System.Drawing.Size(51, 17);
             this.uiOpisKontrole.TabIndex = 4;
             this.uiOpisKontrole.Text = "Opis: ";
             // 
@@ -235,18 +254,20 @@
             // 
             this.uiStatusKontrole.AutoSize = true;
             this.uiStatusKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiStatusKontrole.Location = new System.Drawing.Point(5, 46);
+            this.uiStatusKontrole.Location = new System.Drawing.Point(7, 57);
+            this.uiStatusKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiStatusKontrole.Name = "uiStatusKontrole";
-            this.uiStatusKontrole.Size = new System.Drawing.Size(51, 13);
+            this.uiStatusKontrole.Size = new System.Drawing.Size(64, 17);
             this.uiStatusKontrole.TabIndex = 3;
             this.uiStatusKontrole.Text = "Status: ";
             // 
             // uiOpisTekst
             // 
             this.uiOpisTekst.AutoSize = true;
-            this.uiOpisTekst.Location = new System.Drawing.Point(46, 69);
+            this.uiOpisTekst.Location = new System.Drawing.Point(61, 85);
+            this.uiOpisTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiOpisTekst.Name = "uiOpisTekst";
-            this.uiOpisTekst.Size = new System.Drawing.Size(34, 13);
+            this.uiOpisTekst.Size = new System.Drawing.Size(45, 17);
             this.uiOpisTekst.TabIndex = 7;
             this.uiOpisTekst.Text = "Opis: ";
             // 
@@ -254,18 +275,20 @@
             // 
             this.uiDatumKontrole.AutoSize = true;
             this.uiDatumKontrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiDatumKontrole.Location = new System.Drawing.Point(5, 24);
+            this.uiDatumKontrole.Location = new System.Drawing.Point(7, 30);
+            this.uiDatumKontrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiDatumKontrole.Name = "uiDatumKontrole";
-            this.uiDatumKontrole.Size = new System.Drawing.Size(101, 13);
+            this.uiDatumKontrole.Size = new System.Drawing.Size(128, 17);
             this.uiDatumKontrole.TabIndex = 2;
             this.uiDatumKontrole.Text = "Datum kontrole: ";
             // 
             // uiStatusTekst
             // 
             this.uiStatusTekst.AutoSize = true;
-            this.uiStatusTekst.Location = new System.Drawing.Point(52, 46);
+            this.uiStatusTekst.Location = new System.Drawing.Point(69, 57);
+            this.uiStatusTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uiStatusTekst.Name = "uiStatusTekst";
-            this.uiStatusTekst.Size = new System.Drawing.Size(43, 13);
+            this.uiStatusTekst.Size = new System.Drawing.Size(56, 17);
             this.uiStatusTekst.TabIndex = 6;
             this.uiStatusTekst.Text = "Status: ";
             // 
@@ -277,39 +300,43 @@
             this.groupBox1.Controls.Add(this.uiOpisKontrole);
             this.groupBox1.Controls.Add(this.uiStatusKontrole);
             this.groupBox1.Controls.Add(this.uiOpisTekst);
-            this.groupBox1.Location = new System.Drawing.Point(90, 129);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(120, 159);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(270, 125);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(360, 154);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kontrola";
             // 
             // uiStavkeKontroleCijepljenja
             // 
-            this.uiStavkeKontroleCijepljenja.Location = new System.Drawing.Point(309, 278);
+            this.uiStavkeKontroleCijepljenja.Location = new System.Drawing.Point(412, 342);
+            this.uiStavkeKontroleCijepljenja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiStavkeKontroleCijepljenja.Name = "uiStavkeKontroleCijepljenja";
-            this.uiStavkeKontroleCijepljenja.Size = new System.Drawing.Size(187, 150);
+            this.uiStavkeKontroleCijepljenja.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiStavkeKontroleCijepljenja.Size = new System.Drawing.Size(249, 185);
             this.uiStavkeKontroleCijepljenja.TabIndex = 6;
             this.uiStavkeKontroleCijepljenja.TabStop = false;
             this.uiStavkeKontroleCijepljenja.Text = "Cijepljenja";
             // 
             // uiStavkeKontroleOperacije
             // 
-            this.uiStavkeKontroleOperacije.Location = new System.Drawing.Point(518, 278);
+            this.uiStavkeKontroleOperacije.Location = new System.Drawing.Point(691, 342);
+            this.uiStavkeKontroleOperacije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiStavkeKontroleOperacije.Name = "uiStavkeKontroleOperacije";
-            this.uiStavkeKontroleOperacije.Size = new System.Drawing.Size(187, 150);
+            this.uiStavkeKontroleOperacije.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiStavkeKontroleOperacije.Size = new System.Drawing.Size(249, 185);
             this.uiStavkeKontroleOperacije.TabIndex = 6;
             this.uiStavkeKontroleOperacije.TabStop = false;
             this.uiStavkeKontroleOperacije.Text = "Operacije";
             // 
             // frmDetaljiKontrole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(754, 531);
+            this.ClientSize = new System.Drawing.Size(1005, 654);
             this.Controls.Add(this.uiStavkeKontroleOperacije);
             this.Controls.Add(this.uiStavkeKontroleCijepljenja);
             this.Controls.Add(this.groupBox1);
@@ -319,7 +346,7 @@
             this.Controls.Add(this.uiActionDodajCijepljenje);
             this.Controls.Add(this.uiActionDodajDijagnozu);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmDetaljiKontrole";
             this.Text = "Detalji kontrole";
             this.Load += new System.EventHandler(this.frmDetaljiKontrole_Load);
@@ -364,5 +391,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox uiStavkeKontroleCijepljenja;
         private System.Windows.Forms.GroupBox uiStavkeKontroleOperacije;
+        private System.Windows.Forms.HelpProvider korisnickaPodrska;
     }
 }

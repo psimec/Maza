@@ -59,6 +59,7 @@
             this.uiImeVlasnika = new System.Windows.Forms.TextBox();
             this.lblIme = new System.Windows.Forms.Label();
             this.uiZavrsi = new System.Windows.Forms.Button();
+            this.korisnickaPodrska = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -417,5 +418,6 @@
         private System.Windows.Forms.DateTimePicker uiDatumUginuca;
         private System.Windows.Forms.Label uiLblDatumUginuca;
         private System.Windows.Forms.CheckBox uiZiv;
+        private System.Windows.Forms.HelpProvider korisnickaPodrska;
     }
 }

@@ -36,6 +36,8 @@ namespace PI_t18024_Maza
             listaDijagnoza = new List<Dijagnoza>();
             listaOperacija = new List<Operacija>();
             listaCjepiva = new List<Cjepivo>();
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
         #endregion
 

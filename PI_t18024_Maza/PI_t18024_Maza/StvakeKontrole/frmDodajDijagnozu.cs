@@ -39,6 +39,8 @@ namespace PI_t18024_Maza
             this.zivotinja = zivotinja;
             this.kontrola = kontrola;
             this.listaNapomenaZaLijekove = new List<string>();
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
 
         /// <summary>
@@ -60,6 +62,8 @@ namespace PI_t18024_Maza
             this.status = status;
             this.listaNapomenaZaLijekove = new List<string>();
             CheckForIllegalCrossThreadCalls = false;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
         #endregion
 
