@@ -21,6 +21,7 @@ namespace PI_t18024_Maza
         {
             InitializeComponent();
             zadnjiKliknutiStupac = 0;
+            uiIzbrisiVlasnika.Visible = false;
             PopuniVlasnike();
         }
         #endregion
@@ -253,6 +254,15 @@ namespace PI_t18024_Maza
             if (oznaceni != null)
             {
                 PopuniZivotinje(oznaceni);
+            }
+
+            if (oznaceni.Zivotinja.Count >= 1)
+            {
+                uiIzbrisiVlasnika.Visible = false;
+            }
+            else
+            {
+                uiIzbrisiVlasnika.Visible = true;
             }
         }
         #endregion
