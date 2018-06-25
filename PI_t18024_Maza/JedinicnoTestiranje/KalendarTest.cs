@@ -23,7 +23,18 @@ namespace JedinicnoTestiranje
             frmKalendar.OdrediTjedan(new DateTime(2018, 6, 19).Date);
             
             //ASSERT
-            Assert.IsTrue(frmKalendar.datumOd == new DateTime(2018, 6, 18).Date && frmKalendar.datumDo == new DateTime(2018, 6, 24).Date);
+            Assert.IsTrue(frmKalendar.datumOd == new DateTime(2018, 6, 18).Date && frmKalendar.datumDo == new DateTime(2018, 6, 25).Date);
+
+            Assert.IsFalse(frmKalendar.datumOd == new DateTime(2018, 6, 18).Date && frmKalendar.datumDo == new DateTime(2018, 6, 24).Date);
+
+            Assert.IsTrue(frmKalendar.datumOd.GetType() == typeof(DateTime));
+
+            Assert.IsTrue(frmKalendar.datumDo.GetType() == typeof(DateTime));
+
+            Assert.IsTrue(frmKalendar.datumOd != null);
+
+            Assert.IsTrue(frmKalendar.datumDo != null);
+
         }
 
         [TestMethod]
@@ -37,10 +48,10 @@ namespace JedinicnoTestiranje
                 Kontrola kontrola = db.Kontrola.FirstOrDefault();
 
                 //ACT
-                var test = frmKalendar.KreirajAkrivnost(kontrola);
+                var button = frmKalendar.KreirajAkrivnost(kontrola);
 
                 //ASSERT
-                Assert.IsTrue(test != null && test.Text != "");
+                Assert.IsTrue(button != null && button.Text != "");
             }        
         }
     }

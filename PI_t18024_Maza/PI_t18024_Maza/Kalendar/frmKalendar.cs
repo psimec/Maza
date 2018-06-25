@@ -111,7 +111,7 @@ namespace PI_t18024_Maza
             novi.Text = kontrola.datum_kontrole.TimeOfDay + Environment.NewLine + zivotinja.ime + Environment.NewLine + kontrola.opis;
             novi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             novi.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            novi.Size = new Size(120, 50);
+            novi.Size = new Size(120, 60);
             novi.BringToFront();
 
             if (kontrola.status == "Obavljen")
@@ -140,8 +140,6 @@ namespace PI_t18024_Maza
 
         private void DohvatiAktivnosti()
         {
-            MessageBox.Show(datumOd.ToString());
-            MessageBox.Show(datumDo.ToString());
             using (var db = new MazaEntities())
             {
                 foreach (var kontrola in db.Kontrola)
