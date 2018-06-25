@@ -109,6 +109,12 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
+            if(uiVrstaZahvataUnos.Text == "")
+            {
+                MessageBox.Show("Potrebno je unesti vrstu zahvata operacije.");
+                return;
+            }
+
             using (var db = new MazaEntities())
             {
                 if(this.operacija==null)

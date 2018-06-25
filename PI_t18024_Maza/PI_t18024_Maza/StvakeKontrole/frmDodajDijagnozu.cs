@@ -82,6 +82,19 @@ namespace PI_t18024_Maza
             // Spremi podatke u bazu
             // Promijeni funkcionalnost gumba temeljem moda u kojem je forma
             //Nova dijagnoza
+
+            if(uiSimptomi.Text == "")
+            {
+                MessageBox.Show("Potrebno je unesti simptome dijagnoze.");
+                return;
+            }
+
+            if(uiTerapija.Text=="")
+            {
+                MessageBox.Show("Potrebno je unesti terapiju za dijagnozu.");
+                return;
+            }
+
             if (this.dijagnoza == null)
             {
                 using (var db = new MazaEntities())
@@ -147,12 +160,12 @@ namespace PI_t18024_Maza
 
         private void uiActionDodajLijek_Click(object sender, EventArgs e)
         {
-            //dohvati lijek iz comboboxa
-            //upisi napomenu
-            //prebaci lijek u listbox
-            // upisi lijek u bazu
-            // upisi napomenu u bazu
-            //isprazni polje za napomenu
+
+            if(uiNapomenaLijekUnos.Text == "")
+            {
+                MessageBox.Show("Potrebno je unesti napomenu za odabrani lijek.");
+                return;
+            }
 
             Lijek odabraniLijek = uiActionOdaberiLijek.SelectedItem as Lijek;
             listaNapomenaZaLijekove.Add(uiNapomenaLijekUnos.Text);
