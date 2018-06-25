@@ -110,6 +110,11 @@ namespace PI_t18024_Maza
                 uiBrojMobitela.Text = vlasnik.broj_telefona1;
                 uiBrojTelefona.Text = vlasnik.broj_telefona2;
                 uiEmail.Text = vlasnik.email;
+                this.Text = "Ažuriraj vlasnika";
+            }
+            else
+            {
+                this.Text = "Dodaj vlasnika";
             }
         }
 
