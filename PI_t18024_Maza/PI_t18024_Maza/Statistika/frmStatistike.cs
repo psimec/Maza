@@ -13,6 +13,9 @@ namespace PI_t18024_Maza
     public partial class frmStatistike : frmDizajn
     {
         #region Konstruktori
+        /// <summary>
+        /// Konstruktor forme za prikaz statistika
+        /// </summary>
         public frmStatistike()
         {
             InitializeComponent();
@@ -20,6 +23,9 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije
+        /// <summary>
+        /// Generira podatke o broju životinja po vrsti te ih prikaže na grafu u obliku vertikalno stupićastog grafa
+        /// </summary>
         private void PrikaziVrsteZivotinja()
         {
             this.uiGraf.Series.Clear();
@@ -43,6 +49,10 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Generira podatke o obavljenim i neobavljenim kontrolama za postojeće veterinare te ih prikaže na grafu
+        /// u obliku vertikalno stupićastog grafa
+        /// </summary>
         private void PrikaziKontrole()
         {
             this.uiGraf.Series.Clear();
@@ -97,6 +107,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Generira podatke o broju cjepljenja po vrsti životinje te ih prikazuje na grafu u obliku vertikalno stupićastog grafa
+        /// </summary>
         private void PrikaziCijepljenjaPoVrsti()
         {
             this.uiGraf.Series.Clear();
@@ -132,6 +145,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Generira podatke o broju pojavljivanja svake bolesti te ih prikazuje na grafu u obliku pite
+        /// </summary>
         private void PrikaziNajcesceBolesti()
         {
             this.uiGraf.Series.Clear();

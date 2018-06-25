@@ -24,6 +24,10 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Konstruktori
+        /// <summary>
+        /// Konstruktor forme Detalji Kontrole
+        /// </summary>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
         public frmDetaljiKontrole(Kontrola kontrola)
         {
             InitializeComponent();
@@ -37,6 +41,9 @@ namespace PI_t18024_Maza
 
         #region Funkcije
 
+        /// <summary>
+        /// Provjera statusa kontrole. Temeljem obavljenog i neobavljenog statusa se određuju elementi za prikaz
+        /// </summary>
         public void ProvjeriStatus()
         {
             if (this.kontrola.status == "Obavljen")
@@ -55,6 +62,10 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Provjera da li je prijavljeni veterinar jednak veterinaru koji je zadužen za trenutno aktivnu kontrolu.
+        /// Temeljem te provjere se određuju elementi za prikaz.
+        /// </summary>
         public void ProvjeriVeterinara()
         {
             if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
@@ -67,6 +78,9 @@ namespace PI_t18024_Maza
         }
 
         #region Funkcije za dohvat stavki
+        /// <summary>
+        /// Dohvaćanje svih dijagnoza vezanih uz trenutno aktivnu kontrolu
+        /// </summary>
         public void DohvatiDijagnoze()
         {
             using (var db = new MazaEntities())
@@ -81,6 +95,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Dohvaćanje svih cjepljenja vezanih uz trenutno aktivnu kontrolu
+        /// </summary>
         public void DohvatiCjepljenja()
         {
             using (var db = new MazaEntities())
@@ -89,6 +106,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Dohvaćanje svih operacija vezanih uz trenutno aktivnu kontrolu
+        /// </summary>
         public void DohvatiOperacije()
         {
             using (var db = new MazaEntities())
@@ -105,6 +125,9 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije za popunjavanje stavke kontrole
+        /// <summary>
+        /// Popunjava trenutno aktivnu kontrolu sa dijagnozama vezanih uz tu kontrolu ukoliko postoje
+        /// </summary>
         public void PopuniStavkeDijagnozama()
         {
             if (this.listaDijagnoza.Count > 0)
@@ -124,6 +147,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Popunjava trenutno aktivnu kontrolu sa cjepljenima vezanih uz tu kontrolu ukoliko postoje
+        /// </summary>
         public void PopuniStavkeCjepljenjima()
         {
             if (this.listaCjepiva.Count > 0)
@@ -143,6 +169,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Popunjava trenutno aktivnu kontrolu sa operacijama vezanih uz tu kontrolu ukoliko postoje
+        /// </summary>
         public void PopuniStavkeOperacijama()
         {
             if (this.listaOperacija.Count > 0)
@@ -164,6 +193,11 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije za otvaranje generiranih stavki
+        /// <summary>
+        /// Prikazuje podatke o odabranoj dijagnozi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OtvoriDijagnozu(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
@@ -176,6 +210,11 @@ namespace PI_t18024_Maza
             var rezultat = postojecaDijagnoza.ShowDialog();
         }
 
+        /// <summary>
+        /// Prikazuje podatke o odabranom cjepljenju
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OtvoriCjepljenje(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
@@ -188,6 +227,11 @@ namespace PI_t18024_Maza
             var rezultat = postojeceCijepljenje.ShowDialog();
         }
 
+        /// <summary>
+        /// Prikazuje podatke o odabranoj operaciji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OtvoriOperaciju(object sender, EventArgs e)
         {
             Button gumb = (Button)sender;
@@ -205,6 +249,11 @@ namespace PI_t18024_Maza
 
         #region Događaji
 
+        /// <summary>
+        /// Popunjava trenutno odabranu kontrolu sa podacima iz proslijeđene kontrole
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
             this.vlasnik = null;
@@ -235,6 +284,11 @@ namespace PI_t18024_Maza
             PopuniStavkeOperacijama();
         }
 
+        /// <summary>
+        /// Dodaje novu stavku operacije na trenutačno aktivnu kontrolu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
             frmDodajOperaciju novaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola);
@@ -257,6 +311,11 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Dodaje novu stavku dijagnoze na trenutačno aktivnu kontrolu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
             frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu(this.vlasnik,this.zivotinja,this.kontrola);
@@ -279,6 +338,11 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Dodaje novu stavku cjepljenja na trenutačno aktivnu kontrolu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajCijepljenje_Click(object sender, EventArgs e)
         {
             frmDodajCijepljenje novoCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola);
@@ -300,6 +364,11 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Zatvara trenutačno aktivnu kontrolu te ju ažurira u stanje obavljene kontrole ukoliko korisnik tako odabere i ukoliko je korisnik zadužen za tu kontrolu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionZatvoriDetaljeKontrole_Click(object sender, EventArgs e)
         {
 

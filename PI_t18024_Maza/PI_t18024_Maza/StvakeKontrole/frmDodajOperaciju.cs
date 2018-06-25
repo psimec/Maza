@@ -22,6 +22,12 @@ namespace PI_t18024_Maza
 
         #region Konstruktori
 
+        /// <summary>
+        /// Konstruktor forme Dodaj operaciju u slučaju dodavanja nove operacije
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
         public frmDodajOperaciju(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
@@ -31,6 +37,14 @@ namespace PI_t18024_Maza
             this.kontrola = kontrola;
         }
 
+        /// <summary>
+        /// Konstruktor forme Dodaj operaciju u slučaju pregleda ili ažuriranja postojeće operacije
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
+        /// <param name="operacija">Proslijeđena postojeća operacija</param>
+        /// <param name="status">Proslijeđeni status kontrole</param>
         public frmDodajOperaciju(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Operacija operacija, bool status)
         {
             InitializeComponent();
@@ -45,6 +59,9 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije
+        /// <summary>
+        /// Popunjava osnovne podatke o operaciji
+        /// </summary>
         private void PopuniOsnovnePodatke()
         {
             uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
@@ -55,6 +72,9 @@ namespace PI_t18024_Maza
             uiDatumZahvataTekst.Text = this.kontrola.datum_kontrole.ToShortDateString();
         }
 
+        /// <summary>
+        /// Popunjava preostale podatke o operaciji
+        /// </summary>
         private void PopuniPodatkeOOperaciji()
         {
             uiNapomenaUnos.Text = this.operacija.napomena;
@@ -72,6 +92,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Onemogućuje unos podataka
+        /// </summary>
         private void OnemoguciUnos()
         {
             uiNapomenaUnos.ReadOnly = true;
@@ -82,6 +105,9 @@ namespace PI_t18024_Maza
             uiActionDodajOperaciju.Hide();
         }
 
+        /// <summary>
+        /// Provjerava da li je trenutačno prijavljeni veterinar isti kao i veterinar zadužen za trenutačno aktivnu kontrolu
+        /// </summary>
         private void ProvjeriVeterinara()
         {
             if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
@@ -94,6 +120,11 @@ namespace PI_t18024_Maza
 
         #region Događaji
 
+        /// <summary>
+        /// Popunjava podatke za prikaz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDodajOperaciju_Load(object sender, EventArgs e)
         {
             PopuniOsnovnePodatke();
@@ -118,6 +149,11 @@ namespace PI_t18024_Maza
             this.Close();
         }        
 
+        /// <summary>
+        /// Dodavanje nove stavke operacije ili ažuriranje postojeće
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
             if(uiVrstaZahvataUnos.Text == "")

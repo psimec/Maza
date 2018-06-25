@@ -25,6 +25,12 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Konstruktori
+        /// <summary>
+        /// Konstruktor forme Dodaj dijagnozu u slučaju dodavanje nove dijagnoze
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
         public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
@@ -35,6 +41,14 @@ namespace PI_t18024_Maza
             this.listaNapomenaZaLijekove = new List<string>();
         }
 
+        /// <summary>
+        /// Konstruktor forme Dodaj dijagnozu u slučaju pregleda ili ažuriranja postojeće dijagnoze
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
+        /// <param name="dijagnoza">Postojeća dijagnoza</param>
+        /// <param name="status">Status kontrole</param>
         public frmDodajDijagnozu(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Dijagnoza dijagnoza, bool status)
         {
             InitializeComponent();
@@ -50,6 +64,9 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije
+        /// <summary>
+        /// Popunjava osnovne podatke o dijagnozi
+        /// </summary>
         private void PopuniOsnovnePodatke()
         {
             uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
@@ -58,6 +75,9 @@ namespace PI_t18024_Maza
             uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
         }
 
+        /// <summary>
+        /// Popunjava preostale podatke o dijagnozi
+        /// </summary>
         private void PopuniPodatkeODijagnozi()
         {
             uiNapomena.Text = dijagnoza.napomena;
@@ -87,6 +107,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Popunjava combobox za odabir lijeka sa svim postojećim lijekovima
+        /// </summary>
         private void PopuniLijekove()
         {
             using (var db = new MazaEntities())
@@ -95,6 +118,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Popunjava combobox za odabir bolesti sa svim postojećim bolestima
+        /// </summary>
         private void PopuniBolesti()
         {
             using (var db = new MazaEntities())
@@ -103,32 +129,9 @@ namespace PI_t18024_Maza
             }
         }
 
-        public void ObrisiLijekove()
-        {
-            using (var db = new MazaEntities())
-            {
-                Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
-
-                db.Bolest.Attach(bolest);
-                db.Kontrola.Attach(this.kontrola);
-                db.Dijagnoza.Attach(this.dijagnoza);
-
-                foreach (var propisaniLijek in db.PropisaniLijek)
-                {
-                    if (propisaniLijek.ID_dijagnoza == this.dijagnoza.ID_dijagnoza)
-                    {
-                        db.PropisaniLijek.Attach(propisaniLijek);
-                        db.PropisaniLijek.Remove(propisaniLijek);
-                    }
-                }
-                db.SaveChanges();
-            }
-
-            Thread.Sleep(500);
-            Thread dretva = new Thread(new ThreadStart(DodajLijekove));
-            dretva.Start();
-        }
-
+        /// <summary>
+        /// Dodaje odabrane lijekove u bazu podataka
+        /// </summary>
         public void DodajLijekove()
         {
             using (var db = new MazaEntities())
@@ -139,6 +142,8 @@ namespace PI_t18024_Maza
                 db.Kontrola.Attach(this.kontrola);
                 db.Dijagnoza.Attach(this.dijagnoza);
 
+                //Ažuriranje
+                //Dohvaća stari popis lijekova
                 List<Lijek> listaLijekova = new List<Lijek>();
                 foreach (var propisaniLijek in db.PropisaniLijek)
                 {
@@ -151,6 +156,7 @@ namespace PI_t18024_Maza
                     }
                 }
 
+                //Provjerava da li se koji novi lijek podudara sa starim lijekovima 
                 foreach (Lijek lijekIzListe in listaLijekova)
                 {
                     bool pronadjen = false;
@@ -163,11 +169,13 @@ namespace PI_t18024_Maza
                             propisaniLijek = db.PropisaniLijek.Where(s => s.ID_lijek == lijek.ID_lijek && s.ID_dijagnoza == this.dijagnoza.ID_dijagnoza).FirstOrDefault();
                             db.PropisaniLijek.Attach(propisaniLijek);
                             propisaniLijek.napomena = listaNapomenaZaLijekove[i];
+                            //Pamti da je ažurirana napomena za pronađeni lijek
                             listaNapomenaZaLijekove[i] = "#343";
                             pronadjen = true;
                         }
                     }
 
+                    //Ako lijek nije pronađen onda ga makni iz baze
                     if (!pronadjen)
                     {
                         propisaniLijek = db.PropisaniLijek.Where(s => s.ID_lijek == lijekIzListe.ID_lijek && s.ID_dijagnoza == this.dijagnoza.ID_dijagnoza).FirstOrDefault();
@@ -176,9 +184,11 @@ namespace PI_t18024_Maza
                     }
                 }
 
+                //Dodavanje novih lijekova
                 for (int i = 0; i < uiPropisaniLijekovi.Items.Count; i++)
                 {
                     Lijek lijek = uiPropisaniLijekovi.Items[i] as Lijek;
+                    //Dodaj samo one lijekove koji nisu bili ažurirani
                     if (listaNapomenaZaLijekove[i] != "#343")
                     {
                         PropisaniLijek propisaniLijek = new PropisaniLijek
@@ -195,6 +205,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Provjerava da li je trenutačno prijavljeni veterinar isti kao i veterinar zadužen za trenutačno aktivnu kontrolu
+        /// </summary>
         private void ProvjeriVeterinara()
         {
             if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
@@ -203,6 +216,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Onemogućuje unos novih podataka
+        /// </summary>
         private void OnemoguciUnos()
         {
             uiNapomena.ReadOnly = true;
@@ -220,6 +236,11 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Događaji
+        /// <summary>
+        /// Popunjava podatke o kontroli i dijagnozi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDodajDijagnozu_Load(object sender, EventArgs e)
         {
             PopuniOsnovnePodatke();
@@ -249,13 +270,13 @@ namespace PI_t18024_Maza
             this.Close();
         }
 
+        /// <summary>
+        /// Pohranjuje novu dijagnozu ili ažurira postojeću
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
-            // TODO: 
-            // Spremi podatke u bazu
-            // Promijeni funkcionalnost gumba temeljem moda u kojem je forma
-            //Nova dijagnoza
-
             if(uiSimptomi.Text == "")
             {
                 MessageBox.Show("Potrebno je unesti simptome dijagnoze.");
@@ -268,6 +289,7 @@ namespace PI_t18024_Maza
                 return;
             }
 
+            //Nova dijagnoza
             if (this.dijagnoza == null)
             {
                 using (var db = new MazaEntities())
@@ -309,7 +331,7 @@ namespace PI_t18024_Maza
             }
             else
             {
-                //Azuriraj jednostavne podatke
+                //Ažuriraj postojeću dijagnozu
                 using (var db = new MazaEntities())
                 {
                     Bolest bolest = uiActionOdaberiBolest.SelectedItem as Bolest;
@@ -323,12 +345,17 @@ namespace PI_t18024_Maza
 
                     db.SaveChanges();
                 }
-                Thread dretvaZaBrisanje = new Thread(new ThreadStart(DodajLijekove));
-                dretvaZaBrisanje.Start();
+                Thread dretvaZaAzuriranje = new Thread(new ThreadStart(DodajLijekove));
+                dretvaZaAzuriranje.Start();
             }
             this.Close();
         }
 
+        /// <summary>
+        /// Dodaje novi lijek u listu propisanih lijekova ukoliko je napomena ispunjena
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajLijek_Click(object sender, EventArgs e)
         {
 
@@ -344,6 +371,11 @@ namespace PI_t18024_Maza
             uiNapomenaLijekUnos.Text = "";
         }        
 
+        /// <summary>
+        /// Popunjava napomenu temeljem odabranog propisanog lijeka
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiPropisaniLijekovi_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = uiPropisaniLijekovi.SelectedIndex;
@@ -358,11 +390,21 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Briše napomenu prilikom odabira novog lijeka
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionOdaberiLijek_SelectedIndexChanged(object sender, EventArgs e)
         {
             uiNapomenaLijekUnos.Text = "";
         }        
 
+        /// <summary>
+        /// Obriši lijek iz liste propisanih lijekova i njegovu napomenu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionObrisiLijek_Click(object sender, EventArgs e)
         {
             int index = uiPropisaniLijekovi.SelectedIndex;

@@ -21,6 +21,12 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Konstruktori
+        /// <summary>
+        /// Konstruktor forme Dodaj cijepljenje kada se dodaje novo cijepljenje
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
         public frmDodajCijepljenje(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
@@ -30,6 +36,14 @@ namespace PI_t18024_Maza
             this.kontrola = kontrola;
         }
 
+        /// <summary>
+        /// Konstruktor forme Dodaj cijepljenje kada se vrši pregled cijepljenja ili ažurira postojeće
+        /// </summary>
+        /// <param name="vlasnik">Proslijeđeni vlasnik životinje</param>
+        /// <param name="zivotinja">Proslijeđena životinja na kontroli</param>
+        /// <param name="kontrola">Proslijeđena kontrola</param>
+        /// <param name="cjepivo">Proslijeđeno postojeće cijepljenje</param>
+        /// <param name="status">Proslijeđeni status trenutno aktivne kontrole</param>
         public frmDodajCijepljenje(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola, Cjepivo cjepivo, bool status)
         {
             InitializeComponent();
@@ -43,6 +57,9 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Funkcije
+        /// <summary>
+        /// Popunjava osnovne podatke o kontroli
+        /// </summary>
         private void PopuniOsnovnePodatke()
         {
             uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
@@ -51,6 +68,9 @@ namespace PI_t18024_Maza
             uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
         }
 
+        /// <summary>
+        /// Popunjava combobox sa cjepivima za mogućnost odabira cjepiva
+        /// </summary>
         private void PopuniCjepiva()
         {
             using (var db = new MazaEntities())
@@ -62,6 +82,10 @@ namespace PI_t18024_Maza
             uiActionOdaberiCjepivo.ValueMember = "ID_cjepivo";
         }
 
+        /// <summary>
+        /// Popunjava polja za prikaz podataka o odabranom cjepivu
+        /// </summary>
+        /// <param name="cjepivo">Odabrano cjepivo</param>
         private void PopuniPodatkeOCjepivu(Cjepivo cjepivo)
         {
             if (cjepivo != null)
@@ -74,6 +98,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Provjera da li je trenutačno prijavljeni veterinar isti kao i veterinar zadužen za trenutno aktivnu kontrolu
+        /// </summary>
         private void ProvjeriVeterinara()
         {
             if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
@@ -82,6 +109,9 @@ namespace PI_t18024_Maza
             }
         }
 
+        /// <summary>
+        /// Onemogućuje unos novih cjepljenja
+        /// </summary>
         private void OnemoguciUnos()
         {
             uiActionOdaberiCjepivo.Enabled = false;
@@ -91,6 +121,11 @@ namespace PI_t18024_Maza
         #endregion
 
         #region Događaji
+        /// <summary>
+        /// Prikazuje podatke temeljem statusa kontrole
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDodajCijepljenje_Load(object sender, EventArgs e)
         {
             PopuniOsnovnePodatke();
@@ -124,6 +159,11 @@ namespace PI_t18024_Maza
             this.Close();
         }
 
+        /// <summary>
+        /// Ovisno o statusu kontrole dodaje novo cjepljenje ili ažurira postojeće
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajCjepivo_Click(object sender, EventArgs e)
         {
             using (var db = new MazaEntities())
@@ -148,15 +188,10 @@ namespace PI_t18024_Maza
                     db.Cjepivo.Attach(this.cjepivo);
                     db.Kontrola.Attach(this.kontrola);
 
-                    //this.cjepivo.Kontrola.Remove(this.kontrola);
-                    //this.kontrola.Cjepivo.Remove(this.cjepivo);
-
-                    //db.Entry(this.kontrola).Collection("Cjepivo").Load();
                     this.kontrola.Cjepivo.Remove(this.cjepivo);
 
                     db.Cjepivo.Attach(cjepivo);
                     this.kontrola.Cjepivo.Add(cjepivo);
-                    //cjepivo.Kontrola.Add(this.kontrola);
                 }
                 db.SaveChanges();
             }
