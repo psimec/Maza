@@ -38,7 +38,7 @@ namespace PI_t18024_Maza
             brojOdabranogDana = (int)DateTime.Now.DayOfWeek - 1 == -1 ? 6 : ((int)DateTime.Now.DayOfWeek - 1);
 
             datumOd = DateTime.Now.AddDays(-brojOdabranogDana).Date;
-            datumDo = DateTime.Now.AddDays(6 - brojOdabranogDana).Date;
+            datumDo = DateTime.Now.AddDays(6 - brojOdabranogDana).AddDays(1).Date;
             PopuniDatume();
             IspisAktivnosti();
         }
@@ -60,7 +60,7 @@ namespace PI_t18024_Maza
                 brojOdabranogDana = 6;
             }
             datumOd = datum.AddDays(-brojOdabranogDana).Date;
-            datumDo = datum.AddDays(6 - brojOdabranogDana).Date;
+            datumDo = datum.AddDays(6 - brojOdabranogDana).AddDays(1).Date;
         }
 
         /// <summary>
@@ -140,6 +140,8 @@ namespace PI_t18024_Maza
 
         private void DohvatiAktivnosti()
         {
+            MessageBox.Show(datumOd.ToString());
+            MessageBox.Show(datumDo.ToString());
             using (var db = new MazaEntities())
             {
                 foreach (var kontrola in db.Kontrola)
@@ -147,7 +149,7 @@ namespace PI_t18024_Maza
                     // Dohvacanje aktivnosti prijavljenog veterinara
                     if (!sviVeterinari)
                     {                    
-                        if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1) && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
+                        if (kontrola.datum_kontrole > datumOd && kontrola.datum_kontrole < datumDo && kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
                         {
                             int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
                             if (index >= 0)
@@ -164,7 +166,7 @@ namespace PI_t18024_Maza
                     // Dohvacanje aktivnosti za sve veterinare
                     else
                     {
-                        if (kontrola.datum_kontrole > datumOd.AddDays(-1) && kontrola.datum_kontrole < datumDo.AddDays(1))
+                        if (kontrola.datum_kontrole > datumOd && kontrola.datum_kontrole < datumDo)
                         {
                             int index = listaDaniAktivnosti.FindIndex(a => a.Dan == kontrola.datum_kontrole.DayOfWeek);
                             if (index >= 0)
