@@ -70,6 +70,7 @@ namespace PI_t18024_Maza
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
             frmDodajOperaciju novaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola);
+            novaOperacija.StartPosition = FormStartPosition.CenterScreen;
             var rezultat = novaOperacija.ShowDialog();
 
             if (rezultat == DialogResult.OK)
@@ -91,6 +92,7 @@ namespace PI_t18024_Maza
         private void uiActionDodajDijagnozu_Click(object sender, EventArgs e)
         {
             frmDodajDijagnozu novaDijagnoza = new frmDodajDijagnozu(this.vlasnik,this.zivotinja,this.kontrola);
+            novaDijagnoza.StartPosition= FormStartPosition.CenterScreen;
             var rezultat = novaDijagnoza.ShowDialog();
 
             if(rezultat == DialogResult.OK)
@@ -239,6 +241,7 @@ namespace PI_t18024_Maza
             Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
 
             frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza, this.status);
+            postojecaDijagnoza.StartPosition = FormStartPosition.CenterScreen;
             var rezultat = postojecaDijagnoza.ShowDialog();
         }
 
@@ -250,6 +253,7 @@ namespace PI_t18024_Maza
             Cjepivo cjepivo = listaCjepiva[indexCjepljenja - 1];
 
             frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
+            postojeceCijepljenje.StartPosition = FormStartPosition.CenterScreen;
             var rezultat = postojeceCijepljenje.ShowDialog();
         }
 
@@ -261,12 +265,14 @@ namespace PI_t18024_Maza
             Operacija operacija = listaOperacija[indexOperacije - 1];
 
             frmDodajOperaciju postojecaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola, operacija, this.status);
+            postojecaOperacija.StartPosition = FormStartPosition.CenterScreen;
             var rezultat = postojecaOperacija.ShowDialog();
         }
 
         private void uiActionDodajCijepljenje_Click(object sender, EventArgs e)
         {
             frmDodajCijepljenje novoCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola);
+            novoCijepljenje.StartPosition = FormStartPosition.CenterScreen;
             var rezultat = novoCijepljenje.ShowDialog();
 
             if (rezultat == DialogResult.OK)

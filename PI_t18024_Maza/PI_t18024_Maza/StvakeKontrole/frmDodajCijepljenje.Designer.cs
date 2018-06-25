@@ -58,11 +58,9 @@
             this.uiPodaciOZivotinji.Controls.Add(this.uiVrstaZivotinje);
             this.uiPodaciOZivotinji.Controls.Add(this.uiImeZivotinje);
             this.uiPodaciOZivotinji.Controls.Add(this.uiVlasnikZivotinje);
-            this.uiPodaciOZivotinji.Location = new System.Drawing.Point(32, 17);
-            this.uiPodaciOZivotinji.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiPodaciOZivotinji.Location = new System.Drawing.Point(24, 14);
             this.uiPodaciOZivotinji.Name = "uiPodaciOZivotinji";
-            this.uiPodaciOZivotinji.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.uiPodaciOZivotinji.Size = new System.Drawing.Size(297, 218);
+            this.uiPodaciOZivotinji.Size = new System.Drawing.Size(223, 177);
             this.uiPodaciOZivotinji.TabIndex = 1;
             this.uiPodaciOZivotinji.TabStop = false;
             this.uiPodaciOZivotinji.Text = "Podaci o životinji";
@@ -70,90 +68,81 @@
             // uiDatumRodenjaZivotinje
             // 
             this.uiDatumRodenjaZivotinje.AutoSize = true;
-            this.uiDatumRodenjaZivotinje.Location = new System.Drawing.Point(35, 182);
-            this.uiDatumRodenjaZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiDatumRodenjaZivotinje.Location = new System.Drawing.Point(19, 147);
             this.uiDatumRodenjaZivotinje.Name = "uiDatumRodenjaZivotinje";
-            this.uiDatumRodenjaZivotinje.Size = new System.Drawing.Size(109, 17);
+            this.uiDatumRodenjaZivotinje.Size = new System.Drawing.Size(83, 13);
             this.uiDatumRodenjaZivotinje.TabIndex = 3;
             this.uiDatumRodenjaZivotinje.Text = "Datum rođenja: ";
             // 
             // uiVrstaZivotinje
             // 
             this.uiVrstaZivotinje.AutoSize = true;
-            this.uiVrstaZivotinje.Location = new System.Drawing.Point(33, 134);
-            this.uiVrstaZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiVrstaZivotinje.Location = new System.Drawing.Point(19, 110);
             this.uiVrstaZivotinje.Name = "uiVrstaZivotinje";
-            this.uiVrstaZivotinje.Size = new System.Drawing.Size(49, 17);
+            this.uiVrstaZivotinje.Size = new System.Drawing.Size(37, 13);
             this.uiVrstaZivotinje.TabIndex = 2;
             this.uiVrstaZivotinje.Text = "Vrsta: ";
             // 
             // uiImeZivotinje
             // 
             this.uiImeZivotinje.AutoSize = true;
-            this.uiImeZivotinje.Location = new System.Drawing.Point(32, 87);
-            this.uiImeZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiImeZivotinje.Location = new System.Drawing.Point(19, 71);
             this.uiImeZivotinje.Name = "uiImeZivotinje";
-            this.uiImeZivotinje.Size = new System.Drawing.Size(38, 17);
+            this.uiImeZivotinje.Size = new System.Drawing.Size(30, 13);
             this.uiImeZivotinje.TabIndex = 1;
             this.uiImeZivotinje.Text = "Ime: ";
             // 
             // uiVlasnikZivotinje
             // 
             this.uiVlasnikZivotinje.AutoSize = true;
-            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(32, 43);
-            this.uiVlasnikZivotinje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiVlasnikZivotinje.Location = new System.Drawing.Point(19, 35);
             this.uiVlasnikZivotinje.Name = "uiVlasnikZivotinje";
-            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(61, 17);
+            this.uiVlasnikZivotinje.Size = new System.Drawing.Size(47, 13);
             this.uiVlasnikZivotinje.TabIndex = 0;
             this.uiVlasnikZivotinje.Text = "Vlasnik: ";
             // 
             // uiImeCjepiva
             // 
             this.uiImeCjepiva.AutoSize = true;
-            this.uiImeCjepiva.Location = new System.Drawing.Point(79, 305);
-            this.uiImeCjepiva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiImeCjepiva.Location = new System.Drawing.Point(43, 273);
             this.uiImeCjepiva.Name = "uiImeCjepiva";
-            this.uiImeCjepiva.Size = new System.Drawing.Size(86, 17);
+            this.uiImeCjepiva.Size = new System.Drawing.Size(67, 13);
             this.uiImeCjepiva.TabIndex = 2;
             this.uiImeCjepiva.Text = "Ime cjepiva: ";
             // 
             // uiDozaCjepiva
             // 
             this.uiDozaCjepiva.AutoSize = true;
-            this.uiDozaCjepiva.Location = new System.Drawing.Point(81, 374);
-            this.uiDozaCjepiva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiDozaCjepiva.Location = new System.Drawing.Point(43, 321);
             this.uiDozaCjepiva.Name = "uiDozaCjepiva";
-            this.uiDozaCjepiva.Size = new System.Drawing.Size(97, 17);
+            this.uiDozaCjepiva.Size = new System.Drawing.Size(75, 13);
             this.uiDozaCjepiva.TabIndex = 3;
             this.uiDozaCjepiva.Text = "Doza cjepiva: ";
             // 
             // uiProizvodac
             // 
             this.uiProizvodac.AutoSize = true;
-            this.uiProizvodac.Location = new System.Drawing.Point(85, 439);
-            this.uiProizvodac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiProizvodac.Location = new System.Drawing.Point(43, 362);
             this.uiProizvodac.Name = "uiProizvodac";
-            this.uiProizvodac.Size = new System.Drawing.Size(86, 17);
+            this.uiProizvodac.Size = new System.Drawing.Size(67, 13);
             this.uiProizvodac.TabIndex = 4;
             this.uiProizvodac.Text = "Proizvođač: ";
             // 
             // uiRokTrajanja
             // 
             this.uiRokTrajanja.AutoSize = true;
-            this.uiRokTrajanja.Location = new System.Drawing.Point(83, 496);
-            this.uiRokTrajanja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiRokTrajanja.Location = new System.Drawing.Point(43, 404);
             this.uiRokTrajanja.Name = "uiRokTrajanja";
-            this.uiRokTrajanja.Size = new System.Drawing.Size(92, 17);
+            this.uiRokTrajanja.Size = new System.Drawing.Size(70, 13);
             this.uiRokTrajanja.TabIndex = 5;
             this.uiRokTrajanja.Text = "Rok trajanja: ";
             // 
             // uiCijenaCjepiva
             // 
             this.uiCijenaCjepiva.AutoSize = true;
-            this.uiCijenaCjepiva.Location = new System.Drawing.Point(92, 560);
-            this.uiCijenaCjepiva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiCijenaCjepiva.Location = new System.Drawing.Point(43, 442);
             this.uiCijenaCjepiva.Name = "uiCijenaCjepiva";
-            this.uiCijenaCjepiva.Size = new System.Drawing.Size(103, 17);
+            this.uiCijenaCjepiva.Size = new System.Drawing.Size(79, 13);
             this.uiCijenaCjepiva.TabIndex = 6;
             this.uiCijenaCjepiva.Text = "Cijena cjepiva: ";
             // 
@@ -162,19 +151,17 @@
             this.uiActionOdaberiCjepivo.DataSource = this.cjepivoBindingSource;
             this.uiActionOdaberiCjepivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdaberiCjepivo.FormattingEnabled = true;
-            this.uiActionOdaberiCjepivo.Location = new System.Drawing.Point(423, 95);
-            this.uiActionOdaberiCjepivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionOdaberiCjepivo.Location = new System.Drawing.Point(46, 225);
             this.uiActionOdaberiCjepivo.Name = "uiActionOdaberiCjepivo";
-            this.uiActionOdaberiCjepivo.Size = new System.Drawing.Size(160, 24);
+            this.uiActionOdaberiCjepivo.Size = new System.Drawing.Size(121, 21);
             this.uiActionOdaberiCjepivo.TabIndex = 7;
             this.uiActionOdaberiCjepivo.SelectedIndexChanged += new System.EventHandler(this.uiOdabirCjepiva_SelectedIndexChanged);
             // 
             // uiActionDodajCjepivo
             // 
-            this.uiActionDodajCjepivo.Location = new System.Drawing.Point(423, 570);
-            this.uiActionDodajCjepivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionDodajCjepivo.Location = new System.Drawing.Point(119, 473);
             this.uiActionDodajCjepivo.Name = "uiActionDodajCjepivo";
-            this.uiActionDodajCjepivo.Size = new System.Drawing.Size(132, 28);
+            this.uiActionDodajCjepivo.Size = new System.Drawing.Size(99, 23);
             this.uiActionDodajCjepivo.TabIndex = 8;
             this.uiActionDodajCjepivo.Text = "Dodaj cjepljenje";
             this.uiActionDodajCjepivo.UseVisualStyleBackColor = true;
@@ -182,10 +169,9 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(579, 570);
-            this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionOdustani.Location = new System.Drawing.Point(249, 473);
             this.uiActionOdustani.Name = "uiActionOdustani";
-            this.uiActionOdustani.Size = new System.Drawing.Size(100, 28);
+            this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
             this.uiActionOdustani.TabIndex = 9;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
@@ -194,59 +180,54 @@
             // uiImeCjepivaTekst
             // 
             this.uiImeCjepivaTekst.AutoSize = true;
-            this.uiImeCjepivaTekst.Location = new System.Drawing.Point(172, 306);
-            this.uiImeCjepivaTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiImeCjepivaTekst.Location = new System.Drawing.Point(116, 273);
             this.uiImeCjepivaTekst.Name = "uiImeCjepivaTekst";
-            this.uiImeCjepivaTekst.Size = new System.Drawing.Size(86, 17);
+            this.uiImeCjepivaTekst.Size = new System.Drawing.Size(67, 13);
             this.uiImeCjepivaTekst.TabIndex = 10;
             this.uiImeCjepivaTekst.Text = "Ime cjepiva: ";
             // 
             // uiDozaCjepivaTekst
             // 
             this.uiDozaCjepivaTekst.AutoSize = true;
-            this.uiDozaCjepivaTekst.Location = new System.Drawing.Point(179, 374);
-            this.uiDozaCjepivaTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiDozaCjepivaTekst.Location = new System.Drawing.Point(124, 321);
             this.uiDozaCjepivaTekst.Name = "uiDozaCjepivaTekst";
-            this.uiDozaCjepivaTekst.Size = new System.Drawing.Size(97, 17);
+            this.uiDozaCjepivaTekst.Size = new System.Drawing.Size(75, 13);
             this.uiDozaCjepivaTekst.TabIndex = 11;
             this.uiDozaCjepivaTekst.Text = "Doza cjepiva: ";
             // 
             // uiProizvodacTekst
             // 
             this.uiProizvodacTekst.AutoSize = true;
-            this.uiProizvodacTekst.Location = new System.Drawing.Point(179, 439);
-            this.uiProizvodacTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiProizvodacTekst.Location = new System.Drawing.Point(116, 362);
             this.uiProizvodacTekst.Name = "uiProizvodacTekst";
-            this.uiProizvodacTekst.Size = new System.Drawing.Size(86, 17);
+            this.uiProizvodacTekst.Size = new System.Drawing.Size(67, 13);
             this.uiProizvodacTekst.TabIndex = 12;
             this.uiProizvodacTekst.Text = "Proizvođač: ";
             // 
             // uiRokTrajanjaTekst
             // 
             this.uiRokTrajanjaTekst.AutoSize = true;
-            this.uiRokTrajanjaTekst.Location = new System.Drawing.Point(177, 496);
-            this.uiRokTrajanjaTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiRokTrajanjaTekst.Location = new System.Drawing.Point(116, 404);
             this.uiRokTrajanjaTekst.Name = "uiRokTrajanjaTekst";
-            this.uiRokTrajanjaTekst.Size = new System.Drawing.Size(92, 17);
+            this.uiRokTrajanjaTekst.Size = new System.Drawing.Size(70, 13);
             this.uiRokTrajanjaTekst.TabIndex = 13;
             this.uiRokTrajanjaTekst.Text = "Rok trajanja: ";
             // 
             // uiCijenaCjepivaTekst
             // 
             this.uiCijenaCjepivaTekst.AutoSize = true;
-            this.uiCijenaCjepivaTekst.Location = new System.Drawing.Point(199, 561);
-            this.uiCijenaCjepivaTekst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiCijenaCjepivaTekst.Location = new System.Drawing.Point(128, 442);
             this.uiCijenaCjepivaTekst.Name = "uiCijenaCjepivaTekst";
-            this.uiCijenaCjepivaTekst.Size = new System.Drawing.Size(103, 17);
+            this.uiCijenaCjepivaTekst.Size = new System.Drawing.Size(79, 13);
             this.uiCijenaCjepivaTekst.TabIndex = 14;
             this.uiCijenaCjepivaTekst.Text = "Cijena cjepiva: ";
             // 
             // frmDodajCijepljenje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(695, 625);
+            this.ClientSize = new System.Drawing.Size(367, 511);
             this.Controls.Add(this.uiCijenaCjepivaTekst);
             this.Controls.Add(this.uiRokTrajanjaTekst);
             this.Controls.Add(this.uiProizvodacTekst);
@@ -261,9 +242,8 @@
             this.Controls.Add(this.uiDozaCjepiva);
             this.Controls.Add(this.uiImeCjepiva);
             this.Controls.Add(this.uiPodaciOZivotinji);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDodajCijepljenje";
-            this.Text = "frmDodajCijepljenje";
+            this.Text = "Cijepljenje";
             this.Load += new System.EventHandler(this.frmDodajCijepljenje_Load);
             this.uiPodaciOZivotinji.ResumeLayout(false);
             this.uiPodaciOZivotinji.PerformLayout();

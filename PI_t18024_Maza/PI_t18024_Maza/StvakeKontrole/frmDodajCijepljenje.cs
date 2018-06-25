@@ -49,8 +49,9 @@ namespace PI_t18024_Maza
                 uiActionDodajCjepivo.Text = "Ažuriraj cjepljenje";
             }
 
+            ProvjeriVeterinara();
 
-            if (status != null && status)
+            if(status)
             {
                 uiActionOdustani.Text = "Zatvori";
                 OnemoguciUnos();
@@ -137,6 +138,14 @@ namespace PI_t18024_Maza
                 uiRokTrajanjaTekst.Text = cjepivo.rok_trajanja.ToShortDateString();
                 uiCijenaCjepivaTekst.Text = cjepivo.cijena + " kn";
                 uiDozaCjepivaTekst.Text = cjepivo.doza + " mg";
+            }
+        }
+
+        private void ProvjeriVeterinara()
+        {
+            if(this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                OnemoguciUnos();
             }
         }
 

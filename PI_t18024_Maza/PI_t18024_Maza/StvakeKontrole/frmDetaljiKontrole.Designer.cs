@@ -321,7 +321,7 @@
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDetaljiKontrole";
-            this.Text = "frmDetaljiKontrole";
+            this.Text = "Detalji kontrole";
             this.Load += new System.EventHandler(this.frmDetaljiKontrole_Load);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.uiActionDodajDijagnozu, 0);

@@ -56,12 +56,13 @@ namespace PI_t18024_Maza
 
             PopuniLijekove();
             PopuniBolesti();
-            if(status != null && !status && this.dijagnoza!=null)
+            ProvjeriVeterinara();
+            if(!status && this.dijagnoza!=null)
             {
                 PopuniPodatkeODijagnozi();
                 uiActionDodajDijagnozu.Text = "Ažuriraj dijagnozu";
             }
-            else if(status != null && status)
+            else if(status)
             {
                 PopuniPodatkeODijagnozi();
                 uiActionOdustani.Text = "Zatvori";
@@ -331,6 +332,14 @@ namespace PI_t18024_Maza
             {
                 uiPropisaniLijekovi.Items.RemoveAt(index);
                 listaNapomenaZaLijekove.RemoveAt(index);
+            }
+        }
+
+        private void ProvjeriVeterinara()
+        {
+            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                OnemoguciUnos();
             }
         }
 

@@ -42,12 +42,14 @@ namespace PI_t18024_Maza
         {
             PopuniOsnovnePodatke();
 
-            if (status != null && !status && this.operacija != null)
+            ProvjeriVeterinara();
+
+            if (!status && this.operacija != null)
             {
                 PopuniPodatkeOOperaciji();
                 uiActionDodajOperaciju.Text = "Ažuriraj operaciju";
             }
-            else if (status != null && status)
+            else if(status)
             {
                 PopuniPodatkeOOperaciji();
                 uiActionOdustani.Text = "Zatvori";
@@ -95,6 +97,14 @@ namespace PI_t18024_Maza
         private void uiActionOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ProvjeriVeterinara()
+        {
+            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                OnemoguciUnos();
+            }
         }
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
