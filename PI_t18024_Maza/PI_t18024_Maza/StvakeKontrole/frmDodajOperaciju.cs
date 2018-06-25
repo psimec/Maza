@@ -12,11 +12,15 @@ namespace PI_t18024_Maza
 {
     public partial class frmDodajOperaciju : Form
     {
+        #region Varijable
         Vlasnik vlasnik;
         Zivotinja zivotinja;
         Kontrola kontrola;
         public Operacija operacija;
         bool status;
+        #endregion
+
+        #region Konstruktori
 
         public frmDodajOperaciju(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
@@ -38,6 +42,58 @@ namespace PI_t18024_Maza
             this.status = status;
         }
 
+        #endregion
+
+        #region Funkcije
+        private void PopuniOsnovnePodatke()
+        {
+            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+            uiImeZivotinje.Text += zivotinja.ime;
+            uiVrstaZivotinje.Text += zivotinja.vrsta;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
+
+            uiDatumZahvataTekst.Text = this.kontrola.datum_kontrole.ToShortDateString();
+        }
+
+        private void PopuniPodatkeOOperaciji()
+        {
+            uiNapomenaUnos.Text = this.operacija.napomena;
+            uiVrstaZahvataUnos.Text = this.operacija.vrsta_zahvata;
+
+            TimeSpan vrijeme;
+            if (!TimeSpan.TryParse(this.operacija.trajanje_zahtjeva.ToString(), out vrijeme))
+            {
+                MessageBox.Show("Neispravan format trajanja zahtjeva! Molimo Vas da kontaktirate Administratora.");
+                this.Close();
+            }
+            else
+            {
+                uiTrajanjeZahvataUnos.Value = uiTrajanjeZahvataUnos.Value + vrijeme;
+            }
+        }
+
+        private void OnemoguciUnos()
+        {
+            uiNapomenaUnos.ReadOnly = true;
+            uiVrstaZahvataUnos.ReadOnly = true;
+
+            uiTrajanjeZahvataUnos.Enabled = false;
+
+            uiActionDodajOperaciju.Hide();
+        }
+
+        private void ProvjeriVeterinara()
+        {
+            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                OnemoguciUnos();
+            }
+        }
+
+        #endregion
+
+        #region Događaji
+
         private void frmDodajOperaciju_Load(object sender, EventArgs e)
         {
             PopuniOsnovnePodatke();
@@ -55,57 +111,12 @@ namespace PI_t18024_Maza
                 uiActionOdustani.Text = "Zatvori";
                 OnemoguciUnos();
             }
-        }
-
-        private void PopuniOsnovnePodatke()
-        {
-            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
-            uiImeZivotinje.Text += zivotinja.ime;
-            uiVrstaZivotinje.Text += zivotinja.vrsta;
-            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
-
-            uiDatumZahvataTekst.Text = this.kontrola.datum_kontrole.ToShortDateString();
-        }
-
-        private void PopuniPodatkeOOperaciji()
-        {
-            uiNapomenaUnos.Text = this.operacija.napomena;
-            uiVrstaZahvataUnos.Text = this.operacija.vrsta_zahvata;
-
-            TimeSpan vrijeme;
-            if(!TimeSpan.TryParse(this.operacija.trajanje_zahtjeva.ToString(), out vrijeme))
-            {
-                MessageBox.Show("Neispravan format trajanja zahtjeva! Molimo Vas da kontaktirate Administratora.");
-                this.Close();
-            }
-            else
-            {
-                uiTrajanjeZahvataUnos.Value = uiTrajanjeZahvataUnos.Value + vrijeme;
-            }            
-        }
-
-        private void OnemoguciUnos()
-        {
-            uiNapomenaUnos.ReadOnly = true;
-            uiVrstaZahvataUnos.ReadOnly = true;
-
-            uiTrajanjeZahvataUnos.Enabled = false;
-
-            uiActionDodajOperaciju.Hide();
-        }
+        }        
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ProvjeriVeterinara()
-        {
-            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
-            {
-                OnemoguciUnos();
-            }
-        }
+        }        
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
         {
@@ -150,5 +161,7 @@ namespace PI_t18024_Maza
             }
             this.Close();
         }
+
+        #endregion
     }
 }

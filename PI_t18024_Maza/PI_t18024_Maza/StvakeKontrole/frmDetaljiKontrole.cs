@@ -12,6 +12,7 @@ namespace PI_t18024_Maza
 {
     public partial class frmDetaljiKontrole : frmDizajnDijagnoza
     {
+        #region Varijable
         Kontrola kontrola;
         Zivotinja zivotinja;
         Vlasnik vlasnik;
@@ -20,6 +21,9 @@ namespace PI_t18024_Maza
         List<Dijagnoza> listaDijagnoza;
         List<Operacija> listaOperacija;
         List<Cjepivo> listaCjepiva;
+        #endregion
+
+        #region Konstruktori
         public frmDetaljiKontrole(Kontrola kontrola)
         {
             InitializeComponent();
@@ -28,12 +32,178 @@ namespace PI_t18024_Maza
             listaDijagnoza = new List<Dijagnoza>();
             listaOperacija = new List<Operacija>();
             listaCjepiva = new List<Cjepivo>();
-            // ukoliko je status obavljen onda ponudi pregled stavki kontrole
-            // inace nudi dodavanje novih stavki
-
-            //na vrh stavi podatke o kontroli
-            // sredina mogucnosti
         }
+        #endregion
+
+        #region Funkcije
+
+        public void ProvjeriStatus()
+        {
+            if (this.kontrola.status == "Obavljen")
+            {
+                this.status = true;
+                this.uiStatusTekst.ForeColor = Color.Green;
+                this.uiActionDodajCijepljenje.Hide();
+                this.uiActionDodajDijagnozu.Hide();
+                this.uiActionDodajOperaciju.Hide();
+            }
+            else
+            {
+                this.status = false;
+                this.uiStatusTekst.ForeColor = Color.Red;
+                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
+            }
+        }
+
+        public void ProvjeriVeterinara()
+        {
+            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                this.uiActionDodajCijepljenje.Hide();
+                this.uiActionDodajDijagnozu.Hide();
+                this.uiActionDodajOperaciju.Hide();
+                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
+            }
+        }
+
+        #region Funkcije za dohvat stavki
+        public void DohvatiDijagnoze()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var dijagnoza in db.Dijagnoza)
+                {
+                    if (dijagnoza.ID_kontrola == this.kontrola.ID_kontrola)
+                    {
+                        this.listaDijagnoza.Add(dijagnoza);
+                    }
+                }
+            }
+        }
+
+        public void DohvatiCjepljenja()
+        {
+            using (var db = new MazaEntities())
+            {
+                this.listaCjepiva = db.Cjepivo.Where(s => s.Kontrola.Any(c => c.ID_kontrola == this.kontrola.ID_kontrola)).ToList();
+            }
+        }
+
+        public void DohvatiOperacije()
+        {
+            using (var db = new MazaEntities())
+            {
+                foreach (var operacija in db.Operacija)
+                {
+                    if (operacija.ID_kontrola == this.kontrola.ID_kontrola)
+                    {
+                        this.listaOperacija.Add(operacija);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Funkcije za popunjavanje stavke kontrole
+        public void PopuniStavkeDijagnozama()
+        {
+            if (this.listaDijagnoza.Count > 0)
+            {
+                for (int i = 1; i <= listaDijagnoza.Count; i++)
+                {
+                    Button kreiranaDijagnoza = new Button();
+                    kreiranaDijagnoza.Width = 75;
+                    kreiranaDijagnoza.Height = 25;
+                    kreiranaDijagnoza.FlatStyle = FlatStyle.Flat;
+                    kreiranaDijagnoza.BackColor = Color.FromArgb(89, 119, 183);
+                    kreiranaDijagnoza.Text = "Dijagnoza " + i;
+                    kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
+                    uiStavkeKontroleDijagnoze.Controls.Add(kreiranaDijagnoza);
+                    kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (40 * (i - 1)));
+                }
+            }
+        }
+
+        public void PopuniStavkeCjepljenjima()
+        {
+            if (this.listaCjepiva.Count > 0)
+            {
+                for (int i = 1; i <= listaCjepiva.Count; i++)
+                {
+                    Button kreiranoCjepljenje = new Button();
+                    kreiranoCjepljenje.Width = 75;
+                    kreiranoCjepljenje.Height = 25;
+                    kreiranoCjepljenje.FlatStyle = FlatStyle.Flat;
+                    kreiranoCjepljenje.BackColor = Color.FromArgb(89, 119, 183);
+                    kreiranoCjepljenje.Text = "Cjepljenje " + i;
+                    kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
+                    uiStavkeKontroleCijepljenja.Controls.Add(kreiranoCjepljenje);
+                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 25, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
+                }
+            }
+        }
+
+        public void PopuniStavkeOperacijama()
+        {
+            if (this.listaOperacija.Count > 0)
+            {
+                for (int i = 1; i <= listaOperacija.Count; i++)
+                {
+                    Button kreiranaOperacija = new Button();
+                    kreiranaOperacija.Width = 75;
+                    kreiranaOperacija.Height = 25;
+                    kreiranaOperacija.FlatStyle = FlatStyle.Flat;
+                    kreiranaOperacija.BackColor = Color.FromArgb(89, 119, 183);
+                    kreiranaOperacija.Text = "Operacija " + i;
+                    kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
+                    uiStavkeKontroleOperacije.Controls.Add(kreiranaOperacija);
+                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 25, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
+                }
+            }
+        }
+        #endregion
+
+        #region Funkcije za otvaranje generiranih stavki
+        private void OtvoriDijagnozu(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string[] polje = gumb.Text.Split(' ');
+            int indexDijagnoze = int.Parse(polje[1]);
+            Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
+
+            frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza, this.status);
+            postojecaDijagnoza.StartPosition = FormStartPosition.CenterScreen;
+            var rezultat = postojecaDijagnoza.ShowDialog();
+        }
+
+        private void OtvoriCjepljenje(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string[] polje = gumb.Text.Split(' ');
+            int indexCjepljenja = int.Parse(polje[1]);
+            Cjepivo cjepivo = listaCjepiva[indexCjepljenja - 1];
+
+            frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
+            postojeceCijepljenje.StartPosition = FormStartPosition.CenterScreen;
+            var rezultat = postojeceCijepljenje.ShowDialog();
+        }
+
+        private void OtvoriOperaciju(object sender, EventArgs e)
+        {
+            Button gumb = (Button)sender;
+            string[] polje = gumb.Text.Split(' ');
+            int indexOperacije = int.Parse(polje[1]);
+            Operacija operacija = listaOperacija[indexOperacije - 1];
+
+            frmDodajOperaciju postojecaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola, operacija, this.status);
+            postojecaOperacija.StartPosition = FormStartPosition.CenterScreen;
+            var rezultat = postojecaOperacija.ShowDialog();
+        }
+        #endregion
+
+        #endregion
+
+        #region Događaji
 
         private void frmDetaljiKontrole_Load(object sender, EventArgs e)
         {
@@ -63,8 +233,6 @@ namespace PI_t18024_Maza
 
             DohvatiOperacije();
             PopuniStavkeOperacijama();
-
-            //ovisno o statusu prikazi stavke kontrole ukoliko ih ima <- taj dio kasnije
         }
 
         private void uiActionDodajOperaciju_Click(object sender, EventArgs e)
@@ -111,164 +279,6 @@ namespace PI_t18024_Maza
             }
         }
 
-        public void ProvjeriStatus()
-        {
-            if (this.kontrola.status == "Obavljen")
-            {
-                this.status = true;
-                this.uiStatusTekst.ForeColor = Color.Green;
-                this.uiActionDodajCijepljenje.Hide();
-                this.uiActionDodajDijagnozu.Hide();
-                this.uiActionDodajOperaciju.Hide();
-            }
-            else
-            {
-                this.status = false;
-                this.uiStatusTekst.ForeColor = Color.Red;
-                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
-            }
-        }
-
-        public void ProvjeriVeterinara()
-        {
-            if(this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
-            {
-                this.uiActionDodajCijepljenje.Hide();
-                this.uiActionDodajDijagnozu.Hide();
-                this.uiActionDodajOperaciju.Hide();
-                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
-            }
-        }
-
-        public void DohvatiDijagnoze()
-        {
-            using (var db = new MazaEntities())
-            {
-                foreach (var dijagnoza in db.Dijagnoza)
-                {
-                    if(dijagnoza.ID_kontrola == this.kontrola.ID_kontrola)
-                    {
-                        this.listaDijagnoza.Add(dijagnoza);
-                    }
-                }
-            }
-        }
-
-        public void DohvatiCjepljenja()
-        {
-            using (var db = new MazaEntities())
-            {
-                this.listaCjepiva=db.Cjepivo.Where(s => s.Kontrola.Any(c => c.ID_kontrola == this.kontrola.ID_kontrola)).ToList();
-            }
-        }
-
-        public void DohvatiOperacije()
-        {
-            using (var db = new MazaEntities())
-            {
-                foreach (var operacija in db.Operacija)
-                {
-                    if(operacija.ID_kontrola == this.kontrola.ID_kontrola)
-                    {
-                        this.listaOperacija.Add(operacija);
-                    }
-                }
-            }
-        }
-
-        public void PopuniStavkeDijagnozama()
-        {
-            if(this.listaDijagnoza.Count>0)
-            {
-                for(int i=1;i<=listaDijagnoza.Count;i++)
-                {
-                    Button kreiranaDijagnoza = new Button();
-                    kreiranaDijagnoza.Width = 75;
-                    kreiranaDijagnoza.Height = 25;
-                    kreiranaDijagnoza.FlatStyle = FlatStyle.Flat;
-                    kreiranaDijagnoza.BackColor = Color.FromArgb(89, 119, 183);
-                    kreiranaDijagnoza.Text = "Dijagnoza " + i;
-                    kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
-                    uiStavkeKontroleDijagnoze.Controls.Add(kreiranaDijagnoza);
-                    kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (40*(i-1)));
-                }
-            }
-        }
-
-        public void PopuniStavkeCjepljenjima()
-        {
-            if(this.listaCjepiva.Count>0)
-            {
-                for (int i = 1; i <= listaCjepiva.Count; i++)
-                {
-                    Button kreiranoCjepljenje = new Button();
-                    kreiranoCjepljenje.Width = 75;
-                    kreiranoCjepljenje.Height = 25;
-                    kreiranoCjepljenje.FlatStyle = FlatStyle.Flat;
-                    kreiranoCjepljenje.BackColor = Color.FromArgb(89, 119, 183);
-                    kreiranoCjepljenje.Text = "Cjepljenje " + i;
-                    kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
-                    uiStavkeKontroleCijepljenja.Controls.Add(kreiranoCjepljenje);
-                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 25, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
-                }
-            }
-        }
-
-        public void PopuniStavkeOperacijama()
-        {
-            if(this.listaOperacija.Count>0)
-            {
-                for (int i = 1; i <= listaOperacija.Count; i++)
-                {
-                    Button kreiranaOperacija = new Button();
-                    kreiranaOperacija.Width = 75;
-                    kreiranaOperacija.Height = 25;
-                    kreiranaOperacija.FlatStyle = FlatStyle.Flat;
-                    kreiranaOperacija.BackColor = Color.FromArgb(89, 119, 183);
-                    kreiranaOperacija.Text = "Operacija " + i;
-                    kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
-                    uiStavkeKontroleOperacije.Controls.Add(kreiranaOperacija);
-                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 25, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
-                }
-            }
-        }
-
-        private void OtvoriDijagnozu(object sender, EventArgs e)
-        {
-            Button gumb = (Button)sender;
-            string[] polje = gumb.Text.Split(' ');
-            int indexDijagnoze = int.Parse(polje[1]);
-            Dijagnoza dijagnoza = listaDijagnoza[indexDijagnoze - 1];
-
-            frmDodajDijagnozu postojecaDijagnoza = new frmDodajDijagnozu(this.vlasnik, this.zivotinja, this.kontrola, dijagnoza, this.status);
-            postojecaDijagnoza.StartPosition = FormStartPosition.CenterScreen;
-            var rezultat = postojecaDijagnoza.ShowDialog();
-        }
-
-        private void OtvoriCjepljenje(object sender, EventArgs e)
-        {
-            Button gumb = (Button)sender;
-            string[] polje = gumb.Text.Split(' ');
-            int indexCjepljenja = int.Parse(polje[1]);
-            Cjepivo cjepivo = listaCjepiva[indexCjepljenja - 1];
-
-            frmDodajCijepljenje postojeceCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola, cjepivo, this.status);
-            postojeceCijepljenje.StartPosition = FormStartPosition.CenterScreen;
-            var rezultat = postojeceCijepljenje.ShowDialog();
-        }
-
-        private void OtvoriOperaciju(object sender, EventArgs e)
-        {
-            Button gumb = (Button)sender;
-            string[] polje = gumb.Text.Split(' ');
-            int indexOperacije = int.Parse(polje[1]);
-            Operacija operacija = listaOperacija[indexOperacije - 1];
-
-            frmDodajOperaciju postojecaOperacija = new frmDodajOperaciju(this.vlasnik, this.zivotinja, this.kontrola, operacija, this.status);
-            postojecaOperacija.StartPosition = FormStartPosition.CenterScreen;
-            var rezultat = postojecaOperacija.ShowDialog();
-        }
-
         private void uiActionDodajCijepljenje_Click(object sender, EventArgs e)
         {
             frmDodajCijepljenje novoCijepljenje = new frmDodajCijepljenje(this.vlasnik, this.zivotinja, this.kontrola);
@@ -311,8 +321,8 @@ namespace PI_t18024_Maza
             else
             {
                 this.Close();
-            }
-            
+            }            
         }
+        #endregion
     }
 }

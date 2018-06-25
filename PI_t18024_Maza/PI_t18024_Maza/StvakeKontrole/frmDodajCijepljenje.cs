@@ -12,12 +12,15 @@ namespace PI_t18024_Maza
 {
     public partial class frmDodajCijepljenje : Form
     {
+        #region Varijable
         Vlasnik vlasnik;
         Zivotinja zivotinja;
         Kontrola kontrola;
         public Cjepivo cjepivo;
         bool status;
+        #endregion
 
+        #region Konstruktori
         public frmDodajCijepljenje(Vlasnik vlasnik, Zivotinja zivotinja, Kontrola kontrola)
         {
             InitializeComponent();
@@ -37,7 +40,57 @@ namespace PI_t18024_Maza
             this.cjepivo = cjepivo;
             this.status = status;
         }
+        #endregion
 
+        #region Funkcije
+        private void PopuniOsnovnePodatke()
+        {
+            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
+            uiImeZivotinje.Text += zivotinja.ime;
+            uiVrstaZivotinje.Text += zivotinja.vrsta;
+            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
+        }
+
+        private void PopuniCjepiva()
+        {
+            using (var db = new MazaEntities())
+            {
+                uiActionOdaberiCjepivo.DataSource = db.Cjepivo.ToList();
+            }
+
+            uiActionOdaberiCjepivo.DisplayMember = "ime";
+            uiActionOdaberiCjepivo.ValueMember = "ID_cjepivo";
+        }
+
+        private void PopuniPodatkeOCjepivu(Cjepivo cjepivo)
+        {
+            if (cjepivo != null)
+            {
+                uiImeCjepivaTekst.Text = cjepivo.ime;
+                uiProizvodacTekst.Text = cjepivo.proizvodac;
+                uiRokTrajanjaTekst.Text = cjepivo.rok_trajanja.ToShortDateString();
+                uiCijenaCjepivaTekst.Text = cjepivo.cijena + " kn";
+                uiDozaCjepivaTekst.Text = cjepivo.doza + " mg";
+            }
+        }
+
+        private void ProvjeriVeterinara()
+        {
+            if (this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                OnemoguciUnos();
+            }
+        }
+
+        private void OnemoguciUnos()
+        {
+            uiActionOdaberiCjepivo.Enabled = false;
+
+            uiActionDodajCjepivo.Hide();
+        }
+        #endregion
+
+        #region Događaji
         private void frmDodajCijepljenje_Load(object sender, EventArgs e)
         {
             PopuniOsnovnePodatke();
@@ -109,51 +162,6 @@ namespace PI_t18024_Maza
             }
             this.Close();
         }
-
-        private void PopuniOsnovnePodatke()
-        {
-            uiVlasnikZivotinje.Text += vlasnik.ime + " " + vlasnik.prezime;
-            uiImeZivotinje.Text += zivotinja.ime;
-            uiVrstaZivotinje.Text += zivotinja.vrsta;
-            uiDatumRodenjaZivotinje.Text += zivotinja.datum_rodenja.ToShortDateString();
-        }
-
-        private void PopuniCjepiva()
-        {
-            using (var db = new MazaEntities())
-            {
-                uiActionOdaberiCjepivo.DataSource = db.Cjepivo.ToList();
-            }
-
-            uiActionOdaberiCjepivo.DisplayMember = "ime";
-            uiActionOdaberiCjepivo.ValueMember = "ID_cjepivo";
-        }
-
-        private void PopuniPodatkeOCjepivu(Cjepivo cjepivo)
-        {
-            if(cjepivo != null)
-            {
-                uiImeCjepivaTekst.Text = cjepivo.ime;
-                uiProizvodacTekst.Text = cjepivo.proizvodac;
-                uiRokTrajanjaTekst.Text = cjepivo.rok_trajanja.ToShortDateString();
-                uiCijenaCjepivaTekst.Text = cjepivo.cijena + " kn";
-                uiDozaCjepivaTekst.Text = cjepivo.doza + " mg";
-            }
-        }
-
-        private void ProvjeriVeterinara()
-        {
-            if(this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
-            {
-                OnemoguciUnos();
-            }
-        }
-
-        private void OnemoguciUnos()
-        {
-            uiActionOdaberiCjepivo.Enabled = false;
-
-            uiActionDodajCjepivo.Hide();
-        }
+        #endregion
     }
 }

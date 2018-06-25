@@ -12,16 +12,14 @@ namespace PI_t18024_Maza
 {
     public partial class frmStatistike : frmDizajn
     {
+        #region Konstruktori
         public frmStatistike()
         {
             InitializeComponent();
         }
+        #endregion
 
-        private void uiActionPrikaziGraf_Click(object sender, EventArgs e)
-        {
-            PrikaziVrsteZivotinja();
-        }
-
+        #region Funkcije
         private void PrikaziVrsteZivotinja()
         {
             this.uiGraf.Series.Clear();
@@ -72,7 +70,7 @@ namespace PI_t18024_Maza
             {
                 foreach (Veterinar veterinar in listaVeterinara)
                 {
-                    if(veterinar.ID_veterinar == item.veterinar)
+                    if (veterinar.ID_veterinar == item.veterinar)
                     {
                         this.uiGraf.Series["Obavljene kontrole"].Points.AddXY(veterinar.ime + " " + veterinar.prezime, item.broj);
                         break;
@@ -115,7 +113,7 @@ namespace PI_t18024_Maza
 
                 foreach (Kontrola kontrola in listaKontrola)
                 {
-                    if(kontrola.Cjepivo != null)
+                    if (kontrola.Cjepivo != null)
                     {
                         pravaLista.Add(listaZivotinja.Where(s => s.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault());
                     }
@@ -160,7 +158,7 @@ namespace PI_t18024_Maza
             {
                 foreach (Bolest bolest in listaBolesti)
                 {
-                    if(bolest.ID_bolest == item.bolest)
+                    if (bolest.ID_bolest == item.bolest)
                     {
                         this.uiGraf.Series["Broj pojavljivanja bolesti"].Points.AddXY(bolest.naziv, item.broj);
                         break;
@@ -168,6 +166,13 @@ namespace PI_t18024_Maza
                 }
             }
         }
+        #endregion
+
+        #region Događaji
+        private void uiActionPrikaziGraf_Click(object sender, EventArgs e)
+        {
+            PrikaziVrsteZivotinja();
+        }        
 
         private void frmStatistike_Load(object sender, EventArgs e)
         {
@@ -188,5 +193,6 @@ namespace PI_t18024_Maza
         {
             PrikaziNajcesceBolesti();
         }
+        #endregion
     }
 }
