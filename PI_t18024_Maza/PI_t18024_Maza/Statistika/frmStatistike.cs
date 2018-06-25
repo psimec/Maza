@@ -134,6 +134,41 @@ namespace PI_t18024_Maza
             }
         }
 
+        private void PrikaziNajcesceBolesti()
+        {
+            this.uiGraf.Series.Clear();
+            this.uiGraf.Series.Add("Broj pojavljivanja bolesti");
+            this.uiGraf.Series["Broj pojavljivanja bolesti"].Color = Color.Purple;
+            this.uiGraf.Series["Broj pojavljivanja bolesti"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+            List<Dijagnoza> listaDijagnoza = null;
+            List<Bolest> listaBolesti = null;
+
+            using (var db = new MazaEntities())
+            {
+                listaBolesti = db.Bolest.ToList();
+                listaDijagnoza = db.Dijagnoza.ToList();
+            }
+
+            var brojBolesti = listaDijagnoza.GroupBy(n => n.ID_bolest).Select(group => new
+            {
+                bolest = group.Key,
+                broj = group.Count()
+            });
+
+            foreach (var item in brojBolesti)
+            {
+                foreach (Bolest bolest in listaBolesti)
+                {
+                    if(bolest.ID_bolest == item.bolest)
+                    {
+                        this.uiGraf.Series["Broj pojavljivanja bolesti"].Points.AddXY(bolest.naziv, item.broj);
+                        break;
+                    }
+                }
+            }
+        }
+
         private void frmStatistike_Load(object sender, EventArgs e)
         {
             PrikaziVrsteZivotinja();
@@ -147,6 +182,11 @@ namespace PI_t18024_Maza
         private void uiPrikaziCijepljenja_Click(object sender, EventArgs e)
         {
             PrikaziCijepljenjaPoVrsti();
+        }
+
+        private void uiActionNajcesceBolesti_Click(object sender, EventArgs e)
+        {
+            PrikaziNajcesceBolesti();
         }
     }
 }
