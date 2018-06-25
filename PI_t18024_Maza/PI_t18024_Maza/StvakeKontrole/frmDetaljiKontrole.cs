@@ -286,9 +286,27 @@ namespace PI_t18024_Maza
 
         private void uiActionZatvoriDetaljeKontrole_Click(object sender, EventArgs e)
         {
-            //dodaj update da status kontrole bude obavljen ukoliko je u modu neobavljenog
-            //pitaj paskala za promjenu boje na kalendaru
-            this.Close();
+
+            if(this.kontrola.ID_veterinar == PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                if(!this.status)
+                {
+                    if(MessageBox.Show("Da li ste stvarno završili sa kontrolom?", "Jeste li sigurni?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        //promijeni status
+                        this.Close();
+                    }                    
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
     }
 }
