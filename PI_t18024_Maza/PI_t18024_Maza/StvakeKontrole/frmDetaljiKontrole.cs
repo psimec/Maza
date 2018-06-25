@@ -52,6 +52,7 @@ namespace PI_t18024_Maza
             this.uiOpisTekst.Text = this.kontrola.opis;
             this.uiStatusTekst.Text = this.kontrola.status;
 
+            ProvjeriVeterinara();
             ProvjeriStatus();
 
             DohvatiDijagnoze();
@@ -81,8 +82,8 @@ namespace PI_t18024_Maza
                 kreiranaOperacija.Height = 25;
                 kreiranaOperacija.Text = "Operacija " + i;
                 kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
-                uiStavkeKontrole.Controls.Add(kreiranaOperacija);
-                kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 175, kreiranaOperacija.Location.Y + 25 + (30 * (i - 1)));
+                uiStavkeKontroleOperacije.Controls.Add(kreiranaOperacija);
+                kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 175, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
 
             }
         }
@@ -102,8 +103,8 @@ namespace PI_t18024_Maza
                 kreiranaDijagnoza.Height = 25;
                 kreiranaDijagnoza.Text = "Dijagnoza " + i;
                 kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
-                uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
-                kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (30 * (i - 1)));
+                uiStavkeKontroleDijagnoze.Controls.Add(kreiranaDijagnoza);
+                kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (40 * (i - 1)));
 
             }
         }
@@ -114,7 +115,6 @@ namespace PI_t18024_Maza
             {
                 this.status = true;
                 this.uiStatusTekst.ForeColor = Color.Green;
-
                 this.uiActionDodajCijepljenje.Hide();
                 this.uiActionDodajDijagnozu.Hide();
                 this.uiActionDodajOperaciju.Hide();
@@ -123,6 +123,17 @@ namespace PI_t18024_Maza
             {
                 this.status = false;
                 this.uiStatusTekst.ForeColor = Color.Red;
+                this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
+            }
+        }
+
+        public void ProvjeriVeterinara()
+        {
+            if(this.kontrola.ID_veterinar != PrijavljeniVeterinar.Veterinar.ID_veterinar)
+            {
+                this.uiActionDodajCijepljenje.Hide();
+                this.uiActionDodajDijagnozu.Hide();
+                this.uiActionDodajOperaciju.Hide();
                 this.uiActionZatvoriDetaljeKontrole.Text = "Završi";
             }
         }
@@ -176,7 +187,7 @@ namespace PI_t18024_Maza
                     kreiranaDijagnoza.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranaDijagnoza.Text = "Dijagnoza " + i;
                     kreiranaDijagnoza.Click += new EventHandler(OtvoriDijagnozu);
-                    uiStavkeKontrole.Controls.Add(kreiranaDijagnoza);
+                    uiStavkeKontroleDijagnoze.Controls.Add(kreiranaDijagnoza);
                     kreiranaDijagnoza.Location = new Point(kreiranaDijagnoza.Location.X + 25, kreiranaDijagnoza.Location.Y + 25 + (40*(i-1)));
                 }
             }
@@ -195,8 +206,8 @@ namespace PI_t18024_Maza
                     kreiranoCjepljenje.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranoCjepljenje.Text = "Cjepljenje " + i;
                     kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
-                    uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
-                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 125, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
+                    uiStavkeKontroleCijepljenja.Controls.Add(kreiranoCjepljenje);
+                    kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 25, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
                 }
             }
         }
@@ -214,8 +225,8 @@ namespace PI_t18024_Maza
                     kreiranaOperacija.BackColor = Color.FromArgb(89, 119, 183);
                     kreiranaOperacija.Text = "Operacija " + i;
                     kreiranaOperacija.Click += new EventHandler(OtvoriOperaciju);
-                    uiStavkeKontrole.Controls.Add(kreiranaOperacija);
-                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 225, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
+                    uiStavkeKontroleOperacije.Controls.Add(kreiranaOperacija);
+                    kreiranaOperacija.Location = new Point(kreiranaOperacija.Location.X + 25, kreiranaOperacija.Location.Y + 25 + (40 * (i - 1)));
                 }
             }
         }
@@ -268,8 +279,8 @@ namespace PI_t18024_Maza
                 kreiranoCjepljenje.Height = 25;
                 kreiranoCjepljenje.Text = "Cjepljenje " + i;
                 kreiranoCjepljenje.Click += new EventHandler(OtvoriCjepljenje);
-                uiStavkeKontrole.Controls.Add(kreiranoCjepljenje);
-                kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (30 * (i - 1)));
+                uiStavkeKontroleCijepljenja.Controls.Add(kreiranoCjepljenje);
+                kreiranoCjepljenje.Location = new Point(kreiranoCjepljenje.Location.X + 100, kreiranoCjepljenje.Location.Y + 25 + (40 * (i - 1)));
             }
         }
 
