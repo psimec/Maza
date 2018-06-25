@@ -99,6 +99,41 @@ namespace PI_t18024_Maza
             }
         }
 
+        private void PrikaziCijepljenjaPoVrsti()
+        {
+            this.uiGraf.Series.Clear();
+            this.uiGraf.Series.Add("Broj cjepljenja");
+            this.uiGraf.Series["Broj cjepljenja"].Color = Color.Purple;
+
+            List<Kontrola> listaKontrola = null;
+            List<Zivotinja> listaZivotinja = null;
+            List<Zivotinja> pravaLista = new List<Zivotinja>();
+            using (var db = new MazaEntities())
+            {
+                listaKontrola = db.Kontrola.ToList();
+                listaZivotinja = db.Zivotinja.ToList();
+
+                foreach (Kontrola kontrola in listaKontrola)
+                {
+                    if(kontrola.Cjepivo != null)
+                    {
+                        pravaLista.Add(listaZivotinja.Where(s => s.ID_zivotinja == kontrola.ID_zivotinja).FirstOrDefault());
+                    }
+                }
+            }
+
+            var brojCjepljenja = pravaLista.GroupBy(n => n.vrsta).Select(group => new
+            {
+                vrsta = group.Key,
+                broj = group.Count()
+            });
+
+            foreach (var item in brojCjepljenja)
+            {
+                this.uiGraf.Series["Broj cjepljenja"].Points.AddXY(item.vrsta, item.broj);
+            }
+        }
+
         private void frmStatistike_Load(object sender, EventArgs e)
         {
             PrikaziVrsteZivotinja();
@@ -107,6 +142,11 @@ namespace PI_t18024_Maza
         private void uiActionPrikaziKontrole_Click(object sender, EventArgs e)
         {
             PrikaziKontrole();
+        }
+
+        private void uiPrikaziCijepljenja_Click(object sender, EventArgs e)
+        {
+            PrikaziCijepljenjaPoVrsti();
         }
     }
 }

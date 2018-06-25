@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.uiActionPrikaziGraf = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiActionPrikaziKontrole = new System.Windows.Forms.Button();
+            this.uiPrikaziCijepljenja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiGraf)).BeginInit();
             this.SuspendLayout();
             // 
             // uiGraf
             // 
-            chartArea1.Name = "ChartArea1";
-            this.uiGraf.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.uiGraf.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.uiGraf.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.uiGraf.Legends.Add(legend2);
             this.uiGraf.Location = new System.Drawing.Point(293, 216);
             this.uiGraf.Name = "uiGraf";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Broj životinja";
-            this.uiGraf.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Broj životinja";
+            this.uiGraf.Series.Add(series2);
             this.uiGraf.Size = new System.Drawing.Size(539, 344);
             this.uiGraf.TabIndex = 2;
             this.uiGraf.Text = "chart1";
@@ -83,11 +84,22 @@
             this.uiActionPrikaziKontrole.UseVisualStyleBackColor = true;
             this.uiActionPrikaziKontrole.Click += new System.EventHandler(this.uiActionPrikaziKontrole_Click);
             // 
+            // uiPrikaziCijepljenja
+            // 
+            this.uiPrikaziCijepljenja.Location = new System.Drawing.Point(463, 117);
+            this.uiPrikaziCijepljenja.Name = "uiPrikaziCijepljenja";
+            this.uiPrikaziCijepljenja.Size = new System.Drawing.Size(100, 36);
+            this.uiPrikaziCijepljenja.TabIndex = 16;
+            this.uiPrikaziCijepljenja.Text = "Prikaži cijepljenja po vrsti";
+            this.uiPrikaziCijepljenja.UseVisualStyleBackColor = true;
+            this.uiPrikaziCijepljenja.Click += new System.EventHandler(this.uiPrikaziCijepljenja_Click);
+            // 
             // frmStatistike
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.Controls.Add(this.uiPrikaziCijepljenja);
             this.Controls.Add(this.uiActionPrikaziKontrole);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.uiActionPrikaziGraf);
@@ -99,6 +111,7 @@
             this.Controls.SetChildIndex(this.uiActionPrikaziGraf, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.uiActionPrikaziKontrole, 0);
+            this.Controls.SetChildIndex(this.uiPrikaziCijepljenja, 0);
             ((System.ComponentModel.ISupportInitialize)(this.uiGraf)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Button uiActionPrikaziGraf;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button uiActionPrikaziKontrole;
+        private System.Windows.Forms.Button uiPrikaziCijepljenja;
     }
 }
