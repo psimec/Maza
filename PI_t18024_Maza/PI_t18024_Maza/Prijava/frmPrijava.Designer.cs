@@ -147,6 +147,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrijava";
             this.Text = "Prijava";
+            this.Load += new System.EventHandler(this.frmPrijava_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrijava_KeyDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

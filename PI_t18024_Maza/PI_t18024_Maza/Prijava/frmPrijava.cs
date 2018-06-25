@@ -146,11 +146,19 @@ namespace PI_t18024_Maza
             {
                 Autentifikacija();
             }
+        }
 
+        private void frmPrijava_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.F1)
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18024/wiki/3.-Korisni%C4%8Dka-dokumentacija#prijava");
             }
+        }
+
+        private void frmPrijava_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
 
 
