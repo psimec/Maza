@@ -26,6 +26,9 @@ namespace PI_t18024_Maza
         {
             this.vlasnik = vlasnik;
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
 
         /// <summary>
@@ -38,6 +41,9 @@ namespace PI_t18024_Maza
             this.vlasnik = vlasnik;
             this.zivotinja = zivotinja;
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
         #endregion
 

@@ -46,6 +46,7 @@
             this.bolestTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.bolestTableAdapter();
             this.LijekTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.LijekTableAdapter();
             this.PovijestBolestiTableAdapter = new PI_t18024_Maza._18024_DBDataSetTableAdapters.PovijestBolestiTableAdapter();
+            this.korisnickaPodrska = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.vlasnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._18024_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zivotinjaBindingSource)).BeginInit();
@@ -103,10 +104,11 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PI_t18024_Maza.PovijestBolesti.IzvjestajZivotinja.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
+            this.reportViewer1.Location = new System.Drawing.Point(-4, -1);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(884, 783);
+            this.reportViewer1.Size = new System.Drawing.Size(1178, 963);
             this.reportViewer1.TabIndex = 3;
             // 
             // vlasnikTableAdapter
@@ -135,10 +137,11 @@
             // 
             // frmPovijestBolesti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 780);
+            this.ClientSize = new System.Drawing.Size(1173, 960);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPovijestBolesti";
             this.Text = "Povijest bolesti";
             this.Load += new System.EventHandler(this.povijestBolesti_Load);
@@ -170,5 +173,6 @@
         private _18024_DBDataSetTableAdapters.LijekTableAdapter LijekTableAdapter;
         private System.Windows.Forms.BindingSource PovijestBolestiBindingSource;
         private _18024_DBDataSetTableAdapters.PovijestBolestiTableAdapter PovijestBolestiTableAdapter;
+        private System.Windows.Forms.HelpProvider korisnickaPodrska;
     }
 }

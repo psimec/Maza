@@ -15,6 +15,8 @@ namespace PI_t18024_Maza
         public frmDizajnDijagnoza()
         {
             InitializeComponent();
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
 
         private void uiActionClose_Click(object sender, EventArgs e)

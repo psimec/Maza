@@ -35,6 +35,8 @@ namespace PI_t18024_Maza
             this.vlasnik = vlasnik;
             this.zivotinja = zivotinja;
             this.kontrola = kontrola;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
 
         /// <summary>
@@ -54,6 +56,8 @@ namespace PI_t18024_Maza
             this.kontrola = kontrola;
             this.operacija = operacija;
             this.status = status;
+            korisnickaPodrska.SetShowHelp(this, true);
+            korisnickaPodrska.HelpNamespace = "https://github.com/foivz/r18024/blob/master/Datoteke/Korisnicka_dokumentacija/Korisnicka_dokumentacija.pdf";
         }
 
         #endregion
