@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.uiActionPrikaziGraf = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,80 +42,98 @@
             // 
             // uiGraf
             // 
-            chartArea1.Name = "ChartArea1";
-            this.uiGraf.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.uiGraf.Legends.Add(legend1);
-            this.uiGraf.Location = new System.Drawing.Point(293, 216);
+            chartArea2.Name = "ChartArea1";
+            this.uiGraf.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.uiGraf.Legends.Add(legend2);
+            this.uiGraf.Location = new System.Drawing.Point(391, 266);
+            this.uiGraf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiGraf.Name = "uiGraf";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Broj životinja";
-            this.uiGraf.Series.Add(series1);
-            this.uiGraf.Size = new System.Drawing.Size(539, 344);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Broj životinja";
+            this.uiGraf.Series.Add(series2);
+            this.uiGraf.Size = new System.Drawing.Size(719, 423);
             this.uiGraf.TabIndex = 2;
             this.uiGraf.Text = "chart1";
             // 
             // uiActionPrikaziGraf
             // 
-            this.uiActionPrikaziGraf.Location = new System.Drawing.Point(242, 117);
+            this.uiActionPrikaziGraf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionPrikaziGraf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPrikaziGraf.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPrikaziGraf.Location = new System.Drawing.Point(391, 138);
+            this.uiActionPrikaziGraf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionPrikaziGraf.Name = "uiActionPrikaziGraf";
-            this.uiActionPrikaziGraf.Size = new System.Drawing.Size(89, 36);
+            this.uiActionPrikaziGraf.Size = new System.Drawing.Size(139, 55);
             this.uiActionPrikaziGraf.TabIndex = 3;
             this.uiActionPrikaziGraf.Text = "Prikaži vrste životinja";
-            this.uiActionPrikaziGraf.UseVisualStyleBackColor = true;
+            this.uiActionPrikaziGraf.UseVisualStyleBackColor = false;
             this.uiActionPrikaziGraf.Click += new System.EventHandler(this.uiActionPrikaziGraf_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(162, 428);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(216, 527);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 81);
+            this.panel1.Size = new System.Drawing.Size(7, 100);
             this.panel1.TabIndex = 14;
             // 
             // uiActionPrikaziKontrole
             // 
-            this.uiActionPrikaziKontrole.Location = new System.Drawing.Point(354, 117);
+            this.uiActionPrikaziKontrole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionPrikaziKontrole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPrikaziKontrole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPrikaziKontrole.Location = new System.Drawing.Point(576, 138);
+            this.uiActionPrikaziKontrole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionPrikaziKontrole.Name = "uiActionPrikaziKontrole";
-            this.uiActionPrikaziKontrole.Size = new System.Drawing.Size(89, 36);
+            this.uiActionPrikaziKontrole.Size = new System.Drawing.Size(139, 55);
             this.uiActionPrikaziKontrole.TabIndex = 15;
             this.uiActionPrikaziKontrole.Text = "Prikaži kontrole";
-            this.uiActionPrikaziKontrole.UseVisualStyleBackColor = true;
+            this.uiActionPrikaziKontrole.UseVisualStyleBackColor = false;
             this.uiActionPrikaziKontrole.Click += new System.EventHandler(this.uiActionPrikaziKontrole_Click);
             // 
             // uiPrikaziCijepljenja
             // 
-            this.uiPrikaziCijepljenja.Location = new System.Drawing.Point(463, 117);
+            this.uiPrikaziCijepljenja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiPrikaziCijepljenja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiPrikaziCijepljenja.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiPrikaziCijepljenja.Location = new System.Drawing.Point(758, 138);
+            this.uiPrikaziCijepljenja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiPrikaziCijepljenja.Name = "uiPrikaziCijepljenja";
-            this.uiPrikaziCijepljenja.Size = new System.Drawing.Size(100, 36);
+            this.uiPrikaziCijepljenja.Size = new System.Drawing.Size(153, 55);
             this.uiPrikaziCijepljenja.TabIndex = 16;
             this.uiPrikaziCijepljenja.Text = "Prikaži cijepljenja po vrsti";
-            this.uiPrikaziCijepljenja.UseVisualStyleBackColor = true;
+            this.uiPrikaziCijepljenja.UseVisualStyleBackColor = false;
             this.uiPrikaziCijepljenja.Click += new System.EventHandler(this.uiPrikaziCijepljenja_Click);
             // 
             // uiActionNajcesceBolesti
             // 
-            this.uiActionNajcesceBolesti.Location = new System.Drawing.Point(582, 117);
+            this.uiActionNajcesceBolesti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(119)))), ((int)(((byte)(183)))));
+            this.uiActionNajcesceBolesti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionNajcesceBolesti.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNajcesceBolesti.Location = new System.Drawing.Point(957, 138);
+            this.uiActionNajcesceBolesti.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionNajcesceBolesti.Name = "uiActionNajcesceBolesti";
-            this.uiActionNajcesceBolesti.Size = new System.Drawing.Size(100, 36);
+            this.uiActionNajcesceBolesti.Size = new System.Drawing.Size(153, 55);
             this.uiActionNajcesceBolesti.TabIndex = 17;
             this.uiActionNajcesceBolesti.Text = "Prikaži najčešće bolesti";
-            this.uiActionNajcesceBolesti.UseVisualStyleBackColor = true;
+            this.uiActionNajcesceBolesti.UseVisualStyleBackColor = false;
             this.uiActionNajcesceBolesti.Click += new System.EventHandler(this.uiActionNajcesceBolesti_Click);
             // 
             // frmStatistike
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 632);
+            this.ClientSize = new System.Drawing.Size(1344, 778);
             this.Controls.Add(this.uiActionNajcesceBolesti);
             this.Controls.Add(this.uiPrikaziCijepljenja);
             this.Controls.Add(this.uiActionPrikaziKontrole);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.uiActionPrikaziGraf);
             this.Controls.Add(this.uiGraf);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "frmStatistike";
             this.Text = "frmStatistike";
             this.Load += new System.EventHandler(this.frmStatistike_Load);
